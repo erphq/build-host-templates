@@ -31,19 +31,20 @@ jobs:
     needs: validate
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      contents: write
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
           name: reviewed-template-preview
           path: dist
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-      - uses: actions/deploy-pages@v4
-        id: deployment
+      - name: Package the reviewed catalog
+        run: |
+          tar -czf catalog.tar.gz -C dist .
+          sha256sum catalog.tar.gz > catalog.tar.gz.sha256
+      - name: Publish immutable catalog release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: catalog-${{ github.sha }}
+        run: |
+          gh release create "$RELEASE_TAG" catalog.tar.gz catalog.tar.gz.sha256 --title "Template collection ${RELEASE_TAG#catalog-}" --notes "Reviewed catalog built from the main branch. build.host imports this release automatically." --latest

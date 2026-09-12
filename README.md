@@ -37,10 +37,14 @@ Open the template's `site/index.html` path from the generated `catalog.json`. ZI
 
 ## Publication
 
-Pull requests run validation and produce a downloadable preview artifact. Changes merged into `main` publish the static catalog and assets using GitHub Pages. build.host consumes this catalog, so template updates do not require a platform-code release. Previews run on a separate origin from the authenticated platform.
+Pull requests run validation and produce a downloadable preview artifact. Changes merged into `main` publish the static catalog and assets as an immutable GitHub Release. build.host consumes this catalog, so template updates do not require a platform-code release. Previews run on a separate origin from the authenticated platform.
 
 ## Credits and licensing
 
 The initial landing-page collection is migrated from ProtoSites with the owner's authorization. Original reference acknowledgements, image provenance, and font licenses are retained beside the assets. Referenced products are inspiration, not authors or endorsers of these templates.
 
 Repository tooling and original template code/prompts are under [MIT](LICENSE). Third-party assets retain their own licenses; this repository's license does not relicense photography, fonts, or other third-party material. Read each template's credits before redistributing assets.
+
+The catalog assets are served from `https://template-assets.build.host`, a separate browser origin from the authenticated platform. Organization policy disables GitHub Pages, so publication uses GitHub Releases instead. The server imports a successfully published release within five minutes; the platform refreshes its catalog within another minute.
+
+Business-preview migration status: all 43 complete prompts and original deployed visual concepts are retained. The owner is supplying the original editable business gallery project to replace the preserved compiled preview bundle. These entries are labeled design concepts rather than working applications.

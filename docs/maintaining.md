@@ -8,9 +8,9 @@ Require **Validate collection** and an approving code-owner review on `main`. Di
 
 Before merging, download the preview artifact, inspect the working UI, and check the full prompt and asset provenance. Static catalog validation proves structural consistency; it does not prove quality, security, authorship, licensing, or correct business behavior. Those require review.
 
-The publication job runs only for `main` or a manual run on `main`. It uses GitHub's short-lived Pages token and has no build.host platform credentials. Pull-request jobs have read-only permissions and cannot publish. Never add platform secrets to this repository or run untrusted PR code with production credentials.
+The publication job runs only for `main` or a manual run on `main`. It uses GitHub's short-lived repository token to publish a versioned release and has no build.host platform credentials. A restricted service on the build.host server checks for a new release every five minutes, verifies the archive checksum, validates its paths and catalog, and atomically switches to it. Pull-request jobs have read-only permissions and cannot publish. Never add platform secrets to this repository or run untrusted PR code with production credentials.
 
-The platform fetches the published catalog and shows template assets from the separate preview origin. A failed publication leaves the previous published Pages release available. Use the Actions publication status to confirm success before announcing an entry.
+The platform fetches the published catalog and shows template assets from the separate preview origin. A failed publication leaves the previous published catalog release available. Use the Actions publication status to confirm success before announcing an entry.
 
 ## Add a category
 

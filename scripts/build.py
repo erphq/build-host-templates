@@ -37,6 +37,7 @@ def load_catalog():
             assert isinstance(item[field], str) and item[field].strip(), f'{path}: missing {field}'
         assert item['prompt'] == 'PROMPT.md', f'{path}: prompt must be PROMPT.md'
         assert len((path.parent / 'PROMPT.md').read_text().strip()) >= 200, f'{path}: incomplete prompt'
+        assert item.get('sharedAssets') in (None, 'business'), f'{path}: unknown shared asset group'
         assert item['previewKind'] in ('interactive', 'concept'), f'{path}: invalid preview kind'
         entry = item.get('entry')
         assert entry and not Path(entry).is_absolute() and '..' not in Path(entry).parts, f'{path}: missing or unsafe preview entry'
@@ -65,6 +66,11 @@ def build(output):
     for item in catalog['templates']:
         source = ROOT / 'templates' / item['id']
         shutil.copytree(source, output / item['id'], dirs_exist_ok=True)
+        # Preview copies are not search landing pages. Downloadable source stays unchanged.
+        for page in (output / item['id'] / 'site').rglob('*.html'):
+            markup = page.read_text()
+            markup = re.sub(r'<head([^>]*)>', r'<head\1><meta name="robots" content="noindex, nofollow">', markup, count=1, flags=re.I)
+            page.write_text(markup)
         with zipfile.ZipFile(output / item['downloadPath'], 'w', zipfile.ZIP_DEFLATED) as archive:
             for file in sorted(source.rglob('*')):
                 if file.is_file():
