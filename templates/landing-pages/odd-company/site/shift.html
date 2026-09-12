@@ -1,0 +1,1122 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SHIFT | Odd Company</title><meta name="description" content="An exhibition-identity study built around strong type, a focused geometric accent, and the scale of a printed poster."><link rel="preload" href="assets/archivo-black.ttf" as="font" type="font/ttf" crossorigin><style>@font-face {
+  font-family: Archivo;
+  src: url('assets/archivo-black.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --paper: #f5f5f3;
+  --ink: #202024;
+  --muted: #626269;
+  --line: #cbcbce;
+  --surface: #e9e9e8;
+  --accent: #b93926;
+  --on-accent: #fff;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --paper: #19191d;
+  --ink: #f2f1f5;
+  --muted: #bab8c3;
+  --line: #47464f;
+  --surface: #24242b;
+  --accent: #ffa58e;
+  --on-accent: #271c19;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #19191d;
+    --ink: #f2f1f5;
+    --muted: #bab8c3;
+    --line: #47464f;
+    --surface: #24242b;
+    --accent: #ffa58e;
+    --on-accent: #271c19;
+    color-scheme: dark;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    16px/1.6 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: Archivo, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+} /* Layer order: normal content, sticky work panels, header, skip link. */
+.skip {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 4;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 12px 18px;
+  transform: translateY(-160%);
+}
+.skip:focus {
+  transform: none;
+}
+.header {
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 0 4vw;
+}
+.wordmark {
+  font-family: Archivo, sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+}
+.header nav > a {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+.header nav a:hover {
+  color: var(--accent);
+}
+.header button {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+  font-size: 13px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 45px;
+  align-items: center;
+  padding: 50px 4vw 65px;
+  max-width: 1700px;
+  margin: auto;
+}
+.hero h1 {
+  font-size: clamp(54px, 6vw, 92px);
+  line-height: 1.03;
+  letter-spacing: -0.075em;
+}
+.hero > div > p {
+  font-size: 19px;
+  max-width: 470px;
+  color: var(--muted);
+  margin: 25px 0 30px;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 15px 22px;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 550;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+.primary:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+.primary:active {
+  transform: scale(0.98);
+}
+.hero-art {
+  display: block;
+  overflow: hidden;
+}
+.hero-art > img {
+  height: 480px;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+.hero-art:hover > img {
+  transform: scale(1.035);
+}
+.work {
+  position: relative;
+}
+.work-panel {
+  view-timeline-name: --work-panel;
+  position: sticky;
+  top: 72px;
+  z-index: 1;
+  min-height: calc(100dvh - 72px);
+  padding: 45px 4vw;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 60px;
+  align-items: center;
+}
+.work-copy .category {
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.work-copy h2 {
+  font-size: clamp(44px, 4.6vw, 72px);
+  letter-spacing: -0.065em;
+  margin-bottom: 25px;
+  overflow-wrap: anywhere;
+}
+.work-copy > p:not(.category) {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 400px;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  padding: 16px 0;
+  font-size: 14px;
+  font-weight: 550;
+  margin-top: 20px;
+}
+.text-link:hover {
+  color: var(--accent);
+}
+.work-picture {
+  display: block;
+  overflow: hidden;
+}
+.work-picture > img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  max-height: calc(100dvh - 170px);
+}
+.section {
+  padding: 90px 4vw;
+  max-width: 1500px;
+  margin: auto;
+}
+.practice {
+  max-width: 1100px;
+}
+.practice > h2 {
+  font-size: clamp(42px, 5.5vw, 76px);
+}
+.practice > p {
+  font-size: 20px;
+  max-width: 670px;
+  color: var(--muted);
+  margin: 28px 0 45px;
+}
+.services {
+  display: grid;
+  gap: 0;
+}
+.services details {
+  padding: 27px 0;
+  border-top: 1px solid var(--line);
+}
+.services summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+.services summary::-webkit-details-marker {
+  display: none;
+}
+.services details[open] summary svg {
+  transform: rotate(45deg);
+}
+.services p {
+  max-width: 670px;
+  margin-top: 22px;
+  font-size: 18px;
+  color: var(--muted);
+}
+.studio-statement {
+  border-top: 1px solid var(--line);
+}
+.studio-statement > p {
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 26px;
+}
+.studio-statement h2 {
+  font-size: clamp(43px, 6vw, 88px);
+  max-width: 1200px;
+}
+.studio-statement > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  max-width: 950px;
+  margin-top: 35px;
+}
+.studio-statement > div > p {
+  font-size: 18px;
+  color: var(--muted);
+}
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 55px 4vw 25px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.footer-wordmark {
+  font-family: Archivo, sans-serif;
+  font-size: clamp(50px, 7vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+}
+.footer > div > p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 430px;
+}
+.footer > div > a {
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 25px;
+}
+.footer-bottom {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer .footer-bottom > a {
+  font-size: 12px;
+  margin: 0;
+}
+.study-intro {
+  padding-top: 35px;
+  padding-bottom: 40px;
+}
+.back {
+  font-size: 14px;
+  color: var(--muted);
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.back svg {
+  transform: rotate(180deg);
+}
+.study-intro > .category {
+  font-size: 14px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.study-intro > h1 {
+  font-size: clamp(68px, 11vw, 170px);
+}
+.study-line {
+  font-size: 24px;
+  color: var(--muted);
+  margin-top: 25px;
+  max-width: 750px;
+}
+.study-image {
+  margin: 0 4vw;
+}
+.study-image img {
+  aspect-ratio: 4/2.7;
+  object-fit: cover;
+}
+.study-image figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 15px;
+}
+.study-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px 80px;
+}
+.study-body h2 {
+  font-size: 31px;
+  margin-bottom: 25px;
+  letter-spacing: -0.04em;
+}
+.study-body p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 650px;
+}
+.study-body > div:last-child {
+  grid-column: 1/-1;
+}
+.study-body ul {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+}
+.study-body li {
+  font-size: 16px;
+  padding: 10px 15px;
+  background: var(--surface);
+}
+.next-study {
+  border-top: 1px solid var(--line);
+  padding: 35px 4vw 55px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+.next-study > span {
+  grid-column: 1/-1;
+  font-size: 14px;
+  color: var(--muted);
+}
+.next-study strong {
+  font-family: Archivo, sans-serif;
+  font-weight: 400;
+  font-size: clamp(50px, 8vw, 120px);
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+.next-study > svg {
+  width: 40px;
+  height: 40px;
+}
+.brief-intro {
+  padding-bottom: 45px;
+}
+.brief-intro h1 {
+  font-size: clamp(57px, 7vw, 104px);
+}
+.brief-intro p {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 670px;
+  margin-top: 25px;
+}
+.brief-layout {
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.brief-layout form {
+  padding: 35px;
+  background: var(--surface);
+}
+.brief-layout form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+  margin-bottom: 27px;
+}
+.brief-layout input:not([type='checkbox']),
+.brief-layout textarea,
+.brief-layout select {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 13px;
+  min-height: 49px;
+  font-size: 16px;
+}
+.brief-layout textarea {
+  resize: vertical;
+}
+.brief-layout fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 27px;
+}
+.brief-layout legend {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.scope-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.scope-options label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 15px;
+}
+.scope-options input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent);
+}
+.brief-note h2 {
+  font-size: 46px;
+  margin-bottom: 25px;
+}
+.brief-note p {
+  font-size: 18px;
+  color: var(--muted);
+  margin-top: 22px;
+  max-width: 400px;
+}
+#brief-error {
+  font-size: 14px;
+  margin-top: 18px;
+  color: var(--ink);
+}
+#brief-result {
+  grid-column: 1/-1;
+  padding: 35px;
+  border: 1px solid var(--line);
+}
+#brief-result > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+#brief-result h2 {
+  font-size: 39px;
+}
+#edit-brief {
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 8px 0;
+}
+#brief-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    17px/1.65 Geist,
+    sans-serif;
+  color: var(--muted);
+  margin: 30px 0;
+}
+.brief-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+#copy-brief {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 14px;
+}
+#copy-status {
+  display: block;
+  font-size: 14px;
+  margin-top: 20px;
+  color: var(--muted);
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+  }
+  .hero h1 {
+    font-size: 62px;
+  }
+  .hero-art img {
+    height: 430px;
+  }
+  .work-panel {
+    gap: 40px;
+  }
+  .work-copy h2 {
+    font-size: 46px;
+  }
+  .work-copy > p:not(.category) {
+    font-size: 17px;
+  }
+  .header nav {
+    gap: 24px;
+  }
+  .brief-layout {
+    gap: 40px;
+  }
+  .brief-note h2 {
+    font-size: 38px;
+  }
+  .brief-layout form {
+    padding: 25px;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    padding: 0 20px;
+    height: 72px;
+    gap: 15px;
+  }
+  .wordmark {
+    font-size: 15px;
+  }
+  .header nav {
+    gap: 14px;
+    font-size: 12px;
+  }
+  .header nav > a:nth-child(2) {
+    display: none;
+  }
+  .header nav svg {
+    display: none;
+  }
+  .header button {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+  .hero {
+    display: block;
+    padding: 35px 20px 40px;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 8vw, 64px);
+    line-height: 1.06;
+    letter-spacing: -0.07em;
+  }
+  .hero > div > p {
+    font-size: 17px;
+    max-width: 450px;
+    margin: 24px 0;
+  }
+  .primary {
+    padding: 13px 18px;
+    min-height: 48px;
+    font-size: 14px;
+    gap: 25px;
+  }
+  .hero-art {
+    margin-top: 32px;
+  }
+  .hero-art img {
+    height: auto;
+    aspect-ratio: 4/3;
+  }
+  .work-panel {
+    position: relative;
+    top: auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 38px 20px;
+    gap: 27px;
+    align-items: stretch;
+  }
+  .work-copy .category {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  .work-copy h2 {
+    font-size: clamp(42px, 9vw, 67px);
+    margin-bottom: 20px;
+  }
+  .work-copy > p:not(.category) {
+    font-size: 17px;
+    max-width: 520px;
+  }
+  .text-link {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .work-picture img {
+    max-height: none;
+    aspect-ratio: 4/3;
+  }
+  .section {
+    padding: 60px 20px;
+  }
+  .practice > h2 {
+    font-size: clamp(37px, 7vw, 55px);
+  }
+  .practice > p {
+    font-size: 18px;
+    margin: 24px 0 32px;
+  }
+  .services summary {
+    font-size: 23px;
+  }
+  .services p {
+    font-size: 17px;
+  }
+  .studio-statement h2 {
+    font-size: clamp(35px, 7vw, 53px);
+    line-height: 1.08;
+  }
+  .studio-statement > div {
+    display: block;
+    margin-top: 28px;
+  }
+  .studio-statement > div > p {
+    font-size: 17px;
+    margin-top: 20px;
+  }
+  .footer {
+    display: block;
+    padding: 40px 20px 25px;
+  }
+  .footer-wordmark {
+    font-size: clamp(45px, 10vw, 70px);
+  }
+  .footer > div {
+    margin-top: 30px;
+  }
+  .footer > div > p {
+    font-size: 17px;
+  }
+  .footer > div > a {
+    font-size: 15px;
+  }
+  .footer-bottom {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 11px;
+  }
+  .footer-bottom > span {
+    flex-basis: 100%;
+  }
+  .footer .footer-bottom > a {
+    font-size: 12px;
+  }
+  .study-intro {
+    padding-top: 28px;
+    padding-bottom: 30px;
+  }
+  .back {
+    margin-bottom: 30px;
+  }
+  .study-intro > h1 {
+    font-size: clamp(49px, 11vw, 80px);
+    overflow-wrap: anywhere;
+  }
+  .study-line {
+    font-size: 21px;
+    margin-top: 22px;
+  }
+  .study-image {
+    margin: 0 20px;
+  }
+  .study-image img {
+    aspect-ratio: 4/3;
+  }
+  .study-image figcaption {
+    font-size: 11px;
+  }
+  .study-body {
+    display: block;
+  }
+  .study-body > div {
+    margin-bottom: 35px;
+  }
+  .study-body h2 {
+    font-size: 27px;
+    margin-bottom: 20px;
+  }
+  .study-body p {
+    font-size: 17px;
+  }
+  .study-body ul {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .study-body li {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .next-study {
+    padding: 30px 20px 40px;
+  }
+  .next-study strong {
+    font-size: clamp(42px, 10vw, 70px);
+  }
+  .next-study > svg {
+    width: 27px;
+    height: 27px;
+  }
+  .brief-intro {
+    padding-bottom: 30px;
+  }
+  .brief-intro h1 {
+    font-size: clamp(42px, 9vw, 65px);
+  }
+  .brief-intro p {
+    font-size: 18px;
+  }
+  .brief-layout {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    gap: 35px;
+  }
+  .brief-layout form {
+    width: 100%;
+    padding: 25px 20px;
+  }
+  .brief-note h2 {
+    font-size: 36px;
+  }
+  .brief-note p {
+    font-size: 17px;
+    max-width: 550px;
+  }
+  .scope-options {
+    gap: 15px 10px;
+  }
+  .scope-options label {
+    font-size: 14px;
+  }
+  .brief-layout form > label {
+    font-size: 14px;
+  }
+  .brief-layout legend {
+    font-size: 14px;
+  }
+  #brief-result {
+    width: 100%;
+    padding: 25px 20px;
+  }
+  #brief-result > div:first-child {
+    display: block;
+  }
+  #brief-result h2 {
+    font-size: 33px;
+  }
+  #edit-brief {
+    margin-top: 18px;
+  }
+  #brief-text {
+    font-size: 16px;
+  }
+  .brief-actions {
+    gap: 18px;
+  }
+}
+@media (max-width: 380px) {
+  .header {
+    gap: 10px;
+  }
+  .wordmark {
+    font-size: 13px;
+  }
+  .header nav {
+    font-size: 11px;
+    gap: 10px;
+  }
+  .header button {
+    font-size: 11px;
+    padding: 7px;
+  }
+  .hero h1 {
+    font-size: 39px;
+  }
+  .work-copy h2 {
+    font-size: 40px;
+  }
+  .practice > h2 {
+    font-size: 33px;
+  }
+  .studio-statement h2 {
+    font-size: 31px;
+  }
+  .scope-options {
+    grid-template-columns: 1fr;
+  }
+  .study-intro > h1 {
+    font-size: 44px;
+  }
+  .brief-intro h1 {
+    font-size: 38px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+  }
+  @supports (animation-timeline: view()) {
+    .work-picture > img {
+      animation: picture-arrival linear both;
+      animation-timeline: --work-panel;
+      animation-range: entry 0% cover 40%;
+    }
+    @keyframes picture-arrival {
+      from {
+        transform: scale(1.05);
+        opacity: 0.7;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .work-panel {
+    position: relative;
+    top: auto;
+    min-height: 0;
+  }
+}
+
+.primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="header"><a class="wordmark" href="index.html">ODD COMPANY</a><nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="index.html#practice">Practice</a><a href="brief.html">Start a project <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><button id="theme" type="button" aria-label="Use dark theme">Dark</button></nav></header><main id="main"><section class="study-intro section"><a class="back" href="index.html#work"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg> Work</a><p class="category">Graphic design</p><h1 class="arrive">SHIFT.</h1><p class="study-line">Give an idea a physical presence.</p></section><figure class="study-image"><img src="assets/shift.webp" srcset="assets/shift-640.webp 640w, assets/shift.webp 1280w" sizes="(max-width: 760px) 90vw, 65vw" alt="Original generated SHIFT concept photograph" width="1400" height="1050"><figcaption>Original generated concept artwork. Self-initiated study.</figcaption></figure><section class="study-body section"><div><h2>THE QUESTION.</h2><p>Make an exhibition concept feel confident through a small number of repeatable visual choices.</p></div><div><h2>THE DIRECTION.</h2><p>Let black-and-white typography establish the structure, with a vermilion form acting as an interruption. Photograph the poster as a physical object so the identity has material context.</p></div><div><h2>THE SCOPE.</h2><ul><li>Exhibition identity</li><li>Poster direction</li><li>Art direction</li></ul><p>One original generated poster photograph. The exhibition, text, and identity are fictional, and no real event or institutional relationship is implied.</p></div></section><a class="next-study" href="together.html"><span>Next study</span><strong>TOGETHER</strong><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></main><footer class="footer"><a href="index.html" class="footer-wordmark">ODD<br>COMPANY.</a><div><p>Identity, packaging, and campaign concepts with a clear point of view.</p><a href="brief.html">Start a project <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div><div class="footer-bottom"><span>A fictional creative studio. All projects are self-initiated concepts.</span><a href="assets/CREDITS.txt">Credits</a><a href="../../">ProtoSites <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div></footer><script>(() => {
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  let preferred = null;
+  try {
+    const value = localStorage.getItem('odd-company-theme');
+    if (['dark', 'light'].includes(value)) preferred = value;
+  } catch {}
+  const theme = document.querySelector('#theme');
+  function setTheme(dark) {
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    theme.textContent = dark ? 'Light' : 'Dark';
+    theme.setAttribute(
+      'aria-label',
+      dark ? 'Use light theme' : 'Use dark theme',
+    );
+  }
+  setTheme(preferred ? preferred === 'dark' : system.matches);
+  theme.addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    preferred = dark ? 'dark' : 'light';
+    setTheme(dark);
+    try {
+      localStorage.setItem('odd-company-theme', preferred);
+    } catch {}
+  });
+  system.addEventListener('change', () => {
+    if (!preferred) setTheme(system.matches);
+  });
+  function arrive(el) {
+    if (el && !motion.matches)
+      el.animate(
+        [
+          { transform: 'translateY(15px)', opacity: 0.8 },
+          { transform: 'translateY(0)', opacity: 1 },
+        ],
+        { duration: 650, easing: 'cubic-bezier(.16,1,.3,1)' },
+      );
+  }
+  arrive(document.querySelector('.arrive'));
+  if (!motion.matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            arrive(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+    document
+      .querySelectorAll('.arrive-secondary')
+      .forEach((el) => observer.observe(el));
+  }
+  motion.addEventListener('change', () => {
+    if (motion.matches) document.getAnimations().forEach((a) => a.cancel());
+  });
+  const form = document.querySelector('#brief-form');
+  if (!form) return;
+  const result = document.querySelector('#brief-result');
+  const error = document.querySelector('#brief-error');
+  let draft = '';
+  form.addEventListener('input', () => {
+    result.hidden = true;
+    draft = '';
+    error.textContent = '';
+    form
+      .querySelectorAll('input,textarea')
+      .forEach((input) => input.setCustomValidity(''));
+  });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const text = (key) => {
+      const value = data.get(key);
+      return typeof value === 'string' ? value.trim() : '';
+    };
+    const project = form.querySelector('[name=project]');
+    const idea = form.querySelector('[name=idea]');
+    project.setCustomValidity(text('project') ? '' : 'Enter a project name.');
+    idea.setCustomValidity(
+      text('idea').length >= 20
+        ? ''
+        : 'Describe the idea in at least 20 characters.',
+    );
+    if (!form.reportValidity()) return;
+    const scopes = data
+      .getAll('scope')
+      .filter((value) => typeof value === 'string');
+    if (!scopes.length) {
+      error.textContent = 'Choose at least one kind of work.';
+      form.querySelector('[name=scope]').focus();
+      return;
+    }
+    draft =
+      'ODD COMPANY / PROJECT BRIEF\n\nProject: ' +
+      text('project') +
+      '\nScope: ' +
+      scopes.join(', ') +
+      '\nTiming: ' +
+      text('timing') +
+      '\n\nThe idea\n' +
+      text('idea') +
+      '\n\nUnsent local draft for a fictional studio. No message or agreement has been submitted.';
+    document.querySelector('#brief-text').textContent = draft;
+    error.textContent = '';
+    result.hidden = false;
+    result.focus({ preventScroll: true });
+    arrive(result);
+    result.scrollIntoView({
+      behavior: motion.matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  });
+  document.querySelector('#edit-brief').addEventListener('click', () => {
+    form.scrollIntoView({
+      behavior: motion.matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
+    form.querySelector('[name=project]').focus({ preventScroll: true });
+  });
+  document.querySelector('#download-brief').addEventListener('click', () => {
+    const url = URL.createObjectURL(
+      new Blob([draft], { type: 'text/plain;charset=utf-8' }),
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'odd-company-project-brief.txt';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+  document.querySelector('#copy-brief').addEventListener('click', async () => {
+    const status = document.querySelector('#copy-status');
+    try {
+      await navigator.clipboard.writeText(draft);
+      status.textContent = 'Brief copied.';
+    } catch {
+      status.textContent =
+        'Clipboard access is unavailable. Download the brief or select the text above.';
+    }
+  });
+  form.querySelector('[type=submit]').disabled = false;
+})();
+</script></body></html>

@@ -1,0 +1,31 @@
+{
+  "slug": "moss",
+  "name": "MOSS / LAB",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "Botanical care built around tactile photography, a forest palette, and a concise ingredient story.",
+  "tagline": "Less, but better.",
+  "style": "Botanical minimalism",
+  "palette": [
+    "#e5ebe1",
+    "#193529",
+    "#2c5d3c"
+  ],
+  "order": 20,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "asymmetric product and headline, daily ritual steps, ingredient disclosures, paired product collection, routine builder",
+    "motion": "soft image entrance, ingredient disclosure expansion, selected routine feedback",
+    "interaction": "choose skin preference and routine length; show a matching two- or three-step routine",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

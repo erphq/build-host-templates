@@ -1,0 +1,23 @@
+[
+  {
+    "file": "chair.webp",
+    "prompt": "Use case: product-mockup\nAsset type: original product photograph for Plinth, a furniture-store concept.\nPrimary request: Portrait 4:5 product photograph of a sculptural lounge chair in ochre boucle with dark walnut wood frame, clean three-quarter view, beautiful fabric texture.\nScene: pale neutral-gray seamless studio background, soft directional light, subtle realistic grounding shadow. Centered with generous negative space, whole object visible.\nConstraints: fictional original product concept; avoid recognizable branded signature objects. No typography, logos, watermark, or UI. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated fictional original product concept"
+  },
+  {
+    "file": "table.webp",
+    "prompt": "Use case: product-mockup\nAsset type: original product photograph for Plinth, a furniture-store concept.\nPrimary request: Portrait 4:5 product photograph of a low sculptural side table in reddish-brown solid wood, circular top and three rounded chunky legs, premium product still life.\nScene: pale neutral-gray seamless studio background, soft directional light, subtle realistic grounding shadow. Centered with generous negative space, whole object visible.\nConstraints: fictional original product concept; avoid recognizable branded signature objects. No typography, logos, watermark, or UI. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated fictional original product concept"
+  },
+  {
+    "file": "lamp.webp",
+    "prompt": "Use case: product-mockup\nAsset type: original product photograph for Plinth, a furniture-store concept.\nPrimary request: Portrait 4:5 product photograph of a small cobalt-blue enamel table lamp with a broad domed shade and a short cylindrical base, unlit, premium product still life.\nScene: pale neutral-gray seamless studio background, soft directional light, subtle realistic grounding shadow. Centered with generous negative space, whole object visible.\nConstraints: fictional original product concept; avoid recognizable branded signature objects. No typography, logos, watermark, or UI. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated fictional original product concept"
+  }
+]

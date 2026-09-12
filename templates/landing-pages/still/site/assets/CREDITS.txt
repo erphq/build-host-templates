@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "photography",
+  "source_page": "https://www.pexels.com/photo/man-portrait-in-black-and-white-17026670/",
+  "author": "Luis Quintero",
+  "image_url": "https://images.pexels.com/photos/17026670/pexels-photo-17026670.jpeg?cs=srgb&dl=pexels-jibarofoto-17026670.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 4000,
+  "height": 6000
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "photography",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/black-and-white-street-17044310/",
+  "image_url": "https://images.pexels.com/photos/17044310/pexels-photo-17044310.jpeg?cs=srgb&dl=pexels-bnwtake0405-17044310.jpg&fm=jpg",
+  "author": "Takeshi Arai",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "black white street",
+  "width": 3000,
+  "height": 4500
+}
+
+Secondary image 2
+{
+  "site_slug": "photography",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/portrait-of-woman-in-black-and-white-20497521/",
+  "image_url": "https://images.pexels.com/photos/20497521/pexels-photo-20497521.jpeg?cs=srgb&dl=pexels-kamryn-collins-634834690-20497521.jpg&fm=jpg",
+  "author": "Kamryn Collins",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "portrait woman black white",
+  "width": 6000,
+  "height": 4000
+}

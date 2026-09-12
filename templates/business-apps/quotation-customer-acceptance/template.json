@@ -1,0 +1,22 @@
+{
+  "slug": "quotation-customer-acceptance",
+  "name": "Quotation & Customer Acceptance",
+  "collection": "business-apps",
+  "category": "client-services",
+  "industry": "Client services",
+  "description": "Customer, quote version, line items, optional extras, validity, terms, customer name and acceptance timestamp",
+  "tagline": "Agree on scope before work begins.",
+  "style": "purple",
+  "palette": [],
+  "order": 106,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 8,
+  "notes": {
+    "interaction": "Customer, quote version, line items, optional extras, validity, terms, customer name and acceptance timestamp"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

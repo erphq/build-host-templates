@@ -1,0 +1,31 @@
+{
+  "slug": "object",
+  "name": "OBJECT / 01",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "A furniture collection that treats each object like an exhibit.",
+  "tagline": "Made to live with.",
+  "style": "Industrial furniture catalog",
+  "palette": [
+    "#e9e8e4",
+    "#292927",
+    "#545b44"
+  ],
+  "order": 24,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "large collection title, product cutaway image, material swatches, dimensions diagram, care accordion, shopping bag",
+    "motion": "material transition, object entrance, bag feedback",
+    "interaction": "choose material and size, reveal dimensions, add and remove configured furniture in a demo bag",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

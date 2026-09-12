@@ -1,0 +1,31 @@
+{
+  "slug": "roster",
+  "name": "Roster",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A complete team-planning product with editable weekly allocations, daily capacity, time off, overbooking and project-hour views.",
+  "tagline": "A plan that leaves room for people.",
+  "style": "Considered resource-planning product",
+  "palette": [
+    "#132b40",
+    "#b5e0e8",
+    "#f5f4ed"
+  ],
+  "order": 11,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Navy split hero, readable schedule vignette, weekly person and day workspace, project-hour views and a working guide",
+    "motion": "Schedule entrance, linked allocation hover, perspective switches and accessible dialogs",
+    "interaction": "Edit allocations and time off, find overbooking, reassign project hours, compare estimates, save notes and export CSV",
+    "provenance": "Five original pages with a shared, tested planning model, original fictional teams and working local staffing flows."
+  },
+  "credits": {
+    "referenceName": "Float",
+    "referenceUrl": "https://www.float.com/"
+  },
+  "pageCount": 5
+}

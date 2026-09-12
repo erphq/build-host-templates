@@ -1,0 +1,31 @@
+{
+  "slug": "beacon",
+  "name": "Beacon",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A synthetic service-health workspace with incident chronology, local response actions and a public status-page preview.",
+  "tagline": "Know what changed. Own what happens next.",
+  "style": "Service-health observability",
+  "palette": [
+    "#112b2b",
+    "#bcf3c8",
+    "#f3f5ef"
+  ],
+  "order": 6,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Midnight product console, light monitor workspace, ordered check inspector, incident timeline and public status preview",
+    "motion": "Scenario changes, check selection and chronological response updates",
+    "interaction": "Inspect synthetic checks, filter services, acknowledge incidents, separate internal and public updates, recover a scenario and export a report",
+    "provenance": "Five original pages with three fictional scenarios, twenty-four ordered checks and tested local incident-response behavior; no live monitoring or alerts."
+  },
+  "credits": {
+    "referenceName": "Better Stack",
+    "referenceUrl": "https://betterstack.com/uptime"
+  },
+  "pageCount": 5
+}

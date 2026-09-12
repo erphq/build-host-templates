@@ -1,0 +1,31 @@
+{
+  "slug": "stackline",
+  "name": "Stackline",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A substantial developer-SaaS with a layered interactive hero, language-selectable concept code, cancellable local deployment playground, documentation and usage pricing.",
+  "tagline": "Deployment, considered.",
+  "style": "Developer product infrastructure",
+  "palette": [
+    "#080b0c",
+    "#edf2ee",
+    "#b4e6d5"
+  ],
+  "order": 35,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "large serif developer hero, interactive layered sculpture, language-selectable code window, pipeline and event demonstrations, environment board, full docs and playground",
+    "motion": "layer inspection transition, visible cancellable simulation stages, progressive code-window arrival, reduced-motion fallback",
+    "interaction": "switch and copy concept code, simulate success/failure/cancellation, select environments, calculate sample build and transfer pricing",
+    "provenance": "Original four-page rebuild with independent code, product behavior, copy and geometric artwork. No reference assets or source included; deployment and billing are local simulations."
+  },
+  "credits": {
+    "referenceName": "Resend, discovered through Saaspo",
+    "referenceUrl": "https://resend.com/"
+  },
+  "pageCount": 4
+}

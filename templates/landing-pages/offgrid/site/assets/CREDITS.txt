@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "alpine",
+  "source_page": "https://www.pexels.com/photo/hiking-adventure-in-alpine-mountain-landscape-33021053/",
+  "author": "Marius Mann",
+  "image_url": "https://images.pexels.com/photos/33021053/pexels-photo-33021053.jpeg?cs=srgb&dl=pexels-marius-mann-772581-33021053.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 4238,
+  "height": 6562
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "alpine",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/hiker-resting-on-rock-with-trekking-boots-35836275/",
+  "image_url": "https://images.pexels.com/photos/35836275/pexels-photo-35836275.jpeg?cs=srgb&dl=pexels-yoan-siswaya-2159161707-35836275.jpg&fm=jpg",
+  "author": "Yoan Siswaya",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "mountain hiking boots",
+  "width": 4896,
+  "height": 3264
+}
+
+Secondary image 2
+{
+  "site_slug": "alpine",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/a-tent-is-set-up-in-the-mountains-at-night-18331999/",
+  "image_url": "https://images.pexels.com/photos/18331999/pexels-photo-18331999.jpeg?cs=srgb&dl=pexels-toulouse-18331999.jpg&fm=jpg",
+  "author": "Ma\u00ebl BALLAND",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "alpine tent camping",
+  "width": 4480,
+  "height": 6720
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "supper",
+  "name": "Supper",
+  "collection": "landing-pages",
+  "category": "restaurants-caf-s",
+  "industry": "Food",
+  "description": "An original restaurant concept with an interactive photographic menu, local tasting selection, and unsent table-request planner.",
+  "tagline": "Good food. Better company.",
+  "style": "Cobalt restaurant editorial",
+  "palette": [
+    "#f6f7f2",
+    "#173bb5",
+    "#aebde3"
+  ],
+  "order": 48,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "oversized serif masthead, sticky food photograph, selectable menu rows, receipt-like tasting selection, native table dialog",
+    "motion": "user-triggered dish-photo transitions, masthead arrival, progressive story reveal, reduced-motion support",
+    "interaction": "select dish photographs, build a local tasting selection, copy its subtotal, prepare an unsent table request",
+    "provenance": "Original single-page restaurant concept with its own identity, composition, menu, generated food imagery, and local interactions. No reference code or assets included."
+  },
+  "credits": {
+    "referenceName": "Ristorante by Damir Cosic",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/ristorante/"
+  },
+  "pageCount": 1
+}

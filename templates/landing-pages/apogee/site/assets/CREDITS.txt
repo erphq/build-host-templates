@@ -1,0 +1,11 @@
+APOGEE / IMAGE CREDITS
+
+hero.webp: Original generated planetary concept, AI image generation, 2026-09-08. It is not a real satellite observation. See provenance.json for the generation brief.
+
+earth.webp: NASA / International Space Station crew. Viewing Earth from the Space Station. https://www.nasa.gov/image-article/viewing-earth-from-space-station/ . NASA US government imagery; source retained from the library asset archive.
+sunset.webp: NASA / International Space Station crew. International Space Station orbits into sunset. https://www.nasa.gov/image-article/international-space-station-orbits-into-sunset/ . NASA US government imagery; source retained from the library asset archive.
+NASA media guidelines: https://www.nasa.gov/nasa-brand-center/images-and-media/ . No affiliation or endorsement is implied. These images illustrate fictional research concepts, not real results of Apogee missions.
+
+Font: Geist, SIL Open Font License, included.
+
+Composition reference: Astro Lab by Raunak Das, https://www.framer.com/marketplace/templates/astro-lab/ and https://astrolab.framer.website/ . Live homepage and research section inspected read-only. No reference source code or imagery was copied.

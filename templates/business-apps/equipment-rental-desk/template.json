@@ -1,0 +1,22 @@
+{
+  "slug": "equipment-rental-desk",
+  "name": "Equipment Rental Desk",
+  "collection": "business-apps",
+  "category": "services-repairs",
+  "industry": "Services & repairs",
+  "description": "Equipment units, date/time interval, customer, rate basis, deposit, condition-out/in photos, return time, damage charges",
+  "tagline": "Availability through return, sorted.",
+  "style": "navy",
+  "palette": [],
+  "order": 110,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 13,
+  "notes": {
+    "interaction": "Equipment units, date/time interval, customer, rate basis, deposit, condition-out/in photos, return time, damage charges"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

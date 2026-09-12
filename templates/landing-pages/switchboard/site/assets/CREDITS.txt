@@ -1,0 +1,5 @@
+Switchboard is an original fictional software concept.
+Signal module: original AI-generated photograph, built-in image generation. Exact prompt in provenance.json.
+Geist: Vercel, SIL Open Font License, see GEIST-LICENSE.txt.
+Lucide icons: ISC License, see LUCIDE-LICENSE.txt.
+Reference research: https://saaspo.com/pages/linear-landing-page-v4 and https://linear.app/homepage and https://linear.app/plan. No reference assets or source copied.

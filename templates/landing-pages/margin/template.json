@@ -1,0 +1,31 @@
+{
+  "slug": "margin",
+  "name": "Margin",
+  "collection": "landing-pages",
+  "category": "editorial",
+  "industry": "Creative",
+  "description": "A six-page design journal with a large serif masthead, a varied editorial front page, three complete original essays, and a reading-focused archive.",
+  "tagline": "Space for a longer look.",
+  "style": "Contemporary print editorial",
+  "palette": [
+    "#f5f0e6",
+    "#28241f",
+    "#a82f22"
+  ],
+  "order": 43,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "serif masthead, lead story beside secondary essays, editorial letter, issue index, readable article pages",
+    "motion": "restrained image hover and reduced-motion-aware anchor navigation",
+    "interaction": "search and filter essays, save a reading list, switch reading modes, adjust article text size, print essays",
+    "provenance": "Original six-page editorial concept with its own composition, writing, and reading controls. Two licensed photographs and one existing generated illustration are credited; no reference code or assets included."
+  },
+  "credits": {
+    "referenceName": "The New by Mr. Cosmos",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/the-new/"
+  },
+  "pageCount": 6
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "tailoring-order-book",
+  "name": "Tailoring Order Book",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Customer, measurement profile/version, garment, fabric received, design/reference, trial dates, delivery promise, deposit",
+  "tagline": "Measurements to final fitting.",
+  "style": "cream",
+  "palette": [],
+  "order": 118,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 21,
+  "notes": {
+    "interaction": "Customer, measurement profile/version, garment, fabric received, design/reference, trial dates, delivery promise, deposit"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

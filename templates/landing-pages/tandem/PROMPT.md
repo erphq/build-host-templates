@@ -1,0 +1,2122 @@
+# Tandem — find a time, make it count
+
+Build a complete, original scheduling SaaS concept named Tandem. The website must include a carefully art-directed marketing page, a working booking-request demonstration, an editable weekly availability page, and a substantial product guide. The interactive experience should connect these pages: settings saved on the availability page determine the dates and slots offered on the booking page, the visitor can translate those slots into a named time zone, and a selected time can become a reviewable local request with a downloadable tentative calendar file. This is a product demonstration with real local behavior, not an operating booking service.
+
+The tone is thoughtful, clear, and human. Tandem makes room for conversations without making scheduling feel like another administrative system. The phrase “Find a time. Make it count.” is the central promise. Use warmth and precision together: editorial serif headings, neutral interface typography, ivory backgrounds, apricot illustration surfaces, and plum actions. Avoid a generic blue technology theme, oversized abstract gradients, fake metrics, invented customer testimonials, or a wall of product claims that the local implementation cannot demonstrate. The scheduling interface itself is the most important visual asset.
+
+## Research foundation
+
+The research source is Cal.com, discovered through the Saaspo entry at https://saaspo.com/pages/calcom-landing-page. The actual live pages inspected were https://cal.com/ and https://cal.com/talk-to-sales. The home page was observed at a desktop viewport of 1471 by 903. It presents a large framed white hero on a pale background, with narrow vertical page rails, a strong left-aligned headline, and a realistic booking interface on the right. The interface is wide enough to extend beyond the immediate hero field, making the product feel larger than a decorative card.
+
+The reference hero heading was directly measured as Cal Sans, weight 600, 64 pixels with a 70.4-pixel line height. Its text block began around x=211.5 and y=252.6 and occupied a 500-pixel width. The measured heading was three lines high, approximately 211.2 pixels. The visible hero panel spans most of the central page width and begins around y=96. The live preview contains a host identity, meeting name, short explanation, duration options, meeting location, time-zone label, and a monthly date grid. That level of product specificity is the transferable lesson.
+
+The reference continues with a company strip, a three-step scheduling explanation, a benefits section, a larger feature collection, testimonial areas, integrations, frequently asked questions, and a closing call to action. The three-step section was inspected while scrolling. Each card combines a small step number, an explanatory title and paragraph, and a real-looking scheduling control or interface fragment. The examples include calendar connections, weekday availability, and meeting location. The benefit cards show buffer settings, booking links, calendar overlays, and reminders instead of relying on generic illustrations.
+
+The live page’s section headings were measured at 48 pixels with a 52.8-pixel line height. The typography remains consistent across the long page, and the interface fragments give the reader a concrete understanding of the product. The scrolled navigation remains visible inside a translucent white bar. Exact animation durations were not measured, and no claim should be made that Tandem reproduces the reference timing. Tandem uses its own restrained, user-triggered transitions and avoids automatic motion that would need a pause control.
+
+The sales page was inspected read-only. It uses a two-column composition inside the same wide white panel: a large heading and explanation at the left, and a framed form at the right. The form has visible labels, short fields arranged in pairs, a full-width context field, and a dark full-width action. No reference form was filled or submitted. Tandem borrows the clarity of this structure for its local request flow, but does not copy Cal.com’s wording, business claims, customer identities, registered marks, artwork, or source code.
+
+## Original brand and visual system
+
+Tandem’s wordmark is lowercase and set in a medium-to-semibold sans-serif. The original mark consists of four small rounded vertical shapes arranged in a two-by-two cluster and slightly rotated. Two shapes are apricot-brown and two are plum. The mark suggests people coming together without requiring a literal calendar icon. Keep it compact enough to work in the header and footer. Do not add a registered-trademark symbol or imply that this fictional product is a real commercial service.
+
+Use Geist locally for interface text, labels, navigation, buttons, and body copy. Use system Georgia for the large editorial headings. The contrast between the warm serif and precise sans-serif should be deliberate. Large headings are regular weight, with slightly tightened tracking and a line height close to one. Body copy is around fifteen pixels on desktop and fourteen pixels on mobile, with enough line height for comfortable reading. Supporting product labels may be smaller, but essential form controls and explanatory text must remain readable.
+
+The base background is a warm ivory near #f7f5ef. White panels use soft warm-gray borders rather than bright cool-gray outlines. Primary plum is approximately #633a59, with darker hover states. Apricot surfaces provide warmth around product previews. Supporting text is a muted warm gray, not a low-opacity black that becomes unreadable. Selected calendar days and time slots use plum backgrounds with white text. Empty and unavailable states use reduced emphasis while retaining adequate contrast for their purpose.
+
+Corners are moderately rounded, generally between six and sixteen pixels depending on scale. Small buttons and controls use six to eight pixels; major framed sections use twelve to sixteen. Shadows are low-contrast and broad, used mainly to give the product preview a slight physical lift. Avoid stacking rounded cards inside rounded cards without a structural reason. The booking interface may have internal panels because it is a real application layout, but marketing sections should remain relatively flat and spacious.
+
+## Marketing page composition
+
+Use a central maximum width of approximately 1240 pixels, with 28-pixel inner margins on desktop. The header is 86 pixels high and shares the subtle vertical page rails. Put the Tandem identity at the left and a concise navigation at the right: How it works, The guide, Availability, and Try the demo. The final action is a filled plum button. Every navigation destination must exist. At mobile widths, keep Availability and the demo action visible, and retain the guide through the footer.
+
+The hero is a large white panel with a fine border, sixteen-pixel radius, and a two-column layout. The left column contains a small soft-colored eyebrow, the two-line serif headline, a concise explanation, two actions, and a small note explaining that the demo needs no account or calendar connection. The first action opens the booking request, and the second opens availability settings. Do not label either action Sign up if no signup flow exists. The copy should accurately describe what the visitor can do immediately.
+
+The right column contains a detailed booking-page preview placed over an irregular apricot oval. The preview is tilted by roughly two degrees on desktop and straightens when its region is hovered. Its top bar contains a fictional booking path and a clear preview label. The body has a host column and a monthly calendar column. The host is Maya Chen, explicitly a fictional demonstration profile. Represent the avatar through initials in a colored circle, avoiding fabricated photography or a claim about a real person.
+
+The preview’s host column contains a meeting title, short description, duration, video conversation label, and local-time indication. The monthly grid contains weekday labels and a selected date. These are visual preview elements, not fake controls. Use ordinary text spans for noninteractive sample dates and arrows. The preview’s bottom bar includes a real Open live demo link. A small floating note with a check mark reinforces the theme of a calmer calendar without claiming that any meeting has actually been booked.
+
+Below the hero, use a restrained audience strip with generic categories such as independent minds, small teams, creative partners, and collaborators. These are audiences, not customer logos. Follow with a centered introduction to a three-step process. The cards explain choosing availability, finding a common time zone, and reviewing a request. Each includes a compact original interface visual: weekday rows, city clocks, or a draft summary. Static illustrative clocks must be labeled as an example rather than pretending to reflect the current time.
+
+The benefits section uses two larger panels. One explains buffers and protected lunch, with an original calendar timeline showing a conversation, a patterned buffer, and lunch. The other explains time-zone translation through three city rows. The copy must connect the visual to the implemented behavior. The page ends with a small set of native FAQ disclosures and a plum closing invitation. The FAQ clarifies that the demo is local, how saved availability works, how time zones are displayed, and what happens to entered details.
+
+## The booking application
+
+The booking page is a real local application with three visible stages: choose a time, add details, and review the prepared request. Use a page heading outside the application panel and a clear local-demo notice above it. The notice should state that no actual booking or invitation is created. The application itself has a host summary column and a larger interactive area. On desktop, the host remains visible while the visitor chooses a date or enters details. On mobile, it becomes a compact summary above the controls.
+
+The host summary includes initials, the fictional name, a short conversation title, and a concise description. It should state that availability uses UTC and that lunch from 12:00 to 13:00 UTC is reserved. A direct link opens the availability editor. The description should be generic enough to fit an exploratory conversation, without inventing a real consultant’s services. Meeting location is a video conversation concept; do not generate a fake video URL or imply that a conferencing service has been connected.
+
+The choose-time stage begins with a conversation-length control and a visitor time-zone select. Offer thirty and sixty minutes as mutually exclusive pressed-state buttons. Offer six named zones: Europe/London, America/New_York, America/Los_Angeles, Asia/Kolkata, Asia/Tokyo, and UTC. London is the initial display zone. Use full zone labels so the visitor can understand the selection. The selected zone changes display labels only; it must not alter the underlying UTC instant already selected.
+
+Below these controls, place a monthly calendar and a time-slot column. The calendar uses a Monday-first grid with weekday headers, empty leading cells, and actual date buttons. The month title and previous/next controls are explicit. Dates without available slots are disabled. The calendar initially chooses a future available day, and month navigation is bounded to a small local demonstration range. Do not use a frozen date grid that becomes misleading as time passes. Generate dates from the current runtime date.
+
+The calendar’s date is the host’s UTC date. State this near the grid. Each time button displays the visitor’s selected time zone and has an accessible label containing the complete local date and time. This matters because a far-ahead time zone may show a different local date from the host date. The review beneath the grid repeats the full local date, time, zone abbreviation, and duration. A disabled Continue button becomes enabled only after a time is selected.
+
+Time slots are computed from saved weekday availability. Start times occur on half-hour intervals. A meeting plus its buffer must fit completely within the working window and must not overlap the fixed UTC lunch break. Require at least one hour of notice before the slot begins. The buffer is after the meeting. A thirty-minute meeting starting at 16:30 with a fifteen-minute buffer cannot fit before a 17:00 closing time, so that slot must not appear. These are actual rules implemented in the shared pure logic, not decorative copy.
+
+Changing the date clears the selected time and recomputes slots. Changing the duration also clears the selected time because the old choice may no longer fit. Changing the time zone preserves the selected instant and updates all labels. If no times fit, show a useful empty state and a route back to availability settings. If all weekdays are closed, the interface should remain intact with no enabled dates; it must not loop indefinitely while searching for a slot.
+
+## Details and request review
+
+Continue moves to a details form inside the same application panel. Show a summary of the host, selected length, and complete local date and time before asking for information. Required fields are name and email. Context is optional and has a sensible maximum length. Every input has a visible label, native validation, appropriate autocomplete, and a clear focus state. Use a real form and normal submit behavior handled locally. Do not send the data to a server.
+
+Provide Change time and Prepare request actions. Changing time returns to the calendar while preserving entered values. Preparing the request validates the form and then renders the result using textContent. FormData values must be narrowed to strings before trimming or rendering, because FormData can also contain File values. Keep the transformation simple and explicit. The result panel should receive focus when it is revealed so that the state change is understandable to keyboard and assistive-technology users.
+
+The result says that a request draft is ready, not that a meeting is confirmed. It shows name, email, selected time, duration, optional context, and a Local draft — Not booked status. Offer Edit details, Choose another time, and a real download link for a tentative calendar file. The calendar download should be prepared as a Blob URL only after the visitor completes the local request. The link gets a descriptive filename ending in .ics. Do not use an anchor without a destination as the visible active download action.
+
+The calendar file follows a minimal iCalendar structure with VCALENDAR and VEVENT blocks, version, product identifier, unique identifier, timestamp, UTC start and end, a generic summary, a clear description, and STATUS:TENTATIVE. It should contain no attendee addresses, organizer identity, conferencing URL, or invitation-sending instruction. The visitor chooses whether to download or import it. The webpage does not add anything to a real calendar by itself. Revoke an earlier Blob URL before preparing a replacement to avoid retaining unnecessary resources.
+
+## Availability editor
+
+The availability page should feel like the configuration view of the same product, not a separate marketing form. Begin with a heading about making room for what matters, a short explanation of UTC hours, and a Preview booking page link. Add a concise notice that settings are saved only in the current browser tab. The main layout has a broad white settings panel and a narrower warm explanatory panel. At smaller widths, prioritize the working settings and let the secondary note disappear or move below.
+
+Provide weekday rows for Monday through Friday. Each row has a labeled enabled checkbox, a start-time select, a dash, and an end-time select. Use whole-hour values to keep the demonstration manageable. Disabling a day also disables its time controls while preserving their values. Weekends remain closed. Validate that each start is earlier than its end, and focus the relevant end control when that validation fails. Do not silently correct an invalid range or save a configuration that cannot be interpreted.
+
+Provide a buffer select with zero, fifteen, and thirty minutes. Explain the lunch break and the requirement that a meeting and its buffer fit fully within availability. Save writes only the settings object to session storage. A polite feedback message confirms the local save and directs the visitor to the booking demo. Reset restores the original weekday schedule. If session storage is blocked or throws, show a useful failure message. The booking page should still be able to use a safe default schedule.
+
+Validate stored configuration defensively before using it. It must contain seven booleans for enabled days, seven integer start values, seven valid end values, and one of the supported buffer lengths. Reject malformed or unexpected values and return a fresh default object. Stored settings are not trusted merely because they came from the browser. Keep this logic small and coherent, with pure functions that can be exercised independently from DOM rendering.
+
+## Product guide and content depth
+
+The guide is a full page with a centered editorial introduction and a two-column reading layout. The left contains a compact section navigation; the right contains substantial explanations. Sections cover the experience, availability rules, time zones, request drafts, and what stays local. Use semantic headings and anchor links. The guide is part of the product, so its language should match the actual implementation rather than describing hypothetical integrations or enterprise features.
+
+Explain the default working week and the lunch and buffer rules with a concrete example. Explain that the date grid uses the host UTC date while time buttons use the visitor zone. Describe daylight-saving handling through named zones rather than fixed offsets. Explain the difference between a local request draft and a real booking. Make clear that entering an email address does not send a message and that the calendar file is tentative. These explanations help the visitor make meaningful decisions, so they belong in product content.
+
+The privacy section should describe actual local behavior plainly. Availability lives in session storage; request details live in the current page and are cleared on reload. There is no external account connection, analytics integration, or message-sending backend in this concept. Avoid generic legal assurances, unsupported security certifications, and promises about services that do not exist. The goal is clarity about what this demonstration does, not a long compliance disclaimer.
+
+## Responsive behavior and accessibility
+
+At around 1050 pixels, reduce the hero’s spacing and typography slightly while preserving the two-column relationship. At 820 pixels, stack the hero, compact the host summary, and adapt the benefits and settings layouts. At 580 pixels, use sixteen-pixel page margins, a serif headline around fifty-four pixels, and a one-column booking layout. The time-slot list becomes a three-column grid beneath the calendar. Ensure the date grid, dropdowns, and all actions fit within a 390-pixel viewport without horizontal document overflow.
+
+The small marketing preview may use reduced type because it is explicitly a visual preview and has a real link to the accessible live application. The live booking interface must use readable controls, full labels, and complete date descriptions. Do not sacrifice actual product usability to preserve the marketing screenshot. A narrow screen should show the same working flow with more vertical space, not a shrunken desktop interface.
+
+Use a skip link on every page, semantic navigation and main landmarks, labeled forms, native selects, and pressed states for choices. Date and slot buttons must have meaningful accessible names. Disabled controls should reflect genuine unavailable states. Focus moves when stages change, and live summaries announce important selection changes. Native FAQ details elements provide disclosure behavior without custom keyboard handling. Avoid unsupported ARIA attributes on generic decorative containers.
+
+Motion should be restrained and connected to interaction. The preview straightens on hover, actions lift slightly, and selected controls change color. No continuous background motion or autoplay demonstration is needed. Respect prefers-reduced-motion by removing transitions and smooth scrolling. The static state must retain all information and functionality. The interface should still feel finished when motion is disabled.
+
+## Delivery and verification
+
+Export buildTandem from scripts/tandem/build.mjs. It writes four complete pages into public/demos/tandem and returns an object containing prompt. Store local fonts, licenses, original preview artwork, and hero.webp beneath the demo assets directory. Write the detailed prompt both beside the demo and under public/prompts/tandem.md. The assembled prompt includes exact responsive CSS and the real JavaScript under the heading Reference interaction handler. Do not edit shared catalogs, application files, validators, or unrelated demo directories.
+
+Run scoped lint over the Tandem source. Exercise the pure scheduling rules with meaningful cases: lunch overlap, end-of-day buffer, disabled weekdays, malformed settings, and time-zone conversion across a date boundary. Inspect the desktop marketing composition and the narrow booking and availability views. In the browser, save a schedule change, open booking, choose duration and zone, select a slot, prepare a request, and inspect the resulting calendar download link. Report actual observed outcomes, distinguishing Blob preparation from a completed file download.
+
+The final result should look like a considered scheduling product and behave like a coherent local demonstration. Its strength comes from the combination of a warm visual identity, specific product storytelling, correct time handling, and an honest request flow that never pretends to send or book anything externally.
+
+
+## Verified accessibility refinements
+
+Keep all meaningful supporting text above a 4.5:1 contrast ratio. Use #695e65 for general muted copy on ivory and white; use #675b60 on the warm feature panel, #71646c for white-panel timeline and city labels, and #80552f for the lunch label on #f2e9dd. Static preview calendar numbers remain readable in #776b73 instead of looking like disabled controls. The preview meeting title is an h2 after the page h1; its compact visual size does not justify skipping a heading level.
+
+
+## Exact responsive CSS
+
+```css
+@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: #f7f5ef;
+  color: #302a2b;
+  font:
+    15px/1.5 Geist,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #83559a;
+  outline-offset: 4px;
+}
+::selection {
+  background: #ecd5cc;
+}
+.skip {
+  position: fixed;
+  top: -80px;
+  background: #572f52;
+  color: #fff;
+  padding: 15px;
+  z-index: 99;
+}
+.skip:focus {
+  top: 0;
+}
+.wrap {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 28px;
+}
+.header {
+  max-width: 1240px;
+  margin: auto;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-left: 1px solid #e5e0d5;
+  border-right: 1px solid #e5e0d5;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+}
+.tandem-mark {
+  display: inline-grid;
+  grid-template-columns: repeat(2, 8px);
+  gap: 3px;
+  transform: rotate(-12deg);
+}
+.tandem-mark i {
+  width: 8px;
+  height: 12px;
+  background: #bd654d;
+  border-radius: 5px;
+}
+.tandem-mark i:nth-child(2),
+.tandem-mark i:nth-child(3) {
+  background: #633a59;
+}
+.nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  font-size: 12px;
+}
+.nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  border: 1px solid #633a59;
+  border-radius: 8px;
+  background: #633a59;
+  color: #fff;
+  padding: 13px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.btn:hover {
+  background: #4d2945;
+  transform: translateY(-1px);
+}
+.btn.secondary {
+  background: #fff;
+  color: #473c42;
+  border-color: #ded8d4;
+}
+.btn.secondary:hover {
+  background: #f1e9e4;
+}
+.btn.light {
+  background: #fff;
+  color: #633a59;
+  border-color: #fff;
+}
+.micro {
+  font-size: 10px;
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+  color: #756e70;
+}
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 11px;
+  color: #6e4b61;
+  background: #f1e6e8;
+  border: 1px solid #e5d4dc;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+.hero {
+  border: 1px solid #e5e0d5;
+  background: #fff;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 36px;
+  align-items: center;
+  padding: 64px 40px 64px 48px;
+  position: relative;
+  overflow: hidden;
+  min-height: 640px;
+}
+.hero-copy h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(49px, 4.9vw, 73px);
+  font-weight: 400;
+  letter-spacing: -3.3px;
+  line-height: 1.03;
+  margin: 26px 0 23px;
+}
+.hero-copy h1 em {
+  color: #95614d;
+  font-weight: 400;
+}
+.hero-copy > p {
+  color: #695e65;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 385px;
+}
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 27px;
+  flex-wrap: wrap;
+}
+.hero-note {
+  font-size: 10px !important;
+  margin-top: 15px !important;
+  color: #756e70 !important;
+}
+.hero-product {
+  position: relative;
+  min-width: 0;
+  padding: 35px 0;
+}
+.product-halo {
+  position: absolute;
+  inset: 0 -55px;
+  background: #efe5de;
+  border-radius: 48% 42% 45% 50%;
+  transform: rotate(-10deg);
+}
+.booking-preview {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 20px 60px #613e401c;
+  border: 1px solid #e1dbd6;
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 510px;
+  transform: rotate(2deg);
+  transition: transform 0.7s;
+}
+.hero-product:hover .booking-preview {
+  transform: rotate(0);
+}
+.preview-top {
+  padding: 14px 20px;
+  border-bottom: 1px solid #eae5df;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #695e65;
+}
+.preview-body {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  min-height: 315px;
+}
+.host-mini {
+  padding: 26px 22px;
+  border-right: 1px solid #eae5df;
+}
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #ebc9b5;
+  color: #774833;
+  font-size: 13px;
+  font-weight: 500;
+}
+.host-mini > span {
+  font-size: 10px;
+  color: #7a7077;
+  display: block;
+  margin-top: 17px;
+}
+.host-mini h2 {
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  margin: 6px 0 15px;
+}
+.host-mini p {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #7b7477;
+}
+.host-line {
+  font-size: 10px;
+  color: #645e61;
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+.mini-calendar {
+  padding: 25px 21px;
+}
+.mini-month {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+  font-size: 10px;
+}
+.mini-grid span {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+}
+.mini-grid .weekday {
+  font-size: 8px;
+  color: #777076;
+}
+.mini-grid .available {
+  background: #f4eeef;
+}
+.mini-grid .selected {
+  background: #633a59;
+  color: #fff;
+}
+.mini-grid .muted {
+  color: #776b73;
+}
+.preview-bottom {
+  border-top: 1px solid #eae5df;
+  padding: 12px 20px;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  background: #fbf9f7;
+}
+.floating-note {
+  position: absolute;
+  background: #fff;
+  box-shadow: 0 8px 30px #432a2920;
+  border: 1px solid #e3dad4;
+  border-radius: 9px;
+  padding: 14px 17px;
+  bottom: -5px;
+  left: 30px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 10px;
+}
+.floating-note strong {
+  font-weight: 500;
+  display: block;
+  font-size: 12px;
+}
+.check {
+  background: #e0e9dc;
+  color: #53664b;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.audience {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 30px 30px 45px;
+  font-size: 18px;
+  color: #695e65;
+  border-bottom: 1px solid #e5e0d5;
+}
+.audience p {
+  font-size: 11px;
+  max-width: 170px;
+  color: #695e65;
+}
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 45px;
+}
+.section-head h2 {
+  font-family: Georgia, serif;
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: -1.8px;
+  line-height: 1.15;
+  margin: 20px 0 17px;
+}
+.section-head p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #695e65;
+}
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid #e5e0d5;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.step {
+  background: #fff;
+  border: 1px solid #e3ddd5;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.step-copy {
+  padding: 27px 25px 20px;
+}
+.step-copy .number {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e2dbd4;
+  border-radius: 50%;
+  font-size: 10px;
+  margin-bottom: 22px;
+}
+.step h3 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin: 0 0 10px;
+}
+.step p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #695e65;
+  margin: 0;
+}
+.step-visual {
+  height: 195px;
+  background: #f8f4ef;
+  border-top: 1px solid #f0e9e1;
+  padding: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.mini-row {
+  background: #fff;
+  box-shadow: 0 3px 8px #46342208;
+  border: 1px solid #ebe4dd;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 10px;
+}
+.toggle {
+  width: 23px;
+  height: 14px;
+  border-radius: 12px;
+  background: #633a59;
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+}
+.toggle:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: auto;
+}
+.tag {
+  background: #f4e6e4;
+  color: #884d4d;
+  border: 1px solid #edd5d2;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 9px;
+}
+.tiny-slot {
+  padding: 10px;
+  border: 1px solid #d9c4d8;
+  color: #633a59;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 11px;
+}
+.features {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+}
+.feature {
+  background: #f0e9e4;
+  border: 1px solid #e3d8cf;
+  border-radius: 14px;
+  padding: 32px;
+  min-height: 370px;
+  overflow: hidden;
+}
+.feature:nth-child(2) {
+  background: #eeedf2;
+  border-color: #dcd9e5;
+}
+.feature h3 {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  max-width: 350px;
+}
+.feature > p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #675b60;
+  max-width: 385px;
+}
+.timeline {
+  background: #fff;
+  border: 1px solid #e2d9d2;
+  border-radius: 9px;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 14px;
+  padding: 20px;
+  margin-top: 35px;
+  transform: rotate(-2deg);
+}
+.timeline-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #71646c;
+  font-size: 9px;
+}
+.timeline-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.event-block {
+  padding: 10px 14px;
+  background: #efe5ef;
+  color: #633a59;
+  font-size: 11px;
+  border-left: 3px solid #a17ea0;
+  border-radius: 4px;
+}
+.buffer-block {
+  height: 20px;
+  background: repeating-linear-gradient(
+    135deg,
+    #f5f1ec,
+    #f5f1ec 4px,
+    #e9e1d8 4px,
+    #e9e1d8 5px
+  );
+  border-radius: 4px;
+}
+.timezone-lines {
+  margin-top: 32px;
+  display: grid;
+  gap: 8px;
+}
+.timezone-line {
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #e0dce7;
+  padding: 15px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.timezone-line span {
+  color: #71646c;
+}
+.faq {
+  max-width: 790px;
+  margin: auto;
+}
+.faq details {
+  border-top: 1px solid #ded7ce;
+  padding: 21px 0;
+}
+.faq summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 14px;
+}
+.faq summary:after {
+  content: '+';
+  color: #8d6d81;
+}
+.faq details[open] summary:after {
+  content: '−';
+}
+.faq p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #695e65;
+  max-width: 680px;
+}
+.cta {
+  background: #633a59;
+  color: #fff;
+  border-radius: 16px;
+  text-align: center;
+  padding: 65px 25px;
+  margin: 60px 0;
+}
+.cta h2 {
+  font-family: Georgia, serif;
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: -1.8px;
+  line-height: 1.12;
+  margin: 0 0 19px;
+}
+.cta p {
+  color: #dacbd6;
+  font-size: 13px;
+  margin: 0 0 25px;
+}
+.footer {
+  max-width: 1240px;
+  padding: 15px 28px 35px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  font-size: 11px;
+  color: #695e65;
+}
+.footer-links {
+  display: flex;
+  gap: 23px;
+}
+.footer a:hover {
+  color: #633a59;
+}
+.app-wrap {
+  max-width: 1150px;
+  margin: 30px auto 75px;
+  padding: 0 24px;
+}
+.app-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin: 45px 0 25px;
+}
+.app-heading h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 43px;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+  margin: 8px 0;
+}
+.app-heading p {
+  color: #807379;
+  font-size: 12px;
+}
+.demo-note {
+  font-size: 11px;
+  color: #776f72;
+  background: #ede7e0;
+  border: 1px solid #e2d9cf;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+.scheduler {
+  background: #fff;
+  border: 1px solid #dfd7d2;
+  border-radius: 13px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  box-shadow: 0 8px 35px #47332c08;
+  overflow: hidden;
+}
+.host-panel {
+  padding: 28px;
+  border-right: 1px solid #e6dfd9;
+}
+.host-panel h2 {
+  font-size: 24px;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+  margin: 9px 0 17px;
+}
+.host-panel p {
+  font-size: 12px;
+  color: #7b7076;
+  line-height: 1.7;
+}
+.host-panel .avatar {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+}
+.host-panel .host-line {
+  margin-top: 17px;
+  font-size: 11px;
+}
+.scheduler-main {
+  min-width: 0;
+  padding: 26px;
+}
+.booking-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+.control-label {
+  font-size: 10px;
+  color: #796e74;
+  display: block;
+}
+.control-label select {
+  display: block;
+  max-width: 100%;
+  border: 1px solid #ddd3d8;
+  border-radius: 6px;
+  padding: 9px 10px;
+  background: #fff;
+  color: #473a44;
+  margin-top: 7px;
+  font-size: 11px;
+}
+.duration-options {
+  display: flex;
+  gap: 4px;
+  background: #f3eeee;
+  border-radius: 7px;
+  padding: 4px;
+  margin-top: 7px;
+}
+.duration-options button {
+  padding: 7px 12px;
+  font-size: 11px;
+  border: 0;
+  background: none;
+  border-radius: 5px;
+  color: #85747e;
+}
+.duration-options button[aria-pressed='true'] {
+  background: #fff;
+  box-shadow: 0 1px 4px #42263d16;
+  color: #58384e;
+}
+.booking-columns {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 24px;
+}
+.month-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 21px;
+}
+.month-nav h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+.month-buttons {
+  display: flex;
+  gap: 7px;
+}
+.month-buttons button {
+  background: #fff;
+  border: 1px solid #e0d8dd;
+  border-radius: 5px;
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+.month-buttons button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+.day-grid .day-name {
+  font-size: 9px;
+  color: #8b7b85;
+  text-align: center;
+  padding-bottom: 9px;
+}
+.day-grid button,
+.day-grid .empty {
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 0;
+  border-radius: 7px;
+  background: #f4eeef;
+  font-size: 12px;
+}
+.day-grid button:disabled {
+  background: transparent;
+  color: #c5bac0;
+  cursor: default;
+}
+.day-grid button[aria-pressed='true'] {
+  background: #633a59;
+  color: #fff;
+}
+.day-grid button:not(:disabled):hover {
+  background: #e8d9e4;
+  color: #633a59;
+}
+.calendar-note {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #8c7c87;
+  margin-top: 20px;
+}
+.slots h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 1px 0 17px;
+  line-height: 1.5;
+}
+.slot-list {
+  display: grid;
+  gap: 7px;
+  max-height: 285px;
+  overflow: auto;
+  padding: 2px 3px 3px;
+}
+.slot-list button {
+  background: #fff;
+  border: 1px solid #deceda;
+  border-radius: 6px;
+  padding: 10px 6px;
+  color: #633a59;
+  font-size: 12px;
+}
+.slot-list button:hover {
+  background: #f4eaf0;
+}
+.slot-list button[aria-pressed='true'] {
+  background: #633a59;
+  color: #fff;
+}
+.slot-list .empty-state {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #8a7886;
+}
+.booking-bottom {
+  margin-top: 25px;
+  border-top: 1px solid #ebe2e8;
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.booking-bottom p {
+  font-size: 11px;
+  color: #847480;
+  max-width: 330px;
+  line-height: 1.5;
+}
+.btn:disabled {
+  background: #ded5dc;
+  border-color: #ded5dc;
+  color: #9d8e98;
+  cursor: not-allowed;
+  transform: none;
+}
+.request-form {
+  max-width: 560px;
+  margin: auto;
+}
+.request-form h3 {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  margin-top: 0;
+}
+.request-form label {
+  display: block;
+  font-size: 11px;
+  margin: 20px 0;
+}
+.request-form input,
+.request-form textarea {
+  display: block;
+  width: 100%;
+  border: 1px solid #dcd1d8;
+  border-radius: 7px;
+  padding: 12px;
+  background: #fff;
+  color: #483b45;
+  margin-top: 7px;
+}
+.request-form textarea {
+  resize: vertical;
+}
+.request-form .summary {
+  border: 1px solid #e1d1dd;
+  background: #f8f2f6;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+}
+.request-result {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.request-result h3 {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  letter-spacing: -1px;
+  font-weight: 400;
+  margin: 20px 0 10px;
+}
+.request-result > p {
+  font-size: 13px;
+  color: #81727c;
+  line-height: 1.7;
+}
+.request-result dl {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  font-size: 12px;
+  padding: 20px 0;
+  border-top: 1px solid #e3d7df;
+  border-bottom: 1px solid #e3d7df;
+  margin: 25px 0;
+}
+.request-result dt {
+  color: #897983;
+}
+.request-result dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.availability-layout {
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  gap: 24px;
+}
+.settings-card {
+  background: #fff;
+  border: 1px solid #dfd7d2;
+  border-radius: 12px;
+  padding: 30px;
+}
+.settings-card h2 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin: 0 0 7px;
+}
+.settings-card > p {
+  font-size: 12px;
+  color: #81727c;
+  line-height: 1.7;
+}
+.hours-list {
+  margin: 28px 0;
+}
+.hours-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 20px 1fr;
+  gap: 12px;
+  align-items: center;
+  border-top: 1px solid #eee5e9;
+  padding: 16px 0;
+}
+.hours-row label {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hours-row input[type='checkbox'] {
+  accent-color: #633a59;
+  width: 16px;
+  height: 16px;
+}
+.hours-row select {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #ded2db;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 12px;
+}
+.hours-row select:disabled {
+  background: #f5f1f3;
+  color: #ac9aa6;
+}
+.rule-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  font-size: 12px;
+  gap: 15px;
+}
+.rule-control select {
+  padding: 9px;
+  border: 1px solid #ded2db;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 12px;
+}
+.settings-note {
+  background: #eee5dc;
+  border: 1px solid #e2d5c8;
+  border-radius: 12px;
+  padding: 25px;
+  align-self: start;
+}
+.settings-note h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 0 0 17px;
+}
+.settings-note p,
+.settings-note li {
+  font-size: 12px;
+  color: #807067;
+  line-height: 1.8;
+}
+.settings-note ul {
+  padding-left: 18px;
+}
+.settings-note .btn {
+  margin-top: 20px;
+}
+.feedback {
+  font-size: 12px;
+  line-height: 1.6;
+  min-height: 20px;
+  margin-top: 16px;
+  color: #6d405e;
+}
+.guide-hero {
+  text-align: center;
+  padding: 65px 15px 60px;
+  max-width: 810px;
+  margin: auto;
+}
+.guide-hero h1 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 59px;
+  letter-spacing: -2.3px;
+  line-height: 1.08;
+  margin: 20px 0;
+}
+.guide-hero p {
+  font-size: 15px;
+  color: #81737a;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto;
+}
+.guide-grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 60px;
+  padding: 20px 0 60px;
+}
+.guide-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 12px;
+  position: sticky;
+  top: 25px;
+  align-self: start;
+}
+.guide-nav a:hover {
+  color: #633a59;
+  text-decoration: underline;
+}
+.guide-section {
+  padding: 35px 0;
+  border-top: 1px solid #dfd6ce;
+}
+.guide-section h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: -0.7px;
+  margin: 0 0 17px;
+}
+.guide-section p,
+.guide-section li {
+  font-size: 14px;
+  color: #7b7075;
+  line-height: 1.8;
+}
+.guide-section li {
+  margin: 10px 0;
+}
+.guide-callout {
+  padding: 20px;
+  border: 1px solid #e2d5d9;
+  border-radius: 8px;
+  background: #f0e7ec;
+  font-size: 13px;
+  color: #6d4b60;
+  line-height: 1.8;
+}
+.status-line {
+  font-size: 11px;
+  margin-top: 15px;
+  color: #7e6275;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 1050px) {
+  .hero {
+    padding: 40px 28px;
+    gap: 25px;
+    grid-template-columns: 1fr 1fr;
+    min-height: 580px;
+  }
+  .hero-copy h1 {
+    font-size: 58px;
+    letter-spacing: -2.8px;
+  }
+  .booking-preview {
+    min-width: 460px;
+  }
+  .host-mini {
+    padding: 24px 17px;
+  }
+  .mini-calendar {
+    padding: 24px 17px;
+  }
+  .hero-actions .btn {
+    padding: 12px 16px;
+  }
+  .audience {
+    font-size: 15px;
+    gap: 20px;
+  }
+  .scheduler {
+    grid-template-columns: 220px 1fr;
+  }
+  .host-panel {
+    padding: 23px;
+  }
+  .booking-columns {
+    gap: 16px;
+    grid-template-columns: 1fr 125px;
+  }
+  .availability-layout {
+    grid-template-columns: 1fr 260px;
+  }
+  .hours-row {
+    grid-template-columns: 105px 1fr 15px 1fr;
+    gap: 8px;
+  }
+}
+@media (max-width: 820px) {
+  .nav {
+    gap: 20px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px;
+    min-height: 0;
+  }
+  .hero-copy {
+    max-width: 530px;
+  }
+  .hero-copy h1 {
+    font-size: 65px;
+  }
+  .hero-product {
+    max-width: 580px;
+    width: 100%;
+    margin: auto;
+  }
+  .booking-preview {
+    min-width: 0;
+  }
+  .product-halo {
+    inset: 0 -15px;
+  }
+  .audience {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .audience p {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .step-visual {
+    height: 100%;
+    min-height: 220px;
+    border-top: 0;
+    border-left: 1px solid #f0e9e1;
+  }
+  .features {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  .feature {
+    padding: 25px;
+  }
+  .scheduler {
+    grid-template-columns: 1fr;
+  }
+  .host-panel {
+    border-right: 0;
+    border-bottom: 1px solid #e6dfd9;
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 0 18px;
+  }
+  .host-panel .avatar {
+    grid-row: 1/4;
+  }
+  .host-panel .micro {
+    margin: 0;
+  }
+  .host-panel h2 {
+    margin: 3px 0 10px;
+  }
+  .host-panel > p {
+    grid-column: 2;
+    margin: 0;
+  }
+  .host-panel .host-line {
+    display: none;
+  }
+  .booking-columns {
+    grid-template-columns: 1fr 180px;
+  }
+  .availability-layout {
+    grid-template-columns: 1fr;
+  }
+  .settings-note {
+    display: none;
+  }
+  .guide-grid {
+    grid-template-columns: 160px 1fr;
+    gap: 35px;
+  }
+  .header {
+    border: 0;
+  }
+  .footer {
+    flex-wrap: wrap;
+  }
+  .hours-row {
+    grid-template-columns: 125px 1fr 20px 1fr;
+  }
+}
+@media (max-width: 580px) {
+  .wrap {
+    padding: 0 16px;
+  }
+  .header {
+    height: 73px;
+    padding: 0 18px;
+  }
+  .logo {
+    font-size: 26px;
+  }
+  .nav {
+    gap: 16px;
+    font-size: 11px;
+  }
+  .nav .nav-secondary {
+    display: none;
+  }
+  .nav .btn {
+    padding: 10px 13px;
+    font-size: 11px;
+  }
+  .hero {
+    padding: 28px 22px 30px;
+    border-radius: 13px;
+  }
+  .hero-copy h1 {
+    font-size: 54px;
+    letter-spacing: -2.5px;
+    margin: 24px 0 20px;
+  }
+  .hero-copy > p {
+    font-size: 14px;
+  }
+  .hero-actions {
+    gap: 8px;
+  }
+  .hero-actions .btn {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+  .hero-note {
+    font-size: 10px !important;
+  }
+  .hero-product {
+    padding: 20px 0 28px;
+  }
+  .booking-preview {
+    transform: none;
+  }
+  .preview-top {
+    padding: 10px 12px;
+    font-size: 8px;
+  }
+  .preview-body {
+    grid-template-columns: 0.85fr 1.15fr;
+    min-height: 235px;
+  }
+  .host-mini {
+    padding: 18px 12px;
+  }
+  .host-mini .avatar {
+    width: 31px;
+    height: 31px;
+    font-size: 10px;
+  }
+  .host-mini > span {
+    font-size: 8px;
+    margin-top: 12px;
+  }
+  .host-mini h2 {
+    font-size: 14px;
+    letter-spacing: -0.4px;
+  }
+  .host-mini p {
+    font-size: 9px;
+  }
+  .host-line {
+    font-size: 8px;
+  }
+  .mini-calendar {
+    padding: 18px 10px;
+  }
+  .mini-month {
+    font-size: 10px;
+    margin-bottom: 15px;
+  }
+  .mini-grid {
+    font-size: 8px;
+    gap: 3px;
+  }
+  .mini-grid .weekday {
+    font-size: 6px;
+  }
+  .preview-bottom {
+    padding: 10px;
+    font-size: 8px;
+  }
+  .floating-note {
+    left: 15px;
+    bottom: 0;
+    padding: 10px 12px;
+    font-size: 8px;
+    gap: 8px;
+  }
+  .floating-note strong {
+    font-size: 10px;
+  }
+  .floating-note .check {
+    width: 23px;
+    height: 23px;
+  }
+  .audience {
+    padding: 25px 0 35px;
+    font-size: 14px;
+    gap: 18px;
+  }
+  .audience p {
+    font-size: 11px;
+    margin: 0;
+  }
+  .section {
+    padding: 52px 0;
+  }
+  .section-head {
+    margin-bottom: 30px;
+  }
+  .section-head h2 {
+    font-size: 37px;
+    letter-spacing: -1.3px;
+  }
+  .section-head p {
+    font-size: 13px;
+  }
+  .step {
+    grid-template-columns: 1fr;
+  }
+  .step-visual {
+    min-height: 180px;
+    height: 180px;
+    border-left: 0;
+    border-top: 1px solid #f0e9e1;
+  }
+  .step-copy {
+    padding: 24px;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .feature {
+    min-height: 350px;
+  }
+  .cta {
+    padding: 42px 22px;
+    margin: 42px 0;
+  }
+  .cta h2 {
+    font-size: 37px;
+    letter-spacing: -1.4px;
+  }
+  .footer {
+    padding: 8px 18px 25px;
+    gap: 15px;
+    font-size: 10px;
+  }
+  .footer-links {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .app-wrap {
+    margin: 0 auto 45px;
+    padding: 0 15px;
+  }
+  .app-heading {
+    margin: 25px 0 18px;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .app-heading h1 {
+    font-size: 36px;
+  }
+  .app-heading p {
+    font-size: 11px;
+  }
+  .demo-note {
+    font-size: 10px;
+    padding: 12px;
+  }
+  .scheduler-main {
+    padding: 21px 16px;
+  }
+  .booking-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .control-label select {
+    width: 100%;
+  }
+  .booking-columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .day-grid {
+    gap: 6px;
+  }
+  .day-grid button {
+    font-size: 12px;
+  }
+  .slot-list {
+    grid-template-columns: repeat(3, 1fr);
+    max-height: 220px;
+    gap: 7px;
+  }
+  .slots h3 {
+    margin-bottom: 10px;
+  }
+  .slot-list button {
+    font-size: 11px;
+    padding: 10px 4px;
+  }
+  .booking-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .booking-bottom p {
+    font-size: 10px;
+    margin: 0 0 8px;
+  }
+  .host-panel {
+    padding: 20px;
+    grid-template-columns: 42px 1fr;
+    gap: 0 14px;
+  }
+  .host-panel .avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 11px;
+  }
+  .host-panel h2 {
+    font-size: 22px;
+  }
+  .host-panel > p {
+    font-size: 11px;
+  }
+  .request-form h3 {
+    font-size: 23px;
+  }
+  .form-actions {
+    flex-wrap: wrap;
+  }
+  .request-result h3 {
+    font-size: 31px;
+  }
+  .request-result dl {
+    grid-template-columns: 75px 1fr;
+    gap: 10px;
+    font-size: 11px;
+  }
+  .settings-card {
+    padding: 22px 16px;
+  }
+  .hours-row {
+    grid-template-columns: 100px 1fr 12px 1fr;
+    gap: 5px;
+  }
+  .hours-row label {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .hours-row select {
+    font-size: 10px;
+    padding: 8px 4px;
+  }
+  .hours-row input[type='checkbox'] {
+    width: 14px;
+    height: 14px;
+  }
+  .guide-hero {
+    padding: 40px 5px;
+  }
+  .guide-hero h1 {
+    font-size: 44px;
+    letter-spacing: -1.6px;
+  }
+  .guide-hero p {
+    font-size: 14px;
+  }
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .guide-nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 11px;
+  }
+  .guide-section {
+    padding: 25px 0;
+  }
+  .guide-section h2 {
+    font-size: 29px;
+  }
+  .guide-section p,
+  .guide-section li {
+    font-size: 13px;
+  }
+  .feedback {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+```
+
+## Reference interaction handler
+
+```javascript
+const defaultHours = {
+  days: [false, true, true, true, true, true, false],
+  start: [9, 9, 9, 9, 9, 9, 9],
+  end: [17, 17, 17, 17, 17, 17, 17],
+  buffer: 15,
+};
+function safeHours(value) {
+  if (!value || typeof value !== 'object') return structuredClone(defaultHours);
+  const validArray = (a) => Array.isArray(a) && a.length === 7;
+  const valid =
+    validArray(value.days) &&
+    value.days.every((x) => typeof x === 'boolean') &&
+    validArray(value.start) &&
+    validArray(value.end) &&
+    value.start.every(
+      (n, i) =>
+        Number.isInteger(n) &&
+        n >= 0 &&
+        n < 24 &&
+        Number.isInteger(value.end[i]) &&
+        value.end[i] > n &&
+        value.end[i] <= 24,
+    ) &&
+    [0, 15, 30].includes(value.buffer);
+  return valid ? value : structuredClone(defaultHours);
+}
+function dateKey(date) {
+  return date.toISOString().slice(0, 10);
+}
+function slotsForDay(key, duration, hours, now = new Date()) {
+  const midnight = new Date(`${key}T00:00:00Z`);
+  const day = midnight.getUTCDay();
+  if (!hours.days[day]) return [];
+  const result = [];
+  for (
+    let minute = hours.start[day] * 60;
+    minute + duration + hours.buffer <= hours.end[day] * 60;
+    minute += 30
+  ) {
+    const ends = minute + duration + hours.buffer;
+    const lunchOverlap = minute < 13 * 60 && ends > 12 * 60;
+    if (lunchOverlap) continue;
+    const instant = new Date(midnight.getTime() + minute * 60000);
+    if (instant.getTime() > now.getTime() + 3600000)
+      result.push(instant.toISOString());
+  }
+  return result;
+}
+function timeLabel(iso, zone) {
+  return new Intl.DateTimeFormat('en-GB', {
+    timeZone: zone,
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  }).format(new Date(iso));
+}
+function fullDateLabel(iso, zone) {
+  return new Intl.DateTimeFormat('en-GB', {
+    timeZone: zone,
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+    timeZoneName: 'short',
+  }).format(new Date(iso));
+}
+function calendarDraft(iso, duration) {
+  const stamp = (d) =>
+    new Date(d)
+      .toISOString()
+      .replace(/[-:]/g, '')
+      .replace(/\.\d{3}/, '');
+  const end = new Date(new Date(iso).getTime() + duration * 60000);
+  return [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Tandem Demo//Local Request//EN',
+    'CALSCALE:GREGORIAN',
+    'BEGIN:VEVENT',
+    `UID:tandem-${stamp(iso)}-${duration}@local.example`,
+    `DTSTAMP:${stamp(new Date())}`,
+    `DTSTART:${stamp(iso)}`,
+    `DTEND:${stamp(end)}`,
+    'SUMMARY:Tandem - tentative conversation',
+    'DESCRIPTION:Local demonstration draft only. No invitation was sent and no meeting is booked.',
+    'STATUS:TENTATIVE',
+    'END:VEVENT',
+    'END:VCALENDAR',
+    '',
+  ].join('\r\n');
+}
+
+const HOURS_KEY = 'tandem-demo-availability';
+function loadHours() {
+  try {
+    return safeHours(JSON.parse(sessionStorage.getItem(HOURS_KEY) || 'null'));
+  } catch {
+    return safeHours(null);
+  }
+}
+const hours = loadHours();
+const booking = document.querySelector('#booking-app');
+const availabilityForm = document.querySelector('#availability-form');
+let selectedDate = '';
+let selectedSlot = '';
+let duration = 30;
+let zone = 'Europe/London';
+let monthOffset = 0;
+let downloadUrl = '';
+const today = new Date();
+const baseMonth = new Date(
+  Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), 1),
+);
+function getCurrentMonth() {
+  return new Date(
+    Date.UTC(
+      baseMonth.getUTCFullYear(),
+      baseMonth.getUTCMonth() + monthOffset,
+      1,
+    ),
+  );
+}
+function renderSlots() {
+  const list = document.querySelector('#slot-list');
+  list.replaceChildren();
+  document.querySelector('#slot-date').textContent = selectedDate
+    ? new Intl.DateTimeFormat('en-GB', {
+        weekday: 'short',
+        day: 'numeric',
+        month: 'short',
+        timeZone: 'UTC',
+      }).format(new Date(`${selectedDate}T12:00:00Z`)) + ' · host date'
+    : 'Choose a date';
+  const slots = selectedDate ? slotsForDay(selectedDate, duration, hours) : [];
+  for (const iso of slots) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = timeLabel(iso, zone);
+    button.setAttribute('aria-label', fullDateLabel(iso, zone));
+    button.setAttribute('aria-pressed', String(iso === selectedSlot));
+    button.addEventListener('click', () => {
+      selectedSlot = iso;
+      renderSlots();
+      updateContinue();
+    });
+    list.append(button);
+  }
+  if (!slots.length) {
+    const text = document.createElement('p');
+    text.className = 'empty-state';
+    text.textContent = selectedDate
+      ? 'No times fit this day. Try another date or adjust availability.'
+      : 'Select an available day to see times.';
+    list.append(text);
+  }
+}
+function updateContinue() {
+  const next = document.querySelector('#continue-request');
+  next.disabled = !selectedSlot;
+  document.querySelector('#selected-summary').textContent = selectedSlot
+    ? `${fullDateLabel(selectedSlot, zone)} · ${duration} minutes`
+    : 'Choose a day and time that works for you.';
+}
+function selectDate(key) {
+  selectedDate = key;
+  selectedSlot = '';
+  renderCalendar();
+  renderSlots();
+  updateContinue();
+}
+function renderCalendar() {
+  const month = getCurrentMonth();
+  document.querySelector('#month-title').textContent = new Intl.DateTimeFormat(
+    'en-GB',
+    { month: 'long', year: 'numeric', timeZone: 'UTC' },
+  ).format(month);
+  document.querySelector('#month-prev').disabled = monthOffset === 0;
+  document.querySelector('#month-next').disabled = monthOffset === 2;
+  const grid = document.querySelector('#day-grid');
+  grid.replaceChildren();
+  for (const day of ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']) {
+    const label = document.createElement('span');
+    label.className = 'day-name';
+    label.textContent = day;
+    grid.append(label);
+  }
+  const blanks = (month.getUTCDay() + 6) % 7;
+  for (let i = 0; i < blanks; i++) {
+    const blank = document.createElement('span');
+    blank.className = 'empty';
+    grid.append(blank);
+  }
+  const count = new Date(
+    Date.UTC(month.getUTCFullYear(), month.getUTCMonth() + 1, 0),
+  ).getUTCDate();
+  for (let d = 1; d <= count; d++) {
+    const date = new Date(
+      Date.UTC(month.getUTCFullYear(), month.getUTCMonth(), d),
+    );
+    const key = dateKey(date);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.textContent = String(d);
+    button.disabled = slotsForDay(key, duration, hours).length === 0;
+    button.setAttribute('aria-pressed', String(key === selectedDate));
+    button.setAttribute(
+      'aria-label',
+      new Intl.DateTimeFormat('en-GB', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'UTC',
+      }).format(date),
+    );
+    button.addEventListener('click', () => selectDate(key));
+    grid.append(button);
+  }
+}
+function initialDate() {
+  for (let i = 1; i <= 90; i++) {
+    const date = new Date(
+      Date.UTC(
+        today.getUTCFullYear(),
+        today.getUTCMonth(),
+        today.getUTCDate() + i,
+      ),
+    );
+    const key = dateKey(date);
+    if (slotsForDay(key, duration, hours).length) {
+      monthOffset =
+        (date.getUTCFullYear() - baseMonth.getUTCFullYear()) * 12 +
+        date.getUTCMonth() -
+        baseMonth.getUTCMonth();
+      return key;
+    }
+  }
+  return '';
+}
+function showStep(id) {
+  for (const name of ['choose-step', 'details-step', 'result-step'])
+    document.getElementById(name).hidden = name !== id;
+  document.getElementById(id).focus();
+}
+function readText(data, key) {
+  const value = data.get(key);
+  return typeof value === 'string' ? value.trim() : '';
+}
+function prepareRequest(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (
+    !(form instanceof HTMLFormElement) ||
+    !form.reportValidity() ||
+    !selectedSlot
+  )
+    return;
+  const data = new FormData(form);
+  document.querySelector('#result-name').textContent = readText(data, 'name');
+  document.querySelector('#result-email').textContent = readText(data, 'email');
+  document.querySelector('#result-time').textContent = fullDateLabel(
+    selectedSlot,
+    zone,
+  );
+  document.querySelector('#result-duration').textContent =
+    `${duration} minutes`;
+  document.querySelector('#result-notes').textContent =
+    readText(data, 'notes') || 'No additional context';
+  if (downloadUrl) URL.revokeObjectURL(downloadUrl);
+  downloadUrl = URL.createObjectURL(
+    new Blob([calendarDraft(selectedSlot, duration)], {
+      type: 'text/calendar;charset=utf-8',
+    }),
+  );
+  document.querySelector('#download-calendar').href = downloadUrl;
+  showStep('result-step');
+}
+function initializeBooking() {
+  selectedDate = initialDate();
+  renderCalendar();
+  renderSlots();
+  updateContinue();
+  document.querySelector('#timezone').addEventListener('change', (event) => {
+    zone = event.target.value;
+    renderSlots();
+    updateContinue();
+  });
+  document.querySelectorAll('[data-duration]').forEach((button) =>
+    button.addEventListener('click', () => {
+      duration = Number(button.dataset.duration);
+      selectedSlot = '';
+      document
+        .querySelectorAll('[data-duration]')
+        .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      renderCalendar();
+      renderSlots();
+      updateContinue();
+    }),
+  );
+  document.querySelector('#month-prev').addEventListener('click', () => {
+    monthOffset--;
+    renderCalendar();
+  });
+  document.querySelector('#month-next').addEventListener('click', () => {
+    monthOffset++;
+    renderCalendar();
+  });
+  document.querySelector('#continue-request').addEventListener('click', () => {
+    document.querySelector('#request-summary').textContent =
+      `A conversation with Maya Chen · ${duration} minutes · ${fullDateLabel(selectedSlot, zone)}`;
+    showStep('details-step');
+    document.querySelector('#request-name').focus();
+  });
+  document
+    .querySelector('#back-to-times')
+    .addEventListener('click', () => showStep('choose-step'));
+  document
+    .querySelector('#request-form')
+    .addEventListener('submit', prepareRequest);
+  document
+    .querySelector('#edit-request')
+    .addEventListener('click', () => showStep('details-step'));
+  document.querySelector('#new-request').addEventListener('click', () => {
+    selectedSlot = '';
+    renderSlots();
+    updateContinue();
+    showStep('choose-step');
+  });
+}
+function initializeAvailability() {
+  for (let day = 1; day <= 5; day++) {
+    const enabled = document.querySelector(`#enabled-${day}`);
+    const start = document.querySelector(`#start-${day}`);
+    const end = document.querySelector(`#end-${day}`);
+    enabled.checked = hours.days[day];
+    start.value = String(hours.start[day]);
+    end.value = String(hours.end[day]);
+    start.disabled = end.disabled = !enabled.checked;
+    enabled.addEventListener('change', () => {
+      start.disabled = end.disabled = !enabled.checked;
+    });
+  }
+  document.querySelector('#buffer').value = String(hours.buffer);
+  availabilityForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const updated = safeHours(null);
+    for (let day = 1; day <= 5; day++) {
+      updated.days[day] = document.querySelector(`#enabled-${day}`).checked;
+      updated.start[day] = Number(
+        document.querySelector(`#start-${day}`).value,
+      );
+      updated.end[day] = Number(document.querySelector(`#end-${day}`).value);
+      if (updated.start[day] >= updated.end[day]) {
+        document.querySelector('#save-feedback').textContent =
+          'Each start time must be earlier than its end time.';
+        document.querySelector(`#end-${day}`).focus();
+        return;
+      }
+    }
+    updated.buffer = Number(document.querySelector('#buffer').value);
+    try {
+      sessionStorage.setItem(HOURS_KEY, JSON.stringify(updated));
+      document.querySelector('#save-feedback').textContent =
+        'Availability saved in this tab. Open the booking demo to see your changes.';
+    } catch {
+      document.querySelector('#save-feedback').textContent =
+        'Your browser could not save availability. Enable session storage to use this demo.';
+    }
+  });
+  document.querySelector('#reset-hours').addEventListener('click', () => {
+    try {
+      sessionStorage.removeItem(HOURS_KEY);
+      location.reload();
+    } catch {
+      document.querySelector('#save-feedback').textContent =
+        'Your browser could not reset saved availability.';
+    }
+  });
+}
+if (booking) initializeBooking();
+if (availabilityForm) initializeAvailability();
+
+```

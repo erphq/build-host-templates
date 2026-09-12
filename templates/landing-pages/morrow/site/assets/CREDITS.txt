@@ -1,0 +1,13 @@
+MORROW / ASSET CREDITS
+
+All three images are original generated editorial concepts made with the AI image generation on 2026-09-08. They do not depict commissioned client work.
+portrait.webp: Fashion portrait of an adult person in sculptural black clothing.
+vessel.webp: Cobalt glass vessel still life.
+book.webp: Fictional art-book editorial still life.
+hero.webp: Identical gallery compatibility copy of portrait.webp, not an additional asset.
+
+Exact prompts and generation method: provenance.json.
+Font: Geist, SIL Open Font License; see GEIST-LICENSE.txt.
+
+Design reference: Kima by Thaer Swailem, https://www.framer.com/marketplace/templates/kima/ and https://kima.framer.media/ . Read-only reference. No Framer template source or source imagery copied. The adaptation uses its own code, identity, content and generated assets.
+Additional inspiration collections: https://collectui.com/designs/framer-ui-design-inspiration and https://collectui.com/designs/hero-section-ui-design-inspiration . These are references, not sources of downloaded template code.

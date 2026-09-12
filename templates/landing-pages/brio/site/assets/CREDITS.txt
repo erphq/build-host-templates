@@ -1,0 +1,10 @@
+BRIO — ORIGINAL LOCAL FORM PRODUCT
+
+Brio is a fictional forms/workflow product concept. The builder, preview, configuration history and response review operate locally. No hosted form, account, public form link, email, payment, integration or external submission is created. The first two responses are fictional sample records.
+
+All branding, interface code, template descriptions, sample questions and form-study.svg artwork are original project work. hero.webp is a local rendering of that original illustration. The live form playground and builder are HTML/CSS, not copied screenshots.
+
+Typeface: Geist variable, Vercel. SIL Open Font License 1.1. See GEIST-LICENSE.txt.
+
+Live reference research: https://www.fillout.com/
+Observed public homepage: bright illustrated opening, form-creation prompt and examples, product tabs, builder/branding/results feature sections and template routes. Authenticated builder, backend, hosting, integrations, permission model and collaboration behavior were not inspected. Brio's local field editor, snapshots and exports are original implementations. No Fillout illustrations, screenshots, logos, customer claims, reviews or code are redistributed.

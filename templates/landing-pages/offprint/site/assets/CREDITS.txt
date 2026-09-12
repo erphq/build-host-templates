@@ -1,0 +1,14 @@
+OFFPRINT — PUBLICATION AND ASSET CREDITS
+
+Offprint is a fictional editorial publication and issue-shop concept. All six essays are original reflective writing created for this project. They are not reported interviews, real contributor profiles or copied articles. No circulation, award, customer or partnership claims are made.
+
+All brand copy, interface code, colour illustration, object illustration and Issue 01 cover are original project work. Source SVG and WebP derivatives are included locally. The issue formats, page count, dimensions and prices are illustrative; no product is sold or delivered.
+
+Photography: Unsplash. Exact image IDs, URLs and local filenames appear in provenance.json. License: https://unsplash.com/license. Photographs are illustrative companions selected for atmosphere, not documentary evidence of people or places described in the essays. No endorsement is implied.
+
+Font: Geist variable, Vercel, SIL Open Font License 1.1. See GEIST-LICENSE.txt. Article body typography uses system Georgia.
+
+Reference research: Friends of Friends, https://www.freundevonfreunden.com/ (also reached from https://www.friendsoffriends.com/).
+Discovery: https://minimal.gallery/friends-of-friends/ and https://minimal.gallery/tag/editorial/.
+Observed live homepage and long-form OLDER Studio article: compact navigation, dominant photographic lead, subject metadata, image-led story groups, coloured article opener, readable long-form sequence and large in-article photographs.
+Not verified: exact animation timing, CMS, internal search ranking or authenticated features. Reading lists, focus settings and publication selection are original local interactions. No reference articles, photography, contributor names, wordmarks or site code are redistributed.

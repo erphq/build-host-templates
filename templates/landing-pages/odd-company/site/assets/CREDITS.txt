@@ -1,0 +1,9 @@
+ODD COMPANY / ASSET CREDITS
+
+OPEN, SHIFT, TOGETHER: Three original generated campaign/identity photographs made with AI image generation on 2026-09-08. These are fictional branding studies, not real client commissions. Exact prompts and method are in provenance.json. Responsive 640px files are derivatives of the same three images. hero.webp duplicates open.webp for gallery compatibility.
+
+Archivo Black: official Google Fonts repository, https://github.com/google/fonts/tree/main/ofl/archivoblack . SIL Open Font License, included in ARCHIVO-LICENSE.txt.
+Geist: SIL Open Font License, included.
+Lucide icons: ISC license, included in LUCIDE-LICENSE.txt.
+
+Research reference: AgencyCreative / Agznko by Ridhwan Co., https://www.framer.com/marketplace/templates/agencycreative/ and https://agznko.framer.website/ . Marketplace, homepage and a case-study page inspected read-only. No source code, text, branding, client claims or imagery copied. Odd Company uses its own typographic identity, project artwork and scroll-stacked composition.

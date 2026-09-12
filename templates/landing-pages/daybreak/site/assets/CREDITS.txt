@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "coffee",
+  "source_page": "https://www.pexels.com/photo/close-up-of-espresso-dripping-into-glass-cup-33309780/",
+  "author": "James Collington",
+  "image_url": "https://images.pexels.com/photos/33309780/pexels-photo-33309780.jpeg?cs=srgb&dl=pexels-james-collington-2147687246-33309780.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 4672,
+  "height": 7008
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "coffee",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/roasted-coffee-beans-in-close-up-photography-7125705/",
+  "image_url": "https://images.pexels.com/photos/7125705/pexels-photo-7125705.jpeg?cs=srgb&dl=pexels-michael-burrows-7125705.jpg&fm=jpg",
+  "author": "Michael Burrows",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "roasted coffee beans",
+  "width": 4160,
+  "height": 6240
+}
+
+Secondary image 2
+{
+  "site_slug": "coffee",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/barista-pouring-coffee-into-a-cup-26711779/",
+  "image_url": "https://images.pexels.com/photos/26711779/pexels-photo-26711779.jpeg?cs=srgb&dl=pexels-jonathanborba-26711779.jpg&fm=jpg",
+  "author": "Jonathan Borba",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "barista pouring coffee",
+  "width": 5464,
+  "height": 8192
+}

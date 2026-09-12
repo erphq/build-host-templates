@@ -1,0 +1,31 @@
+{
+  "slug": "odd-company",
+  "name": "Odd Company",
+  "collection": "landing-pages",
+  "category": "agencies",
+  "industry": "Creative",
+  "description": "An original creative-studio portfolio with bold Archivo typography, three generated campaign studies, scroll-stacked projects, and a local brief builder.",
+  "tagline": "Good ideas. Made visible.",
+  "style": "Typographic studio with stacked projects",
+  "palette": [
+    "#f5f5f3",
+    "#202024",
+    "#b93926"
+  ],
+  "order": 46,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "asymmetric typographic hero, three native sticky project panels, focused practice disclosures, complete case-study pages",
+    "motion": "scroll-stacked panels, progressive CSS view-timeline image transitions, heading arrivals, reduced-motion and mobile fallbacks",
+    "interaction": "browse and open three studies, switch themes, choose brief scope, create, copy, edit, and download an unsent project brief",
+    "provenance": "Original five-page studio concept with its own typography, composition, campaign imagery, copy, and interactions. All work is fictional and self-initiated; no reference source or assets included."
+  },
+  "credits": {
+    "referenceName": "AgencyCreative by Ridhwan Co.",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/agencycreative/"
+  },
+  "pageCount": 5
+}

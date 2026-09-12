@@ -1,0 +1,46 @@
+Primary image
+{
+  "subject": "space",
+  "source_page": null,
+  "image_url": null,
+  "author": "AI image generation",
+  "license": "AI-generated original asset",
+  "generation_tool": "Built-in image generation",
+  "prompt": "Create one cinematic realistic space photograph, horizontal 1536x1024: close-up planet limb with orange atmospheric sunlight against a near-black starfield, enormous majestic scale. Deep black and burnt-orange tones. No spacecraft, no text, no logos.",
+  "width": 1536,
+  "height": 1024
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "space",
+  "position": 1,
+  "source_page": "https://www.nasa.gov/image-article/viewing-earth-from-space-station/",
+  "image_url": "https://www.nasa.gov/wp-content/uploads/2023/03/iss065e086377.jpg",
+  "author": "NASA / International Space Station crew",
+  "license": "NASA US government imagery, generally not subject to US copyright; NASA Images and Media Usage Guidelines",
+  "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "credit": "NASA",
+  "art_direction": "viewing-earth-from-space-station",
+  "width": 1041,
+  "height": 585,
+  "reuse_note": "Acknowledge NASA as image source. Use factually without implying NASA endorsement. Source page credits NASA and does not identify a third-party copyright holder."
+}
+
+Secondary image 2
+{
+  "site_slug": "space",
+  "position": 2,
+  "source_page": "https://www.nasa.gov/image-article/international-space-station-orbits-into-sunset/",
+  "image_url": "https://www.nasa.gov/wp-content/uploads/2023/03/iss064e035804.jpg",
+  "author": "NASA / International Space Station crew",
+  "license": "NASA US government imagery, generally not subject to US copyright; NASA Images and Media Usage Guidelines",
+  "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "credit": "NASA",
+  "art_direction": "international-space-station-orbits-into-sunset",
+  "width": 1041,
+  "height": 585,
+  "reuse_note": "Acknowledge NASA as image source. Use factually without implying NASA endorsement. Source page credits NASA and does not identify a third-party copyright holder."
+}

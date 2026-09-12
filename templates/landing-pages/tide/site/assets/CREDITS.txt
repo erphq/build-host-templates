@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "surf",
+  "source_page": "https://www.pexels.com/photo/surfer-on-wave-10112820/",
+  "author": "Dalton Douglas",
+  "image_url": "https://images.pexels.com/photos/10112820/pexels-photo-10112820.jpeg?cs=srgb&dl=pexels-douglasphotography-10112820.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 5472,
+  "height": 3648
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "surf",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/photograph-of-surfboards-on-the-sand-13763517/",
+  "image_url": "https://images.pexels.com/photos/13763517/pexels-photo-13763517.jpeg?cs=srgb&dl=pexels-leon-kohle-3158283-13763517.jpg&fm=jpg",
+  "author": "Leon Kohle",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "surfboards beach",
+  "width": 6000,
+  "height": 3376
+}
+
+Secondary image 2
+{
+  "site_slug": "surf",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/sea-waves-in-close-up-photography-5116194/",
+  "image_url": "https://images.pexels.com/photos/5116194/pexels-photo-5116194.jpeg?cs=srgb&dl=pexels-nayla-charo-3181636-5116194.jpg&fm=jpg",
+  "author": "Nayla Charo",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "ocean breaking waves",
+  "width": 4000,
+  "height": 3000
+}

@@ -1,0 +1,1008 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Open Edition — Morrow</title><meta name="description" content="A printed-object study at the intersection of image, sequence, and color. An open book becomes a frame for a graphic conversation in blue, black, and orange. "><meta name="theme-color" content="#f4f4f0"><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --paper: #f4f4f0;
+  --ink: #20221f;
+  --muted: #6a6e66;
+  --line: #d7dad1;
+  --accent: #354af0;
+  --panel: #e9ebe4;
+  --radius: 5px;
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    16px/1.55 Geist,
+    Arial,
+    sans-serif;
+}
+body.dark {
+  --paper: #151713;
+  --ink: #f0f2e9;
+  --muted: #a6ada0;
+  --line: #353b31;
+  --accent: #aeb7ff;
+  --panel: #252a21;
+  color-scheme: dark;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+button {
+  color: inherit;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+p {
+  letter-spacing: -0.025em;
+}
+button {
+  border: 0;
+}
+.micro {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.045em;
+}
+.muted {
+  color: var(--muted);
+}
+.skip {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  transform: translateY(-150%);
+  padding: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  z-index: 20;
+}
+.skip:focus {
+  transform: none;
+}
+.studio-layout {
+  display: grid;
+  grid-template-columns: minmax(290px, 29%) minmax(0, 1fr);
+  gap: 0;
+  max-width: 2000px;
+  margin: auto;
+}
+.profile {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 28px 30px 24px;
+  border-right: 1px solid var(--line);
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+  scroll-behavior: smooth;
+}
+.identity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.wordmark {
+  font-size: 36px;
+  font-weight: 650;
+  letter-spacing: -2.4px;
+  line-height: 1;
+}
+.wordmark span {
+  font-size: 14px;
+  vertical-align: top;
+  letter-spacing: 0;
+  margin-left: 4px;
+}
+.identity-note {
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+.intro {
+  padding: 70px 0 40px;
+}
+.intro h1 {
+  font-size: clamp(36px, 3.7vw, 62px);
+  line-height: 1.03;
+  letter-spacing: -0.065em;
+  margin: 18px 0 22px;
+}
+.intro p {
+  max-width: 270px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.45;
+}
+.pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.pill:hover {
+  background: var(--accent);
+  color: var(--paper);
+  transform: translateY(-2px);
+}
+.intro .pill {
+  margin-top: 28px;
+}
+.rail-nav {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+.rail-nav > a,
+.rail-nav > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px 0;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+}
+.rail-nav span {
+  color: var(--muted);
+}
+.rail-nav > a:hover,
+.rail-nav > button:hover {
+  color: var(--accent);
+}
+.rail-section {
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 25px;
+}
+.rail-section h2 {
+  font-size: 29px;
+  line-height: 1.12;
+  margin: 14px 0 18px;
+}
+.rail-section p {
+  font-size: 16px;
+  color: var(--muted);
+  margin-top: 15px;
+}
+.service {
+  margin-top: 24px;
+}
+.service h3 {
+  font-size: 18px;
+  letter-spacing: -0.025em;
+}
+.service p {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.closing .pill {
+  margin-top: 8px;
+}
+.rail-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  padding-top: 25px;
+  font-size: 13px;
+}
+.rail-footer > span {
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 12px;
+}
+.work {
+  padding: 26px 24px 0;
+  min-width: 0;
+  scroll-margin-top: 20px;
+}
+.work-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 38px;
+}
+.work-header h2 {
+  font-size: 20px;
+  letter-spacing: -0.04em;
+}
+.work-header sup {
+  font-size: 12px;
+  top: -0.2em;
+  position: relative;
+  margin-left: 3px;
+  color: var(--muted);
+}
+.work-controls {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.quiet {
+  background: none;
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.quiet:hover {
+  color: var(--accent);
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 28px 0 20px;
+  flex-wrap: wrap;
+}
+.filters button {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: none;
+  font-size: 13px;
+  color: var(--muted);
+}
+.filters button[aria-pressed='true'] {
+  border-color: var(--line);
+  color: var(--ink);
+  background: var(--panel);
+}
+.filters button:hover {
+  color: var(--accent);
+}
+#work-count {
+  margin-left: auto;
+  color: var(--muted);
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: 1.07fr 1fr;
+  align-items: start;
+  gap: 32px 16px;
+}
+.work-card.portrait {
+  grid-row: span 2;
+}
+.image-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.image-link img {
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+.portrait .image-link img {
+  aspect-ratio: 3/4.4;
+}
+.landscape .image-link img {
+  aspect-ratio: 4/3;
+}
+.image-link:hover img {
+  transform: scale(1.035);
+}
+.image-action {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  background: #f4f4f0ef;
+  color: #20221f;
+  border-radius: 30px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+.image-link:hover .image-action,
+.image-link:focus-visible .image-action {
+  opacity: 1;
+  transform: none;
+}
+.work-caption {
+  padding: 12px 1px 0;
+}
+.work-caption > a {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+.work-caption p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.studio-note {
+  grid-column: 1/-1;
+  margin-top: 0;
+  padding: 35px 0 38px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  align-items: end;
+}
+.studio-note > .micro {
+  grid-column: 1/-1;
+  margin-bottom: 24px;
+}
+.studio-note > p {
+  grid-row: span 2;
+  font-size: clamp(40px, 5.3vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+.studio-note > p span {
+  color: var(--accent);
+}
+.studio-note > div {
+  font-size: 16px;
+  color: var(--muted);
+  align-self: center;
+  max-width: 260px;
+}
+.studio-note .quiet {
+  text-align: left;
+  margin-top: 20px;
+}
+.work-bottom {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 12px;
+  color: var(--muted);
+}
+[hidden] {
+  display: none !important;
+}
+.back {
+  display: inline-flex;
+  margin-top: 42px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.project-intro {
+  padding: 45px 0 28px;
+}
+.project-intro h1 {
+  font-size: clamp(40px, 4vw, 66px);
+  line-height: 1.05;
+  margin: 14px 0 22px;
+}
+.project-intro p {
+  font-size: 18px;
+  color: var(--muted);
+}
+.project-facts {
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding: 25px 0 5px;
+}
+.project-facts > div {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.project-facts dt {
+  color: var(--muted);
+}
+.project-facts dd {
+  margin: 0;
+}
+.project-work .work-header {
+  margin-bottom: 24px;
+}
+.project-hero {
+  margin: 0;
+}
+.project-hero img {
+  border-radius: var(--radius);
+  max-height: 1050px;
+  object-fit: cover;
+}
+.project-hero.portrait img {
+  aspect-ratio: 1/0.95;
+  object-position: center 38%;
+}
+.project-hero figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--muted);
+  padding: 12px 0;
+}
+.project-statement {
+  padding: 75px 0 55px;
+  max-width: 680px;
+}
+.project-statement h2 {
+  font-size: clamp(40px, 5.5vw, 82px);
+  line-height: 1;
+  margin: 20px 0 24px;
+}
+.project-statement p {
+  font-size: 20px;
+  max-width: 540px;
+  color: var(--muted);
+}
+.project-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  border-top: 1px solid var(--line);
+  padding: 35px 0 55px;
+}
+.project-notes p {
+  margin: 16px 0;
+  color: var(--muted);
+}
+.project-notes a {
+  font-size: 14px;
+}
+.next-project {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  gap: 25px;
+  align-items: center;
+}
+.next-project h2 {
+  font-size: 36px;
+  line-height: 1.15;
+  margin-top: 15px;
+}
+.next-project img {
+  height: 130px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+dialog {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  width: min(560px, calc(100% - 32px));
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  padding: 28px;
+  margin: auto;
+}
+dialog::backdrop {
+  background: #10120dcc;
+  backdrop-filter: blur(6px);
+}
+.dialog-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+dialog h2 {
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 28px 0 20px;
+}
+dialog > p {
+  color: var(--muted);
+}
+form {
+  margin-top: 25px;
+}
+form label {
+  display: block;
+  font-size: 14px;
+  margin: 18px 0;
+}
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  background: var(--panel);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 7px;
+  font-size: 16px;
+}
+textarea {
+  resize: vertical;
+}
+#brief-result {
+  margin-top: 25px;
+}
+#brief-result h3 {
+  font-size: 24px;
+}
+#brief-text {
+  white-space: pre-wrap;
+  margin: 20px 0;
+  overflow-wrap: anywhere;
+}
+#brief-result .pill {
+  margin-top: 20px;
+}
+#edit-brief {
+  margin-left: 20px;
+}
+@media (min-width: 1700px) {
+  .profile {
+    padding: 35px 45px;
+  }
+  .work {
+    padding: 32px 35px 0;
+  }
+  .intro {
+    padding-top: 90px;
+  }
+  .work-grid {
+    gap: 38px 24px;
+  }
+}
+@media (max-width: 1050px) and (min-width: 761px) {
+  .studio-layout {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+  .profile {
+    padding: 24px 22px;
+  }
+  .work {
+    padding: 22px 18px 0;
+  }
+  .work-controls > .micro {
+    display: none;
+  }
+  .identity-note {
+    display: none;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .work-card.portrait {
+    grid-row: auto;
+  }
+  .portrait .image-link img {
+    aspect-ratio: 4/4.4;
+  }
+  .studio-note {
+    grid-template-columns: 1fr;
+  }
+  .studio-note > div {
+    margin-top: 25px;
+  }
+  .intro h1 {
+    font-size: 38px;
+  }
+  .project-notes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .studio-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile {
+    position: relative;
+    height: auto;
+    overflow: visible;
+    padding: 24px 20px 0;
+    border: 0;
+    display: contents;
+  }
+  .identity {
+    padding: 24px 20px 0;
+    order: 0;
+  }
+  .intro {
+    padding: 42px 20px 28px;
+    order: 1;
+  }
+  .intro h1 {
+    font-size: clamp(44px, 9vw, 68px);
+    margin: 15px 0 18px;
+  }
+  .intro p {
+    max-width: 370px;
+  }
+  .intro .pill {
+    margin-top: 22px;
+  }
+  .rail-nav {
+    margin: 0 20px;
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+  }
+  .rail-nav > a,
+  .rail-nav > button {
+    width: auto;
+    gap: 10px;
+    font-size: 13px;
+    padding: 6px 0;
+  }
+  .work {
+    order: 3;
+    padding: 27px 20px 0;
+  }
+  .profile > .rail-section {
+    order: 4;
+    margin: 0 20px;
+    padding: 32px 0;
+  }
+  .profile > .rail-footer {
+    order: 5;
+    padding: 25px 20px;
+  }
+  .rail-section h2 {
+    font-size: 34px;
+  }
+  .rail-section p {
+    max-width: 550px;
+  }
+  .work-controls > .micro {
+    display: none;
+  }
+  .filters {
+    margin: 18px 0;
+  }
+  .filters button {
+    padding: 8px 10px;
+  }
+  #work-count {
+    display: none;
+  }
+  .work-grid {
+    gap: 28px 12px;
+  }
+  .work-caption p {
+    font-size: 12px;
+  }
+  .image-action {
+    display: none;
+  }
+  .studio-note {
+    margin-top: 5px;
+    grid-template-columns: 1fr;
+    padding: 28px 0;
+  }
+  .studio-note > p {
+    font-size: 55px;
+    grid-row: auto;
+  }
+  .studio-note > div {
+    margin-top: 25px;
+  }
+  .work-bottom {
+    font-size: 12px;
+  }
+  .profile > .back {
+    order: 1;
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+  .project-intro {
+    order: 2;
+    padding: 30px 20px 22px;
+  }
+  .project-intro h1 {
+    font-size: 54px;
+  }
+  .project-intro p {
+    max-width: 550px;
+  }
+  .project-facts {
+    order: 2;
+    margin: 0 20px;
+    padding: 22px 0 0;
+  }
+  .project-work {
+    order: 3;
+  }
+  .project-hero.portrait img {
+    aspect-ratio: 3/4;
+    max-height: none;
+  }
+  .project-statement {
+    padding: 42px 0 35px;
+  }
+  .project-statement h2 {
+    font-size: 44px;
+  }
+  .project-statement p {
+    font-size: 18px;
+  }
+  .project-notes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 0;
+  }
+  .next-project {
+    grid-template-columns: 1fr 100px;
+    gap: 15px;
+  }
+  .next-project h2 {
+    font-size: 30px;
+  }
+  .next-project img {
+    height: 95px;
+  }
+  .project-hero figcaption {
+    font-size: 12px;
+  }
+  dialog {
+    padding: 22px;
+  }
+  dialog h2 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 480px) {
+  .work-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .work-card,
+  .studio-note {
+    width: 100%;
+  }
+  .portrait .image-link img {
+    aspect-ratio: 3/4;
+  }
+  .work-caption > a {
+    font-size: 17px;
+  }
+  .work-caption p {
+    font-size: 13px;
+  }
+  .identity-note {
+    font-size: 12px;
+  }
+  .wordmark {
+    font-size: 34px;
+  }
+  .rail-nav {
+    gap: 10px;
+  }
+  .rail-nav > a,
+  .rail-nav > button {
+    font-size: 12px;
+  }
+  .intro h1 {
+    font-size: 46px;
+  }
+  .filters {
+    gap: 1px;
+  }
+  .filters button {
+    font-size: 12px;
+    padding: 9px;
+  }
+  .work-bottom {
+    gap: 8px;
+  }
+  .project-hero figcaption {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html,
+  .profile {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style></head><body><a class="skip" href="#work">Skip to work</a><div class="studio-layout"><aside class="profile" id="profile" tabindex="0" aria-label="Studio information"><div class="identity"><a href="index.html" class="wordmark">morrow<span>↗</span></a><div class="identity-note">INDEPENDENT<br>IMAGE & DESIGN STUDIO</div></div><a class="back" href="index.html#work">← All work</a><div class="project-intro"><span class="micro">STUDY 03 / 2026</span><h1>Open Edition</h1><p>A printed-object study at the intersection of image, sequence, and color. An open book becomes a frame for a graphic conversation in blue, black, and orange.</p></div><dl class="project-facts"><div><dt>Discipline</dt><dd>Editorial</dd></div><div><dt>Format</dt><dd>Independent concept</dd></div><div><dt>Scope</dt><dd>Editorial direction<br>Print concept<br>Digital presentation</dd></div></dl><section class="rail-section"><h2>The brief</h2><p>Explore an editorial identity through the physical presence of a book. The result should suggest a larger visual system while standing on its own as a still life.</p></section><section class="rail-section"><h2>The approach</h2><p>An electric tabletop sets the tone. Contrasting pages establish a rhythm that carries into the website: large image fields, small precise captions, and moments of interruption.</p></section><section class="rail-section closing"><span class="micro">HAVE SOMETHING IN MIND?</span><h2>Let’s make<br>it interesting.</h2><button type="button" class="pill" data-contact>Start a conversation <span aria-hidden="true">↗</span></button></section><footer class="rail-footer"><a href="../../">ProtoSites <span aria-hidden="true">↗</span></a><a href="assets/CREDITS.txt">Credits <span aria-hidden="true">↗</span></a><span>Fictional studio · Original generated imagery</span></footer></aside><main class="work project-work" id="work" tabindex="-1"><header class="work-header"><span class="micro">EDITORIAL / 2026</span><button type="button" class="quiet" id="theme-toggle" aria-label="Use dark theme">◐ <span>Theme</span></button></header><figure class="project-hero landscape"><img class="" src="assets/book.webp" alt="A printed-object study at the intersection of image, sequence, and color. An open book becomes a frame for a graphic conversation in blue, black, and orange." width="1200" height="900" fetchpriority="high"><figcaption><span>A little friction. A new perspective.</span><span>Image study 03</span></figcaption></figure><section class="project-statement"><span class="micro">THE STUDY</span><h2>A little friction. A new perspective.</h2><p>One generated editorial still life with a complete digital case-study page. The publication is a fictional concept, not an existing book.</p></section><section class="project-notes"><div><span class="micro">COMPOSITION</span><p>An electric tabletop sets the tone. Contrasting pages establish a rhythm that carries into the website: large image fields, small precise captions, and moments of interruption.</p></div><div><span class="micro">MADE FOR THIS COLLECTION</span><p>Original generated imagery. A fictional, self-initiated project with no client commission or commercial results implied.</p><a href="assets/CREDITS.txt">Read image credits <span aria-hidden="true">↗</span></a></div></section><a class="next-project" href="soft-form.html"><div><span class="micro">NEXT STUDY / 01</span><h2>Soft Form <span aria-hidden="true">↗</span></h2></div><img class="" src="assets/portrait.webp" alt="A study of the space between a person and the shape they inhabit. Sculptural clothing, quiet architecture, and light that leaves room for ambiguity." width="900" height="1200" loading="lazy"></a><div class="work-bottom"><a href="index.html#work">← All work</a><a href="#work">Back to top ↑</a></div></main></div><dialog id="contact-dialog" aria-labelledby="contact-title"><div class="dialog-top"><span class="micro">A NEW CONVERSATION</span><button type="button" class="quiet close-dialog" aria-label="Close project inquiry">Close ×</button></div><h2 id="contact-title">What are you<br>thinking about?</h2><p>This portfolio is a concept. Prepare a project brief here; nothing is sent.</p><form id="inquiry"><label>Your name<input name="name" required autocomplete="name" maxlength="100"></label><label>Project type<select name="type"><option>Art direction</option><option>Still life</option><option>Editorial</option><option>Something else</option></select></label><label>A little about the project<textarea name="brief" rows="4" required minlength="10" maxlength="2000" placeholder="The idea, the context, the possibility…"></textarea></label><button class="pill" type="submit">Prepare my brief <span aria-hidden="true">↗</span></button></form><section id="brief-result" hidden aria-live="polite"><h3>Your brief is ready.</h3><p id="brief-text"></p><p class="muted">Prepared locally. No message has been sent or saved.</p><button type="button" class="pill" id="download-brief">Download brief ↓</button><button type="button" class="quiet" id="edit-brief">Edit brief</button></section></dialog><script>(() => {
+  const themeButton = document.querySelector('#theme-toggle');
+  function applyTheme(dark) {
+    document.body.classList.toggle('dark', dark);
+    themeButton?.setAttribute(
+      'aria-label',
+      dark ? 'Use light theme' : 'Use dark theme',
+    );
+  }
+  try {
+    applyTheme(localStorage.getItem('morrow-theme') === 'dark');
+  } catch {}
+  themeButton?.addEventListener('click', () => {
+    const dark = !document.body.classList.contains('dark');
+    applyTheme(dark);
+    try {
+      localStorage.setItem('morrow-theme', dark ? 'dark' : 'light');
+    } catch {}
+  });
+  const filters = [...document.querySelectorAll('[data-filter]')];
+  filters.forEach((button) =>
+    button.addEventListener('click', () => {
+      const selected = button.dataset.filter;
+      let count = 0;
+      filters.forEach((item) =>
+        item.setAttribute('aria-pressed', String(item === button)),
+      );
+      document.querySelectorAll('[data-category]').forEach((card) => {
+        card.hidden =
+          selected !== 'All work' && card.dataset.category !== selected;
+        if (!card.hidden) count++;
+      });
+      document.querySelector('#work-count').textContent =
+        `${count} ${count === 1 ? 'study' : 'studies'}`;
+      document.querySelector('.studio-note').hidden = selected !== 'All work';
+    }),
+  );
+  const dialog = document.querySelector('#contact-dialog');
+  let opener = null;
+  document.querySelectorAll('[data-contact]').forEach((button) =>
+    button.addEventListener('click', () => {
+      opener = button;
+      dialog.showModal();
+    }),
+  );
+  document
+    .querySelector('.close-dialog')
+    .addEventListener('click', () => dialog.close());
+  dialog.addEventListener('close', () => opener?.focus());
+  dialog.addEventListener('click', (event) => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (
+      event.clientX < box.left ||
+      event.clientX > box.right ||
+      event.clientY < box.top ||
+      event.clientY > box.bottom
+    )
+      dialog.close();
+  });
+  const form = document.querySelector('#inquiry');
+  const result = document.querySelector('#brief-result');
+  let brief = '';
+  form.addEventListener('input', (event) => {
+    if (
+      event.target instanceof HTMLInputElement ||
+      event.target instanceof HTMLTextAreaElement
+    )
+      event.target.setCustomValidity('');
+  });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const text = (key) => {
+      const value = data.get(key);
+      return typeof value === 'string' ? value.trim() : '';
+    };
+    const name = form.querySelector('[name="name"]');
+    const description = form.querySelector('[name="brief"]');
+    name.setCustomValidity(text('name') ? '' : 'Enter your name.');
+    description.setCustomValidity(
+      text('brief').length >= 10
+        ? ''
+        : 'Describe your project in at least 10 characters.',
+    );
+    if (!form.reportValidity()) return;
+    brief = `MORROW / PROJECT INQUIRY DRAFT\n\nName: ${text('name')}\nDiscipline: ${text('type')}\n\n${text('brief')}\n\nPrepared locally. This is an unsent draft for a fictional studio.`;
+    document.querySelector('#brief-text').textContent = brief;
+    form.hidden = true;
+    result.hidden = false;
+    document.querySelector('#download-brief').focus();
+  });
+  document.querySelector('#edit-brief').addEventListener('click', () => {
+    result.hidden = true;
+    form.hidden = false;
+    form.querySelector('input').focus();
+  });
+  document.querySelector('#download-brief').addEventListener('click', () => {
+    const url = URL.createObjectURL(
+      new Blob([brief], { type: 'text/plain;charset=utf-8' }),
+    );
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'morrow-project-brief.txt';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+})();
+</script></body></html>

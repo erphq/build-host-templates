@@ -1,0 +1,2 @@
+Three original AI-generated food photographs created for Supper. No reference template assets used. Exact generation prompts are in provenance.json. DM Serif Display and Geist are used under their included font licenses. All dishes, prices, and restaurant details are fictional concepts.
+Research reference: Ristorante by Damir Cosic, https://www.framer.com/marketplace/templates/ristorante/ . Reference informs menu accessibility principles only.

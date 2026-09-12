@@ -1,0 +1,22 @@
+{
+  "slug": "laundry-order-tracker",
+  "name": "Laundry Order Tracker",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Customer/contact, garment type/count, service, rate, stains/damage notes, promised date, payment",
+  "tagline": "Counted in. Checked out.",
+  "style": "blue",
+  "palette": [],
+  "order": 117,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 20,
+  "notes": {
+    "interaction": "Customer/contact, garment type/count, service, rate, stains/damage notes, promised date, payment"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

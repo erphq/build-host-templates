@@ -1,0 +1,22 @@
+{
+  "slug": "accountant-document-bill-desk",
+  "name": "Accountant Document & Bill Desk",
+  "collection": "business-apps",
+  "category": "client-services",
+  "industry": "Client services",
+  "description": "Client/month checklist, private uploads, supplier invoice fields, duplicate review, missing files, accountant comments, export pack",
+  "tagline": "Collect, review, and hand over the month.",
+  "style": "purple",
+  "palette": [],
+  "order": 104,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 5,
+  "notes": {
+    "interaction": "Client/month checklist, private uploads, supplier invoice fields, duplicate review, missing files, accountant comments, export pack"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

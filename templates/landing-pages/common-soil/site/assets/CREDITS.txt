@@ -1,0 +1,13 @@
+COMMON SOIL — ORIGINAL NONPROFIT CONCEPT
+
+Common Soil is a fictional community-garden nonprofit website. Garden names, neighbourhoods, project proposals, stories and activities are original illustrative content. No real addresses, attendance, harvest, volunteer, financial, ecological or social-impact totals are claimed. No donations, registrations or messages are processed.
+
+Original work: brand writing, project and editorial stories, interface code, neighbourhood.svg and neighbourhood.webp. The map is an imaginary schematic, not a navigation map or a record of real garden locations.
+
+Photography: licensed Unsplash images. Exact source URLs, photo identifiers and local files appear in provenance.json. License: https://unsplash.com/license. Images are illustrative and do not document Common Soil projects or imply endorsement by depicted people, photographers or property owners.
+
+Font: Geist variable, Vercel. SIL Open Font License 1.1. See GEIST-LICENSE.txt. Long story prose uses system Georgia.
+
+Reference research: Burkinow / Bissiri, https://burkinow.com/en
+Discovery: https://minimal.gallery/burkinow-bissiri/ and https://minimal.gallery/tag/non-profit-charity/
+Observed live place, timeline and project navigation; immersive spatial/photographic storytelling; contextual project narrative; community-use descriptions and deeper project material. No donation or contact action was taken. Exact rendering engine, scroll timing and donation system were not verified. Common Soil's map, draft and activity planner are original local implementations. No Burkinow photography, impact figures, donor incentives, branding or code is redistributed.

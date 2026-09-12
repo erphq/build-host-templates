@@ -1,0 +1,22 @@
+{
+  "slug": "service-visits-plan-renewals",
+  "name": "Service Visits & Plan Renewals",
+  "collection": "business-apps",
+  "category": "services-repairs",
+  "industry": "Services & repairs",
+  "description": "Customer equipment, appointment, contract coverage and expiry, visit checklist, parts, labor, photos, renewal follow-up",
+  "tagline": "One-off jobs and covered visits, together.",
+  "style": "blue",
+  "palette": [],
+  "order": 109,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 11,
+  "notes": {
+    "interaction": "Customer equipment, appointment, contract coverage and expiry, visit checklist, parts, labor, photos, renewal follow-up"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

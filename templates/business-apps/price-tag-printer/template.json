@@ -1,0 +1,23 @@
+{
+  "slug": "price-tag-printer",
+  "name": "Price Tag Printer",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Paste product/SKU/price CSV, set copies per product, tag size, font and optional barcode only for supplied validated identifiers. Preview printable US Letter sheet with trim marks and export PDF. USD with two decimals; no automatic tax claims.",
+  "tagline": "Ready for\nthe shelf.",
+  "style": "purple",
+  "palette": [],
+  "order": 42,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 49,
+  "notes": {
+    "interaction": "Paste product/SKU/price CSV, set copies per product, tag size, font and optional barcode only for supplied validated identifiers. Preview printable US Letter sheet with trim marks and export PDF. USD with two decimals; no automatic tax claims."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

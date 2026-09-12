@@ -1,0 +1,31 @@
+{
+  "slug": "other-studio",
+  "name": "OTHER",
+  "collection": "landing-pages",
+  "category": "agencies",
+  "industry": "Creative",
+  "description": "An independent creative studio with expressive typography and a filterable work index.",
+  "tagline": "Ordinary is optional.",
+  "style": "Experimental studio poster",
+  "palette": [
+    "#f15c45",
+    "#211d23",
+    "#211d23"
+  ],
+  "order": 26,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "oversized stacked title, sculptural artwork, selected project index, services accordion, project budget estimator",
+    "motion": "letter entrance, project preview reveal, accordion expansion",
+    "interaction": "filter work by Identity, Digital, and Art; estimate a project range from scope choices",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

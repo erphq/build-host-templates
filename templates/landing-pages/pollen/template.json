@@ -1,0 +1,32 @@
+{
+  "slug": "pollen",
+  "name": "Pollen",
+  "collection": "landing-pages",
+  "category": "restaurants-caf-s",
+  "industry": "Food",
+  "description": "An expressive bakery concept with original food imagery, complete bake details, sharing-pack math and a local pickup draft.",
+  "tagline": "A little crumb of joy.",
+  "style": "Expressive neighborhood bakery",
+  "palette": [
+    "#fff7df",
+    "#f7e6a3",
+    "#b13b28",
+    "#233c87"
+  ],
+  "order": 2,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Butter-yellow editorial identity, original food photography, complete bake stories, menu filters and a pickup basket",
+    "motion": "Food-image hover, menu filtering, variant changes and pickup-draft updates",
+    "interaction": "Choose bake variants and sharing packs, calculate pieces and prices, validate dependent pickup windows and export a local plan",
+    "provenance": "Eight original pages with four original food photographs, three fictional bakes and tested local preorder planning; no real ordering or payments."
+  },
+  "credits": {
+    "referenceName": "Tartine",
+    "referenceUrl": "https://tartinebakery.com/"
+  },
+  "pageCount": 8
+}

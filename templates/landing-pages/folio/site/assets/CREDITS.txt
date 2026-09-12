@@ -1,0 +1,14 @@
+FOLIO — ORIGINAL PRODUCT CONCEPT
+
+Folio, Northline Studio, sample people, clients, project briefs, deliverables, prices and plan limits are fictional demonstration content. No accounts, external messages, client approvals, payments or submissions are created.
+
+All product UI, brand copy, code and Verdant artwork are original project work. The SVG design boards were authored for this demonstration and converted to local WebP images. They are not real client deliverables or copied reference assets.
+Files: identity.svg/webp, direction.svg/webp, packaging.svg/webp, hero.webp.
+
+Typeface: Geist variable, Vercel. SIL Open Font License 1.1. See GEIST-LICENSE.txt. Display italic text uses system Georgia.
+
+Reference research:
+https://www.hellobonsai.com/client-portal
+https://www.hellobonsai.com/forms
+Inspected September 8, 2026: centered proposition, compact navigation, large product portal visual, feature-specific sections, branded client access, status visibility, documents, task collaboration and intake-form relationships.
+The authenticated application, exact backend, security model, real approvals and payments were not inspected. Folio's local workflow and visual identity are original implementations. No Bonsai screenshots, brand assets, customer claims, quotations or code are redistributed.

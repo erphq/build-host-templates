@@ -1,0 +1,32 @@
+{
+  "slug": "assembly",
+  "name": "Assembly",
+  "collection": "landing-pages",
+  "category": "events-communities",
+  "industry": "Events",
+  "description": "A bold design conference with original speaker studies, a two-track programme and a personal itinerary that makes scheduling conflicts explicit.",
+  "tagline": "Ideas meet. Hands make.",
+  "style": "Graphic design conference",
+  "palette": [
+    "#f05c3b",
+    "#ddd653",
+    "#5148d7",
+    "#f8f5e9"
+  ],
+  "order": 8,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Oversized typographic identity, original speaker posters, ruled programme, substantial practitioner studies and a conflict-aware itinerary",
+    "motion": "Graphic identity changes, schedule filtering, accessible conflict dialogs and itinerary updates",
+    "interaction": "Filter ten sessions, save an itinerary, resolve multiple overlaps, explore speaker projects and export Markdown or a tentative calendar",
+    "provenance": "Eight independent pages with three original poster systems, fictional speakers and sessions, and a tested local itinerary and calendar workflow."
+  },
+  "credits": {
+    "referenceName": "OFFF Barcelona",
+    "referenceUrl": "https://www.offf.barcelona/"
+  },
+  "pageCount": 8
+}

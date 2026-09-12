@@ -1,0 +1,23 @@
+[
+  {
+    "file": "mountains.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original landscape photograph for Ramble, a fictional travel-concept website.\nPrimary request: Alpine high country: a turquoise lake below a rugged mountain ridge, a narrow grassy shore in foreground, clear blue sky, inviting and expansive.\nStyle: Wide landscape 16:9 clean editorial travel photography, natural daylight, strong horizon depth.\nConstraints: Imagined landscape, not a real destination or documentary location photograph. No typography, logos, watermark, UI, or people. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated imagined landscape, not a real destination or documentary location photograph"
+  },
+  {
+    "file": "coast.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original landscape photograph for Ramble, a fictional travel-concept website.\nPrimary request: Wild coast: a pale sandy cove with blue-green surf beneath high rugged cliffs, coastal path visible above, clear afternoon light, no buildings.\nStyle: Wide landscape 16:9 clean editorial travel photography, natural daylight, strong horizon depth.\nConstraints: Imagined landscape, not a real destination or documentary location photograph. No typography, logos, watermark, UI, or people. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated imagined landscape, not a real destination or documentary location photograph"
+  },
+  {
+    "file": "forest.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original landscape photograph for Ramble, a fictional travel-concept website.\nPrimary request: Forest pause: a lush temperate forest with a calm stream and small waterfall, dappled light, rich natural greens, no fantasy elements.\nStyle: Wide landscape 16:9 clean editorial travel photography, natural daylight, strong horizon depth.\nConstraints: Imagined landscape, not a real destination or documentary location photograph. No typography, logos, watermark, UI, or people. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated imagined landscape, not a real destination or documentary location photograph"
+  }
+]

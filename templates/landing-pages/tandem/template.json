@@ -1,0 +1,31 @@
+{
+  "slug": "tandem",
+  "name": "Tandem",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A thoughtful scheduling experience with editable weekly hours, time-zone-aware availability, and local calendar-request drafts.",
+  "tagline": "Find a time. Make it count.",
+  "style": "Scheduling product experience",
+  "palette": [
+    "#f7f5ef",
+    "#633a59",
+    "#efe5de"
+  ],
+  "order": 38,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "warm product introduction, detailed scheduling preview, real booking-request flow, editable availability and complete guide",
+    "motion": "slot selection and review transitions, responsive product presentation and reduced-motion support",
+    "interaction": "edit weekly hours and buffers, choose duration and time zone, inspect available slots and prepare a tentative calendar draft",
+    "provenance": "Independent four-page scheduling product with original layout, copy, local availability logic and compatibility links for prior pages."
+  },
+  "credits": {
+    "referenceName": "Cal.com, discovered through Saaspo",
+    "referenceUrl": "https://cal.com/"
+  },
+  "pageCount": 4
+}

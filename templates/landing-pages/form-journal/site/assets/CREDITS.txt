@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "magazine",
+  "source_page": "https://www.pexels.com/photo/brutalist-architecture-in-mexico-city-30882004/",
+  "author": "Mois\u00e9s Fonseca",
+  "image_url": "https://images.pexels.com/photos/30882004/pexels-photo-30882004.jpeg?cs=srgb&dl=pexels-minimoy-30882004.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 3675,
+  "height": 5513
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "magazine",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/modern-concrete-staircase-and-architectural-design-35177525/",
+  "image_url": "https://images.pexels.com/photos/35177525/pexels-photo-35177525.jpeg?cs=srgb&dl=pexels-cloudett-35177525.jpg&fm=jpg",
+  "author": "Laura Cleffmann",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "concrete staircase architecture",
+  "width": 6240,
+  "height": 4160
+}
+
+Secondary image 2
+{
+  "site_slug": "magazine",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/modern-architecture-building-facade-11043707/",
+  "image_url": "https://images.pexels.com/photos/11043707/pexels-photo-11043707.jpeg?cs=srgb&dl=pexels-mikky-k-158844-11043707.jpg&fm=jpg",
+  "author": "mikky k",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "modern architectural facade",
+  "width": 5304,
+  "height": 7952
+}

@@ -1,0 +1,1534 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Programme | Night Shapes</title><meta name="description" content="An original fictional festival with a concept programme, generated artist imagery, and a browser-local personal schedule. "><link rel="preload" href="assets/anton.ttf" as="font" type="font/ttf" crossorigin><style>@font-face {
+  font-family: Anton;
+  src: url('assets/anton.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --paper: #f5f6f2;
+  --ink: #222820;
+  --muted: #596652;
+  --line: #c6cec2;
+  --surface: #e8ece2;
+  --accent: #c5ed70;
+  --accent-text: #355313;
+  --on-accent: #1a2917;
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --paper: #10160f;
+  --ink: #f0f4e9;
+  --muted: #b1beaa;
+  --line: #3b4735;
+  --surface: #1c2518;
+  --accent: #c5ed70;
+  --accent-text: #c5ed70;
+  --on-accent: #1a2917;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #10160f;
+    --ink: #f0f4e9;
+    --muted: #b1beaa;
+    --line: #3b4735;
+    --surface: #1c2518;
+    --accent: #c5ed70;
+    --accent-text: #c5ed70;
+    --on-accent: #1a2917;
+    color-scheme: dark;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    16px/1.6 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+a,
+button,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: Anton, Impact, sans-serif;
+  font-weight: 400;
+  line-height: 1.03;
+  letter-spacing: -0.025em;
+}
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 5px;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.skip {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 12px 18px;
+  transform: translateY(-160%);
+}
+.skip:focus {
+  transform: none;
+}
+.header {
+  height: 72px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font-family: Anton, sans-serif;
+  font-size: 29px;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+}
+.header nav > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+.header nav a[aria-current='page'],
+.header nav a:hover {
+  color: var(--accent-text);
+}
+.header button {
+  font-size: 12px;
+  border: 1px solid var(--line);
+  padding: 8px 11px;
+}
+.plan-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  min-width: 23px;
+  height: 23px;
+}
+.hero {
+  padding: 22px 32px 0;
+}
+.hero h1 {
+  display: flex;
+  gap: 0.09em;
+  justify-content: space-between;
+  font-size: clamp(85px, 14.4vw, 230px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+.hero-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 22px 0 25px;
+}
+.hero-intro > p:first-child {
+  font-size: 14px;
+  white-space: nowrap;
+}
+.hero-intro > p:nth-child(2) {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 400px;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: var(--accent);
+  color: var(--on-accent);
+  min-height: 48px;
+  padding: 13px 20px;
+  font-size: 14px;
+  font-weight: 550;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+.primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.hero-photo {
+  height: 370px;
+  object-fit: cover;
+  object-position: center 0%;
+}
+.ticker-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--line);
+}
+.ticker-window {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: lineup-travel 24s linear infinite;
+}
+.ticker-copy {
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  padding-right: 65px;
+  font-family: Anton, sans-serif;
+  font-size: 34px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ticker-copy a:hover {
+  color: var(--accent-text);
+}
+.ticker-section.paused .ticker-track {
+  animation-play-state: paused;
+}
+#ticker-toggle {
+  font-size: 12px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+}
+@keyframes lineup-travel {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.section {
+  padding: 80px 32px;
+  max-width: 1600px;
+  margin: auto;
+}
+.lineup > h2 {
+  font-size: clamp(48px, 6vw, 84px);
+}
+.lineup > p {
+  font-size: 18px;
+  max-width: 560px;
+  color: var(--muted);
+  margin: 23px 0 40px;
+}
+.artist-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 35px 28px;
+  align-items: start;
+}
+.artist-card.artist-0 {
+  grid-row: span 2;
+}
+.artist-card > a {
+  display: block;
+  overflow: hidden;
+}
+.artist-card img {
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  transition: transform 0.6s;
+}
+.artist-card.artist-0 img {
+  aspect-ratio: 4/4.6;
+  object-position: 45% center;
+}
+.artist-card > a:hover img {
+  transform: scale(1.03);
+}
+.artist-card > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 7px 20px;
+  padding-top: 18px;
+}
+.artist-card h3 {
+  font-size: 37px;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+}
+.artist-card p {
+  font-size: 14px;
+  color: var(--muted);
+  grid-column: 1;
+}
+.artist-card > div > a {
+  grid-column: 2;
+  grid-row: 1/3;
+  align-self: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+}
+.programme-teaser {
+  border-top: 1px solid var(--line);
+  max-width: 1100px;
+}
+.programme-teaser h2 {
+  font-size: clamp(62px, 8vw, 115px);
+  text-transform: uppercase;
+}
+.programme-teaser > p {
+  font-size: 20px;
+  max-width: 650px;
+  color: var(--muted);
+  margin: 30px 0;
+}
+.info {
+  border-top: 1px solid var(--line);
+  max-width: 1100px;
+}
+.info h2 {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.info details {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+}
+.info summary {
+  font-size: 18px;
+  cursor: pointer;
+}
+.info details p {
+  font-size: 16px;
+  max-width: 720px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 50px 32px 25px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.footer-brand {
+  font-family: Anton, sans-serif;
+  font-size: clamp(65px, 10vw, 155px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+.footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 15px;
+}
+.footer nav > a {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 330px;
+}
+.footer > p {
+  grid-column: 1/-1;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  max-width: 1000px;
+}
+.page-intro {
+  padding-top: 55px;
+  padding-bottom: 40px;
+}
+.page-intro h1 {
+  font-size: clamp(64px, 9vw, 135px);
+  text-transform: uppercase;
+}
+.page-intro p {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 680px;
+  margin-top: 25px;
+}
+.programme {
+  padding-top: 0;
+}
+.day-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+}
+.day-tabs > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: left;
+  padding: 25px 0;
+  border-bottom: 3px solid transparent;
+}
+.day-tabs strong {
+  font-family: Anton, sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+}
+.day-tabs span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.day-tabs > button[aria-selected='true'] {
+  border-color: var(--accent-text);
+}
+.programme-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  max-width: 600px;
+  margin-top: 30px;
+}
+.programme-filters > label,
+.pass-calculator label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+select {
+  min-width: 0;
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 12px;
+  font-size: 15px;
+  min-height: 46px;
+}
+.programme-count {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 30px 0 18px;
+}
+.set-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 100px 125px;
+  gap: 25px;
+  align-items: center;
+  padding: 26px 0;
+  border-top: 1px solid var(--line);
+}
+.set-time {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.set-time > time {
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+.set-time > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.set-artist h3 {
+  font-size: 35px;
+  line-height: 1.1;
+}
+.set-artist p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 7px;
+}
+.stage-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+.save-set {
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--line);
+}
+.save-set[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+.status {
+  display: block;
+  min-height: 24px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.text-link {
+  display: inline-flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 14px;
+  padding: 15px 0;
+}
+.programme > .text-link {
+  margin-top: 15px;
+}
+#empty-programme {
+  padding: 45px 0;
+  border-top: 1px solid var(--line);
+}
+#empty-programme h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+}
+#reset-filters {
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 10px 0;
+}
+.night-planner {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 50px;
+  align-items: start;
+  padding-top: 0;
+}
+.saved-schedule {
+  min-width: 0;
+}
+#empty-plan {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+#empty-plan h2 {
+  font-size: 50px;
+  line-height: 1.08;
+}
+#empty-plan p {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 25px 0;
+}
+.saved-day {
+  margin-bottom: 30px;
+}
+.saved-day > h2 {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+.saved-day .set-row {
+  grid-template-columns: 80px minmax(0, 1fr) auto;
+  gap: 18px;
+  padding: 23px 0;
+}
+.saved-day .stage-label {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 12px;
+}
+.saved-day .save-set {
+  grid-column: 3;
+  grid-row: 1/3;
+}
+.saved-day .set-artist h3 {
+  font-size: 28px;
+}
+.saved-day .set-time {
+  align-self: start;
+}
+.saved-day .set-time > time {
+  font-size: 18px;
+}
+.pass-calculator {
+  padding: 30px;
+  background: var(--surface);
+}
+.pass-calculator h2 {
+  font-size: 37px;
+}
+.pass-calculator > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 20px 0 25px;
+}
+.pass-calculator label {
+  margin: 22px 0;
+}
+.pass-total {
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.pass-total > span {
+  font-size: 14px;
+}
+.pass-total > strong {
+  font-family: Anton, sans-serif;
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1;
+}
+#pass-coverage {
+  font-size: 14px;
+  color: var(--ink);
+  margin: 24px 0;
+}
+.calculator-note {
+  font-size: 12px !important;
+}
+#conflicts {
+  padding: 25px;
+  background: var(--surface);
+  margin: 25px 0;
+}
+#conflicts h2 {
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+#conflict-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 15px;
+}
+#conflict-list li + li {
+  margin-top: 14px;
+}
+.schedule-actions {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+#clear-plan {
+  font-size: 13px;
+  text-decoration: underline;
+  padding: 10px 0;
+}
+.artist-intro {
+  padding-top: 35px;
+  padding-bottom: 40px;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 35px;
+}
+.back svg {
+  transform: rotate(180deg);
+}
+.artist-intro h1 {
+  font-size: clamp(70px, 11vw, 165px);
+  text-transform: uppercase;
+}
+.artist-intro > p {
+  font-size: 20px;
+  color: var(--muted);
+  margin-top: 22px;
+}
+.artist-hero {
+  margin: 0 32px;
+}
+.artist-hero img {
+  aspect-ratio: 16/7;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.artist-story {
+  max-width: 1050px;
+}
+.artist-story h2 {
+  font-size: clamp(45px, 6vw, 76px);
+  margin-bottom: 30px;
+}
+.artist-story p {
+  font-size: 20px;
+  color: var(--muted);
+  margin-top: 23px;
+  max-width: 800px;
+}
+.artist-sets {
+  padding-top: 0;
+}
+.artist-sets > h2 {
+  font-size: 43px;
+  margin-bottom: 35px;
+}
+.artist-day {
+  margin-bottom: 25px;
+}
+.artist-day > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 13px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 1050px) {
+  .header nav {
+    gap: 22px;
+  }
+  .hero-intro {
+    gap: 25px;
+  }
+  .hero-intro > p:nth-child(2) {
+    max-width: 300px;
+    font-size: 15px;
+  }
+  .hero h1 {
+    font-size: 14vw;
+  }
+  .artist-grid {
+    gap: 30px 22px;
+  }
+  .artist-card h3 {
+    font-size: 31px;
+  }
+  .set-row {
+    grid-template-columns: 90px minmax(0, 1fr) 65px 115px;
+    gap: 18px;
+  }
+  .set-artist h3 {
+    font-size: 31px;
+  }
+  .night-planner {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 30px;
+  }
+  .pass-calculator {
+    padding: 25px;
+  }
+  .saved-day .set-row {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 13px;
+  }
+  .saved-day .save-set {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+  }
+  .saved-day .stage-label {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .saved-day .set-artist h3 {
+    font-size: 27px;
+  }
+  .hero-photo {
+    height: 340px;
+  }
+}
+@media (max-width: 760px) {
+  .header {
+    padding: 0 20px;
+    height: 72px;
+    gap: 15px;
+  }
+  .brand {
+    font-size: 23px;
+  }
+  .header nav {
+    font-size: 12px;
+    gap: 13px;
+  }
+  .header nav > a:first-child {
+    display: none;
+  }
+  .header button {
+    font-size: 11px;
+    padding: 7px 9px;
+  }
+  .header nav > a {
+    gap: 6px;
+  }
+  .plan-count {
+    min-width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .hero {
+    padding: 25px 20px 0;
+  }
+  .hero h1 {
+    display: block;
+    font-size: clamp(76px, 19vw, 140px);
+    line-height: 0.96;
+  }
+  .title-word {
+    display: block;
+  }
+  .hero-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 17px;
+    padding: 23px 0 28px;
+  }
+  .hero-intro > p:first-child {
+    font-size: 13px;
+  }
+  .hero-intro > p:nth-child(2) {
+    font-size: 17px;
+    max-width: 400px;
+  }
+  .hero-intro > .primary {
+    justify-self: start;
+  }
+  .primary {
+    font-size: 14px;
+    min-height: 47px;
+    padding: 12px 17px;
+    gap: 25px;
+  }
+  .hero-photo {
+    height: 320px;
+    object-position: 48% 35%;
+  }
+  .ticker-section {
+    padding: 22px 20px;
+    gap: 14px;
+  }
+  .ticker-copy {
+    font-size: 28px;
+    gap: 35px;
+    padding-right: 35px;
+  }
+  #ticker-toggle {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+  .section {
+    padding: 55px 20px;
+  }
+  .lineup > h2 {
+    font-size: 48px;
+  }
+  .lineup > p {
+    font-size: 17px;
+    margin: 23px 0 30px;
+  }
+  .artist-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .artist-card {
+    width: 100%;
+  }
+  .artist-card img,
+  .artist-card.artist-0 img {
+    aspect-ratio: 4/3;
+    object-position: center 35%;
+  }
+  .artist-card h3 {
+    font-size: 35px;
+  }
+  .artist-card p {
+    font-size: 13px;
+  }
+  .programme-teaser h2 {
+    font-size: 68px;
+  }
+  .programme-teaser > p {
+    font-size: 18px;
+    margin: 25px 0;
+  }
+  .info h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+  .info summary {
+    font-size: 17px;
+  }
+  .footer {
+    display: block;
+    padding: 40px 20px 25px;
+  }
+  .footer-brand {
+    font-size: 84px;
+  }
+  .footer nav {
+    margin: 35px 0;
+    font-size: 14px;
+    gap: 20px;
+  }
+  .footer p {
+    font-size: 12px;
+  }
+  .page-intro {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+  .page-intro h1 {
+    font-size: 65px;
+  }
+  .page-intro p {
+    font-size: 18px;
+    margin-top: 23px;
+  }
+  .programme {
+    padding-top: 0;
+  }
+  .day-tabs {
+    gap: 20px;
+  }
+  .day-tabs > button {
+    display: block;
+    padding: 20px 0;
+  }
+  .day-tabs strong {
+    font-size: 32px;
+    display: block;
+  }
+  .day-tabs span {
+    font-size: 12px;
+    display: block;
+    margin-top: 8px;
+  }
+  .programme-filters {
+    gap: 15px;
+    margin-top: 25px;
+  }
+  .programme-filters > label {
+    font-size: 13px;
+  }
+  .programme-filters select {
+    font-size: 13px;
+    padding: 11px;
+  }
+  .programme-count {
+    font-size: 11px;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .programme-count > span:last-child {
+    max-width: 190px;
+    text-align: right;
+  }
+  .set-row {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 12px 17px;
+    padding: 23px 0;
+  }
+  .set-time > time {
+    font-size: 18px;
+  }
+  .set-time > span {
+    font-size: 10px;
+  }
+  .set-artist h3 {
+    font-size: 29px;
+  }
+  .set-artist p {
+    font-size: 12px;
+  }
+  .stage-label {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 12px;
+  }
+  .save-set {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+  .night-planner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+    gap: 40px;
+  }
+  .saved-schedule,
+  .pass-calculator {
+    width: 100%;
+  }
+  .saved-day .set-row {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 12px 17px;
+  }
+  .saved-day .set-artist h3 {
+    font-size: 28px;
+  }
+  .pass-calculator {
+    padding: 25px 20px;
+  }
+  .pass-calculator h2 {
+    font-size: 36px;
+  }
+  #empty-plan h2 {
+    font-size: 45px;
+  }
+  .schedule-actions {
+    gap: 18px;
+  }
+  .schedule-actions > .primary {
+    font-size: 13px;
+  }
+  .artist-intro {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .artist-intro h1 {
+    font-size: clamp(60px, 15vw, 105px);
+  }
+  .artist-intro > p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  .artist-hero {
+    margin: 0 20px;
+  }
+  .artist-hero img {
+    aspect-ratio: 4/3;
+  }
+  .artist-story h2 {
+    font-size: 44px;
+  }
+  .artist-story p {
+    font-size: 18px;
+  }
+  .artist-sets {
+    padding-top: 0;
+  }
+  .artist-sets > h2 {
+    font-size: 36px;
+  }
+  .artist-day > p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 380px) {
+  .header {
+    gap: 10px;
+  }
+  .brand {
+    font-size: 21px;
+  }
+  .header nav {
+    font-size: 11px;
+    gap: 9px;
+  }
+  .header button {
+    font-size: 11px;
+    padding: 7px;
+  }
+  .hero h1 {
+    font-size: 71px;
+  }
+  .hero-photo {
+    height: 275px;
+  }
+  .page-intro h1 {
+    font-size: 57px;
+  }
+  .programme-count > span:last-child {
+    max-width: 150px;
+  }
+  .set-row,
+  .saved-day .set-row {
+    gap: 10px 12px;
+    grid-template-columns: 57px minmax(0, 1fr);
+  }
+  .set-artist h3 {
+    font-size: 27px;
+  }
+  .ticker-copy {
+    font-size: 26px;
+  }
+  .artist-intro h1 {
+    font-size: 56px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .ticker-track {
+    width: auto;
+    display: block;
+  }
+  .ticker-copy {
+    white-space: normal;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 0;
+  }
+  .ticker-copy[aria-hidden='true'] {
+    display: none;
+  }
+  #ticker-toggle {
+    display: none;
+  }
+}
+.ticker-window:hover .ticker-track,
+.ticker-window:focus-within .ticker-track {
+  animation-play-state: paused;
+}
+/* Keep the pause control above the moving ticker's stacking context. */
+#ticker-toggle {
+  position: relative;
+  z-index: 1;
+  background: var(--paper);
+  min-width: 60px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="header"><a class="brand" href="index.html">NIGHT SHAPES</a><nav aria-label="Main navigation"><a href="index.html#lineup">Artists</a><a href="programme.html" aria-current="page">Programme</a><a href="my-night.html" >My night <span class="plan-count">0</span></a><button type="button" id="theme" aria-label="Use dark theme">Dark</button></nav></header><main id="main"><section class="page-intro section"><h1>The programme.</h1><p>Choose a day and stage. Save the sets that shape your night.</p></section><section class="programme section"><div class="day-tabs" role="tablist" aria-label="Programme day"><button type="button" role="tab" id="day-friday" aria-controls="programme-panel" aria-selected="true" tabindex="0" data-day-tab="friday"><strong>Friday</strong><span>10 September</span></button><button type="button" role="tab" id="day-saturday" aria-controls="programme-panel" aria-selected="false" tabindex="-1" data-day-tab="saturday"><strong>Saturday</strong><span>11 September</span></button></div><div class="programme-filters"><label>Stage<select id="stage-filter"><option>All stages</option><option>Hall</option><option>Yard</option></select></label><label>Artist<select id="artist-filter"><option value="all">All artists</option><option value="faye-lumen">Faye Lumen</option><option value="slow-circuit">Slow Circuit</option><option value="glass-orchard">Glass Orchard</option></select></label></div><div class="programme-count"><span id="set-count" aria-live="polite">3 sets</span><span>Concept schedule. Times are illustrative.</span></div><div id="programme-panel" role="tabpanel" aria-labelledby="day-friday"><article class="set-row"  data-day="friday" data-stage="Hall" data-artist="faye-lumen"><div class="set-time"><time>19:00</time><span>until 20:00</span></div><div class="set-artist"><h3><a href="faye-lumen.html">Faye Lumen</a></h3><p>Art pop</p></div><span class="stage-label">Hall</span><button type="button" class="save-set" data-set="friday-faye" aria-pressed="false" aria-label="Add set: Faye Lumen, Friday, 19:00">Add set <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></article><article class="set-row"  data-day="friday" data-stage="Yard" data-artist="slow-circuit"><div class="set-time"><time>19:30</time><span>until 20:30</span></div><div class="set-artist"><h3><a href="slow-circuit.html">Slow Circuit</a></h3><p>Live electronics</p></div><span class="stage-label">Yard</span><button type="button" class="save-set" data-set="friday-circuit" aria-pressed="false" aria-label="Add set: Slow Circuit, Friday, 19:30">Add set <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></article><article class="set-row"  data-day="friday" data-stage="Hall" data-artist="glass-orchard"><div class="set-time"><time>21:00</time><span>until 22:00</span></div><div class="set-artist"><h3><a href="glass-orchard.html">Glass Orchard</a></h3><p>Ambient club</p></div><span class="stage-label">Hall</span><button type="button" class="save-set" data-set="friday-orchard" aria-pressed="false" aria-label="Add set: Glass Orchard, Friday, 21:00">Add set <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></article><article class="set-row" hidden data-day="saturday" data-stage="Yard" data-artist="glass-orchard"><div class="set-time"><time>18:00</time><span>until 19:00</span></div><div class="set-artist"><h3><a href="glass-orchard.html">Glass Orchard</a></h3><p>Ambient club</p></div><span class="stage-label">Yard</span><button type="button" class="save-set" data-set="saturday-orchard" aria-pressed="false" aria-label="Add set: Glass Orchard, Saturday, 18:00">Add set <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></article><article class="set-row" hidden data-day="saturday" data-stage="Hall" data-artist="faye-lumen"><div class="set-time"><time>19:15</time><span>until 20:15</span></div><div class="set-artist"><h3><a href="faye-lumen.html">Faye Lumen</a></h3><p>Art pop</p></div><span class="stage-label">Hall</span><button type="button" class="save-set" data-set="saturday-faye" aria-pressed="false" aria-label="Add set: Faye Lumen, Saturday, 19:15">Add set <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></article><article class="set-row" hidden data-day="saturday" data-stage="Hall" data-artist="slow-circuit"><div class="set-time"><time>21:00</time><span>until 22:30</span></div><div class="set-artist"><h3><a href="slow-circuit.html">Slow Circuit</a></h3><p>Live electronics</p></div><span class="stage-label">Hall</span><button type="button" class="save-set" data-set="saturday-circuit" aria-pressed="false" aria-label="Add set: Slow Circuit, Saturday, 21:00">Add set <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button></article></div><div id="empty-programme" hidden><h2>No sets in this view.</h2><button type="button" id="reset-filters">Show all stages and artists</button></div><output class="status" aria-live="polite"></output><a href="my-night.html" class="text-link">Open my night <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></section></main><footer class="footer"><a class="footer-brand" href="index.html">NIGHT<br>SHAPES.</a><nav aria-label="Footer navigation"><a href="programme.html">Programme <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a href="my-night.html">My night <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a href="assets/CREDITS.txt">Image credits</a><a href="../../">ProtoSites <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></nav><p>A fictional festival concept. Artists, stages, dates, and prices are illustrative. No real tickets, bookings, or artist affiliations are offered.</p></footer><script type="application/json" id="night-data">{"artists":[{"slug":"faye-lumen","name":"Faye Lumen","genre":"Art pop","image":"faye.webp","line":"A voice that changes the room.","bio":"Faye Lumen is a fictional vocalist created for the Night Shapes concept. Her imagined set moves between intimate songs and expansive electronic arrangements.","detail":"The performance direction pairs a close, expressive vocal presence with a wide stage atmosphere. This is an original artist concept and generated image, not a real performer profile or release announcement."},{"slug":"slow-circuit","name":"Slow Circuit","genre":"Live electronics","image":"circuit.webp","line":"Built live. Felt together.","bio":"Slow Circuit is a fictional electronic-music project built around live synthesis and a patient sense of momentum.","detail":"The imagined performance begins with small patterns and lets them develop into a larger shared rhythm. No real recordings, endorsements, or artist bookings are implied."},{"slug":"glass-orchard","name":"Glass Orchard","genre":"Ambient club","image":"orchard.webp","line":"Space, texture, and a pulse.","bio":"Glass Orchard is a fictional electronic duo exploring the meeting point of atmosphere and dance-floor energy.","detail":"Their concept set brings soft textures into sharper focus over time. The stage photograph and biography were created for this demonstration and do not depict a real booked act."}],"days":[{"id":"friday","name":"Friday","date":"2027-09-10","label":"10 September"},{"id":"saturday","name":"Saturday","date":"2027-09-11","label":"11 September"}],"sets":[{"id":"friday-faye","artist":"faye-lumen","day":"friday","stage":"Hall","start":"19:00","end":"20:00"},{"id":"friday-circuit","artist":"slow-circuit","day":"friday","stage":"Yard","start":"19:30","end":"20:30"},{"id":"friday-orchard","artist":"glass-orchard","day":"friday","stage":"Hall","start":"21:00","end":"22:00"},{"id":"saturday-orchard","artist":"glass-orchard","day":"saturday","stage":"Yard","start":"18:00","end":"19:00"},{"id":"saturday-faye","artist":"faye-lumen","day":"saturday","stage":"Hall","start":"19:15","end":"20:15"},{"id":"saturday-circuit","artist":"slow-circuit","day":"saturday","stage":"Hall","start":"21:00","end":"22:30"}],"passes":[{"id":"friday","name":"Friday concept pass","price":59,"days":["friday"]},{"id":"saturday","name":"Saturday concept pass","price":69,"days":["saturday"]},{"id":"weekend","name":"Weekend concept pass","price":109,"days":["friday","saturday"]}],"icons":{"plus":"\u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-plus\" aria-hidden=\"true\">\u003cpath d=\"M5 12h14\">\u003c/path>\u003cpath d=\"M12 5v14\">\u003c/path>\u003c/svg>","check":"\u003csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check\" aria-hidden=\"true\">\u003cpath d=\"M20 6 9 17l-5-5\">\u003c/path>\u003c/svg>"}}</script><script>const createCalendar = function createCalendar(
+  data,
+  selectedIds,
+  timestamp = new Date().toISOString(),
+) {
+  const escape = (value) =>
+    value
+      .replaceAll('\\', '\\\\')
+      .replaceAll('\n', '\\n')
+      .replaceAll(',', '\\,')
+      .replaceAll(';', '\\;');
+  const stamp = timestamp.replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const lines = [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//ProtoSites//Night Shapes Concept//EN',
+    'CALSCALE:GREGORIAN',
+    'X-WR-CALNAME:Night Shapes concept schedule',
+  ];
+  for (const set of data.sets.filter((item) => selectedIds.includes(item.id))) {
+    const artist = data.artists.find((item) => item.slug === set.artist);
+    const day = data.days.find((item) => item.id === set.day);
+    const date = day.date.replaceAll('-', '');
+    lines.push(
+      'BEGIN:VEVENT',
+      'UID:' + set.id + '@night-shapes.example',
+      'DTSTAMP:' + stamp,
+      'DTSTART:' + date + 'T' + set.start.replace(':', '') + '00',
+      'DTEND:' + date + 'T' + set.end.replace(':', '') + '00',
+      'SUMMARY:' + escape(artist.name + ' | Night Shapes concept'),
+      'LOCATION:' + escape(set.stage + ' (fictional stage)'),
+      'DESCRIPTION:Fictional concept schedule. No ticket purchased or real booking made.',
+      'END:VEVENT',
+    );
+  }
+  lines.push('END:VCALENDAR');
+  return (
+    lines
+      .flatMap((line) =>
+        (line.match(/.{1,73}/g) || ['']).map(
+          (part, index) => (index ? ' ' : '') + part,
+        ),
+      )
+      .join('\r\n') + '\r\n'
+  );
+};
+(() => {
+  const data = JSON.parse(document.querySelector('#night-data').textContent);
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const system = matchMedia('(prefers-color-scheme: dark)');
+  function read(key, fallback) {
+    try {
+      return JSON.parse(localStorage.getItem(key) || 'null') ?? fallback;
+    } catch {
+      return fallback;
+    }
+  }
+  function write(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch {
+      return false;
+    }
+  }
+  let preferred = read('night-shapes-theme', null);
+  if (!['light', 'dark'].includes(preferred)) preferred = null;
+  const theme = document.querySelector('#theme');
+  function applyTheme(dark) {
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    theme.textContent = dark ? 'Light' : 'Dark';
+    theme.setAttribute(
+      'aria-label',
+      dark ? 'Use light theme' : 'Use dark theme',
+    );
+  }
+  applyTheme(preferred ? preferred === 'dark' : system.matches);
+  theme.addEventListener('click', () => {
+    const dark = document.documentElement.dataset.theme !== 'dark';
+    preferred = dark ? 'dark' : 'light';
+    applyTheme(dark);
+    write('night-shapes-theme', preferred);
+  });
+  system.addEventListener('change', () => {
+    if (!preferred) applyTheme(system.matches);
+  });
+  function reveal(el, delay = 0) {
+    if (el && !reduced.matches)
+      el.animate(
+        [
+          { transform: 'translateY(16px)', opacity: 0.75 },
+          { transform: 'translateY(0)', opacity: 1 },
+        ],
+        { duration: 550, delay, easing: 'cubic-bezier(.16,1,.3,1)' },
+      );
+  }
+  document
+    .querySelectorAll('.title-word')
+    .forEach((word, index) => reveal(word, index * 80));
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) document.getAnimations().forEach((a) => a.cancel());
+  });
+  const ticker = document.querySelector('.ticker-section');
+  if (ticker) {
+    const toggle = document.querySelector('#ticker-toggle');
+    let paused = read('night-shapes-ticker-paused', false) === true;
+    function updateTicker() {
+      ticker.classList.toggle('paused', paused);
+      toggle.textContent = paused ? 'Play' : 'Pause';
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.setAttribute(
+        'aria-label',
+        (paused ? 'Play' : 'Pause') + ' lineup motion',
+      );
+    }
+    updateTicker();
+    toggle.addEventListener('click', () => {
+      paused = !paused;
+      updateTicker();
+      write('night-shapes-ticker-paused', paused);
+    });
+  }
+  const stored = read('night-shapes-sets', []);
+  const selected = new Set(
+    Array.isArray(stored)
+      ? stored.filter((id) => data.sets.some((set) => set.id === id))
+      : [],
+  );
+  const artistFor = (set) =>
+    data.artists.find((artist) => artist.slug === set.artist);
+  const dayFor = (set) => data.days.find((day) => day.id === set.day);
+  const selectedSets = () =>
+    data.sets
+      .filter((set) => selected.has(set.id))
+      .sort(
+        (a, b) =>
+          dayFor(a).date.localeCompare(dayFor(b).date) ||
+          a.start.localeCompare(b.start),
+      );
+  function overlaps(a, b) {
+    return a.day === b.day && a.start < b.end && a.end > b.start;
+  }
+  function conflicts() {
+    const chosen = selectedSets();
+    const pairs = [];
+    chosen.forEach((a, index) =>
+      chosen.slice(index + 1).forEach((b) => {
+        if (overlaps(a, b)) pairs.push([a, b]);
+      }),
+    );
+    return pairs;
+  }
+  function buttonMarkup(set) {
+    const active = selected.has(set.id);
+    const label = active ? 'Remove set' : 'Add set';
+    return `<button type="button" class="save-set" data-set="${set.id}" aria-pressed="${active}" aria-label="${label}: ${artistFor(set).name}, ${dayFor(set).name}, ${set.start}">${label} ${active ? data.icons.check : data.icons.plus}</button>`;
+  }
+  function rowMarkup(set) {
+    const artist = artistFor(set);
+    return `<article class="set-row"><div class="set-time"><time>${set.start}</time><span>until ${set.end}</span></div><div class="set-artist"><h3><a href="${artist.slug}.html">${artist.name}</a></h3><p>${artist.genre}</p></div><span class="stage-label">${set.stage}</span>${buttonMarkup(set)}</article>`;
+  }
+  function updateButtons() {
+    document
+      .querySelectorAll('.plan-count')
+      .forEach((el) => (el.textContent = String(selected.size)));
+    document.querySelectorAll('[data-set]').forEach((button) => {
+      const set = data.sets.find((item) => item.id === button.dataset.set);
+      if (!set) return;
+      const active = selected.has(set.id);
+      const label = active ? 'Remove set' : 'Add set';
+      button.setAttribute('aria-pressed', String(active));
+      button.setAttribute(
+        'aria-label',
+        label +
+          ': ' +
+          artistFor(set).name +
+          ', ' +
+          dayFor(set).name +
+          ', ' +
+          set.start,
+      );
+      button.innerHTML =
+        label + ' ' + (active ? data.icons.check : data.icons.plus);
+    });
+  }
+  const passType = document.querySelector('#pass-type');
+  const passQuantity = document.querySelector('#pass-quantity');
+  function updatePass() {
+    if (!passType) return;
+    const pass =
+      data.passes.find((item) => item.id === passType.value) ||
+      data.passes.at(-1);
+    const amount = Number(passQuantity.value);
+    const quantity =
+      Number.isInteger(amount) && amount >= 1 && amount <= 6 ? amount : 1;
+    document.querySelector('#pass-total').textContent = new Intl.NumberFormat(
+      'en-US',
+      { style: 'currency', currency: 'USD', maximumFractionDigits: 0 },
+    ).format(pass.price * quantity);
+    const uncovered = [
+      ...new Set(
+        selectedSets()
+          .filter((set) => !pass.days.includes(set.day))
+          .map((set) => dayFor(set).name),
+      ),
+    ];
+    document.querySelector('#pass-coverage').textContent = !selected.size
+      ? 'Save sets to compare this sample pass with your draft.'
+      : uncovered.length
+        ? uncovered.join(' and ') + ' sets are outside this sample pass choice.'
+        : 'This sample pass covers the nights currently in your draft.';
+  }
+  function renderPlan() {
+    const container = document.querySelector('#saved-sets');
+    if (!container) return;
+    document.querySelector('#empty-plan').hidden = selected.size > 0;
+    container.innerHTML = data.days
+      .map((day) => {
+        const chosen = selectedSets().filter((set) => set.day === day.id);
+        return chosen.length
+          ? `<section class="saved-day"><h2>${day.name}</h2>${chosen.map(rowMarkup).join('')}</section>`
+          : '';
+      })
+      .join('');
+    const pairs = conflicts();
+    document.querySelector('#conflicts').hidden = pairs.length === 0;
+    const list = document.querySelector('#conflict-list');
+    list.replaceChildren();
+    pairs.forEach(([a, b]) => {
+      const li = document.createElement('li');
+      li.textContent =
+        artistFor(a).name +
+        ' overlaps ' +
+        artistFor(b).name +
+        ' on ' +
+        dayFor(a).name +
+        '. Pick one, or keep both in your draft.';
+      list.append(li);
+    });
+    document.querySelector('#export-calendar').disabled = selected.size === 0;
+    document.querySelector('#clear-plan').disabled = selected.size === 0;
+    updatePass();
+  }
+  document.addEventListener('click', (event) => {
+    if (!(event.target instanceof Element)) return;
+    const button = event.target.closest('[data-set]');
+    if (!button) return;
+    const set = data.sets.find((item) => item.id === button.dataset.set);
+    if (!set) return;
+    const removing = selected.has(set.id);
+    if (removing) selected.delete(set.id);
+    else selected.add(set.id);
+    const persisted = write('night-shapes-sets', [...selected]);
+    updateButtons();
+    renderPlan();
+    let message =
+      (removing ? 'Removed ' : 'Added ') +
+      artistFor(set).name +
+      (removing ? ' from' : ' to') +
+      ' My night.';
+    if (!persisted) message += ' Saved for this visit only.';
+    if (
+      !removing &&
+      selectedSets().some(
+        (other) => other.id !== set.id && overlaps(set, other),
+      )
+    )
+      message += ' This overlaps another saved set.';
+    document
+      .querySelectorAll('.status')
+      .forEach((el) => (el.textContent = message));
+    if (document.querySelector('#saved-sets')) {
+      const target =
+        document.querySelector('[data-set="' + set.id + '"]') ||
+        document.querySelector('#clear-plan');
+      if (target && !target.disabled) target.focus();
+      else document.querySelector('#empty-plan a')?.focus();
+    }
+  });
+  updateButtons();
+  renderPlan();
+  passType?.addEventListener('change', updatePass);
+  passQuantity?.addEventListener('change', updatePass);
+  document.querySelector('#clear-plan')?.addEventListener('click', () => {
+    selected.clear();
+    const persisted = write('night-shapes-sets', []);
+    document.querySelectorAll('.status').forEach((el) => {
+      el.textContent = persisted
+        ? 'My night cleared.'
+        : 'Cleared for this visit only. Browser storage is unavailable.';
+    });
+    updateButtons();
+    renderPlan();
+    document.querySelector('#empty-plan a').focus();
+  });
+  document.querySelector('#export-calendar')?.addEventListener('click', () => {
+    if (!selected.size) return;
+    const calendar = createCalendar(data, [...selected]);
+    const url = URL.createObjectURL(
+      new Blob([calendar], { type: 'text/calendar;charset=utf-8' }),
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'night-shapes-concept-schedule.ics';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
+  const tabs = [...document.querySelectorAll('[data-day-tab]')];
+  const stage = document.querySelector('#stage-filter');
+  const artist = document.querySelector('#artist-filter');
+  let day = 'friday';
+  if (artist) {
+    const wanted = new URLSearchParams(location.search).get('artist');
+    if (data.artists.some((item) => item.slug === wanted))
+      artist.value = wanted;
+  }
+  function filterProgramme() {
+    if (!stage) return;
+    let count = 0;
+    document.querySelectorAll('#programme-panel .set-row').forEach((row) => {
+      row.hidden =
+        row.dataset.day !== day ||
+        (stage.value !== 'All stages' && row.dataset.stage !== stage.value) ||
+        (artist.value !== 'all' && row.dataset.artist !== artist.value);
+      if (!row.hidden) {
+        reveal(row, count * 45);
+        count++;
+      }
+    });
+    document.querySelector('#set-count').textContent =
+      count + ' ' + (count === 1 ? 'set' : 'sets');
+    document.querySelector('#empty-programme').hidden = count > 0;
+    document
+      .querySelector('#programme-panel')
+      .setAttribute('aria-labelledby', 'day-' + day);
+  }
+  function chooseDay(index) {
+    day = tabs[index].dataset.dayTab;
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.tabIndex = i === index ? 0 : -1;
+    });
+    filterProgramme();
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => chooseDay(index));
+    tab.addEventListener('keydown', (event) => {
+      let next = index;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft')
+        next = 1 - index;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      chooseDay(next);
+      tabs[next].focus();
+    });
+  });
+  stage?.addEventListener('change', filterProgramme);
+  artist?.addEventListener('change', filterProgramme);
+  document.querySelector('#reset-filters')?.addEventListener('click', () => {
+    stage.value = 'All stages';
+    artist.value = 'all';
+    filterProgramme();
+    stage.focus();
+  });
+  filterProgramme();
+})();
+</script></body></html>

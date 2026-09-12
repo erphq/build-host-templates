@@ -1,0 +1,37 @@
+Primary image: original generated artwork
+{
+  "slug": "moss",
+  "prompt": "Premium unbranded frosted sage-green serum bottle and low ceramic moisturizer jar on pale cool-green stone, branch shadow, sparse botanical leaf, natural daylight, editorial skincare campaign. Vertical 1024x1536. No text or logo. NOT medical vials. Photorealistic high-end beauty campaign; subtle tactile textures, sophisticated quiet composition.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1024,
+  "height": 1536
+}
+
+Secondary image 1
+{
+  "site_slug": "skincare",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/close-up-of-natural-serum-4841274/",
+  "image_url": "https://images.pexels.com/photos/4841274/pexels-photo-4841274.jpeg?cs=srgb&dl=pexels-misolo-cosmetic-2588316-4841274.jpg&fm=jpg",
+  "author": "Misolo Cosmetic",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "serum bottle natural",
+  "width": 5134,
+  "height": 3423
+}
+
+Secondary image 2
+{
+  "site_slug": "skincare",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/woman-doing-skincare-on-her-face-9253778/",
+  "image_url": "https://images.pexels.com/photos/9253778/pexels-photo-9253778.jpeg?cs=srgb&dl=pexels-ron-lach-9253778.jpg&fm=jpg",
+  "author": "Ron Lach",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "skincare woman face",
+  "width": 4000,
+  "height": 6000
+}

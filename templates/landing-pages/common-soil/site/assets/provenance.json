@@ -1,0 +1,54 @@
+{
+  "photos": [
+    {
+      "file": "hero.webp",
+      "source": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b",
+      "license": "https://unsplash.com/license",
+      "context": "Illustrative gardening photography, not documentation of Common Soil projects.",
+      "responsive": "hero-800.webp"
+    },
+    {
+      "file": "garden.webp",
+      "source": "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735",
+      "license": "https://unsplash.com/license",
+      "context": "Illustrative gardening photography, not documentation of Common Soil projects.",
+      "responsive": "garden-800.webp"
+    },
+    {
+      "file": "seedlings.webp",
+      "source": "https://images.unsplash.com/photo-1416879595882-3373a0480b5b",
+      "license": "https://unsplash.com/license",
+      "context": "Illustrative gardening photography, not documentation of Common Soil projects.",
+      "responsive": "seedlings-800.webp"
+    },
+    {
+      "file": "harvest.webp",
+      "source": "https://images.unsplash.com/photo-1542838132-92c53300491e",
+      "license": "https://unsplash.com/license",
+      "context": "Illustrative gardening photography, not documentation of Common Soil projects.",
+      "responsive": "harvest-800.webp"
+    },
+    {
+      "file": "flowers.webp",
+      "source": "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+      "license": "https://unsplash.com/license",
+      "context": "Illustrative gardening photography, not documentation of Common Soil projects.",
+      "responsive": "flowers-800.webp"
+    },
+    {
+      "file": "woods.webp",
+      "source": "https://images.unsplash.com/photo-1448375240586-882707db888b",
+      "license": "https://unsplash.com/license",
+      "context": "Illustrative gardening photography, not documentation of Common Soil projects.",
+      "responsive": "woods-800.webp"
+    }
+  ],
+  "map": {
+    "file": "neighbourhood.svg",
+    "credit": "Original schematic imaginary neighbourhood. Not a real navigation map."
+  },
+  "font": {
+    "file": "geist-variable.woff2",
+    "license": "SIL Open Font License 1.1"
+  }
+}

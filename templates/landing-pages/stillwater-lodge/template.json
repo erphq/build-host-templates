@@ -1,0 +1,31 @@
+{
+  "slug": "stillwater-lodge",
+  "name": "Stillwater Lodge",
+  "collection": "landing-pages",
+  "category": "travel-hospitality",
+  "industry": "Travel",
+  "description": "An immersive lakeside lodge concept with complete stays, room galleries, experiences, dining, and a validated local stay planner.",
+  "tagline": "A little closer to doing nothing.",
+  "style": "Editorial lakeside hospitality",
+  "palette": [
+    "#f4f1e8",
+    "#293126",
+    "#b7c1a7"
+  ],
+  "order": 55,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "inset cinematic lake hero, centered serif identity, portrait narratives, room archive, full split menu and complete stay planner",
+    "motion": "hero image settle, intersection reveals, scroll-snap room gallery, hover and modal transitions",
+    "interaction": "filter room families, browse room galleries, select dining menus and experiences, validate dates/capacity, calculate and save a local itinerary",
+    "provenance": "Original nine-page hospitality concept with independent brand, writing, image selection and local planning logic. No real inventory, reservations or payments."
+  },
+  "credits": {
+    "referenceName": "Hyll Hotel, discovered through Minimal Gallery",
+    "referenceUrl": "https://hyllhotel.com/"
+  },
+  "pageCount": 9
+}

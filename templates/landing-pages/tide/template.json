@@ -1,0 +1,31 @@
+{
+  "slug": "tide",
+  "name": "TIDE",
+  "collection": "landing-pages",
+  "category": "travel-hospitality",
+  "industry": "Travel",
+  "description": "A coastal surf school with ocean-first art direction and a lesson planner.",
+  "tagline": "Follow the water.",
+  "style": "Coastal adventure journal",
+  "palette": [
+    "#dcece9",
+    "#183d46",
+    "#246c7e"
+  ],
+  "order": 29,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "wave panorama with low headline, lesson chooser, instructor notes, session schedule, lesson planner",
+    "motion": "ocean image drift, lesson selection transition, schedule reveal",
+    "interaction": "choose experience level and group size; show the recommended lesson and sample total",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

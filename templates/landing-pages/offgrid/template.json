@@ -1,0 +1,31 @@
+{
+  "slug": "offgrid",
+  "name": "OFFGRID",
+  "collection": "landing-pages",
+  "category": "travel-hospitality",
+  "industry": "Travel",
+  "description": "An alpine expedition outfitter for people who prefer the long way home.",
+  "tagline": "Go where you feel small.",
+  "style": "Expedition field journal",
+  "palette": [
+    "#102c31",
+    "#e6f0e9",
+    "#c9e55b"
+  ],
+  "order": 17,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "immersive photograph with compact top navigation, journey selector, route itinerary, packing notes, booking planner",
+    "motion": "slow landscape reveal, itinerary step entrance, route selection transitions",
+    "interaction": "switch destinations and difficulty; select departure and group size; calculate an indicative trip total",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

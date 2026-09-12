@@ -1,0 +1,9 @@
+NIGHT SHAPES / ASSET CREDITS
+
+Three original generated live-performance photographs, AI image generation, 2026-09-08. Faye Lumen, Slow Circuit, and Glass Orchard are fictional performers, not real artist profiles or bookings. Exact prompts/method are in provenance.json. Responsive derivatives do not count as additional original images. hero.webp duplicates faye.webp.
+
+Anton: official Google Fonts CSS API; exact asset URL in FONT-SOURCE.txt. SIL Open Font License included.
+Geist: SIL Open Font License included.
+Lucide icons: ISC license included.
+
+Research reference: Zenith Festival by Roman Rybiansky, https://www.framer.com/marketplace/templates/zenith-festival/ and https://zenithfest.framer.website/ . Marketplace and live event layout inspected read-only. No reference code, artist names, graphics, copy, or ticket links were reused. Night Shapes has its own visual direction, original images, fictional programme, and local schedule planner.

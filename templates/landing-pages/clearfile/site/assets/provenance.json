@@ -1,0 +1,6 @@
+{
+  "file": "approval-tray.png",
+  "prompt": "Use case: photorealistic-natural\nAsset type: original editorial still-life photograph for Clearfile, a fictional document-approval SaaS.\nPrimary request: A sculptural translucent sea-glass teal acrylic document tray holding three thick warm-white paper sheets, one vermilion paper corner tab, on a pale grey desk.\nComposition: Horizontal 3:2, architectural editorial composition. Tray positioned right-of-centre with generous blank left area.\nLighting: directional natural daylight, cast shadows, realistic translucent acrylic and thick paper textures.\nConstraints: No text, logos, watermark, people, or laptop. Generate exactly one image.",
+  "method": "built-in image generation",
+  "generated": "2026-09-08"
+}

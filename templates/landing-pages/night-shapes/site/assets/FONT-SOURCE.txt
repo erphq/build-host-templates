@@ -1,0 +1,3 @@
+Anton: official Google Fonts CSS API.
+https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm0K0.ttf
+License: official google/fonts ofl/anton/OFL.txt

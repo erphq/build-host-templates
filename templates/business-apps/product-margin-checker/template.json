@@ -1,0 +1,23 @@
+{
+  "slug": "product-margin-checker",
+  "name": "Product Margin Checker",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Selling price, product cost, packaging, shipping paid, shipping charged, marketplace fee percent, payment fee percent/fixed fee and discounts. Define fee bases explicitly; exclude pass-through collected tax from revenue. Display profit, margin and markup separately.",
+  "tagline": "What\u2019s left\nafter every fee?",
+  "style": "pink",
+  "palette": [],
+  "order": 39,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 46,
+  "notes": {
+    "interaction": "Selling price, product cost, packaging, shipping paid, shipping charged, marketplace fee percent, payment fee percent/fixed fee and discounts. Define fee bases explicitly; exclude pass-through collected tax from revenue. Display profit, margin and markup separately."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

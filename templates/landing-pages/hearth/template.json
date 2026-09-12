@@ -1,0 +1,32 @@
+{
+  "slug": "hearth",
+  "name": "Hearth",
+  "collection": "landing-pages",
+  "category": "property-spaces",
+  "industry": "Architecture",
+  "description": "A considered collection of imagined homes with architectural stories, practical filters, saved comparisons and local viewing inquiry drafts.",
+  "tagline": "Places for a different everyday.",
+  "style": "Editorial architectural homes",
+  "palette": [
+    "#f5f3ed",
+    "#e7e9dd",
+    "#304a3a",
+    "#8f503b"
+  ],
+  "order": 5,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Architectural masthead, original property photography, substantial home stories, saved comparison and a considered viewing draft",
+    "motion": "Photographic hover, shortlist state changes and accessible full-image views",
+    "interaction": "Combine home type, bedrooms and price filters, save and compare homes, inspect images and prepare property-specific viewing drafts",
+    "provenance": "Eight independently composed pages with three original architectural images and fictional property specifications, prices and local inquiry workflows."
+  },
+  "credits": {
+    "referenceName": "The Modern House",
+    "referenceUrl": "https://www.themodernhouse.com/"
+  },
+  "pageCount": 8
+}

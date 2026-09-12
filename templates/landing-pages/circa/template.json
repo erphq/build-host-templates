@@ -1,0 +1,32 @@
+{
+  "slug": "circa",
+  "name": "Circa",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A relationship-focused workspace with linked people and companies, saved views, local notes, editable opportunities and safe exports.",
+  "tagline": "People first. Context always.",
+  "style": "Precise relationship workspace",
+  "palette": [
+    "#ffffff",
+    "#171c27",
+    "#315be8",
+    "#edf2ff"
+  ],
+  "order": 3,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Cobalt relationship map, spacious product narrative, linked people and company records, deal pipeline and a working guide",
+    "motion": "Linked record highlights, saved-view filtering and accessible deal-editor transitions",
+    "interaction": "Filter records, save views, write scoped notes, edit deal stages and values, inspect linked totals and export selected records or the full workspace",
+    "provenance": "Seven original pages with four fictional people, three companies and four editable deals, including tested local relationships and export behavior."
+  },
+  "credits": {
+    "referenceName": "Attio",
+    "referenceUrl": "https://attio.com/"
+  },
+  "pageCount": 7
+}

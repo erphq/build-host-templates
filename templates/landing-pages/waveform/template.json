@@ -1,0 +1,31 @@
+{
+  "slug": "waveform",
+  "name": "WAVEFORM",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "An audio product launch with acid-yellow color, outsized type, and sculptural product photography.",
+  "tagline": "Feel every frequency.",
+  "style": "High-impact product campaign",
+  "palette": [
+    "#e4ed4c",
+    "#171c1b",
+    "#171c1b"
+  ],
+  "order": 18,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "split product stage, sound mode selector, feature comparison, product specification blocks, local shopping bag",
+    "motion": "product entrance, selected listening mode, cart feedback",
+    "interaction": "choose a finish and listening mode; adjust quantity; add to a local demo cart and remove products",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

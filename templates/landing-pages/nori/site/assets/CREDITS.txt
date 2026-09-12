@@ -1,0 +1,37 @@
+Primary image: original generated artwork
+{
+  "slug": "nori",
+  "prompt": "Exquisite minimal omakase composition, two immaculate nigiri on dark handmade stone plate with subtle wasabi accent, dark forest-black background, controlled side lighting, spacious refined restaurant editorial photograph. Vertical 1024x1536. No text or logo. Photorealistic fine dining food photography, impeccable rice texture and fresh fish, restrained arrangement.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1024,
+  "height": 1536
+}
+
+Secondary image 1
+{
+  "site_slug": "sushi",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/chef-preparing-sushi-8951048/",
+  "image_url": "https://images.pexels.com/photos/8951048/pexels-photo-8951048.jpeg?cs=srgb&dl=pexels-ivan-s-8951048.jpg&fm=jpg",
+  "author": "Ivan S",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "sushi chef preparing",
+  "width": 7952,
+  "height": 5304
+}
+
+Secondary image 2
+{
+  "site_slug": "sushi",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/raw-salmon-in-close-up-17564445/",
+  "image_url": "https://images.pexels.com/photos/17564445/pexels-photo-17564445.jpeg?cs=srgb&dl=pexels-nadin-sh-78971847-17564445.jpg&fm=jpg",
+  "author": "Nadin Sh",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "salmon sashimi close up",
+  "width": 4160,
+  "height": 5547
+}

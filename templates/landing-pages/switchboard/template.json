@@ -1,0 +1,31 @@
+{
+  "slug": "switchboard",
+  "name": "Switchboard",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A precise release-planning SaaS with an interactive product narrative, a real local task board and list, and a complete release handoff.",
+  "tagline": "A clear plan. A confident release.",
+  "style": "Operational product canvas",
+  "palette": [
+    "#101310",
+    "#e6bc7d",
+    "#9eaf91"
+  ],
+  "order": 53,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "large left-aligned introduction, interactive product overview, layered task intake, full board, release narrative, working workspace and release room",
+    "motion": "product-view transitions, task-state feedback, staged product panels and reduced-motion fallback",
+    "interaction": "create and edit tasks, assign owners, change status, filter/search, switch board/list, save locally, check release gates and export handoff",
+    "provenance": "Original three-page SaaS with independent branding, product visuals, task data and local planning behavior. No reference assets or source included."
+  },
+  "credits": {
+    "referenceName": "Linear, discovered through Saaspo",
+    "referenceUrl": "https://linear.app/homepage"
+  },
+  "pageCount": 3
+}

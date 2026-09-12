@@ -1,0 +1,22 @@
+{
+  "slug": "gym-membership-desk",
+  "name": "Gym Membership Desk",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Member/contact, plan, start/end, amount, payment, freeze interval, check-ins, renewal history",
+  "tagline": "Memberships that stay on track.",
+  "style": "orange",
+  "palette": [],
+  "order": 113,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 16,
+  "notes": {
+    "interaction": "Member/contact, plan, start/end, amount, payment, freeze interval, check-ins, renewal history"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

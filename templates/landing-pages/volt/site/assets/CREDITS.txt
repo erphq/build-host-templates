@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "cycling",
+  "source_page": "https://www.pexels.com/photo/electric-bicycle-by-wall-16435192/",
+  "author": "Erik Mclean",
+  "image_url": "https://images.pexels.com/photos/16435192/pexels-photo-16435192.jpeg?cs=srgb&dl=pexels-introspectivedsgn-16435192.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 4000,
+  "height": 6000
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "cycling",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/back-wheel-of-electric-bike-19241606/",
+  "image_url": "https://images.pexels.com/photos/19241606/pexels-photo-19241606.jpeg?cs=srgb&dl=pexels-truckrun-19241606.jpg&fm=jpg",
+  "author": "Motor TruckRun",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "electric bike wheel",
+  "width": 3238,
+  "height": 2160
+}
+
+Secondary image 2
+{
+  "site_slug": "cycling",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/cyclist-in-city-17881793/",
+  "image_url": "https://images.pexels.com/photos/17881793/pexels-photo-17881793.jpeg?cs=srgb&dl=pexels-lukas-kosc-525097851-17881793.jpg&fm=jpg",
+  "author": "Lukas Kosc",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "cyclist city bicycle",
+  "width": 3376,
+  "height": 6000
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "still",
+  "name": "STILL",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Creative",
+  "description": "A photography portfolio that gives images space and keeps the interface quiet.",
+  "tagline": "Between the moments.",
+  "style": "Photography contact sheet",
+  "palette": [
+    "#e8e9e5",
+    "#262c29",
+    "#4d5b53"
+  ],
+  "order": 27,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "small masthead, edge-to-edge selected portrait, mixed-aspect contact sheet, photographer note, print selector",
+    "motion": "image opacity reveal, contact sheet hover, lightbox transition",
+    "interaction": "filter photographs by collection; view images in a keyboard-accessible lightbox; choose a print size",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

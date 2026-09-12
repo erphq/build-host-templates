@@ -1,0 +1,2352 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Morning Bun | Pollen</title><meta name="description" content="Original neighborhood bakery concept. Explore bread and pastries, choose sharing packs, and make a local pickup draft."><link rel="preload" href="assets/dm-serif.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="assets/geist-variable.woff2" as="font" type="font/woff2" crossorigin><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: PollenSerif;
+  src: url('assets/dm-serif.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  --cream: #fff7df;
+  --butter: #f7e6a3;
+  --red: #b13b28;
+  --blue: #233c87;
+  --ink: #342f28;
+  --muted: #655a45;
+  --line: #d9c99e;
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font:
+    16px/1.7 Geist,
+    Arial,
+    sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  outline-offset: 5px;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--blue);
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2 {
+  font-family: PollenSerif, Georgia, serif;
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+h3 {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+p {
+  color: var(--muted);
+}
+[hidden] {
+  display: none !important;
+}
+main {
+  overflow: clip;
+}
+.container {
+  max-width: 1320px;
+  margin: auto;
+  padding-inline: 30px;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  background: var(--blue);
+  color: white;
+  padding: 12px;
+  z-index: 100;
+}
+.skip:focus {
+  top: 10px;
+}
+header {
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(30px, calc((100vw - 1260px) /2));
+  gap: 35px;
+  background: #fff7dff5;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(10px);
+}
+.brand {
+  font-family: PollenSerif, Georgia, serif;
+  font-size: 46px;
+  letter-spacing: -2px;
+  line-height: 1;
+  color: var(--red);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand > span {
+  display: flex;
+  align-items: center;
+  align-self: start;
+  margin-top: 8px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 14px;
+  color: var(--blue);
+}
+header a[aria-current='page'] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.basket-link {
+  border: 1px solid #b84d34;
+  padding: 9px 16px;
+  border-radius: 25px;
+  color: var(--red);
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.basket-link > span {
+  font-size: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  min-height: 49px;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: var(--red);
+  color: #fff8e5;
+  border: 1px solid var(--red);
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.button:hover {
+  background: #962d1c;
+  transform: translateY(-2px);
+}
+.button.cream {
+  background: #fff1bd;
+  color: #782918;
+  border-color: #fff1bd;
+}
+.button.cream:hover {
+  background: #fff9e4;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--red);
+  border-bottom: 1px solid #c77c54;
+  padding-bottom: 4px;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #765536;
+  display: block;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: stretch;
+  background: var(--red);
+  color: #fff1c2;
+  min-height: 610px;
+}
+.hero-copy {
+  padding: 60px 10% 70px 12%;
+  align-self: center;
+}
+.hero .eyebrow {
+  color: #fff0c7;
+}
+.hero h1 {
+  font-size: clamp(70px, 7.1vw, 104px);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  margin: 22px 0 27px;
+}
+.hero p {
+  font-size: 18px;
+  line-height: 1.55;
+  color: #fff0cf;
+  max-width: 470px;
+  margin-bottom: 30px;
+}
+.hero-food {
+  position: relative;
+  min-width: 0;
+  padding: 28px 28px 28px 0;
+  display: flex;
+}
+.hero-food > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  object-fit: cover;
+  border-radius: 200px 6px 6px 6px;
+}
+.round-stamp {
+  position: absolute;
+  left: -45px;
+  bottom: 40px;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff0b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 13px;
+  text-align: center;
+  transform: rotate(-10deg);
+  box-shadow: 0 8px 0 #74291e22;
+}
+.round-stamp span {
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  line-height: 1.5;
+}
+.welcome-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background: #f4e09b;
+  border-block: 1px solid #d5b56c;
+  padding: 19px;
+  color: #735233;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+}
+.favorites {
+  padding-top: 75px;
+  padding-bottom: 80px;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 55px;
+  margin-bottom: 40px;
+}
+.section-heading h2 {
+  font-size: 51px;
+  margin: 18px 0 0;
+  color: var(--blue);
+}
+.section-heading > p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 380px;
+}
+.bake-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.bake-image {
+  display: block;
+  position: relative;
+  background: #f3e7bd;
+  overflow: hidden;
+  border-radius: 180px 180px 8px 8px;
+}
+.bake-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.bake-image:hover img {
+  transform: scale(1.035);
+}
+.bake-image > span {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  background: #fff5cc;
+  color: var(--red);
+  border-radius: 50%;
+  height: 42px;
+  width: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+}
+.bake-meta {
+  padding: 22px 0;
+}
+.bake-meta > span {
+  font-size: 12px;
+  color: #775538;
+}
+.bake-meta h3 {
+  font-family: PollenSerif, Georgia, serif;
+  font-weight: 400;
+  font-size: 33px;
+  letter-spacing: -0.025em;
+  margin: 12px 0;
+}
+.bake-meta p {
+  font-size: 16px;
+  margin: 0 0 18px;
+}
+.bake-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+  font-size: 16px;
+  color: #8e3622;
+}
+.bake-price span {
+  font-size: 14px;
+}
+.table-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: #f2dfaa;
+}
+.table-story-image {
+  height: 650px;
+  overflow: hidden;
+}
+.table-story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.table-story > div:last-child {
+  padding: 60px 11%;
+}
+.table-story h2 {
+  font-size: 68px;
+  line-height: 1.02;
+  margin: 23px 0 28px;
+  color: var(--blue);
+}
+.table-story p {
+  font-size: 19px;
+  line-height: 1.65;
+  color: #715332;
+  max-width: 490px;
+}
+.table-story .button {
+  margin-top: 15px;
+}
+.pick-a-moment {
+  padding-block: 80px;
+}
+.moment-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #dbc393;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.moment-links > a {
+  padding: 33px;
+  background: #ffedbc;
+  display: flex;
+  flex-direction: column;
+  min-height: 325px;
+}
+.moment-links > a + a {
+  border-left: 1px solid #d8c08c;
+}
+.moment-links > a:nth-child(2) {
+  background: #efd9c4;
+}
+.moment-links > a:nth-child(3) {
+  background: #dfe7da;
+}
+.moment-links > a > span {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #755436;
+}
+.moment-links h3 {
+  font-family: PollenSerif, Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  margin: 28px 0 18px;
+  color: #6b3623;
+}
+.moment-links p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #6c573e;
+}
+.moment-links svg {
+  align-self: end;
+  margin-top: auto;
+  color: #9c442a;
+}
+.preorder-story {
+  background: var(--blue);
+  color: #fff2bb;
+}
+.preorder-story > .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 85px;
+  align-items: center;
+  padding-block: 75px;
+}
+.preorder-story .eyebrow {
+  color: #f6e5ad;
+}
+.preorder-story h2 {
+  font-size: 67px;
+  line-height: 1;
+  margin: 24px 0;
+}
+.preorder-story p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #f3e7bd;
+}
+.preorder-story .button {
+  margin-top: 20px;
+}
+.preorder-story ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.preorder-story li {
+  display: flex;
+  gap: 25px;
+  padding: 25px 0;
+  border-top: 1px solid #7381b6;
+}
+.preorder-story li > span {
+  font-family: PollenSerif, Georgia, serif;
+  font-size: 33px;
+  line-height: 1;
+  color: #f6df92;
+}
+.preorder-story h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+.preorder-story li p {
+  font-size: 16px;
+  margin: 0;
+}
+.bakery-notes {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  padding-block: 80px;
+}
+.bakery-notes h2 {
+  font-size: 52px;
+  color: var(--blue);
+  margin: 23px 0;
+}
+.bakery-notes details {
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+.bakery-notes summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #67482f;
+}
+.bakery-notes summary:after {
+  content: '+';
+  color: var(--red);
+}
+.bakery-notes details[open] summary:after {
+  content: '−';
+}
+.bakery-notes p {
+  font-size: 16px;
+  margin: 18px 0 0;
+  line-height: 1.8;
+}
+.closing {
+  background: #b33c27;
+  color: #fff0b7;
+  padding: 65px 0 75px;
+  text-align: center;
+}
+.closing .eyebrow {
+  color: #fff1cb;
+  margin-top: 20px;
+}
+.closing h2 {
+  font-size: 83px;
+  line-height: 0.99;
+  margin: 28px 0 35px;
+}
+.closing .container > svg {
+  color: #ffdf87;
+}
+footer {
+  padding: 45px max(30px, calc((100vw - 1260px) /2));
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 40px;
+  background: #fff6d9;
+}
+.footer-note {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 280px;
+}
+footer p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 18px 0 0;
+  color: #705037;
+}
+footer nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 27px;
+  font-size: 14px;
+  color: var(--blue);
+}
+footer .footer-note {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.menu-hero,
+.pickup-hero,
+.basket-heading {
+  padding-top: 55px;
+  padding-bottom: 45px;
+  text-align: center;
+}
+.menu-hero h1,
+.pickup-hero h1,
+.basket-heading h1 {
+  font-size: 69px;
+  line-height: 1.03;
+  margin: 24px 0;
+  color: var(--blue);
+}
+.menu-hero p,
+.pickup-hero p,
+.basket-heading p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+}
+.menu-section {
+  padding-bottom: 65px;
+}
+.menu-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  padding: 22px 0;
+  border-block: 1px solid var(--line);
+}
+.menu-controls > div {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+.menu-controls button {
+  border: 1px solid transparent;
+  border-radius: 25px;
+  min-height: 44px;
+  padding: 10px 17px;
+  font-size: 14px;
+  background: none;
+  color: #795332;
+}
+.menu-controls button[aria-pressed='true'] {
+  background: #f1dfa7;
+  border-color: #d5b66f;
+  color: #765124;
+}
+.menu-controls > label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #cfb980;
+  background: #fffdf1;
+  padding: 12px 15px;
+  border-radius: 5px;
+  color: #835d35;
+}
+.menu-controls input {
+  border: 0;
+  background: none;
+  color: #493d2a;
+  font-size: 14px;
+  width: 220px;
+  min-width: 0;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #766951;
+  opacity: 1;
+}
+#pl-result-count {
+  font-size: 14px;
+  margin: 25px 0;
+}
+#pl-no-results {
+  padding: 65px 25px;
+  text-align: center;
+  border: 1px solid #d7bf86;
+  background: #f7e9bd;
+  border-radius: 8px;
+}
+#pl-no-results h2 {
+  font-size: 43px;
+  color: var(--blue);
+}
+#pl-no-results p {
+  font-size: 17px;
+}
+.menu-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+  padding-block: 50px 75px;
+  border-top: 1px solid var(--line);
+}
+.menu-bottom h2 {
+  font-size: 65px;
+  color: var(--blue);
+  line-height: 1.05;
+  margin: 0;
+}
+.menu-bottom p {
+  font-size: 20px;
+  line-height: 1.7;
+  max-width: 530px;
+}
+.breadcrumbs {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #785233;
+}
+.bake-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: start;
+}
+.detail-photo {
+  position: relative;
+}
+.detail-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 220px 220px 8px 8px;
+}
+.photo-stamp {
+  position: absolute;
+  bottom: 25px;
+  right: -20px;
+  background: #253e88;
+  color: #f9e7aa;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  transform: rotate(12deg);
+}
+.detail-copy {
+  padding-top: 25px;
+}
+.detail-copy h1 {
+  font-size: 61px;
+  color: var(--blue);
+  line-height: 1.05;
+  margin: 20px 0;
+}
+.detail-copy > p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.detail-copy .product-tag {
+  font-size: 20px;
+  color: #a44729;
+  line-height: 1.5;
+}
+.detail-copy form {
+  padding: 24px 0;
+  border-block: 1px solid var(--line);
+  margin: 28px 0;
+}
+.detail-copy form > label {
+  display: grid;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #78502d;
+}
+.detail-copy select {
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+  min-height: 50px;
+  padding: 13px;
+  background: #fffdf3;
+  border: 1px solid #c7b17e;
+  border-radius: 5px;
+  color: #513c26;
+}
+.selected-price {
+  font-size: 24px;
+  color: #923e24;
+  margin: 22px 0;
+  font-weight: 500;
+}
+.selected-price span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #765434;
+}
+.detail-copy form > .button {
+  width: 100%;
+  justify-content: space-between;
+  min-height: 50px;
+}
+.detail-copy [data-pl-add-status] {
+  font-size: 14px;
+  color: #6a4c2b;
+  margin: 17px 0 0;
+}
+.recipe-details {
+  margin-top: 25px;
+}
+.recipe-details details {
+  border-top: 1px solid var(--line);
+  padding: 21px 0;
+}
+.recipe-details summary {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  cursor: pointer;
+  color: #67462b;
+}
+.recipe-details summary:after {
+  content: '+';
+  color: var(--red);
+}
+.recipe-details details[open] summary:after {
+  content: '−';
+}
+.recipe-details p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 18px 0 0;
+}
+.product-pairing {
+  display: grid;
+  grid-template-columns: 0.7fr 1.6fr;
+  gap: 70px;
+  align-items: start;
+  padding-block: 80px;
+}
+.product-pairing h2 {
+  font-size: 49px;
+  color: var(--blue);
+  margin: 23px 0;
+}
+.pairing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.pairing-grid .bake-meta h3 {
+  font-size: 29px;
+}
+.pairing-grid .bake-price {
+  flex-wrap: wrap;
+}
+.story-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 35px 90px;
+  padding-top: 55px;
+  padding-bottom: 65px;
+  align-items: end;
+}
+.story-intro > .eyebrow {
+  grid-column: 1/-1;
+}
+.story-intro h1 {
+  font-size: 85px;
+  line-height: 1;
+  margin: 0;
+  color: var(--red);
+}
+.story-intro p {
+  font-size: 21px;
+  line-height: 1.75;
+}
+.story-image {
+  max-height: 750px;
+  overflow: hidden;
+}
+.story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.story-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+  padding-block: 75px;
+}
+.story-values article {
+  border-top: 1px solid var(--line);
+  padding-top: 23px;
+}
+.story-values span {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  color: #825633;
+}
+.story-values h2 {
+  font-size: 39px;
+  color: var(--blue);
+  line-height: 1.12;
+  margin: 25px 0;
+}
+.story-values p {
+  font-size: 17px;
+  line-height: 1.85;
+}
+.story-manifesto {
+  background: #253d85;
+  color: #fce8a6;
+  text-align: center;
+  padding: 70px 0;
+}
+.story-manifesto .eyebrow {
+  color: #f5e6bb;
+}
+.story-manifesto h2 {
+  font-size: 64px;
+  line-height: 1.06;
+  margin: 28px 0;
+}
+.story-manifesto p {
+  font-size: 20px;
+  line-height: 1.75;
+  color: #f2e6c6;
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+.pickup-guide {
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 85px;
+  padding-top: 25px;
+  padding-bottom: 70px;
+}
+.pickup-guide > aside {
+  position: sticky;
+  top: 115px;
+  align-self: start;
+  padding: 30px;
+  background: #f0e1ad;
+  border: 1px solid #d2b675;
+  border-radius: 7px;
+}
+.pickup-guide aside h2 {
+  font-size: 39px;
+  color: var(--blue);
+}
+.pickup-guide ol {
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.pickup-guide li {
+  padding-left: 6px;
+  margin-bottom: 17px;
+}
+.pickup-guide aside .button {
+  margin-top: 20px;
+}
+.pickup-guide > div > section {
+  padding: 25px 0 40px;
+  border-top: 1px solid var(--line);
+}
+.pickup-guide h2 {
+  font-size: 42px;
+  color: var(--blue);
+  line-height: 1.1;
+  margin: 22px 0;
+}
+.pickup-guide p {
+  font-size: 17px;
+  line-height: 1.85;
+}
+.pickup-guide table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+  margin: 30px 0;
+}
+caption {
+  text-align: left;
+  font-size: 14px;
+  color: #725437;
+  padding-bottom: 16px;
+}
+th,
+td {
+  padding: 16px 14px;
+  border-bottom: 1px solid #d8c28e;
+  font-weight: 400;
+}
+thead th {
+  font-weight: 500;
+  background: #f4e5b9;
+  font-size: 14px;
+  color: #74502b;
+}
+tbody th {
+  font-weight: 500;
+}
+.empty-basket {
+  padding-top: 10px;
+  padding-bottom: 75px;
+}
+.empty-basket > div {
+  background: #f5e6b5;
+  border: 1px solid #d7bf86;
+  border-radius: 12px;
+  padding: 55px;
+  text-align: center;
+}
+.empty-basket svg {
+  color: #a64b28;
+}
+.empty-basket h2 {
+  font-size: 48px;
+  color: var(--blue);
+  margin: 25px 0;
+}
+.empty-basket p {
+  font-size: 17px;
+  max-width: 570px;
+  margin: 0 auto 25px;
+}
+.basket-layout {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 70px;
+  align-items: start;
+  padding-top: 15px;
+}
+.basket-row {
+  display: grid;
+  grid-template-columns: 135px 1fr auto;
+  gap: 24px;
+  padding: 27px 0;
+  border-top: 1px solid var(--line);
+}
+.basket-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 65px 65px 5px 5px;
+}
+.basket-row > div > span {
+  font-size: 12px;
+  color: #735133;
+}
+.basket-row h2 {
+  font-size: 28px;
+  line-height: 1.15;
+  color: var(--blue);
+  margin: 12px 0;
+}
+.basket-row p {
+  font-size: 14px;
+  margin: 0 0 17px;
+}
+.pack-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #bea574;
+  border-radius: 24px;
+  overflow: hidden;
+  width: max-content;
+  background: #fffdf2;
+}
+.pack-quantity button {
+  height: 44px;
+  width: 44px;
+  border: 0;
+  background: none;
+  font-size: 21px;
+  color: #843e26;
+}
+.pack-quantity output {
+  width: 28px;
+  text-align: center;
+  font-size: 16px;
+}
+.pack-quantity button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.remove-pack {
+  border: 0;
+  background: none;
+  padding: 9px 0;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  margin-top: 8px;
+  color: #84402a;
+}
+.pack-price {
+  text-align: right;
+}
+.pack-price strong {
+  font-size: 19px;
+  font-weight: 500;
+  display: block;
+  color: #8c3a23;
+}
+.pack-price > span {
+  display: block;
+  margin-top: 9px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.pickup-form-panel {
+  position: sticky;
+  top: 110px;
+  background: #eeddaa;
+  border: 1px solid #d1b575;
+  border-radius: 12px;
+  padding: 30px;
+}
+.basket-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #c1a569;
+  padding: 25px 0;
+  margin-bottom: 22px;
+}
+.basket-subtotal > span {
+  font-size: 17px;
+}
+.basket-subtotal strong {
+  font-size: 30px;
+  font-weight: 500;
+  color: #943e26;
+}
+.pickup-form-panel p {
+  font-size: 14px;
+  color: #6c5030;
+  line-height: 1.75;
+}
+.pickup-form-panel form {
+  margin-top: 25px;
+}
+.pickup-form-panel label {
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+  color: #72502b;
+  margin: 20px 0;
+}
+.pickup-form-panel select,
+.pickup-form-panel textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  background: #fffcf0;
+  color: #473827;
+  border: 1px solid #bfa56f;
+  border-radius: 5px;
+  font-size: 16px;
+  min-height: 48px;
+}
+.pickup-form-panel select:disabled {
+  color: #766547;
+  background: #f7eccf;
+}
+.pickup-form-panel textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #79674f;
+  opacity: 1;
+}
+.pickup-form-panel .button {
+  width: 100%;
+  margin-top: 5px;
+}
+.pickup-form-panel > .text-link {
+  font-size: 14px;
+  margin-top: 18px;
+}
+#pl-basket-status,
+#pl-pickup-status,
+#pl-draft-status {
+  font-size: 14px;
+  color: #77482b;
+  line-height: 1.7;
+  margin-top: 18px;
+}
+.draft-preview {
+  padding-top: 70px;
+  padding-bottom: 25px;
+  scroll-margin-top: 105px;
+}
+.draft-preview pre {
+  padding: 30px;
+  background: #fffdf2;
+  border: 1px solid #cbb17b;
+  border-radius: 7px;
+  font:
+    16px/1.85 Geist,
+    Arial,
+    sans-serif;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #61492c;
+}
+.basket-note {
+  padding-block: 60px 80px;
+  max-width: 930px;
+  text-align: center;
+}
+.basket-note h2 {
+  font-size: 43px;
+  color: var(--blue);
+  margin-bottom: 25px;
+}
+.basket-note p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.basket-note .text-link {
+  margin-top: 15px;
+}
+.bake-grid.entered .bake-card {
+  animation: pl-rise 0.6s ease-out both;
+}
+.bake-grid.entered .bake-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bake-grid.entered .bake-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.moment-links.entered > a {
+  animation: pl-rise 0.6s ease-out both;
+}
+.preorder-story.entered li {
+  animation: pl-rise 0.55s ease-out both;
+}
+.preorder-story.entered li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.preorder-story.entered li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+@keyframes pl-rise {
+  from {
+    opacity: 0.5;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1100px) {
+  header nav {
+    gap: 22px;
+  }
+  .hero-copy {
+    padding: 45px 9%;
+  }
+  .hero h1 {
+    font-size: 84px;
+  }
+  .hero-food > img {
+    min-height: 520px;
+  }
+  .round-stamp {
+    width: 130px;
+    height: 130px;
+    left: -30px;
+  }
+  .section-heading h2 {
+    font-size: 45px;
+  }
+  .bake-grid {
+    gap: 23px;
+  }
+  .bake-meta h3 {
+    font-size: 30px;
+  }
+  .bake-price {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .table-story h2 {
+    font-size: 55px;
+  }
+  .table-story > div:last-child {
+    padding: 45px 9%;
+  }
+  .preorder-story > .container {
+    gap: 55px;
+  }
+  .preorder-story h2 {
+    font-size: 56px;
+  }
+  .detail-copy h1 {
+    font-size: 52px;
+  }
+  .bake-detail {
+    gap: 45px;
+  }
+  .product-pairing {
+    gap: 40px;
+    grid-template-columns: 0.7fr 1.5fr;
+  }
+  .story-intro {
+    gap: 40px 60px;
+  }
+  .story-intro h1 {
+    font-size: 73px;
+  }
+  .story-values {
+    gap: 30px;
+  }
+  .pickup-guide {
+    gap: 50px;
+  }
+  .basket-layout {
+    gap: 45px;
+  }
+  .basket-row {
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+  }
+  .pack-price {
+    grid-column: 2;
+    text-align: left;
+  }
+  .pickup-form-panel {
+    padding: 25px;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    padding-inline: 24px;
+  }
+  header {
+    height: 76px;
+    padding: 0 24px;
+    gap: 25px;
+  }
+  .brand {
+    font-size: 41px;
+  }
+  .brand > span {
+    margin-top: 6px;
+  }
+  header nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+  .pickup-nav {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
+  }
+  .hero-copy {
+    padding: 40px 25px;
+  }
+  .hero h1 {
+    font-size: 69px;
+  }
+  .hero p {
+    font-size: 17px;
+  }
+  .hero-food {
+    padding: 25px 25px 25px 0;
+  }
+  .hero-food > img {
+    min-height: 500px;
+    border-top-left-radius: 130px;
+  }
+  .round-stamp {
+    width: 112px;
+    height: 112px;
+    left: -20px;
+    bottom: 35px;
+    gap: 8px;
+  }
+  .round-stamp span {
+    font-size: 12px;
+  }
+  .round-stamp svg {
+    width: 25px;
+  }
+  .welcome-strip {
+    gap: 25px;
+    padding: 17px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+  .favorites {
+    padding-block: 55px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-heading h2 {
+    font-size: 42px;
+  }
+  .section-heading > .text-link {
+    margin-top: 25px;
+  }
+  .section-heading > p {
+    margin-top: 25px;
+    max-width: 600px;
+  }
+  .bake-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bake-image {
+    border-radius: 140px 140px 7px 7px;
+  }
+  .table-story {
+    grid-template-columns: 1fr 1fr;
+  }
+  .table-story-image {
+    height: 540px;
+  }
+  .table-story > div:last-child {
+    padding: 35px;
+  }
+  .table-story h2 {
+    font-size: 44px;
+  }
+  .table-story p {
+    font-size: 17px;
+  }
+  .pick-a-moment {
+    padding-block: 55px;
+  }
+  .moment-links {
+    grid-template-columns: 1fr;
+  }
+  .moment-links > a {
+    min-height: 260px;
+    padding: 30px;
+  }
+  .moment-links > a + a {
+    border-left: 0;
+    border-top: 1px solid #d8c08c;
+  }
+  .moment-links h3 {
+    font-size: 36px;
+    margin-top: 22px;
+  }
+  .preorder-story > .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-block: 55px;
+  }
+  .preorder-story p {
+    max-width: 650px;
+  }
+  .preorder-story h2 {
+    font-size: 54px;
+  }
+  .preorder-story ol {
+    max-width: 650px;
+  }
+  .bakery-notes {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-block: 55px;
+  }
+  .bakery-notes h2 {
+    font-size: 44px;
+  }
+  .closing h2 {
+    font-size: 66px;
+  }
+  .closing {
+    padding-block: 55px;
+  }
+  footer {
+    padding: 35px 24px;
+    flex-wrap: wrap;
+  }
+  footer > div {
+    width: 100%;
+  }
+  .menu-hero h1,
+  .pickup-hero h1,
+  .basket-heading h1 {
+    font-size: 55px;
+  }
+  .menu-controls {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .menu-controls > label {
+    width: 100%;
+  }
+  .menu-controls input {
+    width: 100%;
+  }
+  .menu-bottom {
+    gap: 40px;
+  }
+  .menu-bottom h2 {
+    font-size: 51px;
+  }
+  .menu-bottom p {
+    font-size: 18px;
+  }
+  .bake-detail {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .detail-photo {
+    max-width: 650px;
+  }
+  .detail-photo img {
+    max-height: 700px;
+    object-fit: cover;
+  }
+  .photo-stamp {
+    right: 0;
+    bottom: 25px;
+  }
+  .detail-copy {
+    padding-top: 0;
+  }
+  .detail-copy h1 {
+    font-size: 53px;
+  }
+  .detail-copy > p {
+    max-width: 680px;
+    font-size: 18px;
+  }
+  .detail-copy form {
+    max-width: 700px;
+  }
+  .product-pairing {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-block: 55px;
+  }
+  .product-pairing h2 {
+    font-size: 43px;
+  }
+  .pairing-grid {
+    max-width: 850px;
+  }
+  .story-intro {
+    grid-template-columns: 1fr;
+    padding-block: 40px;
+    gap: 30px;
+  }
+  .story-intro > .eyebrow {
+    grid-column: 1;
+  }
+  .story-intro h1 {
+    font-size: 65px;
+  }
+  .story-intro p {
+    font-size: 20px;
+    max-width: 720px;
+  }
+  .story-values {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-block: 55px;
+  }
+  .story-values h2 {
+    font-size: 40px;
+  }
+  .story-values p {
+    max-width: 720px;
+    font-size: 18px;
+  }
+  .story-manifesto h2 {
+    font-size: 53px;
+  }
+  .story-manifesto p {
+    font-size: 18px;
+  }
+  .pickup-guide {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .pickup-guide > aside {
+    position: static;
+    max-width: 700px;
+  }
+  .pickup-guide h2 {
+    font-size: 38px;
+  }
+  .basket-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .basket-row {
+    grid-template-columns: 140px 1fr auto;
+  }
+  .pack-price {
+    grid-column: auto;
+    text-align: right;
+  }
+  .pickup-form-panel {
+    position: static;
+    max-width: 700px;
+    width: 100%;
+  }
+  .draft-preview .section-heading > .button {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    padding-inline: 20px;
+  }
+  header {
+    height: 70px;
+    padding: 0 20px;
+    gap: 15px;
+  }
+  .brand {
+    font-size: 39px;
+  }
+  .brand > span svg {
+    width: 20px;
+  }
+  .brand > span {
+    margin-top: 6px;
+  }
+  header nav {
+    gap: 15px;
+    font-size: 14px;
+  }
+  .story-nav {
+    display: none;
+  }
+  .basket-link {
+    padding: 8px 12px;
+    gap: 7px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-copy {
+    padding: 35px 22px 42px;
+  }
+  .hero h1 {
+    font-size: 80px;
+    line-height: 0.95;
+    margin: 20px 0 26px;
+  }
+  .hero p {
+    font-size: 17px;
+  }
+  .hero-copy .eyebrow {
+    font-size: 12px;
+  }
+  .hero-copy > .button {
+    font-size: 14px;
+    gap: 12px;
+    padding: 12px 18px;
+  }
+  .hero-food {
+    padding: 0 18px 25px;
+    min-height: 345px;
+  }
+  .hero-food > img {
+    min-height: 320px;
+    height: 350px;
+    border-radius: 120px 5px 5px 5px;
+  }
+  .round-stamp {
+    left: auto;
+    right: 28px;
+    bottom: 15px;
+    width: 120px;
+    height: 120px;
+  }
+  .welcome-strip {
+    gap: 18px;
+    font-size: 12px;
+    padding: 18px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .welcome-strip > span:nth-child(2) {
+    flex: none;
+  }
+  .favorites {
+    padding-top: 45px;
+  }
+  .section-heading h2 {
+    font-size: 38px;
+  }
+  .bake-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .bake-image {
+    border-radius: 170px 170px 8px 8px;
+  }
+  .bake-meta h3 {
+    font-size: 35px;
+  }
+  .bake-meta p {
+    font-size: 17px;
+  }
+  .bake-price {
+    flex-wrap: nowrap;
+    font-size: 17px;
+  }
+  .bake-price span {
+    font-size: 14px;
+  }
+  .table-story {
+    grid-template-columns: 1fr;
+  }
+  .table-story-image {
+    height: 460px;
+  }
+  .table-story > div:last-child {
+    padding: 35px 25px 45px;
+  }
+  .table-story h2 {
+    font-size: 53px;
+  }
+  .table-story p {
+    font-size: 18px;
+  }
+  .moment-links > a {
+    padding: 27px;
+  }
+  .moment-links h3 {
+    font-size: 37px;
+  }
+  .preorder-story h2 {
+    font-size: 50px;
+  }
+  .preorder-story li {
+    gap: 20px;
+  }
+  .preorder-story h3 {
+    font-size: 22px;
+  }
+  .preorder-story li p {
+    font-size: 16px;
+  }
+  .bakery-notes h2 {
+    font-size: 40px;
+  }
+  .bakery-notes summary {
+    font-size: 16px;
+  }
+  .closing h2 {
+    font-size: 59px;
+  }
+  .closing .eyebrow {
+    font-size: 12px;
+  }
+  .menu-hero,
+  .pickup-hero,
+  .basket-heading {
+    padding-block: 35px;
+  }
+  .menu-hero h1,
+  .pickup-hero h1,
+  .basket-heading h1 {
+    font-size: 47px;
+  }
+  .menu-hero p,
+  .pickup-hero p,
+  .basket-heading p {
+    font-size: 17px;
+  }
+  .menu-hero p br,
+  .pickup-hero p br,
+  .basket-heading p br {
+    display: none;
+  }
+  .menu-controls {
+    padding-block: 20px;
+  }
+  .menu-controls > div {
+    gap: 4px;
+  }
+  .menu-controls button {
+    font-size: 14px;
+    padding: 9px 11px;
+  }
+  .menu-controls input {
+    font-size: 14px;
+  }
+  .menu-bottom {
+    grid-template-columns: 1fr;
+    padding-block: 40px 60px;
+    gap: 30px;
+  }
+  .menu-bottom h2 {
+    font-size: 50px;
+  }
+  .menu-bottom h2 br {
+    display: none;
+  }
+  .menu-bottom p {
+    font-size: 18px;
+  }
+  .breadcrumbs {
+    font-size: 14px;
+    padding-block: 22px;
+  }
+  .detail-photo img {
+    border-radius: 165px 165px 8px 8px;
+  }
+  .photo-stamp {
+    width: 110px;
+    height: 110px;
+    font-size: 12px;
+    right: 0;
+  }
+  .detail-copy h1 {
+    font-size: 49px;
+  }
+  .detail-copy > p {
+    font-size: 17px;
+  }
+  .detail-copy .product-tag {
+    font-size: 20px;
+  }
+  .detail-copy select {
+    font-size: 16px;
+  }
+  .selected-price {
+    font-size: 23px;
+  }
+  .recipe-details p {
+    font-size: 17px;
+  }
+  .pairing-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .pairing-grid .bake-meta h3 {
+    font-size: 34px;
+  }
+  .product-pairing h2 {
+    font-size: 40px;
+  }
+  .story-intro h1 {
+    font-size: 57px;
+  }
+  .story-intro p {
+    font-size: 19px;
+  }
+  .story-image img {
+    height: 410px;
+    object-fit: cover;
+  }
+  .story-values h2 {
+    font-size: 38px;
+  }
+  .story-values p {
+    font-size: 17px;
+  }
+  .story-manifesto {
+    padding-block: 50px;
+  }
+  .story-manifesto h2 {
+    font-size: 44px;
+  }
+  .story-manifesto p {
+    font-size: 18px;
+  }
+  .pickup-guide > aside {
+    padding: 25px;
+  }
+  .pickup-guide aside h2 {
+    font-size: 35px;
+  }
+  .pickup-guide h2 {
+    font-size: 36px;
+  }
+  .pickup-guide p {
+    font-size: 17px;
+  }
+  .pickup-guide table {
+    font-size: 14px;
+  }
+  th,
+  td {
+    padding: 13px 10px;
+  }
+  .pickup-guide td {
+    overflow-wrap: anywhere;
+  }
+  .empty-basket > div {
+    padding: 40px 25px;
+  }
+  .empty-basket h2 {
+    font-size: 39px;
+  }
+  .empty-basket p {
+    font-size: 17px;
+  }
+  .basket-row {
+    grid-template-columns: 105px 1fr;
+    gap: 18px;
+  }
+  .basket-row h2 {
+    font-size: 26px;
+  }
+  .pack-price {
+    grid-column: 2;
+    text-align: left;
+  }
+  .pack-price strong {
+    font-size: 19px;
+  }
+  .pickup-form-panel {
+    padding: 25px;
+  }
+  .pickup-form-panel select,
+  .pickup-form-panel textarea {
+    font-size: 16px;
+  }
+  .basket-subtotal strong {
+    font-size: 28px;
+  }
+  .draft-preview {
+    padding-top: 50px;
+  }
+  .draft-preview pre {
+    padding: 23px;
+    font-size: 16px;
+  }
+  .basket-note h2 {
+    font-size: 38px;
+  }
+  .basket-note p {
+    font-size: 17px;
+  }
+  footer nav {
+    font-size: 14px;
+    gap: 12px 25px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .round-stamp,
+  .photo-stamp {
+    transform: none;
+  }
+  .bake-image:hover img {
+    transform: none;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">pollen<span><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span></a><nav aria-label="Main navigation"><a aria-current="page" href="menu.html">The bakes</a><a class="story-nav"  href="story.html">Our little story</a><a class="pickup-nav"  href="pickup.html">Pickup guide</a><a class="basket-link" href="basket.html">Basket <span data-pl-count>0</span></a></nav></header><main id="main"><nav class="breadcrumbs container" aria-label="Breadcrumb"><a href="menu.html">All bakes</a><span>/</span><span>Pastries</span></nav><section class="bake-detail container" data-pl-product="morning-bun"><div class="detail-photo"><img src="assets/bun.webp" width="900" height="1125" alt="Original the morning bun product photograph"><span class="photo-stamp">A LITTLE<br> POLLEN GOODNESS</span></div><div class="detail-copy"><span class="eyebrow">Pastries</span><h1>The Morning Bun</h1><p class="product-tag">A little twist in the morning.</p><p>A golden spiral with caramelized edges, visible layers, and a scattering of sugar. Small enough for a quiet break, generous enough to make it feel like one.</p><form data-pl-add-form="morning-bun"><label>How would you like it?<select name="variant" required><option value="">Choose an option</option><option value="single">Single bun — $4.50</option><option value="box-four">Box of 4 — $16.00</option></select></label><p class="selected-price" data-pl-price>$4.50 <span>starting price</span></p><button class="button" type="submit">Add to my basket <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></button><p data-pl-add-status role="status"></p></form><a class="text-link" data-pl-view-basket href="basket.html" hidden>See your basket <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><div class="recipe-details"><details open><summary>The good part</summary><p>Buttery layers. Caramel edges. A bright sweet finish.</p><p>One for the walk, or a box for a table that is about to fill up.</p></details><details><summary>Pack & portion notes</summary><p>A single bun is one piece. A box contains four; the basket quantity counts boxes when that option is selected.</p></details><details><summary>Recipe direction</summary><p>Wheat flour, butter, sugar, milk, yeast, and a little citrus zest are the direction for this fictional bun.</p><p>Illustrative recipe notes only. These are not verified ingredient or allergen details for real food.</p></details><details><summary>About the preorder draft</summary><p>Your choice is saved locally in this browser. You can choose an illustrative pickup day and matching time in the basket. No real order or payment is created.</p></details></div></div></section><section class="product-pairing container"><div><span class="eyebrow">A LITTLE COMPANY FOR YOUR BAKE</span><h2>Something else<br> for the bag?</h2></div><div class="pairing-grid"><article class="bake-card"><a class="bake-image" href="bake-country-loaf.html"><img src="assets/loaf.webp" width="900" height="1125" loading="lazy" alt="Original the country loaf bakery photograph"><span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="bake-meta"><span>Bread</span><h3><a href="bake-country-loaf.html">The Country Loaf</a></h3><p>A good table begins here.</p><a class="bake-price" href="bake-country-loaf.html">From $9.50 <span>Choose your bake →</span></a></div></article><article class="bake-card"><a class="bake-image" href="bake-chocolate-cookie.html"><img src="assets/cookie.webp" width="900" height="1125" loading="lazy" alt="Original the chocolate cookie bakery photograph"><span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><div class="bake-meta"><span>Cookies</span><h3><a href="bake-chocolate-cookie.html">The Chocolate Cookie</a></h3><p>Good things come in uneven circles.</p><a class="bake-price" href="bake-chocolate-cookie.html">From $3.50 <span>Choose your bake →</span></a></div></article></div></section></main><footer><div><a class="brand" href="index.html">pollen<span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></span></a><p>A little crumb of joy.<br> An imagined neighborhood bakery.</p></div><nav aria-label="Footer"><a href="menu.html">The bakes</a><a href="story.html">Our story</a><a href="pickup.html">Pickup guide</a><a href="basket.html">Your basket</a><a href="assets/CREDITS.txt">Credits</a><a href="../../">All designs ↗</a></nav><p class="footer-note">Original bakery concept.<br> Sample menu and pickup windows.<br> Local drafts only. No orders or payments.</p></footer><script>const plBakes=[{"id":"country-loaf","name":"The Country Loaf","category":"Bread","image":"loaf","tag":"A good table begins here.","description":"A round, deeply golden loaf with a crackly crust and an open, tender-looking crumb. The kind of bread this imagined bakery would put at the center of an ordinary lunch.","flavor":"Toasty crust. A gentle tang. A generous middle.","recipe":"Wheat flour, water, salt, and a flour-and-water starter are the direction for this fictional loaf.","serving":"A thick slice with butter, a generous sandwich, or torn pieces around a shared table.","note":"Choose whole if you like to cut your own slices. Choose sliced for a ready-to-share draft selection.","variants":[{"id":"whole","label":"Whole loaf","price":950,"pieces":1},{"id":"sliced","label":"Sliced loaf","price":950,"pieces":1}]},{"id":"morning-bun","name":"The Morning Bun","category":"Pastries","image":"bun","tag":"A little twist in the morning.","description":"A golden spiral with caramelized edges, visible layers, and a scattering of sugar. Small enough for a quiet break, generous enough to make it feel like one.","flavor":"Buttery layers. Caramel edges. A bright sweet finish.","recipe":"Wheat flour, butter, sugar, milk, yeast, and a little citrus zest are the direction for this fictional bun.","serving":"One for the walk, or a box for a table that is about to fill up.","note":"A single bun is one piece. A box contains four; the basket quantity counts boxes when that option is selected.","variants":[{"id":"single","label":"Single bun","price":450,"pieces":1},{"id":"box-four","label":"Box of 4","price":1600,"pieces":4}]},{"id":"chocolate-cookie","name":"The Chocolate Cookie","category":"Cookies","image":"cookie","tag":"Good things come in uneven circles.","description":"A thick cookie with dark chocolate pieces, a craggy edge, and a soft-looking center. An uncomplicated little reason to pause.","flavor":"Deep chocolate. Brown-sugar notes. A little crunch at the edge.","recipe":"Wheat flour, butter, sugar, egg, dark chocolate, and salt are the direction for this fictional cookie.","serving":"Keep one beside a cup, or choose a box when you are bringing something along.","note":"A single cookie is one piece. A box contains six. Each pack choice stays separate in the local basket.","variants":[{"id":"single","label":"Single cookie","price":350,"pieces":1},{"id":"box-six","label":"Box of 6","price":1800,"pieces":6}]}];const plPickupDays={"Friday":["09:00–10:00","11:00–12:00"],"Saturday":["09:00–10:00","10:00–11:00","12:00–13:00"],"Sunday":["10:00–11:00","11:00–12:00"]};
+function plMoney(cents) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(cents / 100);
+}
+function plVariant(product, variant) {
+  return plBakes
+    .find((p) => p.id === product)
+    ?.variants.find((v) => v.id === variant);
+}
+function plValidLine(line) {
+  return !!(
+    plVariant(line?.product, line?.variant) &&
+    Number.isInteger(line.quantity) &&
+    line.quantity >= 1 &&
+    line.quantity <= 6
+  );
+}
+function plTotal(lines) {
+  return lines.reduce(
+    (sum, l) => sum + plVariant(l.product, l.variant).price * l.quantity,
+    0,
+  );
+}
+function plAdd(lines, product, variant) {
+  if (!plVariant(product, variant))
+    return { ok: false, lines, message: 'Choose a menu option first.' };
+  const found = lines.find(
+    (l) => l.product === product && l.variant === variant,
+  );
+  if (found?.quantity >= 6)
+    return {
+      ok: false,
+      lines,
+      message: 'This option already has the maximum quantity of 6.',
+    };
+  return {
+    ok: true,
+    lines: found
+      ? lines.map((l) => (l === found ? { ...l, quantity: l.quantity + 1 } : l))
+      : [...lines, { product, variant, quantity: 1 }],
+    message: 'Added to your local basket.',
+  };
+}
+function plValidPickup(day, slot) {
+  return Object.hasOwn(plPickupDays, day) && plPickupDays[day].includes(slot);
+}
+const plReduced = matchMedia('(prefers-reduced-motion: reduce)');
+const plStore = {
+  read(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key) || 'null');
+    } catch {
+      return null;
+    }
+  },
+  write(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch {
+      return false;
+    }
+  },
+};
+const plEsc = (text) =>
+  String(text).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[
+        c
+      ],
+  );
+const plRaw = plStore.read('pollen-basket-v1');
+let plLines =
+  Array.isArray(plRaw) &&
+  plRaw.length <= 6 &&
+  plRaw.every(plValidLine) &&
+  new Set(plRaw.map((l) => l.product + '::' + l.variant)).size === plRaw.length
+    ? plRaw
+    : [];
+const plPickupRaw = plStore.read('pollen-pickup-v1');
+let plPlan =
+  plPickupRaw &&
+  plValidPickup(plPickupRaw.day, plPickupRaw.slot) &&
+  typeof plPickupRaw.note === 'string' &&
+  plPickupRaw.note.length <= 1200
+    ? plPickupRaw
+    : { day: '', slot: '', note: '' };
+let plPrepared = false;
+function plBadge() {
+  document
+    .querySelectorAll('[data-pl-count]')
+    .forEach(
+      (e) => (e.textContent = plLines.reduce((sum, l) => sum + l.quantity, 0)),
+    );
+}
+plBadge();
+document.querySelectorAll('[data-pl-add-form]').forEach((form) => {
+  const product = plBakes.find((p) => p.id === form.dataset.plAddForm);
+  form.querySelector('select').addEventListener('change', (event) => {
+    const variant = plVariant(product.id, event.target.value);
+    form.querySelector('[data-pl-price]').textContent = variant
+      ? plMoney(variant.price) + ' / ' + variant.label
+      : 'Choose an option';
+  });
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const result = plAdd(
+      plLines,
+      product.id,
+      form.querySelector('select').value,
+    );
+    const status = form.querySelector('[data-pl-add-status]');
+    if (!result.ok) {
+      status.textContent = result.message;
+      return;
+    }
+    if (!plStore.write('pollen-basket-v1', result.lines)) {
+      status.textContent =
+        'Storage unavailable. This choice could not be added to a saved basket.';
+      return;
+    }
+    plLines = result.lines;
+    plBadge();
+    status.textContent =
+      product.name +
+      ' · ' +
+      plVariant(product.id, form.querySelector('select').value).label +
+      ' added to your local basket.';
+    document.querySelector('[data-pl-view-basket]').hidden = false;
+  });
+});
+let plCategory = 'All bakes';
+function plMenuCard(p) {
+  return `<article class="bake-card"><a class="bake-image" href="bake-${p.id}.html"><img src="assets/${p.image}.webp" width="900" height="1125" loading="lazy" alt="Original ${plEsc(p.name.toLowerCase())} bakery photograph"><span>↗</span></a><div class="bake-meta"><span>${p.category}</span><h3><a href="bake-${p.id}.html">${p.name}</a></h3><p>${p.tag}</p><a class="bake-price" href="bake-${p.id}.html">From ${plMoney(p.variants[0].price)} <span>Choose your bake →</span></a></div></article>`;
+}
+function plRenderMenu() {
+  const query = document.getElementById('pl-search').value.trim().toLowerCase();
+  const rows = plBakes.filter(
+    (p) =>
+      (plCategory === 'All bakes' || p.category === plCategory) &&
+      [p.name, p.description, p.flavor, p.category]
+        .join(' ')
+        .toLowerCase()
+        .includes(query),
+  );
+  document.getElementById('pl-menu-results').innerHTML = rows
+    .map(plMenuCard)
+    .join('');
+  document.getElementById('pl-result-count').textContent =
+    rows.length + (rows.length === 1 ? ' bake' : ' bakes');
+  document.getElementById('pl-no-results').hidden = rows.length > 0;
+}
+if (document.getElementById('pl-search')) {
+  plRenderMenu();
+  document.getElementById('pl-search').addEventListener('input', plRenderMenu);
+  document.querySelectorAll('[data-pl-category]').forEach((button) =>
+    button.addEventListener('click', () => {
+      plCategory = button.dataset.plCategory;
+      document
+        .querySelectorAll('[data-pl-category]')
+        .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+      plRenderMenu();
+    }),
+  );
+  document.getElementById('pl-clear-menu').addEventListener('click', () => {
+    plCategory = 'All bakes';
+    document.getElementById('pl-search').value = '';
+    document
+      .querySelectorAll('[data-pl-category]')
+      .forEach((b) =>
+        b.setAttribute(
+          'aria-pressed',
+          String(b.dataset.plCategory === plCategory),
+        ),
+      );
+    plRenderMenu();
+  });
+}
+function plDraft() {
+  return (
+    '# Pollen pickup draft\n\nLocal plan only. No order, payment, or reservation has been made.\n\n' +
+    plLines
+      .map((l) => {
+        const p = plBakes.find((p) => p.id === l.product);
+        const v = plVariant(l.product, l.variant);
+        return (
+          '- ' +
+          p.name +
+          ' / ' +
+          v.label +
+          ' × ' +
+          l.quantity +
+          ' (' +
+          v.pieces * l.quantity +
+          ' piece' +
+          (v.pieces * l.quantity === 1 ? '' : 's') +
+          ') — ' +
+          plMoney(v.price * l.quantity)
+        );
+      })
+      .join('\n') +
+    '\n\nSubtotal: ' +
+    plMoney(plTotal(plLines)) +
+    ' USD\nTax and delivery: not quoted\n\nSample pickup day: ' +
+    plPlan.day +
+    '\nExample window: ' +
+    plPlan.slot +
+    '\n\n## Draft note\n\n' +
+    (plPlan.note || 'No note added.') +
+    '\n\nFictional menu and pickup windows. No real bakery has received this draft.\n'
+  );
+}
+function plRenderBasket() {
+  const empty = !plLines.length;
+  document.getElementById('pl-empty').hidden = !empty;
+  document.getElementById('pl-filled').hidden = empty;
+  document.getElementById('pl-draft-preview').hidden = empty || !plPrepared;
+  if (empty) {
+    plPrepared = false;
+    return;
+  }
+  document.getElementById('pl-basket-lines').innerHTML = plLines
+    .map((l, n) => {
+      const p = plBakes.find((p) => p.id === l.product);
+      const v = plVariant(l.product, l.variant);
+      return `<article class="basket-row"><a href="bake-${p.id}.html"><img src="assets/${p.image}.webp" width="900" height="1125" alt="${plEsc(p.name)}"></a><div><span>${p.category}</span><h2>${p.name}</h2><p>${v.label} · ${v.pieces * l.quantity} piece${v.pieces * l.quantity === 1 ? '' : 's'}</p><div class="pack-quantity"><button data-pl-quantity="${n}" data-change="-1" ${l.quantity === 1 ? 'disabled' : ''} aria-label="Decrease ${plEsc(p.name + ' ' + v.label)} quantity">−</button><output>${l.quantity}</output><button data-pl-quantity="${n}" data-change="1" ${l.quantity === 6 ? 'disabled' : ''} aria-label="Increase ${plEsc(p.name + ' ' + v.label)} quantity">+</button></div><button class="remove-pack" data-pl-remove="${n}">Remove ${v.label}</button></div><div class="pack-price"><strong>${plMoney(v.price * l.quantity)}</strong><span>${plMoney(v.price)} per pack</span></div></article>`;
+    })
+    .join('');
+  document.getElementById('pl-subtotal').textContent = plMoney(
+    plTotal(plLines),
+  );
+  if (plPrepared)
+    document.getElementById('pl-draft-text').textContent = plDraft();
+}
+function plSaveBasket(next) {
+  if (!plStore.write('pollen-basket-v1', next)) {
+    document.getElementById('pl-basket-status').textContent =
+      'Storage unavailable. Your saved basket was not changed.';
+    return;
+  }
+  plLines = next;
+  plBadge();
+  plRenderBasket();
+  document.getElementById('pl-basket-status').textContent =
+    'Basket updated in this browser.';
+}
+function plRenderSlots() {
+  const day = document.getElementById('pl-day').value;
+  const slot = document.getElementById('pl-slot');
+  slot.disabled = !Object.hasOwn(plPickupDays, day);
+  slot.innerHTML =
+    '<option value="">' +
+    (slot.disabled ? 'Choose a day first' : 'Choose a window') +
+    '</option>' +
+    (plPickupDays[day] || [])
+      .map((time) => `<option>${time}</option>`)
+      .join('');
+  slot.value = plPlan.day === day ? plPlan.slot : '';
+}
+function plUpdatePlan() {
+  plPlan = {
+    day: document.getElementById('pl-day').value,
+    slot: document.getElementById('pl-slot').value,
+    note: document.getElementById('pl-order-note').value,
+  };
+  if (plValidPickup(plPlan.day, plPlan.slot)) {
+    const ok = plStore.write('pollen-pickup-v1', plPlan);
+    document.getElementById('pl-pickup-status').textContent = ok
+      ? 'Pickup plan saved locally. These are example windows.'
+      : 'Plan kept on this page only; storage is unavailable.';
+  }
+  if (!plValidPickup(plPlan.day, plPlan.slot) && plPrepared) {
+    plPrepared = false;
+    plRenderBasket();
+  }
+  if (plPrepared && plValidPickup(plPlan.day, plPlan.slot))
+    document.getElementById('pl-draft-text').textContent = plDraft();
+}
+if (document.getElementById('pl-basket-lines')) {
+  document.getElementById('pl-day').value = plPlan.day;
+  document.getElementById('pl-order-note').value = plPlan.note;
+  plRenderSlots();
+  plRenderBasket();
+  document
+    .getElementById('pl-basket-lines')
+    .addEventListener('click', (event) => {
+      const q = event.target.closest('[data-pl-quantity]');
+      const remove = event.target.closest('[data-pl-remove]');
+      if (q) {
+        const index = Number(q.dataset.plQuantity);
+        plSaveBasket(
+          plLines.map((l, n) =>
+            n === index
+              ? {
+                  ...l,
+                  quantity: Math.max(
+                    1,
+                    Math.min(6, l.quantity + Number(q.dataset.change)),
+                  ),
+                }
+              : l,
+          ),
+        );
+      }
+      if (remove)
+        plSaveBasket(
+          plLines.filter((_, n) => n !== Number(remove.dataset.plRemove)),
+        );
+    });
+  document.getElementById('pl-day').addEventListener('change', () => {
+    plPlan.day = document.getElementById('pl-day').value;
+    plPlan.slot = '';
+    plPrepared = false;
+    plRenderSlots();
+    plRenderBasket();
+    document.getElementById('pl-pickup-status').textContent =
+      'Choose a matching example window for this day.';
+  });
+  document.getElementById('pl-slot').addEventListener('change', plUpdatePlan);
+  document
+    .getElementById('pl-order-note')
+    .addEventListener('input', plUpdatePlan);
+  document
+    .getElementById('pl-pickup-form')
+    .addEventListener('submit', (event) => {
+      event.preventDefault();
+      plUpdatePlan();
+      if (!plLines.length || !plValidPickup(plPlan.day, plPlan.slot)) {
+        document.getElementById('pl-pickup-status').textContent =
+          'Choose a valid sample day and one of its matching windows.';
+        return;
+      }
+      plPrepared = true;
+      plRenderBasket();
+      document.getElementById('pl-draft-status').textContent =
+        'Pickup draft prepared locally. No order has been placed.';
+      document
+        .getElementById('pl-draft-preview')
+        .scrollIntoView({
+          behavior: plReduced.matches ? 'auto' : 'smooth',
+          block: 'start',
+        });
+    });
+  document.getElementById('pl-download-draft').addEventListener('click', () => {
+    if (!plLines.length || !plValidPickup(plPlan.day, plPlan.slot)) return;
+    const url = URL.createObjectURL(
+      new Blob([plDraft()], { type: 'text/markdown;charset=utf-8' }),
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'pollen-pickup-draft.md';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    document.getElementById('pl-draft-status').textContent =
+      'Draft prepared for download. No payment or order was created.';
+  });
+}
+if ('IntersectionObserver' in window) {
+  const plObserver = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('entered');
+          plObserver.unobserve(entry.target);
+        }
+      }),
+    { threshold: 0.2 },
+  );
+  document
+    .querySelectorAll('.bake-grid,.moment-links,.preorder-story')
+    .forEach((el) => plObserver.observe(el));
+}
+</script></body></html>

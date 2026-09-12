@@ -1,0 +1,23 @@
+{
+  "slug": "service-price-calculator",
+  "name": "Service Price Calculator",
+  "collection": "business-apps",
+  "category": "services-repairs",
+  "industry": "Services & repairs",
+  "description": "Hours, loaded hourly cost, direct expenses and desired margin. Cost = hours times hourly cost plus expenses; price = cost / (1-margin). Offer separate optional configured tax without claiming a universal rate.",
+  "tagline": "Price your time\nwith confidence.",
+  "style": "pink",
+  "palette": [],
+  "order": 25,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 32,
+  "notes": {
+    "interaction": "Hours, loaded hourly cost, direct expenses and desired margin. Cost = hours times hourly cost plus expenses; price = cost / (1-margin). Offer separate optional configured tax without claiming a universal rate."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

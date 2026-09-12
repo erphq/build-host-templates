@@ -1,0 +1,31 @@
+{
+  "slug": "orbital",
+  "name": "ORBITAL",
+  "collection": "landing-pages",
+  "category": "research-nonprofits",
+  "industry": "Technology",
+  "description": "An orbital observation company with cinematic planet imagery and mission-first storytelling.",
+  "tagline": "A wider perspective.",
+  "style": "Cinematic space technology",
+  "palette": [
+    "#0c1119",
+    "#e8edf3",
+    "#efad74"
+  ],
+  "order": 19,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "planet panorama and left-aligned title, mission timeline, instrument specifications, image archive, mission explorer",
+    "motion": "atmospheric image drift, mission step reveals, instrument tab transitions",
+    "interaction": "select a mission and reveal its payload, orbit, and goals; filter archive by Earth and Deep Space",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

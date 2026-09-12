@@ -1,0 +1,4 @@
+Sequence is a fictional independent design studio. All four project identities, illustrations, and digital mockups are original self-initiated concepts created for this demo. No actual clients or commercial outcomes are represented.
+Original vector artwork: Sequence / ProtoSites, 2026. Created in SVG.
+Typeface: Geist by Vercel, licensed under SIL Open Font License 1.1. Font reused from the existing ProtoSites licensed asset library.
+Structural research reference: https://www.pixeluplabs.com/ ; discovery: https://minimal.gallery/ . Reference artwork and branding are not reused.

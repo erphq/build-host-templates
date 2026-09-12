@@ -1,0 +1,31 @@
+{
+  "slug": "clearfile",
+  "name": "Clearfile",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A full product-led SaaS with cinematic opening, three-view interactive document workspace, sticky workflow narrative, and a working local review room.",
+  "tagline": "The work\u2019s ready. Bring everyone with it.",
+  "style": "Quiet operational SaaS",
+  "palette": [
+    "#f3f5f2",
+    "#123c39",
+    "#ad3825"
+  ],
+  "order": 49,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "full-width atmospheric hero, multi-view product window, original document artwork, sticky workflow panels, review room and pricing",
+    "motion": "scroll-linked hero and workflow motion, product-view transitions, document-change feedback, reduced-motion fallback",
+    "interaction": "switch product views, complete a local handoff checklist, search documents, save review decisions and notes, compare billing periods",
+    "provenance": "Original three-page SaaS study with independently composed layout, product interface, copy, sample data, and generated imagery. No reference assets or source included."
+  },
+  "credits": {
+    "referenceName": "Papermark, discovered through Saaspo",
+    "referenceUrl": "https://www.papermark.com/"
+  },
+  "pageCount": 3
+}

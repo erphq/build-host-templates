@@ -1,0 +1,31 @@
+{
+  "slug": "kinetic",
+  "name": "Kinetic",
+  "collection": "landing-pages",
+  "category": "health-wellness",
+  "industry": "Lifestyle",
+  "description": "An athletic movement-studio concept with class discovery, studio stories, a weekly timetable and a personal interest plan.",
+  "tagline": "YOUR KIND OF MOVEMENT.",
+  "style": "Athletic photographic poster",
+  "palette": [
+    "#ff7047",
+    "#111214",
+    "#f4f4ef"
+  ],
+  "order": 0,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Condensed orange-black identity, photographic class discovery, studio narratives, weekly timetable and a personal shortlist",
+    "motion": "Photo settle, class-image hover and a native horizontal class track",
+    "interaction": "Combine day, style, studio and time filters, explore class formats, save sessions, detect overlaps and prepare a local interest draft",
+    "provenance": "Six original routes with four class-detail variants, two fictional studios and twelve sample sessions, including tested local scheduling and draft workflows."
+  },
+  "credits": {
+    "referenceName": "Gymbox",
+    "referenceUrl": "https://gymbox.com/"
+  },
+  "pageCount": 6
+}

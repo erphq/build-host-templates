@@ -1,0 +1,22 @@
+{
+  "slug": "sales-tax-billing",
+  "name": "Sales Tax Billing",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Business profile, customer billing details and sales-tax settings, invoice lines, user-selected tax treatment, credit notes, receipts",
+  "tagline": "Invoice to payment, in one place.",
+  "style": "blue",
+  "palette": [],
+  "order": 100,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 0,
+  "notes": {
+    "interaction": "Business profile, customer billing details and sales-tax settings, invoice lines, user-selected tax treatment, credit notes, receipts"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

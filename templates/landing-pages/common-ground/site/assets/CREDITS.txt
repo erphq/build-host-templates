@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "fashion",
+  "source_page": "https://www.pexels.com/photo/fashion-editorial-portrait-in-a-studio-setting-31321350/",
+  "author": "Tugrul Kurnaz",
+  "image_url": "https://images.pexels.com/photos/31321350/pexels-photo-31321350.jpeg?cs=srgb&dl=pexels-tugrulkurnaz-31321350.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 3456,
+  "height": 5184
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "fashion",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/close-up-of-elegant-shirt-fabric-detail-35150387/",
+  "image_url": "https://images.pexels.com/photos/35150387/pexels-photo-35150387.jpeg?cs=srgb&dl=pexels-marek-ruczaj-1534625-35150387.jpg&fm=jpg",
+  "author": "Marek Ruczaj",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "fashion clothing fabric detail",
+  "width": 5472,
+  "height": 3648
+}
+
+Secondary image 2
+{
+  "site_slug": "fashion",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/photo-of-runway-model-modelling-a-black-outfit-1477437/",
+  "image_url": "https://images.pexels.com/photos/1477437/pexels-photo-1477437.jpeg?cs=srgb&dl=pexels-rgsk97-1477437.jpg&fm=jpg",
+  "author": "sk",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "fashion model black outfit",
+  "width": 3065,
+  "height": 4598
+}

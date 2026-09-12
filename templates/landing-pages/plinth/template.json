@@ -1,0 +1,31 @@
+{
+  "slug": "plinth",
+  "name": "Plinth",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "An original furniture-store concept with three generated product photographs, a filtered collection, complete product pages, and a local shopping bag.",
+  "tagline": "Objects for ordinary rituals.",
+  "style": "Object-first furniture commerce",
+  "palette": [
+    "#eeece5",
+    "#183d33",
+    "#dfe8a4"
+  ],
+  "order": 44,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "split product opening, consistent object grid, editorial lamp feature, product-information column beside full-height imagery",
+    "motion": "subtle product hover and reduced-motion-aware navigation",
+    "interaction": "filter and sort products, choose quantities, manage a persistent local bag, switch dimension units, download a selection summary",
+    "provenance": "Original six-page storefront concept informed by furniture-commerce research. Own identity, composition, product imagery, copy, and local bag. No reference assets or source code included."
+  },
+  "credits": {
+    "referenceName": "Integro by Mr. Cosmos",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/integro/"
+  },
+  "pageCount": 6
+}

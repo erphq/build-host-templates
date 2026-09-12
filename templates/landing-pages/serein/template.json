@@ -1,0 +1,31 @@
+{
+  "slug": "serein",
+  "name": "Serein",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A complete analytics product with interactive segments, date ranges, metrics, chart modes, exact data tables and a saved-view notebook.",
+  "tagline": "Make the signal useful.",
+  "style": "Interactive product analytics",
+  "palette": [
+    "#f6f5ef",
+    "#315cde",
+    "#263238"
+  ],
+  "order": 39,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "chart-first product story, analytics lenses, preset questions, complete explorer, saved notebook and methodology",
+    "motion": "linked chart and control transitions, product-lens switching and reduced-motion support",
+    "interaction": "segment synthetic data, compare periods, switch charts, inspect rows, save interpretations and export CSV/report files",
+    "provenance": "Independent four-page analytics product with original charts, synthetic records, calculations, narrative and saved-view workflow."
+  },
+  "credits": {
+    "referenceName": "PostHog, discovered through Saaspo",
+    "referenceUrl": "https://posthog.com/product-analytics"
+  },
+  "pageCount": 4
+}

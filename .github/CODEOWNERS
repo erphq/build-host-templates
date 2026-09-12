@@ -1,0 +1,7 @@
+# The platform repository is private and is never needed for contributions.
+* @vishprometa
+# Maintainers control categories, verification, and publication configuration.
+/categories.json @vishprometa
+/contributors.json @vishprometa
+/.github/ @vishprometa
+/scripts/ @vishprometa

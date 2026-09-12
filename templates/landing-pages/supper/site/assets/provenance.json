@@ -1,0 +1,23 @@
+[
+  {
+    "file": "mushrooms.png",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original food photograph for SUPPER, a fictional restaurant website.\nPrimary request: charred king oyster mushrooms on silky white bean puree, parsley oil, toasted crumbs.\nStyle and composition: Cohesive high-end direct-flash editorial food photography, overhead/three-quarter composition. White porcelain plate on cobalt-blue linen with subtle folds. Plate fully visible, food tactile and appetizing. Horizontal 3:2 composition.\nConstraints: No text, logos, watermark, or people. Original food imagery. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated original food imagery for fictional restaurant concept"
+  },
+  {
+    "file": "carrots.png",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original food photograph for SUPPER, a fictional restaurant website.\nPrimary request: roasted slender carrots, tahini, pomegranate, dill.\nStyle and composition: Cohesive high-end direct-flash editorial food photography, overhead/three-quarter composition. White porcelain plate on cobalt-blue linen with subtle folds. Plate fully visible, food tactile and appetizing. Horizontal 3:2 composition.\nConstraints: No text, logos, watermark, or people. Original food imagery. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated original food imagery for fictional restaurant concept"
+  },
+  {
+    "file": "tart.png",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original food photograph for SUPPER, a fictional restaurant website.\nPrimary request: slice of dark chocolate tart, olive oil, flaky salt.\nStyle and composition: Cohesive high-end direct-flash editorial food photography, overhead/three-quarter composition. White porcelain plate on cobalt-blue linen with subtle folds. Plate fully visible, food tactile and appetizing. Horizontal 3:2 composition.\nConstraints: No text, logos, watermark, or people. Original food imagery. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated original food imagery for fictional restaurant concept"
+  }
+]

@@ -1,0 +1,25 @@
+name: Propose a category
+description: Suggest a new category within Business Apps or Landing Pages.
+title: 'Category: '
+body:
+  - type: dropdown
+    id: collection
+    attributes:
+      label: Collection
+      options:
+        - Business Apps
+        - Landing Pages
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Category name
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Who is this for, and what templates belong here?
+    validations:
+      required: true

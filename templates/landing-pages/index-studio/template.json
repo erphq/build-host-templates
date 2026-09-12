@@ -1,0 +1,31 @@
+{
+  "slug": "index-studio",
+  "name": "Index Studio",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Creative",
+  "description": "An independent design practice with an editorial masthead, twelve original project panels, contact-sheet browsing and a selectable inquiry flow.",
+  "tagline": "Ideas with something to say.",
+  "style": "Editorial contact-sheet portfolio",
+  "palette": [
+    "#f0f0e8",
+    "#202721",
+    "#d8ff40"
+  ],
+  "order": 54,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "oversized masthead, angled project artifacts, dark contact-sheet archive, discipline filters, four full case studies, studio and inquiry pages",
+    "motion": "user-driven artwork strips, project selection feedback, layout response and reduced-motion fallback",
+    "interaction": "filter projects, browse artwork strips, select references, carry them into an inquiry draft, copy/download and edit the draft",
+    "provenance": "Original seven-page portfolio following researched archive principles with independent identity, artwork, writing and local inquiry behavior. All projects are self-initiated concepts."
+  },
+  "credits": {
+    "referenceName": "Boc Studio, discovered through Minimal Gallery",
+    "referenceUrl": "https://boc.studio/work"
+  },
+  "pageCount": 7
+}

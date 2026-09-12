@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "ceramics",
+  "source_page": "https://www.pexels.com/photo/potter-hands-working-on-clay-17846719/",
+  "author": "Elizabeth Gartside",
+  "image_url": "https://images.pexels.com/photos/17846719/pexels-photo-17846719.jpeg?cs=srgb&dl=pexels-parfumdefemme-17846719.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 4016,
+  "height": 6016
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "ceramics",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/photo-of-a-ceramic-vase-8274442/",
+  "image_url": "https://images.pexels.com/photos/8274442/pexels-photo-8274442.jpeg?cs=srgb&dl=pexels-rahmi-aksoz-53797721-8274442.jpg&fm=jpg",
+  "author": "Rahmi Aks\u00f6z",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "ceramic vase handmade",
+  "width": 4288,
+  "height": 2848
+}
+
+Secondary image 2
+{
+  "site_slug": "ceramics",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/pottery-workplace-with-clay-pots-on-shelves-4706113/",
+  "image_url": "https://images.pexels.com/photos/4706113/pexels-photo-4706113.jpeg?cs=srgb&dl=pexels-ai25studioai-4706113.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "pottery workshop shelves",
+  "author": "AI25.Studio Studio",
+  "width": 4000,
+  "height": 6000
+}

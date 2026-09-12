@@ -1,0 +1,22 @@
+{
+  "slug": "contractor-site-book-billing",
+  "name": "Contractor Site Book & Billing",
+  "collection": "business-apps",
+  "category": "projects-sites",
+  "industry": "Projects & sites",
+  "description": "Site diary, dated photos, measured work quantities, agreed rates, stage bills, retention, advance allocation, payment receipts",
+  "tagline": "Record the work. Raise the stage bill.",
+  "style": "blue",
+  "palette": [],
+  "order": 119,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 24,
+  "notes": {
+    "interaction": "Site diary, dated photos, measured work quantities, agreed rates, stage bills, retention, advance allocation, payment receipts"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

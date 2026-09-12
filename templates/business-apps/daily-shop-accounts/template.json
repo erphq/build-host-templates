@@ -1,0 +1,22 @@
+{
+  "slug": "daily-shop-accounts",
+  "name": "Daily Shop Accounts",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Opening cash, cash/ACH/card sales, expenses with payment mode, cash withdrawals, counted closing cash",
+  "tagline": "Close the day knowing every dollar.",
+  "style": "jade",
+  "palette": [],
+  "order": 102,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 2,
+  "notes": {
+    "interaction": "Opening cash, cash/ACH/card sales, expenses with payment mode, cash withdrawals, counted closing cash"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

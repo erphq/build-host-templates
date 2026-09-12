@@ -1,0 +1,22 @@
+{
+  "slug": "repair-shop-job-cards",
+  "name": "Repair Shop Job Cards",
+  "collection": "business-apps",
+  "category": "services-repairs",
+  "industry": "Services & repairs",
+  "description": "Customer/contact, device/model/serial, received condition/photos, accessories, complaint, diagnosis, quote, parts, work notes, deposit",
+  "tagline": "Every device has a clear next step.",
+  "style": "orange",
+  "palette": [],
+  "order": 108,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 10,
+  "notes": {
+    "interaction": "Customer/contact, device/model/serial, received condition/photos, accessories, complaint, diagnosis, quote, parts, work notes, deposit"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

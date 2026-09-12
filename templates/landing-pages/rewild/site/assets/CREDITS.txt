@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "conservation",
+  "source_page": "https://www.pexels.com/photo/aerial-shot-of-forest-1650669/",
+  "author": "thiago japyassu",
+  "image_url": "https://images.pexels.com/photos/1650669/pexels-photo-1650669.jpeg?cs=srgb&dl=pexels-japy-1650669.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 4056,
+  "height": 3040
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "conservation",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/deer-in-a-forest-10118850/",
+  "image_url": "https://images.pexels.com/photos/10118850/pexels-photo-10118850.jpeg?cs=srgb&dl=pexels-sunny67-10118850.jpg&fm=jpg",
+  "author": "patrice schoefolt",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "forest wildlife deer",
+  "width": 6270,
+  "height": 4180
+}
+
+Secondary image 2
+{
+  "site_slug": "conservation",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/trees-in-a-forest-in-sunlight-17331658/",
+  "image_url": "https://images.pexels.com/photos/17331658/pexels-photo-17331658.jpeg?cs=srgb&dl=pexels-pratikgupta-17331658.jpg&fm=jpg",
+  "author": "Pratik Gupta",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "forest sunlight trees",
+  "width": 4000,
+  "height": 6000
+}

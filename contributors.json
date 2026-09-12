@@ -1,0 +1,8 @@
+[
+  {
+    "id": "build-host",
+    "name": "build.host",
+    "url": "https://github.com/erphq",
+    "role": "publisher"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "slug": "delivery-dispatch-proof",
+  "name": "Delivery Dispatch & Proof",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Order/reference,recipient,address,phone,driver label,parcel count,COD amount,delivery proof/photo,exception",
+  "tagline": "Every delivery has an outcome.",
+  "style": "jade",
+  "palette": [],
+  "order": 120,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 26,
+  "notes": {
+    "interaction": "Order/reference,recipient,address,phone,driver label,parcel count,COD amount,delivery proof/photo,exception"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

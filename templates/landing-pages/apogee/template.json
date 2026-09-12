@@ -1,0 +1,31 @@
+{
+  "slug": "apogee",
+  "name": "Apogee",
+  "collection": "landing-pages",
+  "category": "research-nonprofits",
+  "industry": "Technology",
+  "description": "A cinematic research-concept site with a planetary opening, interactive mission index, searchable field archive, and three mission pages.",
+  "tagline": "A wider perspective.",
+  "style": "Cinematic research editorial",
+  "palette": [
+    "#080d16",
+    "#edf2fa",
+    "#cdf269"
+  ],
+  "order": 42,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "monumental planetary opening, compact mission strip, vertical mission selector, horizon spread, searchable archive",
+    "motion": "image hover and reduced-motion-aware anchor scrolling",
+    "interaction": "switch missions, search and filter studies, save locally, explore keyboard-accessible research stages",
+    "provenance": "Original five-page coded concept informed by space-site references. Own composition, identity, content, and interactions; one generated planet and two credited NASA images."
+  },
+  "credits": {
+    "referenceName": "Astro Lab by Raunak Das",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/astro-lab/"
+  },
+  "pageCount": 5
+}

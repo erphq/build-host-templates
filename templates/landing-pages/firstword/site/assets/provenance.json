@@ -1,0 +1,6 @@
+{
+  "file": "type-blocks.png",
+  "prompt": "Use case: photorealistic-natural\nAsset type: original editorial still life for Firstword, a fictional brief-writing SaaS.\nPrimary request: Large black wooden letterpress printing blocks, abstract glyph-like shapes with no readable word, arranged asymmetrically on saturated warm yellow paper (approximately #f5dc60), one white card at an angle.\nStyle and composition: Horizontal 3:2, graphic magazine art direction, strong studio shadows, tactile ink and wood grain.\nConstraints: No people, logos, computers, acrylic trays, or desk photograph setting. No readable words, no watermark. Generate exactly one image.",
+  "method": "built-in image generation",
+  "generated": "2026-09-08"
+}

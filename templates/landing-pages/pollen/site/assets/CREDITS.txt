@@ -1,0 +1,5 @@
+Pollen is an original fictional neighborhood bakery concept. Bread and pastry photographs are generated originals; exact prompts in provenance.json. No reference brand imagery or source copied.
+Geist Variable and DM Serif Display: SIL Open Font License; see the included font licenses.
+Lucide icons: ISC License; see LUCIDE-LICENSE.txt.
+Reference research: https://tartinebakery.com/ and https://tartinebakery.com/about.
+Menu, recipe direction, pricing, and pickup windows are illustrative. No real orders, payments, or availability are offered.

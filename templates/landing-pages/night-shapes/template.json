@@ -1,0 +1,31 @@
+{
+  "slug": "night-shapes",
+  "name": "Night Shapes",
+  "collection": "landing-pages",
+  "category": "events-communities",
+  "industry": "Events",
+  "description": "An original festival concept with performer imagery, a day-and-stage programme, overlap-aware personal schedule, and an illustrative pass calculator.",
+  "tagline": "Two nights. Your own rhythm.",
+  "style": "Poster-led festival and schedule",
+  "palette": [
+    "#f5f6f2",
+    "#222820",
+    "#c5ed70"
+  ],
+  "order": 47,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "wide condensed title, full-width concert photography, asymmetric artist lineup, day-filtered programme, personal schedule",
+    "motion": "pausable lineup ticker, staggered title arrivals, programme-state transitions, reduced-motion support",
+    "interaction": "filter sets by day, stage and artist, save a personal schedule, detect overlaps, estimate concept passes and export a calendar",
+    "provenance": "Original six-page event concept with its own visual direction, performer images, programme data, and local planner. All artists, dates, stages and prices are fictional; no reference code or assets included."
+  },
+  "credits": {
+    "referenceName": "Zenith Festival by Roman Rybiansky",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/zenith-festival/"
+  },
+  "pageCount": 6
+}

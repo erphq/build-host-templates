@@ -1,0 +1,31 @@
+{
+  "slug": "kiln",
+  "name": "KILN",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "A ceramic studio with close material studies and a small-batch collection.",
+  "tagline": "No two alike.",
+  "style": "Material-led craft journal",
+  "palette": [
+    "#dddfe0",
+    "#283139",
+    "#566776"
+  ],
+  "order": 30,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "editorial title and pottery image, studio process, glaze swatches, collection list, workshop booking",
+    "motion": "slow image entrance, glaze selection feedback, workshop summary reveal",
+    "interaction": "choose glaze and vessel shape; view care details; select a workshop date and seats",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

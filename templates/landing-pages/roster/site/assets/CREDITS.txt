@@ -1,0 +1,11 @@
+ROSTER — ORIGINAL RESOURCE-PLANNING CONCEPT
+
+All branding, writing, interface code, schedule illustration, people and project data are original fictional demonstration material. Working patterns, allocations and project estimates are illustrative. No real team, HR system, meeting calendar, message, payroll or financial service is connected.
+
+Artwork: schedule.svg and hero.webp are original programmatically authored schedule illustrations. The live marketing and planning interfaces are HTML/CSS, not screenshots copied from another product.
+
+Typeface: Geist variable, Vercel. SIL Open Font License 1.1. See GEIST-LICENSE.txt.
+
+Live research: https://www.float.com/ and https://www.float.com/product/capacity-planning
+Observed public pages: split product proposition, resource schedule imagery, capacity-versus-demand context, individual working days/hours, part-time patterns, time off and over-capacity warnings.
+Not verified: authenticated application behavior, exact drag mechanics, permissions, backend storage, integrations or financial calculations. Roster's local allocation editor, model and visual identity are original. No Float branding, screenshots, customer material or code is redistributed.

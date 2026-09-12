@@ -1,0 +1,1 @@
+Temporary preservation of the original deployed business concept previews. Complete editable prompts are in templates/business-apps. The original project will replace this compiled snapshot when provided by the owner. Third-party bundled code and fonts retain their upstream licenses.

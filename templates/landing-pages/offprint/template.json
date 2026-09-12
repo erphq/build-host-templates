@@ -1,0 +1,31 @@
+{
+  "slug": "offprint",
+  "name": "Offprint",
+  "collection": "landing-pages",
+  "category": "editorial",
+  "industry": "Culture",
+  "description": "A photo-led publication with six original essays, a searchable archive, a personal reading list and a complete local edition shop.",
+  "tagline": "Look again.",
+  "style": "Contemporary culture journal",
+  "palette": [
+    "#f9f9f5",
+    "#242824",
+    "#e8eb69"
+  ],
+  "order": 14,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Dominant photographic opener, graphic archive, colored article openers, reader controls and a publication shop",
+    "motion": "Editorial image settle, hover reveals, native reading progress and accessible search dialogs",
+    "interaction": "Filter and sort stories, save reading, adjust article size and focus, configure editions and export a local bag",
+    "provenance": "Original eleven-page editorial publication with independently sourced photography, original essays and local reading and edition workflows."
+  },
+  "credits": {
+    "referenceName": "Friends of Friends",
+    "referenceUrl": "https://www.freundevonfreunden.com/"
+  },
+  "pageCount": 11
+}

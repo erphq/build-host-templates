@@ -1,0 +1,22 @@
+{
+  "slug": "text-message-order-desk",
+  "name": "Text Message Order Desk",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Customer phone/address, manually entered enquiry, products, quantities, promised date, payment status, fulfillment notes",
+  "tagline": "From enquiry to dispatch.",
+  "style": "jade",
+  "palette": [],
+  "order": 107,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 9,
+  "notes": {
+    "interaction": "Customer phone/address, manually entered enquiry, products, quantities, promised date, payment status, fulfillment notes"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

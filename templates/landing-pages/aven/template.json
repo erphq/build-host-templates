@@ -1,0 +1,31 @@
+{
+  "slug": "aven",
+  "name": "AVEN",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A tactile workspace website with floating interface cards, soft materials, thoughtful motion, and a complete seven-page experience.",
+  "tagline": "Clarity and momentum for ambitious teams.",
+  "style": "Tactile SaaS",
+  "palette": [
+    "#f4f2ee",
+    "#151916",
+    "#d7e9ce"
+  ],
+  "order": 36,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "floating capsule navigation, overlapping live workspace cards, dashboard, feature tabs, integrations, selectable plans, stories, FAQ, and contact",
+    "motion": "staggered card entrances, softly floating integration tiles, animated tab transitions, one-time scroll reveals, reduced-motion and pause support",
+    "interaction": "select and sort people; switch feature panels and plans; preselect a plan in the inquiry; save, restore, copy, and clear a local draft; explore seven complete pages",
+    "provenance": "Reference-inspired adaptation of Grovia, with a fictional identity and local demo behavior."
+  },
+  "credits": {
+    "referenceName": "Grovia live reference",
+    "referenceUrl": "https://grovia.framer.ai/"
+  },
+  "pageCount": 7
+}

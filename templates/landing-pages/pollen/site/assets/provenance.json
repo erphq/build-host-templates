@@ -1,0 +1,26 @@
+[
+  {
+    "name": "table",
+    "prompt": "Use case: photorealistic-natural. Original editorial food photograph for Pollen, a fictional neighborhood bakery concept. Wide 3:2 overhead still life of a craggy round country bread loaf, two golden spiral morning buns, and a few dark chocolate chunk cookies on butter-yellow parchment over a warm terracotta tabletop. One folded cream linen napkin, beautiful morning sunlight and gentle shadows, richly tactile crust and crumbs, generous natural spacing, joyful independent food magazine art direction. No text, logos, watermark, people, or existing brand packaging. Generate one image.",
+    "method": "Generated original bakery imagery",
+    "disclosure": "Fictional bakery products, not real inventory"
+  },
+  {
+    "name": "loaf",
+    "prompt": "Use case: product-mockup. Original bakery product photograph for Pollen. Portrait 4:5 close editorial view of one round country bread loaf with a deep golden brown scored crust and lightly flour-dusted surface, one cut slice showing open crumb beside it, on butter-yellow parchment and a pale cream tabletop. Natural side light, warm tactile texture, complete loaf visible, no text, logos, watermark, or people. Fictional original bakery product. Generate one image.",
+    "method": "Generated original bakery imagery",
+    "disclosure": "Fictional bakery products, not real inventory"
+  },
+  {
+    "name": "bun",
+    "prompt": "Use case: product-mockup. Original bakery product photograph for Pollen. Portrait 4:5 close editorial view of one generous golden spiral morning bun, caramelized edges, delicate sugar crystals, on butter-yellow parchment over a pale cream tabletop. Natural side light and gentle shadow, appetizing tactile layers, whole bun visible with generous negative space. No icing, no text, logos, watermark, or people. Fictional original bakery product. Generate one image.",
+    "method": "Generated original bakery imagery",
+    "disclosure": "Fictional bakery products, not real inventory"
+  },
+  {
+    "name": "cookie",
+    "prompt": "Use case: product-mockup. Original bakery product photograph for Pollen. Portrait 4:5 close editorial view of three thick dark chocolate chunk cookies, one broken to show the soft interior, arranged on butter-yellow parchment over a pale cream tabletop. Natural side light, uneven handmade shapes, rich brown chocolate, beautiful crumbs, appetizing tactile food photography. No text, logos, watermark, or people. Fictional original bakery product. Generate one image.",
+    "method": "Generated original bakery imagery",
+    "disclosure": "Fictional bakery products, not real inventory"
+  }
+]

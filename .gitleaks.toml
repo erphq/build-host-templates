@@ -1,0 +1,10 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Known browser localStorage identifiers in the original Assembly and Roster demos; not credentials"
+regexTarget = "match"
+regexes = [
+  '''key\s*=\s*['"]assembly\-itinerary\-v1['"]''',
+  '''key\s*=\s*['"]roster\-plan\-v1['"]''',
+]

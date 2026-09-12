@@ -1,0 +1,31 @@
+{
+  "slug": "form-journal",
+  "name": "FORM JOURNAL",
+  "collection": "landing-pages",
+  "category": "editorial",
+  "industry": "Creative",
+  "description": "An independent architecture journal with a strong editorial grid and readable long-form stories.",
+  "tagline": "Ideas worth inhabiting.",
+  "style": "Architecture magazine",
+  "palette": [
+    "#eeefeb",
+    "#2a2f2e",
+    "#435e55"
+  ],
+  "order": 32,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "publication masthead, lead story image, asymmetric article grid, essay preview, reading list",
+    "motion": "article image reveal, saved story feedback, category transition",
+    "interaction": "filter articles by topic; read complete local articles in a modal; save stories locally",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

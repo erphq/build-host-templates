@@ -1,0 +1,41 @@
+Primary image
+{
+  "subject": "festival",
+  "source_page": "https://www.pexels.com/photo/crowd-on-festival-14670407/",
+  "author": "Daniel Duarte",
+  "image_url": "https://images.pexels.com/photos/14670407/pexels-photo-14670407.jpeg?cs=srgb&dl=pexels-daniel-duarte-270529097-14670407.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 6048,
+  "height": 4024
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "festival",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/turned-on-stage-lights-976862/",
+  "image_url": "https://images.pexels.com/photos/976862/pexels-photo-976862.jpeg?cs=srgb&dl=pexels-joshsorenson-976862.jpg&fm=jpg",
+  "author": "Josh Sorenson",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "concert stage lights",
+  "width": 5184,
+  "height": 3456
+}
+
+Secondary image 2
+{
+  "site_slug": "festival",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/dj-using-sound-mixer-9731331/",
+  "image_url": "https://images.pexels.com/photos/9731331/pexels-photo-9731331.jpeg?cs=srgb&dl=pexels-sergey-platonov-114873806-9731331.jpg&fm=jpg",
+  "author": "Sergey Platonov",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "dj mixing music",
+  "width": 4898,
+  "height": 3265
+}

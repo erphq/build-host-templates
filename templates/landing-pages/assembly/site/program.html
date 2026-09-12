@@ -1,0 +1,1560 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The programme | Assembly</title><meta name="description" content="Assembly is an original fictional design conference with talks, workshops, speaker studies, and a local itinerary with overlap checks."><link rel="preload" href="assets/geist-variable.woff2" as="font" type="font/woff2" crossorigin><style>@font-face {
+  font-family: Assembly;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: #f8f5e9;
+  color: #20221d;
+  font:
+    16px/1.65 Assembly,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #5148d7;
+  outline-offset: 4px;
+}
+::selection {
+  background: #ddd653;
+  color: #20221d;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 90;
+  background: #fff;
+  padding: 14px;
+}
+.skip:focus {
+  top: 0;
+}
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 74px;
+  border-bottom: 2px solid #20221d;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  font-size: 14px;
+  font-weight: 550;
+  border-right: 2px solid #20221d;
+}
+.header a:last-child {
+  border-right: 0;
+}
+.header .brand {
+  font-size: 25px;
+  letter-spacing: -1px;
+  background: #f05c3b;
+}
+.header .program-link {
+  background: #ddd653;
+}
+.header .plan-link {
+  background: #5148d7;
+  color: #fff;
+}
+.count {
+  font-size: 14px;
+  border: 1px solid currentColor;
+  min-width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  margin-left: 10px;
+}
+.hero {
+  background: #f05c3b;
+  padding: 28px 25px 35px;
+  border-bottom: 2px solid #20221d;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: clamp(95px, 17.4vw, 290px);
+  line-height: 0.85;
+  letter-spacing: -0.085em;
+  font-weight: 760;
+  margin-left: -9px;
+  white-space: nowrap;
+}
+.hero-sub {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: end;
+}
+.hero-sub h2 {
+  font-size: clamp(35px, 3.8vw, 59px);
+  line-height: 1.02;
+  max-width: 540px;
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  font-size: 16px;
+}
+.hero-meta strong {
+  display: block;
+  font-size: 25px;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+  margin-top: 7px;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1.6;
+}
+a.eyebrow {
+  font-size: 14px;
+}
+.hero-lower {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 25px;
+  align-items: end;
+}
+.hero-art {
+  height: 260px;
+  background: #f8f5e9;
+  border: 2px solid #20221d;
+  position: relative;
+  overflow: hidden;
+}
+.art-square {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #5148d7;
+  left: 12%;
+  top: 40px;
+  transform: rotate(-13deg);
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    left 0.6s;
+}
+.art-circle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #ddd653;
+  left: 43%;
+  top: 15px;
+  border: 2px solid #20221d;
+  transition:
+    transform 0.6s,
+    left 0.6s;
+}
+.art-lines {
+  position: absolute;
+  width: 120px;
+  height: 210px;
+  right: 9%;
+  top: 25px;
+  background: repeating-linear-gradient(
+    0deg,
+    #20221d,
+    #20221d 10px,
+    transparent 10px,
+    transparent 24px
+  );
+  transform: rotate(15deg);
+  transition: transform 0.6s;
+}
+.hero-art.shifted .art-square {
+  left: 28%;
+  transform: rotate(30deg);
+}
+.hero-art.shifted .art-circle {
+  left: 8%;
+  transform: scale(0.78);
+}
+.hero-art.shifted .art-lines {
+  transform: rotate(-25deg);
+}
+.hero-action p {
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 420px;
+  margin-bottom: 24px;
+}
+.button {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background: #20221d;
+  color: #fff;
+  border: 2px solid #20221d;
+  padding: 14px 20px;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 550;
+}
+.button.light {
+  background: #f8f5e9;
+  color: #20221d;
+}
+.button:hover {
+  background: #5148d7;
+  border-color: #5148d7;
+  color: #fff;
+}
+.hero-action .button {
+  width: 100%;
+  max-width: 400px;
+}
+.art-control {
+  font-size: 14px;
+  border: 0;
+  background: none;
+  padding: 13px 0 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.secondary-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 17px 25px;
+  border-bottom: 2px solid #20221d;
+  font-size: 14px;
+  font-weight: 550;
+}
+.secondary-nav div {
+  display: flex;
+  gap: 30px;
+}
+.section {
+  padding: 75px 4%;
+}
+.section-heading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12%;
+  align-items: end;
+  margin-bottom: 45px;
+}
+.section-heading h2 {
+  font-size: clamp(39px, 4.6vw, 70px);
+}
+.section-heading p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 500px;
+}
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+.speaker-card {
+  min-width: 0;
+}
+.speaker-card > a {
+  display: block;
+  overflow: hidden;
+}
+.speaker-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+.speaker-card > a:hover img {
+  transform: scale(1.025);
+}
+.speaker-info {
+  padding-top: 20px;
+  border-bottom: 2px solid #20221d;
+  padding-bottom: 22px;
+}
+.speaker-info h3 {
+  font-size: 31px;
+  margin: 8px 0 14px;
+}
+.speaker-info p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.text-link {
+  display: inline-flex;
+  gap: 28px;
+  border-bottom: 1px solid;
+  padding: 7px 0;
+  font-size: 14px;
+}
+.manifesto {
+  background: #5148d7;
+  color: #f8f5e9;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 12%;
+}
+.manifesto h2 {
+  font-size: clamp(40px, 5.2vw, 78px);
+}
+.manifesto p {
+  font-size: 19px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border: 2px solid #20221d;
+}
+.format-card {
+  padding: 32px;
+  border-right: 2px solid #20221d;
+  background: #ddd653;
+}
+.format-card:nth-child(2) {
+  background: #f05c3b;
+}
+.format-card:last-child {
+  border: 0;
+  background: #d3d0ec;
+}
+.format-card h3 {
+  font-size: 34px;
+  margin: 35px 0 20px;
+}
+.format-card p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.program-teaser {
+  border-top: 2px solid #20221d;
+}
+.session-list {
+  border-top: 2px solid #20221d;
+}
+.session {
+  display: grid;
+  grid-template-columns: 150px 1fr 180px;
+  gap: 30px;
+  padding: 27px 0;
+  border-bottom: 1px solid #9b9e8c;
+  align-items: start;
+}
+.session-time {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.session-time strong {
+  font-size: 20px;
+  display: block;
+  letter-spacing: -0.5px;
+}
+.session h3 {
+  font-size: 27px;
+  line-height: 1.15;
+  margin: 7px 0 13px;
+}
+.session p {
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 700px;
+  margin-bottom: 12px;
+}
+.session-person {
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.save-button {
+  border: 2px solid #20221d;
+  background: #f8f5e9;
+  padding: 12px 14px;
+  min-height: 47px;
+  font-size: 14px;
+  font-weight: 550;
+}
+.save-button[aria-pressed='true'] {
+  background: #ddd653;
+}
+.save-button:hover {
+  background: #e8e3ca;
+}
+.venue-teaser {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 9%;
+  background: #ddd653;
+  align-items: center;
+}
+.venue-teaser h2 {
+  font-size: clamp(40px, 5vw, 74px);
+  margin: 20px 0;
+}
+.venue-teaser p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.venue-map {
+  background: #f8f5e9;
+  padding: 24px;
+  border: 2px solid #20221d;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 15px;
+  min-height: 330px;
+}
+.map-room {
+  border: 2px solid #20221d;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 15px;
+  background: #d3d0ec;
+}
+.map-room strong {
+  font-size: 24px;
+  letter-spacing: -0.7px;
+}
+.map-room:nth-child(2) {
+  background: #f1baa7;
+}
+.map-room:last-child {
+  grid-column: 1/-1;
+  background: #ddd653;
+  min-height: 95px;
+}
+.closing {
+  padding: 65px 4%;
+  background: #20221d;
+  color: #f8f5e9;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+}
+.closing h2 {
+  font-size: clamp(40px, 4.8vw, 70px);
+  max-width: 850px;
+}
+.footer {
+  padding: 30px 25px;
+  border-top: 2px solid #20221d;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  font-size: 12px;
+}
+.footer nav {
+  display: flex;
+  gap: 25px;
+  font-size: 14px;
+}
+.page-intro {
+  padding: 55px 4% 40px;
+}
+.page-intro h1 {
+  font-size: clamp(55px, 8vw, 120px);
+  line-height: 0.96;
+  margin: 20px 0 25px;
+  max-width: 1150px;
+}
+.page-intro p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 750px;
+}
+.page-note {
+  font-size: 14px !important;
+  margin-top: 20px !important;
+  color: #535849;
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+.day-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.day-tabs button {
+  border: 2px solid #20221d;
+  background: #f8f5e9;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 550;
+  min-height: 47px;
+}
+.day-tabs button[aria-pressed='true'] {
+  background: #5148d7;
+  color: #fff;
+}
+.track-label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+.track-label select {
+  padding: 12px;
+  border: 2px solid #20221d;
+  background: #fff;
+  font-size: 14px;
+  min-height: 47px;
+}
+.program-count {
+  font-size: 14px;
+  margin: 20px 0;
+}
+.program {
+  padding: 10px 4% 70px;
+}
+.status {
+  font-size: 14px;
+  display: block;
+  line-height: 1.8;
+  min-height: 25px;
+  margin-top: 25px;
+}
+.empty {
+  padding: 35px;
+  background: #e9e6d6;
+  border: 2px solid #20221d;
+}
+.empty h2,
+.empty h3 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+.empty p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+.person-head {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 8%;
+  padding: 60px 4%;
+  align-items: center;
+}
+.person-head h1 {
+  font-size: clamp(65px, 8vw, 120px);
+  line-height: 0.92;
+  margin: 20px 0 25px;
+}
+.person-head p {
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 700px;
+}
+.person-head img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+}
+.person-copy {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 12%;
+  padding: 65px 7%;
+  border-top: 2px solid #20221d;
+}
+.person-copy h2 {
+  font-size: 46px;
+  line-height: 1.08;
+  max-width: 420px;
+}
+.person-copy p {
+  font-size: 18px;
+  line-height: 1.85;
+  margin-bottom: 25px;
+}
+.project-image {
+  margin: 0;
+  padding: 0 7% 65px;
+}
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1.7;
+  object-fit: cover;
+}
+.project-image figcaption {
+  font-size: 12px;
+  padding-top: 12px;
+}
+.person-sessions {
+  padding: 50px 4% 70px;
+}
+.person-sessions > h2 {
+  font-size: 42px;
+  margin-bottom: 35px;
+}
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  padding: 0 4% 70px;
+}
+.access-card {
+  padding: 30px;
+  border: 2px solid #20221d;
+}
+.access-card h2 {
+  font-size: 34px;
+  margin-bottom: 22px;
+}
+.access-card p,
+.access-card li {
+  font-size: 17px;
+  line-height: 1.85;
+  margin-bottom: 15px;
+}
+.access-card ul {
+  padding-left: 22px;
+}
+.plan-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 45px;
+  padding: 10px 4% 75px;
+  align-items: start;
+}
+.plan-sidebar {
+  padding: 25px;
+  background: #ddd653;
+  border: 2px solid #20221d;
+  position: sticky;
+  top: 25px;
+}
+.plan-sidebar h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.plan-sidebar p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.plan-sidebar .button {
+  width: 100%;
+  padding: 13px 12px;
+  font-size: 14px;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.plan-card {
+  border-top: 2px solid #20221d;
+  padding: 27px 0;
+}
+.plan-card h2 {
+  font-size: 31px;
+  line-height: 1.15;
+  margin: 12px 0 18px;
+}
+.plan-card > p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.overlap-label,
+.overlap-summary {
+  background: #f7ccb9;
+  color: #5f2515;
+  border: 1px solid #bb7259;
+  padding: 12px 15px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.overlap-summary {
+  margin-bottom: 25px;
+}
+.plan-card .overlap-label {
+  font-size: 14px;
+}
+.export-panel {
+  margin-top: 35px;
+  padding: 25px;
+  border: 2px solid #20221d;
+  background: #e9e6d6;
+}
+.export-panel h2 {
+  font-size: 31px;
+  margin-bottom: 20px;
+}
+.export-panel textarea {
+  width: 100%;
+  display: block;
+  min-height: 280px;
+  padding: 18px;
+  font:
+    14px/1.8 Assembly,
+    sans-serif;
+  border: 1px solid #929781;
+  margin: 15px 0 20px;
+  resize: vertical;
+}
+.export-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.export-actions .button {
+  font-size: 14px;
+  padding: 12px 15px;
+}
+.conflict-dialog {
+  max-width: calc(100vw - 32px);
+  width: 620px;
+  padding: 32px;
+  border: 2px solid #20221d;
+  background: #f8f5e9;
+  color: #20221d;
+  box-shadow: 12px 12px 0 #20221d4d;
+}
+.conflict-dialog::backdrop {
+  background: #20221d99;
+}
+.conflict-dialog h2 {
+  font-size: 37px;
+  margin: 15px 0 22px;
+}
+.conflict-dialog p,
+.conflict-dialog li {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.conflict-dialog ul {
+  padding-left: 22px;
+  margin: 20px 0;
+}
+.conflict-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+.conflict-actions button {
+  font-size: 14px;
+  min-height: 46px;
+  padding: 11px 15px;
+  border: 2px solid #20221d;
+  background: #ddd653;
+}
+.conflict-actions button:last-child {
+  background: transparent;
+}
+.conflict-dialog .eyebrow {
+  font-size: 12px;
+}
+.large-word {
+  font-size: clamp(75px, 14vw, 210px);
+  font-weight: 750;
+  letter-spacing: -0.08em;
+  line-height: 0.85;
+  overflow: hidden;
+  white-space: nowrap;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 1000px) {
+  .hero-sub {
+    gap: 25px;
+  }
+  .hero-meta {
+    gap: 18px;
+  }
+  .hero-meta strong {
+    font-size: 22px;
+  }
+  .hero-art {
+    height: 225px;
+  }
+  .art-square {
+    width: 145px;
+    height: 145px;
+  }
+  .art-circle {
+    width: 185px;
+    height: 185px;
+  }
+  .art-lines {
+    width: 90px;
+    height: 175px;
+  }
+  .section-heading {
+    gap: 7%;
+  }
+  .speaker-grid {
+    gap: 18px;
+  }
+  .speaker-info h3 {
+    font-size: 27px;
+  }
+  .session {
+    grid-template-columns: 125px 1fr 155px;
+    gap: 22px;
+  }
+  .session h3 {
+    font-size: 25px;
+  }
+  .plan-layout {
+    grid-template-columns: 250px 1fr;
+    gap: 30px;
+  }
+  .person-copy {
+    gap: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .person-copy h2 {
+    font-size: 39px;
+  }
+  .format-card {
+    padding: 25px;
+  }
+  .format-card h3 {
+    font-size: 29px;
+  }
+}
+@media (max-width: 720px) {
+  .header {
+    height: 67px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .header a {
+    padding: 0 13px;
+    font-size: 14px;
+    gap: 5px;
+  }
+  .header .brand {
+    font-size: 21px;
+  }
+  .header .count {
+    margin-left: 3px;
+    min-width: 23px;
+    height: 23px;
+    font-size: 12px;
+  }
+  .hero {
+    padding: 28px 18px;
+  }
+  .hero h1 {
+    font-size: 17.1vw;
+    margin-left: -3px;
+    letter-spacing: -0.085em;
+  }
+  .hero-sub {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 30px;
+  }
+  .hero-sub h2 {
+    font-size: 39px;
+  }
+  .hero-meta {
+    font-size: 14px;
+  }
+  .hero-meta strong {
+    font-size: 22px;
+  }
+  .hero-lower {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 27px;
+  }
+  .hero-art {
+    height: 225px;
+  }
+  .art-square {
+    left: 10%;
+    width: 145px;
+    height: 145px;
+  }
+  .art-circle {
+    left: 42%;
+    width: 180px;
+    height: 180px;
+    top: 22px;
+  }
+  .art-lines {
+    right: 5%;
+    width: 80px;
+    height: 170px;
+    top: 27px;
+  }
+  .hero-action p {
+    font-size: 16px;
+  }
+  .hero-action .button {
+    max-width: none;
+  }
+  .secondary-nav {
+    padding: 15px 18px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .secondary-nav div {
+    gap: 23px;
+  }
+  .secondary-nav > span {
+    width: 100%;
+    font-size: 12px;
+  }
+  .section {
+    padding: 50px 5%;
+  }
+  .section-heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+  }
+  .section-heading h2 {
+    font-size: 42px;
+  }
+  .section-heading p {
+    font-size: 17px;
+  }
+  .speaker-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .speaker-card img {
+    aspect-ratio: 1.15;
+  }
+  .speaker-info h3 {
+    font-size: 32px;
+  }
+  .manifesto {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .manifesto h2 {
+    font-size: 45px;
+  }
+  .manifesto p {
+    font-size: 17px;
+  }
+  .format-grid {
+    grid-template-columns: 1fr;
+  }
+  .format-card {
+    border-right: 0;
+    border-bottom: 2px solid #20221d;
+    padding: 25px;
+  }
+  .format-card h3 {
+    font-size: 34px;
+    margin-top: 25px;
+  }
+  .session {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 24px 0;
+  }
+  .session-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+  }
+  .session-time strong {
+    font-size: 18px;
+  }
+  .session h3 {
+    font-size: 27px;
+    margin-top: 8px;
+  }
+  .session p {
+    font-size: 16px;
+  }
+  .save-button {
+    justify-self: start;
+  }
+  .venue-teaser {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .venue-teaser h2 {
+    font-size: 43px;
+  }
+  .venue-map {
+    padding: 17px;
+    gap: 12px;
+    min-height: 300px;
+  }
+  .map-room {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .map-room strong {
+    font-size: 21px;
+  }
+  .closing {
+    flex-direction: column;
+    align-items: start;
+    padding: 50px 5%;
+    gap: 30px;
+  }
+  .closing h2 {
+    font-size: 42px;
+  }
+  .footer {
+    padding: 25px 5%;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer nav {
+    gap: 23px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  .page-intro {
+    padding: 35px 5% 28px;
+  }
+  .page-intro h1 {
+    font-size: 57px;
+    letter-spacing: -0.06em;
+  }
+  .page-intro p {
+    font-size: 17px;
+  }
+  .page-note {
+    font-size: 14px !important;
+  }
+  .program {
+    padding: 5px 5% 55px;
+  }
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .day-tabs {
+    gap: 8px;
+  }
+  .day-tabs button {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .track-label select {
+    width: 100%;
+  }
+  .person-head {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+    gap: 35px;
+  }
+  .person-head h1 {
+    font-size: 76px;
+  }
+  .person-head p {
+    font-size: 18px;
+  }
+  .person-head img {
+    aspect-ratio: 1.15;
+  }
+  .person-copy {
+    grid-template-columns: 1fr;
+    gap: 27px;
+    padding: 45px 5%;
+  }
+  .person-copy h2 {
+    font-size: 39px;
+  }
+  .person-copy p {
+    font-size: 17px;
+  }
+  .project-image {
+    padding: 0 5% 45px;
+  }
+  .project-image img {
+    aspect-ratio: 1.2;
+  }
+  .person-sessions {
+    padding: 40px 5% 55px;
+  }
+  .person-sessions > h2 {
+    font-size: 37px;
+  }
+  .access-grid {
+    grid-template-columns: 1fr;
+    padding: 0 5% 50px;
+    gap: 22px;
+  }
+  .access-card {
+    padding: 23px;
+  }
+  .access-card h2 {
+    font-size: 31px;
+  }
+  .access-card p,
+  .access-card li {
+    font-size: 16px;
+  }
+  .plan-layout {
+    grid-template-columns: 1fr;
+    padding: 5px 5% 55px;
+    gap: 30px;
+  }
+  .plan-sidebar {
+    position: static;
+    padding: 23px;
+  }
+  .plan-sidebar h2 {
+    font-size: 32px;
+  }
+  .plan-card h2 {
+    font-size: 29px;
+  }
+  .export-panel {
+    padding: 22px;
+  }
+  .conflict-dialog {
+    padding: 24px;
+    box-shadow: 7px 7px 0 #20221d4d;
+  }
+  .conflict-dialog h2 {
+    font-size: 32px;
+  }
+  .conflict-actions {
+    gap: 10px;
+  }
+  .conflict-actions button {
+    width: 100%;
+    text-align: left;
+  }
+  .large-word {
+    font-size: 15.6vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 720px) {
+  .person-head img {
+    aspect-ratio: 5/6;
+    object-fit: contain;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="header"><a class="brand" href="index.html">Assembly<span aria-hidden="true">↗</span></a><a class="program-link" href="program.html">Programme<span aria-hidden="true">↘</span></a><a class="plan-link" href="itinerary.html">My itinerary<span class="count" data-plan-count>0</span></a></header><nav class="secondary-nav" aria-label="Conference navigation"><div><a href="speakers.html">Speakers</a><a href="venue.html">Venue & access</a><a href="program.html">All sessions</a></div><span>20–21 MAY 2027 / FICTIONAL CONFERENCE</span></nav><main id="main"><section class="page-intro"><span class="eyebrow">THE PROGRAMME / TWO DAYS, TWO TRACKS</span><h1>Find your<br>way through.</h1><p>Ten original talks, workshops, and conversations. Choose a day and track, then build a personal itinerary that makes sense for you.</p><p class="page-note">Fictional conference. All demonstration times are UTC. Adding a session is not a ticket, booking, or reservation.</p></section><section class="program" aria-labelledby="sessions-heading"><div class="filters"><div class="day-tabs" role="group" aria-label="Filter by conference day"><button data-day-filter="all" aria-pressed="true">Both days</button><button data-day-filter="2027-05-20" aria-pressed="false">Thu 20 May</button><button data-day-filter="2027-05-21" aria-pressed="false">Fri 21 May</button></div><label class="track-label">Track<select id="track-filter"><option value="all">Both tracks</option><option value="Ideas">Ideas — talks & conversations</option><option value="Practice">Practice — workshops</option></select></label></div><h2 id="sessions-heading" style="font-size:28px">Sessions</h2><p class="program-count" id="program-count" aria-live="polite">10 sessions shown</p><div class="session-list"><article class="session" data-program-session="open-systems" id="open-systems"><div class="session-time"><span>Thursday 20 May</span><strong>09:30–10:15</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Talk</span><h3>An identity is an open system</h3><p>How a simple visual principle can hold a brand together without making every expression the same.</p><a class="session-person" href="ada-vale.html">Ada Vale ↗</a></div><button class="save-button" type="button" data-session-toggle="open-systems" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="reading-rhythm" id="reading-rhythm"><div class="session-time"><span>Thursday 20 May</span><strong>10:30–11:15</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Talk</span><h3>The rhythm of a reading experience</h3><p>A close look at the relationship between a headline, a paragraph, and the space around them.</p><a class="session-person" href="milo-arden.html">Milo Arden ↗</a></div><button class="save-button" type="button" data-session-toggle="reading-rhythm" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="shape-workshop" id="shape-workshop"><div class="session-time"><span>Thursday 20 May</span><strong>10:45–12:15</strong><span>Studio / UTC</span></div><div><span class="eyebrow">Practice / Workshop</span><h3>One shape, many possibilities</h3><p>Build a flexible identity from a single geometric starting point. Paper and a pencil are enough.</p><a class="session-person" href="ada-vale.html">Ada Vale ↗</a></div><button class="save-button" type="button" data-session-toggle="shape-workshop" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="small-rules" id="small-rules"><div class="session-time"><span>Thursday 20 May</span><strong>11:30–12:15</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Talk</span><h3>Small rules, unexpected forms</h3><p>What a simple generative system can teach us about control, variation, and choosing when to stop.</p><a class="session-person" href="nora-sen.html">Nora Sen ↗</a></div><button class="save-button" type="button" data-session-toggle="small-rules" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="unfinished" id="unfinished"><div class="session-time"><span>Thursday 20 May</span><strong>14:00–15:00</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Conversation</span><h3>In praise of the unfinished</h3><p>All three fictional speakers discuss the role of incomplete ideas, rough work, and useful uncertainty.</p><a class="session-person" href="speakers.html">All speakers ↗</a></div><button class="save-button" type="button" data-session-toggle="unfinished" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="constraint-lab" id="constraint-lab"><div class="session-time"><span>Friday 21 May</span><strong>09:30–11:00</strong><span>Studio / UTC</span></div><div><span class="eyebrow">Practice / Workshop</span><h3>The constraint lab</h3><p>Make a family of visual compositions from a short set of rules. No coding knowledge required.</p><a class="session-person" href="nora-sen.html">Nora Sen ↗</a></div><button class="save-button" type="button" data-session-toggle="constraint-lab" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="type-personality" id="type-personality"><div class="session-time"><span>Friday 21 May</span><strong>10:00–10:45</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Talk</span><h3>Type has a point of view</h3><p>How typographic choices communicate character before anyone reads the words.</p><a class="session-person" href="milo-arden.html">Milo Arden ↗</a></div><button class="save-button" type="button" data-session-toggle="type-personality" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="useful-consistency" id="useful-consistency"><div class="session-time"><span>Friday 21 May</span><strong>11:15–12:00</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Talk</span><h3>Useful consistency, not repetition</h3><p>A practical framework for deciding what stays fixed and what can move inside a visual identity.</p><a class="session-person" href="ada-vale.html">Ada Vale ↗</a></div><button class="save-button" type="button" data-session-toggle="useful-consistency" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="poster-workshop" id="poster-workshop"><div class="session-time"><span>Friday 21 May</span><strong>13:00–14:30</strong><span>Studio / UTC</span></div><div><span class="eyebrow">Practice / Workshop</span><h3>A poster with something to say</h3><p>Turn a short sentence into a clear typographic composition, then test it at a different scale.</p><a class="session-person" href="milo-arden.html">Milo Arden ↗</a></div><button class="save-button" type="button" data-session-toggle="poster-workshop" aria-pressed="false">Add to itinerary +</button></article><article class="session" data-program-session="human-choice" id="human-choice"><div class="session-time"><span>Friday 21 May</span><strong>14:00–14:45</strong><span>Forum / UTC</span></div><div><span class="eyebrow">Ideas / Talk</span><h3>The human choice in a system</h3><p>Why editing, context, and intention matter as much as the rules that generate a form.</p><a class="session-person" href="nora-sen.html">Nora Sen ↗</a></div><button class="save-button" type="button" data-session-toggle="human-choice" aria-pressed="false">Add to itinerary +</button></article></div><div class="empty" id="empty-program" hidden><h3>No sessions in this view.</h3><p>Choose another day or track to keep exploring.</p></div><output class="status" data-status aria-live="polite"></output></section></main><footer class="footer"><span>Assembly is an original conference concept.<br>Speakers, sessions, venue, and dates are fictional. No tickets or reservations.</span><nav aria-label="Footer navigation"><a href="program.html">Programme</a><a href="venue.html">Access guide</a><a href="assets/CREDITS.txt">Credits</a></nav></footer><dialog id="conflict-dialog" class="conflict-dialog" aria-labelledby="conflict-title" aria-describedby="conflict-new"><span class="eyebrow">A CHOICE TO MAKE</span><h2 id="conflict-title">These sessions overlap.</h2><p id="conflict-new"></p><p style="margin-top:18px">It overlaps with your saved selection:</p><ul id="conflict-list"></ul><p>You can keep both as alternatives, replace the overlapping sessions, or leave your plan as it is.</p><div class="conflict-actions"><button id="keep-both" type="button">Keep both — flag the overlap</button><button id="replace-overlap" type="button">Replace overlapping sessions</button><button id="cancel-conflict" type="button" autofocus>Cancel</button></div></dialog><script type="application/json" id="assembly-data">{"speakers":[{"id":"ada-vale","name":"Ada Vale","discipline":"Identity & systems","line":"A good identity makes room for change.","color":"#f05c3b","ink":"#20221d","project":"The open shape","bio":"Ada Vale is a fictional identity designer exploring how a simple visual idea can remain recognisable as it changes. Her practice in this conference concept moves between naming, typography, and adaptable graphic systems.","approach":"The work begins with a small rule rather than a finished logo. A repeated shape, a particular proportion, or a distinctive rhythm becomes the starting point for a system that can answer different needs. Consistency comes from the relationship between elements, not from making every application identical.","projectCopy":"The open shape is an original geometric identity study created for Assembly. A square is divided, turned, and recombined to make a family of related compositions. The result tests how much an identity can change before its character disappears.","takeaway":"Leave with a practical way to distinguish a useful design principle from a rigid visual template."},{"id":"milo-arden","name":"Milo Arden","discipline":"Type & editorial","line":"Typography gives an idea its pace.","color":"#ddd653","ink":"#20221d","project":"Words in motion","bio":"Milo Arden is a fictional editorial designer interested in the way typography directs attention. His conference sessions use ordinary words, deliberate scale, and a few simple constraints to explore how a page can feel both clear and alive.","approach":"A typographic decision is also a decision about time. A large word stops the eye; a measured paragraph keeps it moving. Milo’s concept practice treats the headline, caption, and margin as parts of the same reading experience, rather than separate styling exercises.","projectCopy":"Words in motion is an original typographic poster study made for this conference. A few repeated words change scale and position while a strict underlying grid holds the composition together. The tension between order and interruption becomes the visual idea.","takeaway":"Leave with a sharper eye for hierarchy, line length, and the small spacing decisions that make a page readable."},{"id":"nora-sen","name":"Nora Sen","discipline":"Creative coding & form","line":"A constraint can be a place to begin.","color":"#5148d7","ink":"#f8f5e9","project":"A field of possibilities","bio":"Nora Sen is a fictional creative coder and visual artist exploring systems that produce unexpected forms. Her work in the Assembly concept connects simple geometric instructions with questions about authorship, variation, and deliberate choice.","approach":"The interesting part of a generative system is not how many images it can make. It is the relationship between its rules and the decisions a person makes around them. Nora’s sessions focus on readable systems: small enough to understand, open enough to surprise.","projectCopy":"A field of possibilities is an original geometric poster series created for Assembly. Repeated circular forms are interrupted by a small number of changes in position and scale. A limited palette makes those changes easy to see and compare.","takeaway":"Leave with a small set of constraints you can adapt into your own visual experiments, with no coding experience required."}],"sessions":[{"id":"open-systems","day":"2027-05-20","start":"09:30","end":"10:15","track":"Ideas","format":"Talk","room":"Forum","speaker":"ada-vale","title":"An identity is an open system","description":"How a simple visual principle can hold a brand together without making every expression the same."},{"id":"reading-rhythm","day":"2027-05-20","start":"10:30","end":"11:15","track":"Ideas","format":"Talk","room":"Forum","speaker":"milo-arden","title":"The rhythm of a reading experience","description":"A close look at the relationship between a headline, a paragraph, and the space around them."},{"id":"shape-workshop","day":"2027-05-20","start":"10:45","end":"12:15","track":"Practice","format":"Workshop","room":"Studio","speaker":"ada-vale","title":"One shape, many possibilities","description":"Build a flexible identity from a single geometric starting point. Paper and a pencil are enough."},{"id":"small-rules","day":"2027-05-20","start":"11:30","end":"12:15","track":"Ideas","format":"Talk","room":"Forum","speaker":"nora-sen","title":"Small rules, unexpected forms","description":"What a simple generative system can teach us about control, variation, and choosing when to stop."},{"id":"unfinished","day":"2027-05-20","start":"14:00","end":"15:00","track":"Ideas","format":"Conversation","room":"Forum","speaker":"all","title":"In praise of the unfinished","description":"All three fictional speakers discuss the role of incomplete ideas, rough work, and useful uncertainty."},{"id":"constraint-lab","day":"2027-05-21","start":"09:30","end":"11:00","track":"Practice","format":"Workshop","room":"Studio","speaker":"nora-sen","title":"The constraint lab","description":"Make a family of visual compositions from a short set of rules. No coding knowledge required."},{"id":"type-personality","day":"2027-05-21","start":"10:00","end":"10:45","track":"Ideas","format":"Talk","room":"Forum","speaker":"milo-arden","title":"Type has a point of view","description":"How typographic choices communicate character before anyone reads the words."},{"id":"useful-consistency","day":"2027-05-21","start":"11:15","end":"12:00","track":"Ideas","format":"Talk","room":"Forum","speaker":"ada-vale","title":"Useful consistency, not repetition","description":"A practical framework for deciding what stays fixed and what can move inside a visual identity."},{"id":"poster-workshop","day":"2027-05-21","start":"13:00","end":"14:30","track":"Practice","format":"Workshop","room":"Studio","speaker":"milo-arden","title":"A poster with something to say","description":"Turn a short sentence into a clear typographic composition, then test it at a different scale."},{"id":"human-choice","day":"2027-05-21","start":"14:00","end":"14:45","track":"Ideas","format":"Talk","room":"Forum","speaker":"nora-sen","title":"The human choice in a system","description":"Why editing, context, and intention matter as much as the rules that generate a form."}]}</script><script>function sessionsOverlap(a, b) {
+  return a.day === b.day && a.start < b.end && b.start < a.end;
+}
+function conflictPairs(selected) {
+  const pairs = [];
+  for (let i = 0; i < selected.length; i++)
+    for (let j = i + 1; j < selected.length; j++)
+      if (sessionsOverlap(selected[i], selected[j]))
+        pairs.push([selected[i], selected[j]]);
+  return pairs;
+}
+function calendarText(selected) {
+  const stamp = new Date()
+    .toISOString()
+    .replace(/[-:]/g, '')
+    .replace(/\.\d{3}/, '');
+  const escape = (value) =>
+    value
+      .replaceAll('\\', '\\\\')
+      .replaceAll('\n', '\\n')
+      .replaceAll(',', '\\,')
+      .replaceAll(';', '\\;');
+  const instant = (day, time) =>
+    day.replaceAll('-', '') + 'T' + time.replace(':', '') + '00Z';
+  const events = selected.map((session) =>
+    [
+      'BEGIN:VEVENT',
+      `UID:assembly-${session.id}@example.invalid`,
+      `DTSTAMP:${stamp}`,
+      `DTSTART:${instant(session.day, session.start)}`,
+      `DTEND:${instant(session.day, session.end)}`,
+      `SUMMARY:${escape(session.title)}`,
+      `LOCATION:${escape(session.room + ' - fictional Assembly venue')}`,
+      'DESCRIPTION:Fictional conference itinerary. Not a ticket or reservation. All demonstration times use UTC.',
+      'STATUS:TENTATIVE',
+      'END:VEVENT',
+    ].join('\r\n'),
+  );
+  return [
+    'BEGIN:VCALENDAR',
+    'VERSION:2.0',
+    'PRODID:-//Assembly Concept//Local Itinerary//EN',
+    'CALSCALE:GREGORIAN',
+    ...events,
+    'END:VCALENDAR',
+    '',
+  ]
+    .join('\r\n')
+    .split('\r\n')
+    .map((line) => line.match(/.{1,73}/g)?.join('\r\n ') || '')
+    .join('\r\n');
+}
+const data = JSON.parse(document.getElementById('assembly-data').textContent);
+const sessionMap = new Map(
+  data.sessions.map((session) => [session.id, session]),
+);
+const speakerMap = new Map(
+  data.speakers.map((speaker) => [speaker.id, speaker]),
+);
+const key = 'assembly-itinerary-v1';
+function loadPlan() {
+  try {
+    const value = JSON.parse(localStorage.getItem(key) || '[]');
+    return Array.isArray(value)
+      ? [...new Set(value.filter((id) => sessionMap.has(id)))]
+      : [];
+  } catch {
+    return [];
+  }
+}
+let selected = loadPlan();
+let pending = null;
+let trigger = null;
+let icsUrl = '';
+let markdownUrl = '';
+function say(text) {
+  document
+    .querySelectorAll('[data-status]')
+    .forEach((el) => (el.textContent = text));
+}
+function speakerName(session) {
+  return session.speaker === 'all'
+    ? 'All speakers'
+    : speakerMap.get(session.speaker).name;
+}
+function dateLabel(day) {
+  return day === '2027-05-20' ? 'Thursday 20 May' : 'Friday 21 May';
+}
+function sortedPlan() {
+  return selected
+    .map((id) => sessionMap.get(id))
+    .sort((a, b) => (a.day + a.start).localeCompare(b.day + b.start));
+}
+function invalidateExport() {
+  const panel = document.querySelector('#export-panel');
+  if (panel) panel.hidden = true;
+  if (icsUrl) URL.revokeObjectURL(icsUrl);
+  if (markdownUrl) URL.revokeObjectURL(markdownUrl);
+  icsUrl = '';
+  markdownUrl = '';
+  for (const link of document.querySelectorAll(
+    '#calendar-download, #markdown-download',
+  )) {
+    link.removeAttribute('href');
+  }
+  const text = document.querySelector('#export-text');
+  if (text) text.value = '';
+}
+function savePlan(message) {
+  invalidateExport();
+  try {
+    localStorage.setItem(key, JSON.stringify(selected));
+    say(message);
+  } catch {
+    say(
+      'Changes are available on this page, but browser storage is unavailable. Export before leaving.',
+    );
+  }
+  refreshButtons();
+  renderPlan();
+}
+function refreshButtons() {
+  document
+    .querySelectorAll('[data-plan-count]')
+    .forEach((el) => (el.textContent = String(selected.length)));
+  document.querySelectorAll('[data-session-toggle]').forEach((button) => {
+    const added = selected.includes(button.dataset.sessionToggle);
+    button.setAttribute('aria-pressed', String(added));
+    button.textContent = added ? 'In your itinerary −' : 'Add to itinerary +';
+    button.setAttribute(
+      'aria-label',
+      `${added ? 'In your itinerary' : 'Add to itinerary'}: ${sessionMap.get(button.dataset.sessionToggle).title}`,
+    );
+  });
+  document
+    .querySelector('#prepare-export')
+    ?.toggleAttribute('disabled', selected.length === 0);
+}
+const conflictDialog = document.querySelector('#conflict-dialog');
+function requestToggle(id, button) {
+  if (selected.includes(id)) {
+    selected = selected.filter((value) => value !== id);
+    savePlan('Session removed from your itinerary.');
+    if (document.querySelector('#plan-list'))
+      document.querySelector('#plan-heading').focus();
+    return;
+  }
+  const session = sessionMap.get(id);
+  const overlaps = sortedPlan().filter((item) =>
+    sessionsOverlap(item, session),
+  );
+  if (!overlaps.length) {
+    selected.push(id);
+    savePlan('Session added to your itinerary.');
+    return;
+  }
+  pending = { id, overlaps: overlaps.map((item) => item.id) };
+  trigger = button;
+  document.querySelector('#conflict-title').textContent =
+    'These sessions overlap.';
+  document.querySelector('#conflict-new').textContent =
+    `${session.title} · ${dateLabel(session.day)}, ${session.start}–${session.end} UTC`;
+  const list = document.querySelector('#conflict-list');
+  list.replaceChildren();
+  for (const item of overlaps) {
+    const li = document.createElement('li');
+    li.textContent = `${item.title} · ${item.start}–${item.end} UTC`;
+    list.append(li);
+  }
+  conflictDialog.showModal();
+}
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-session-toggle]');
+  if (button) requestToggle(button.dataset.sessionToggle, button);
+});
+document.querySelector('#keep-both')?.addEventListener('click', () => {
+  if (!pending) return;
+  selected.push(pending.id);
+  savePlan('Both sessions kept. The overlap is flagged in your itinerary.');
+  conflictDialog.close();
+});
+document.querySelector('#replace-overlap')?.addEventListener('click', () => {
+  if (!pending) return;
+  selected = selected.filter((id) => !pending.overlaps.includes(id));
+  selected.push(pending.id);
+  savePlan('Overlapping sessions replaced with your new choice.');
+  conflictDialog.close();
+});
+document
+  .querySelector('#cancel-conflict')
+  ?.addEventListener('click', () => conflictDialog.close());
+conflictDialog?.addEventListener('close', () => {
+  pending = null;
+  if (trigger?.isConnected) trigger.focus();
+  else document.querySelector('#plan-heading')?.focus();
+});
+const dayButtons = document.querySelectorAll('[data-day-filter]');
+let activeDay = 'all';
+function filterProgram() {
+  const track = document.querySelector('#track-filter').value;
+  let count = 0;
+  document.querySelectorAll('[data-program-session]').forEach((article) => {
+    const session = sessionMap.get(article.dataset.programSession);
+    article.hidden =
+      (activeDay !== 'all' && session.day !== activeDay) ||
+      (track !== 'all' && session.track !== track);
+    if (!article.hidden) count++;
+  });
+  document.querySelector('#program-count').textContent =
+    `${count} ${count === 1 ? 'session' : 'sessions'} shown`;
+  document.querySelector('#empty-program').hidden = count > 0;
+}
+dayButtons.forEach((button) =>
+  button.addEventListener('click', () => {
+    activeDay = button.dataset.dayFilter;
+    dayButtons.forEach((item) =>
+      item.setAttribute('aria-pressed', String(item === button)),
+    );
+    filterProgram();
+  }),
+);
+document
+  .querySelector('#track-filter')
+  ?.addEventListener('change', filterProgram);
+if (dayButtons.length) filterProgram();
+function make(tag, className, text) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text !== undefined) el.textContent = text;
+  return el;
+}
+function renderPlan() {
+  const list = document.querySelector('#plan-list');
+  if (!list) return;
+  const plan = sortedPlan();
+  const conflicts = conflictPairs(plan);
+  list.replaceChildren();
+  document.querySelector('#empty-plan').hidden = plan.length > 0;
+  document.querySelector('#plan-summary').textContent =
+    `${plan.length} ${plan.length === 1 ? 'session' : 'sessions'} selected · ${conflicts.length} ${conflicts.length === 1 ? 'overlap' : 'overlaps'}`;
+  const warning = document.querySelector('#overlap-summary');
+  warning.hidden = conflicts.length === 0;
+  warning.textContent = conflicts.length
+    ? `${conflicts.length} overlapping ${conflicts.length === 1 ? 'pair needs' : 'pairs need'} your attention. Keep both as alternatives or remove a session below.`
+    : '';
+  for (const session of plan) {
+    const card = make('article', 'plan-card');
+    const collision = conflicts.some((pair) =>
+      pair.some((item) => item.id === session.id),
+    );
+    card.append(
+      make(
+        'span',
+        'eyebrow',
+        `${dateLabel(session.day)} / ${session.start}–${session.end} UTC`,
+      ),
+      make('h2', '', session.title),
+      make(
+        'p',
+        '',
+        `${speakerName(session)} · ${session.format} · ${session.room}`,
+      ),
+    );
+    if (collision)
+      card.append(
+        make('p', 'overlap-label', 'Overlaps with another selected session'),
+      );
+    const button = make('button', 'save-button', 'In your itinerary −');
+    button.type = 'button';
+    button.dataset.sessionToggle = session.id;
+    button.setAttribute('aria-pressed', 'true');
+    button.setAttribute('aria-label', 'In your itinerary: ' + session.title);
+    card.append(button);
+    list.append(card);
+  }
+}
+function planMarkdown() {
+  const plan = sortedPlan();
+  const conflicts = conflictPairs(plan);
+  return (
+    '# Assembly — personal itinerary\n\nFictional design conference. Not a ticket, booking, or reservation. All demonstration times use UTC.\n\n' +
+    plan
+      .map(
+        (session) =>
+          `## ${dateLabel(session.day)} / ${session.start}–${session.end} UTC\n\n${session.title}\n${speakerName(session)} · ${session.format} · ${session.room}\n\n${session.description}\n`,
+      )
+      .join('\n') +
+    '\n## Overlap check\n\n' +
+    (conflicts.length
+      ? conflicts
+          .map(
+            ([a, b]) =>
+              `- ${a.title} overlaps with ${b.title} on ${dateLabel(a.day)}.`,
+          )
+          .join('\n')
+      : 'No selected sessions overlap.') +
+    '\n'
+  );
+}
+document.querySelector('#prepare-export')?.addEventListener('click', () => {
+  if (!selected.length) return;
+  invalidateExport();
+  const markdown = planMarkdown();
+  icsUrl = URL.createObjectURL(
+    new Blob([calendarText(sortedPlan())], {
+      type: 'text/calendar;charset=utf-8',
+    }),
+  );
+  markdownUrl = URL.createObjectURL(
+    new Blob([markdown], { type: 'text/markdown;charset=utf-8' }),
+  );
+  document.querySelector('#calendar-download').href = icsUrl;
+  document.querySelector('#markdown-download').href = markdownUrl;
+  document.querySelector('#export-text').value = markdown;
+  const panel = document.querySelector('#export-panel');
+  panel.hidden = false;
+  panel.focus();
+  say('Itinerary files prepared. Review the overlap check before using them.');
+});
+document
+  .querySelector('#copy-itinerary')
+  ?.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(
+        document.querySelector('#export-text').value,
+      );
+      say('Itinerary copied.');
+    } catch {
+      const text = document.querySelector('#export-text');
+      text.focus();
+      text.select();
+      say('Clipboard unavailable. Copy the selected text or download a file.');
+    }
+  });
+document.querySelector('#shift-art')?.addEventListener('click', (event) => {
+  const button = event.currentTarget;
+  const shifted = button.getAttribute('aria-pressed') !== 'true';
+  button.setAttribute('aria-pressed', String(shifted));
+  document.querySelector('.hero-art').classList.toggle('shifted', shifted);
+  button.textContent = shifted
+    ? 'Reset the composition ↺'
+    : 'Shift the composition ↗';
+});
+refreshButtons();
+renderPlan();
+</script></body></html>

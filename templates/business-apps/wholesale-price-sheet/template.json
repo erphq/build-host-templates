@@ -1,0 +1,23 @@
+{
+  "slug": "wholesale-price-sheet",
+  "name": "Wholesale Price Sheet",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Business identity, contact, product image, SKU, description, wholesale price, suggested retail price, minimum order quantity, pack size and lead time. Editable single-page price sheet with print layout. Use uploaded product images, not fictional stock availability.",
+  "tagline": "Your next\nbest seller.",
+  "style": "cream",
+  "palette": [],
+  "order": 26,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 33,
+  "notes": {
+    "interaction": "Business identity, contact, product image, SKU, description, wholesale price, suggested retail price, minimum order quantity, pack size and lead time. Editable single-page price sheet with print layout. Use uploaded product images, not fictional stock availability."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

@@ -1,0 +1,5 @@
+Beacon is an original fictional observability concept. All services, incidents, check data, interface visuals, and writing are original synthetic material. No live monitoring is represented.
+hero.webp is an original code-rendered service-health illustration, not a screenshot of a real provider.
+Geist Variable: SIL Open Font License; see GEIST-LICENSE.txt.
+Lucide icons: ISC License; see LUCIDE-LICENSE.txt.
+Reference research: https://betterstack.com/uptime and https://betterstack.com/status-page, discovered through https://saaspo.com/pages/better-stack-landing-page. No source assets, logos, customer data, or code copied.

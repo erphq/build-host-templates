@@ -1,0 +1,31 @@
+{
+  "slug": "common-ground",
+  "name": "COMMON GROUND",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Lifestyle",
+  "description": "A modern clothing label with a lookbook-led storefront and useful sizing guidance.",
+  "tagline": "Wear it your way.",
+  "style": "Fashion lookbook",
+  "palette": [
+    "#e0e8ef",
+    "#25343e",
+    "#405d71"
+  ],
+  "order": 28,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "full-bleed campaign photo, condensed headline, lookbook rail, fit guide, capsule collection, shopping bag",
+    "motion": "campaign image reveal, lookbook slide, selected size feedback",
+    "interaction": "select garment size and color; view sizing chart; add and remove garments from a demo bag",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

@@ -1,0 +1,42 @@
+Primary image
+{
+  "subject": "architecture",
+  "source_page": null,
+  "image_url": null,
+  "author": "AI image generation",
+  "license": "AI-generated original asset",
+  "generation_tool": "Built-in image generation",
+  "prompt": "Monolithic off-white concrete coastal villa, blue Mediterranean sea, hard sun, editorial architectural photograph, horizontal 1536x1024, no text.",
+  "width": 1536,
+  "height": 1024
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "architecture",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/house-with-swimming-pool-on-santorini-16771759/",
+  "image_url": "https://images.pexels.com/photos/16771759/pexels-photo-16771759.jpeg?cs=srgb&dl=pexels-ihor-lypnytskyi-117692765-16771759.jpg&fm=jpg",
+  "author": "Ihor Lypnytskyi",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "coastal house exterior",
+  "width": 4000,
+  "height": 5397
+}
+
+Secondary image 2
+{
+  "site_slug": "architecture",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/minimalist-concrete-architectural-interior-36248805/",
+  "image_url": "https://images.pexels.com/photos/36248805/pexels-photo-36248805.jpeg?cs=srgb&dl=pexels-yulia-shapereva-s-58861876-36248805.jpg&fm=jpg",
+  "author": "Yulia Shapereva s",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "concrete minimalist interior",
+  "width": 3024,
+  "height": 4032
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "kindred",
+  "name": "Kindred",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A thoughtful support workspace with local reply drafts, conversation ownership and a complete searchable help center.",
+  "tagline": "Good help feels like being heard.",
+  "style": "Warm editorial support product",
+  "palette": [
+    "#f4f0e6",
+    "#163b2a",
+    "#d5e4b9"
+  ],
+  "order": 12,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Editorial serif proposition, layered native inbox preview, conversational product narrative and a complete support workspace",
+    "motion": "Restrained interface transitions, contextual article insertion and responsive queue changes",
+    "interaction": "Edit per-ticket drafts and notes, assign owners and status, insert relevant help articles, search documentation and export drafts",
+    "provenance": "Nine independently composed pages with original fictional conversations, complete help articles, local ticket workflows and original visual assets."
+  },
+  "credits": {
+    "referenceName": "Help Scout",
+    "referenceUrl": "https://www.helpscout.com/inbox/"
+  },
+  "pageCount": 9
+}

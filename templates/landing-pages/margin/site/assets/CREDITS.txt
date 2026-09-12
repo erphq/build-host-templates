@@ -1,0 +1,13 @@
+MARGIN / IMAGE CREDITS
+
+room.webp and hero.webp: Same licensed photograph, by Yulia Shapereva s. Minimalist concrete architectural interior. https://www.pexels.com/photo/minimalist-concrete-architectural-interior-36248805/ . Pexels License, https://www.pexels.com/license/ . Retained from the ProtoSites asset archive.
+
+city.webp: Moisés Fonseca. Brutalist architecture in Mexico City. https://www.pexels.com/photo/brutalist-architecture-in-mexico-city-30882004/ . Pexels License. Retained from the ProtoSites asset archive.
+
+book.webp: Original generated editorial book still life, AI image generation, 2026-09-08. Originally produced for ProtoSites Morrow, reused as a clearly labeled fictional editorial-object illustration. Prompt: Landscape 4:3 photograph of an open art book with abstract black and vivid tangerine photographic spreads, on a cobalt blue tabletop. Editorial graphic design still life, subtle natural paper texture and beautiful directional daylight, sophisticated composition. No readable brand or text, no UI, no logos, no watermark.
+
+The essays are original reflective design writing. They are not reporting about the depicted buildings or a real publication. No photographer affiliation or endorsement is implied.
+
+Font: Geist, SIL Open Font License (included); Georgia uses the reader’s system font.
+
+Research reference: The New by Mr. Cosmos, https://www.framer.com/marketplace/templates/the-new/ and https://creative-plans-151022.framer.app/ . Read-only examination of publication navigation and article pages; no reference code, writing, or imagery included.

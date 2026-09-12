@@ -1,0 +1,23 @@
+{
+  "slug": "break-even-calculator",
+  "name": "Break-Even Calculator",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Fixed costs, unit price, variable unit cost, expected units. Contribution per unit = price minus variable cost; break-even units = ceiling(fixed costs / contribution); profit = units times contribution minus fixed costs. Chart revenue and total cost against volume.",
+  "tagline": "Know your\nbreak-even.",
+  "style": "blue",
+  "palette": [],
+  "order": 23,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 30,
+  "notes": {
+    "interaction": "Fixed costs, unit price, variable unit cost, expected units. Contribution per unit = price minus variable cost; break-even units = ceiling(fixed costs / contribution); profit = units times contribution minus fixed costs. Chart revenue and total cost against volume."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

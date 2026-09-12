@@ -1,0 +1,23 @@
+[
+  {
+    "file": "faye.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original live-music photograph for Night Shapes, a fictional festival site.\nPrimary request: Faye Lumen: an adult female vocalist with short curly hair singing into a generic microphone, upper-body performance portrait, cool blue stage backlight with natural warm face light, atmospheric haze, strong editorial concert photograph.\nComposition: Wide 16:9 concert photograph.\nConstraints: All subjects are fictional adults. Imagined performers and events, not documentary artist photos. No text, logos, watermark, recognizable branded equipment, or real celebrity likeness. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated imagined performers and events, not documentary artist photos"
+  },
+  {
+    "file": "circuit.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original live-music photograph for Night Shapes, a fictional festival site.\nPrimary request: Slow Circuit: an adult electronic musician behind an unbranded synthesizer, focused profile, amber stage light within deep blue surroundings, cinematic concert photography.\nComposition: Wide 16:9 concert photograph.\nConstraints: All subjects are fictional adults. Imagined performers and events, not documentary artist photos. No text, logos, watermark, recognizable branded equipment, or real celebrity likeness. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated imagined performers and events, not documentary artist photos"
+  },
+  {
+    "file": "orchard.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original live-music photograph for Night Shapes, a fictional festival site.\nPrimary request: Glass Orchard: two adult electronic performers on a stage, distinct silhouettes and instruments under blue and soft pink lights, intimate live-show atmosphere, photographic realism.\nComposition: Wide 16:9 concert photograph.\nConstraints: All subjects are fictional adults. Imagined performers and events, not documentary artist photos. No text, logos, watermark, recognizable branded equipment, or real celebrity likeness. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated imagined performers and events, not documentary artist photos"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "slug": "casa-lune",
+  "name": "CASA LUNE",
+  "collection": "landing-pages",
+  "category": "travel-hospitality",
+  "industry": "Travel",
+  "description": "A boutique hideaway with intimate photography and an unhurried reservation experience.",
+  "tagline": "Stay a little longer.",
+  "style": "Quiet hospitality editorial",
+  "palette": [
+    "#e4e9e9",
+    "#27383d",
+    "#425a6b"
+  ],
+  "order": 23,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "centered hotel masthead, full-width room scene, stay picker, room comparison, local guide, reservation summary",
+    "motion": "gentle picture reveal, room switch fade, date summary feedback",
+    "interaction": "choose arrival, departure, room, and guests; validate date order; calculate sample stay total",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

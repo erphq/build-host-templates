@@ -1,0 +1,1348 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local preview playground | Stackline</title><meta name="description" content="An original developer-platform study with code examples, a cancellable local preview simulator, documentation and transparent sample usage pricing."><link rel="preload" href="assets/dm-serif.ttf" as="font" type="font/ttf" crossorigin><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: Display;
+  src: url('assets/dm-serif.ttf') format('truetype');
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  --bg: #080b0c;
+  --panel: #101617;
+  --raised: #172022;
+  --line: #2b3738;
+  --ink: #edf2ee;
+  --muted: #9eada9;
+  --accent: #b4e6d5;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.6 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-underline-offset: 5px;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+a,
+button,
+input,
+select,
+summary {
+  outline-offset: 5px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--accent);
+}
+[hidden] {
+  display: none !important;
+}
+.skip {
+  position: fixed;
+  top: -80px;
+  left: 15px;
+  z-index: 40;
+  padding: 12px;
+  background: var(--ink);
+  color: var(--bg);
+}
+.skip:focus {
+  top: 12px;
+}
+.header {
+  height: 80px;
+  padding: 0 6.25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  border-bottom: 1px solid #ffffff10;
+  position: relative;
+  z-index: 10;
+}
+.brand {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark {
+  display: grid;
+  gap: 3px;
+  transform: skewY(-17deg);
+}
+.brand-mark i {
+  display: block;
+  width: 20px;
+  height: 4px;
+  background: var(--accent);
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13px;
+}
+.header nav > a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.header nav > a:last-child {
+  color: var(--ink);
+  background: var(--raised);
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+.menu-toggle {
+  display: none;
+}
+.hero {
+  min-height: 650px;
+  padding: 100px 6.25% 75px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 6%;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.hero h1 {
+  font:
+    400 clamp(62px, 7.5vw, 106px)/1.03 Display,
+    Georgia,
+    serif;
+  letter-spacing: -0.045em;
+  margin: 0 0 28px;
+}
+.hero p {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 480px;
+  margin: 0 0 28px;
+}
+.eyebrow {
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 25px;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--ink);
+  color: #102321;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 12px 20px;
+  text-decoration: none;
+  min-height: 48px;
+  font-weight: 500;
+}
+.primary:hover svg {
+  transform: translateX(3px);
+}
+svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  text-decoration: none;
+  color: var(--muted);
+}
+.hero-art {
+  height: 450px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1100px;
+}
+.stack-art {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  transform: rotateX(58deg) rotateZ(-35deg);
+  transform-style: preserve-3d;
+}
+.stack-layer {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #5b7271;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #2b3d3d, #0b1315 70%);
+  box-shadow:
+    18px 22px 20px #0008,
+    inset 1px 1px #a5c2b65e;
+  transform: translateZ(calc(var(--layer)*30px));
+  transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.stack-layer::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border: 1px solid #49615a;
+  border-radius: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 13px,
+    #a7ccbc0c 13px 14px
+  );
+}
+.stack-layer::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 24px;
+  width: 55px;
+  height: 3px;
+  background: var(--accent);
+  box-shadow: 0 0 20px #a6f0cb70;
+}
+.stack-art.expanded .stack-layer {
+  transform: translateZ(calc(var(--layer)*65px));
+}
+.stack-floor {
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  background: radial-gradient(ellipse, #62867b20, transparent 65%);
+  bottom: 15px;
+}
+.inspect {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.capability-rail {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 6.25%;
+  border-block: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+.capability-rail span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.section {
+  padding: 100px 6.25%;
+}
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+.section-heading h2 {
+  font:
+    400 clamp(42px, 5vw, 68px)/1.1 Display,
+    Georgia,
+    serif;
+  letter-spacing: -0.035em;
+  margin: 0 0 22px;
+}
+.section-heading p {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 0;
+}
+.code-window {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0c1113;
+  max-width: 1050px;
+  margin: auto;
+  box-shadow: 0 20px 70px #0007;
+}
+.code-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 22px;
+  border-bottom: 1px solid var(--line);
+  gap: 20px;
+}
+.language-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.language-tabs button {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+.language-tabs button[aria-pressed='true'] {
+  background: var(--raised);
+  color: var(--ink);
+}
+.copy-code {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 9px 12px;
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.code-body {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+}
+.code-body pre {
+  margin: 0;
+  padding: 32px;
+  color: #cbe6da;
+  font:
+    13px/1.9 ui-monospace,
+    SFMono-Regular,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  min-height: 375px;
+}
+.code-aside {
+  border-left: 1px solid var(--line);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.code-aside span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.code-aside strong {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+.code-aside p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+.code-aside .sample-response {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px;
+  background: var(--panel);
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+  color: var(--accent);
+}
+.code-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 22px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+}
+.feature {
+  padding: 42px;
+  min-width: 0;
+}
+.feature:first-child {
+  border-right: 1px solid var(--line);
+}
+.feature h3 {
+  font-size: 27px;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  font-weight: 450;
+  margin: 28px 0 15px;
+}
+.feature p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 440px;
+}
+.pipeline-visual {
+  padding: 26px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  min-height: 240px;
+  display: grid;
+  gap: 14px;
+}
+.pipeline-visual > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+}
+.pipeline-visual > div > span {
+  color: var(--accent);
+  margin-left: auto;
+  font-size: 11px;
+}
+.pipeline-visual i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.event-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 240px;
+  padding: 25px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.event-visual div {
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg);
+  font:
+    11px/1.5 ui-monospace,
+    monospace;
+}
+.event-visual span {
+  color: var(--accent);
+  margin-right: 12px;
+}
+.environment-section {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 9%;
+  align-items: center;
+}
+.environment-section h2 {
+  font:
+    400 clamp(42px, 4.5vw, 62px)/1.1 Display,
+    Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: 0 0 25px;
+}
+.environment-section p {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 400px;
+}
+.environment-board {
+  padding: 25px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.board-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 20px;
+  font-size: 12px;
+}
+.board-head span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.env-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line);
+}
+.env-row:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+.env-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px #96dac331;
+}
+.env-row strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.env-row small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.env-row > a {
+  margin-left: auto;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.faq-section {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 10%;
+}
+.faq-section h2 {
+  font:
+    400 48px/1.15 Display,
+    Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+.faq-section details {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+.faq-section summary {
+  cursor: pointer;
+}
+.faq-section p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.closing {
+  padding: 100px 6.25%;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  background: radial-gradient(ellipse at bottom, #25463d35, transparent 65%);
+}
+.closing h2 {
+  font:
+    400 clamp(45px, 6vw, 80px)/1.1 Display,
+    Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: 0 0 32px;
+}
+footer {
+  padding: 40px 6.25%;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: start;
+}
+footer nav {
+  display: flex;
+  gap: 25px;
+  font-size: 13px;
+}
+footer p {
+  font-size: 11px;
+  color: var(--muted);
+  max-width: 330px;
+  margin: 0;
+}
+.page-intro {
+  padding: 65px 6.25% 40px;
+  max-width: 950px;
+}
+.page-intro h1 {
+  font:
+    400 clamp(46px, 5.5vw, 78px)/1.1 Display,
+    Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: 0 0 22px;
+}
+.page-intro p {
+  color: var(--muted);
+  max-width: 610px;
+}
+.simulation {
+  margin: 0 6.25% 80px;
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+  min-height: 700px;
+}
+.simulation-form {
+  padding: 30px;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+}
+.simulation-form label {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+.simulation-form input,
+.simulation-form select {
+  width: 100%;
+  min-width: 0;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 12px;
+  min-height: 46px;
+}
+.simulation-form button {
+  width: 100%;
+  margin-top: 12px;
+}
+.cancel {
+  background: none;
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 6px;
+}
+.simulation-form p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 25px;
+}
+.simulation-output {
+  padding: 30px;
+  min-width: 0;
+}
+.run-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.run-heading h2 {
+  font-size: 21px;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+  margin: 0;
+}
+.run-heading output {
+  font-size: 11px;
+  color: var(--accent);
+}
+.stage-list {
+  display: grid;
+  gap: 0;
+  margin-bottom: 30px;
+}
+.stage {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  font-size: 13px;
+}
+.stage-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 10px;
+  color: var(--muted);
+}
+.stage small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.stage-status {
+  font-size: 10px;
+  color: var(--muted);
+}
+.stage[data-state='Complete'] .stage-icon {
+  background: var(--accent);
+  color: #173027;
+  border-color: var(--accent);
+}
+.stage[data-state='Running'] .stage-icon {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 5px #b4e6d512;
+}
+.stage[data-state='Failed'] .stage-status {
+  color: #f2ad9e;
+}
+.run-log,
+.run-result {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+  background: #0c1113;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  min-height: 100px;
+  color: #c3d4ce;
+}
+.run-result:empty {
+  display: none;
+}
+.docs-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 800px);
+  justify-content: space-between;
+  gap: 7%;
+  padding: 45px 6.25% 90px;
+}
+.docs-nav {
+  position: sticky;
+  top: 30px;
+  align-self: start;
+  display: grid;
+  gap: 15px;
+  font-size: 13px;
+}
+.docs-nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.docs-content h1 {
+  font:
+    400 62px/1.1 Display,
+    Georgia,
+    serif;
+  margin: 0 0 24px;
+  letter-spacing: -0.04em;
+}
+.docs-content h2 {
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 50px 0 20px;
+}
+.docs-content p,
+.docs-content li {
+  color: var(--muted);
+  font-size: 15px;
+}
+.docs-content pre {
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.docs-callout {
+  padding: 22px;
+  border-left: 3px solid var(--accent);
+  background: var(--panel);
+  margin: 30px 0;
+}
+.docs-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.docs-content th,
+.docs-content td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.calculator {
+  margin: 0 6.25% 75px;
+  padding: 45px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 10%;
+  background: var(--panel);
+}
+.calculator label {
+  display: block;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+.calculator label > span {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+.calculator input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+.estimate {
+  border-left: 1px solid var(--line);
+  padding-left: 35px;
+}
+.estimate h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 22px;
+}
+.estimate > strong {
+  font-size: 58px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  display: block;
+}
+.estimate > p {
+  color: var(--muted);
+  font-size: 12px;
+}
+.estimate dl {
+  margin-top: 25px;
+}
+.estimate dl > div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+  font-size: 12px;
+  gap: 20px;
+}
+.estimate dd {
+  margin: 0;
+}
+.pricing-notes {
+  padding: 0 6.25% 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+  color: var(--muted);
+  font-size: 14px;
+}
+.pricing-notes h2 {
+  color: var(--ink);
+  font-size: 23px;
+  font-weight: 500;
+}
+@supports (animation-timeline: view()) {
+  .code-window {
+    animation: rise both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 25%;
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(35px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+@media (max-width: 800px) {
+  .header {
+    padding: 0 5%;
+    height: 70px;
+  }
+  .header nav {
+    gap: 18px;
+  }
+  .hero {
+    padding: 55px 5% 40px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 72px;
+  }
+  .hero p {
+    font-size: 17px;
+  }
+  .hero-art {
+    height: 370px;
+  }
+  .stack-art {
+    width: 250px;
+    height: 250px;
+  }
+  .capability-rail {
+    padding: 24px 5%;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 11px;
+  }
+  .section {
+    padding: 65px 5%;
+  }
+  .code-body {
+    grid-template-columns: 1fr;
+  }
+  .code-aside {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 25px;
+  }
+  .code-body pre {
+    padding: 25px;
+    min-height: 0;
+  }
+  .code-toolbar {
+    padding: 15px;
+  }
+  .feature {
+    padding: 28px;
+  }
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .environment-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .faq-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .simulation {
+    grid-template-columns: 1fr;
+    margin: 0 5% 50px;
+  }
+  .simulation-form {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 25px;
+  }
+  .simulation-output {
+    padding: 25px;
+  }
+  .calculator {
+    grid-template-columns: 1fr;
+    padding: 25px;
+    margin: 0 5% 50px;
+    gap: 20px;
+  }
+  .estimate {
+    border: 0;
+    border-top: 1px solid var(--line);
+    padding: 25px 0 0;
+  }
+  .pricing-notes {
+    padding: 0 5% 50px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .docs-layout {
+    grid-template-columns: 1fr;
+    padding: 30px 5% 65px;
+    gap: 35px;
+  }
+  .docs-nav {
+    position: static;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .docs-content h1 {
+    font-size: 52px;
+  }
+  .page-intro {
+    padding: 40px 5% 30px;
+  }
+  footer {
+    flex-direction: column;
+    padding: 30px 5%;
+  }
+}
+@media (max-width: 500px) {
+  .menu-toggle {
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 9px 14px;
+    background: var(--panel);
+  }
+  .header nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+  }
+  .header nav.open {
+    display: grid;
+    gap: 20px;
+  }
+  .header nav > a:last-child {
+    justify-self: start;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 15.5vw, 62px);
+  }
+  .hero-art {
+    height: 330px;
+  }
+  .stack-art {
+    width: 210px;
+    height: 210px;
+  }
+  .section-heading h2 {
+    font-size: 44px;
+  }
+  .section-heading p {
+    font-size: 15px;
+  }
+  .code-toolbar {
+    align-items: start;
+    gap: 10px;
+  }
+  .language-tabs {
+    gap: 3px;
+  }
+  .language-tabs button {
+    padding: 8px 9px;
+    font-size: 11px;
+  }
+  .copy-code {
+    font-size: 11px;
+    padding: 8px;
+  }
+  .copy-code svg {
+    display: none;
+  }
+  .code-body pre {
+    padding: 20px;
+    font-size: 11px;
+  }
+  .code-footer {
+    display: block;
+  }
+  .code-footer a {
+    display: block;
+    margin-top: 10px;
+  }
+  .stage {
+    grid-template-columns: 25px 1fr;
+    gap: 10px;
+  }
+  .stage-status {
+    grid-column: 2;
+  }
+  .run-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+  .simulation-output {
+    padding: 20px;
+  }
+  .run-log,
+  .run-result {
+    padding: 16px;
+    font-size: 11px;
+  }
+  .docs-content table {
+    font-size: 11px;
+  }
+  .docs-content th,
+  .docs-content td {
+    padding: 10px 7px;
+  }
+  .docs-content pre {
+    padding: 17px;
+    font-size: 11px;
+  }
+  .hero .eyebrow {
+    font-size: 10px;
+  }
+  .env-row {
+    gap: 12px;
+  }
+  .env-row > a {
+    font-size: 10px;
+  }
+  .env-row strong {
+    font-size: 13px;
+  }
+  .closing {
+    padding: 65px 5%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.usage-control {
+  margin-bottom: 40px;
+}
+.usage-control > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+.usage-control label {
+  margin: 0;
+}
+
+.hero > div {
+  min-width: 0;
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>stackline</a><button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" aria-label="Main navigation"><a href="index.html#integrate">Platform</a><a href="docs.html">Documentation</a><a href="pricing.html">Pricing</a><a href="playground.html">Open playground <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></nav></header><main id="main"><section class="page-intro"><div class="eyebrow">LOCAL PLAYGROUND</div><h1>Follow a preview<br>from start to finish.</h1><p>Choose a project name, environment, and outcome. Watch the local stages run, inspect the result, or cancel a run in progress.</p></section><section class="simulation"><form class="simulation-form" id="simulation-form"><label>Project name<input id="project-name" value="fieldnotes" required pattern="[a-z](?:[a-z0-9]|-){2,31}" maxlength="32" title="Use 3–32 lowercase letters, numbers or hyphens, beginning with a letter."></label><label>Environment<select id="environment"><option value="preview">Preview</option><option value="staging">Staging</option></select></label><label>Simulation outcome<select id="outcome"><option value="success">Success</option><option value="fail">Failed checks</option></select></label><button type="submit" class="primary" id="run-preview">Run simulation <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><button type="button" class="cancel" id="cancel-preview" disabled>Cancel run</button><p>Runs only in this browser. No deployment, network request, repository access, or account is involved.</p></form><div class="simulation-output"><div class="run-heading"><h2>Preview pipeline</h2><output id="run-status" aria-live="polite">Ready to simulate</output></div><div class="stage-list"><div class="stage" data-stage="source" data-state="Waiting"><span class="stage-icon">1</span><div>Read the source<small>Resolve the selected project and environment.</small></div><span class="stage-status">Waiting</span></div><div class="stage" data-stage="build" data-state="Waiting"><span class="stage-icon">2</span><div>Build the preview<small>Assemble the illustrative application bundle.</small></div><span class="stage-status">Waiting</span></div><div class="stage" data-stage="checks" data-state="Waiting"><span class="stage-icon">3</span><div>Run the checks<small>Evaluate the selected simulation outcome.</small></div><span class="stage-status">Waiting</span></div><div class="stage" data-stage="ready" data-state="Waiting"><span class="stage-icon">4</span><div>Prepare the handoff<small>Create an example address and response.</small></div><span class="stage-status">Waiting</span></div></div><pre class="run-log" id="run-log" aria-label="Simulation log">Select Run simulation to begin.</pre><pre class="run-result" id="run-result" aria-label="Sample result"></pre></div></section></main><footer><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>stackline</a><p>Original developer-platform concept. All deployment flows and prices are local examples. Nothing is deployed or billed.</p><nav aria-label="Footer navigation"><a href="docs.html">Docs</a><a href="pricing.html">Pricing</a><a href="assets/CREDITS.txt">Credits</a><a href="../../">ProtoSites ↗</a></nav></footer><script type="application/json" id="stackline-data">{"examples":{"javascript":"// Concept request. This endpoint is illustrative.\nconst response = await fetch(\n  'https://api.stackline.example/previews',\n  {\n    method: 'POST',\n    headers: { 'Content-Type': 'application/json' },\n    body: JSON.stringify({\n      project: 'fieldnotes',\n      environment: 'preview',\n      branch: 'feature/new-direction'\n    })\n  }\n);\n\nconst preview = await response.json();","python":"# Concept request. This endpoint is illustrative.\nimport json\nfrom urllib.request import Request, urlopen\n\npayload = json.dumps({\n    'project': 'fieldnotes',\n    'environment': 'preview',\n    'branch': 'feature/new-direction'\n}).encode()\n\nrequest = Request(\n    'https://api.stackline.example/previews',\n    data=payload,\n    headers={'Content-Type': 'application/json'}\n)\n# Do not execute: example endpoint only.","curl":"# Concept request. This endpoint is illustrative.\ncurl https://api.stackline.example/previews \\\n  --request POST \\\n  --header 'Content-Type: application/json' \\\n  --data '{\n    \"project\": \"fieldnotes\",\n    \"environment\": \"preview\",\n    \"branch\": \"feature/new-direction\"\n  }'\n\n# Explore the local simulator to see a response."},"stages":[{"id":"source","name":"Read the source","detail":"Resolve the selected project and environment."},{"id":"build","name":"Build the preview","detail":"Assemble the illustrative application bundle."},{"id":"checks","name":"Run the checks","detail":"Evaluate the selected simulation outcome."},{"id":"ready","name":"Prepare the handoff","detail":"Create an example address and response."}]}</script><script>const estimateUsage = function estimateUsage(builds, bandwidth) {
+  const base = 15;
+  const buildCost = Math.max(0, builds - 200) * 0.015;
+  const bandwidthCost = Math.max(0, bandwidth - 10) * 0.1;
+  return {
+    base,
+    buildCost,
+    bandwidthCost,
+    total: Math.round((base + buildCost + bandwidthCost) * 100) / 100,
+  };
+};
+const data = JSON.parse(document.getElementById('stackline-data').textContent);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const layerButton = document.getElementById('inspect-layers');
+layerButton?.addEventListener('click', () => {
+  const expanded = layerButton.getAttribute('aria-pressed') !== 'true';
+  layerButton.setAttribute('aria-pressed', String(expanded));
+  document.querySelector('.stack-art').classList.toggle('expanded', expanded);
+  layerButton.textContent = expanded
+    ? 'Bring layers together'
+    : 'Inspect the layers';
+});
+const code = document.getElementById('code-example');
+if (code) {
+  document.querySelectorAll('[data-language]').forEach((button) =>
+    button.addEventListener('click', () => {
+      code.textContent = data.examples[button.dataset.language];
+      document
+        .querySelectorAll('[data-language]')
+        .forEach((item) =>
+          item.setAttribute('aria-pressed', String(item === button)),
+        );
+      document.getElementById('code-status').textContent = '';
+    }),
+  );
+  document.getElementById('copy-code').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(code.textContent);
+      document.getElementById('code-status').textContent =
+        'Concept request copied.';
+    } catch {
+      document.getElementById('code-status').textContent =
+        'Select the code to copy it. Clipboard access is unavailable.';
+    }
+  });
+}
+const form = document.getElementById('simulation-form');
+if (form) {
+  const initialEnvironment = new URLSearchParams(location.search).get(
+    'environment',
+  );
+  if (['preview', 'staging'].includes(initialEnvironment))
+    document.getElementById('environment').value = initialEnvironment;
+  let controller = null;
+  const run = document.getElementById('run-preview');
+  const cancel = document.getElementById('cancel-preview');
+  const log = document.getElementById('run-log');
+  const status = document.getElementById('run-status');
+  const markStage = (id, state) => {
+    const node = document.querySelector(`[data-stage="${id}"]`);
+    node.dataset.state = state;
+    node.querySelector('.stage-status').textContent = state;
+  };
+  function wait(signal) {
+    return new Promise((resolve) => {
+      if (signal.aborted) {
+        resolve(false);
+        return;
+      }
+      const timer = setTimeout(
+        () => {
+          signal.removeEventListener('abort', abort);
+          resolve(true);
+        },
+        reduced.matches ? 0 : 350,
+      );
+      function abort() {
+        clearTimeout(timer);
+        resolve(false);
+      }
+      signal.addEventListener('abort', abort, { once: true });
+    });
+  }
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (controller || !form.reportValidity()) return;
+    const project = document.getElementById('project-name').value.trim();
+    const environment = document.getElementById('environment').value;
+    const outcome = document.getElementById('outcome').value;
+    controller = new AbortController();
+    const signal = controller.signal;
+    form
+      .querySelectorAll('input,select')
+      .forEach((control) => (control.disabled = true));
+    run.disabled = true;
+    cancel.disabled = false;
+    log.textContent = 'LOCAL SIMULATION\n';
+    document.getElementById('run-result').textContent = '';
+    status.textContent = 'Simulation running';
+    data.stages.forEach((stage) => markStage(stage.id, 'Waiting'));
+    try {
+      for (const stage of data.stages) {
+        markStage(stage.id, 'Running');
+        log.textContent += '> ' + stage.name + '\n';
+        if (!(await wait(signal))) {
+          markStage(stage.id, 'Cancelled');
+          status.textContent = 'Simulation cancelled';
+          log.textContent += 'Stopped locally. Nothing deployed.\n';
+          return;
+        }
+        if (stage.id === 'checks' && outcome === 'fail') {
+          markStage(stage.id, 'Failed');
+          status.textContent = 'Sample checks failed';
+          log.textContent +=
+            'Example validation error: missing build output.\nChoose Success and run again to explore recovery.\n';
+          return;
+        }
+        markStage(stage.id, 'Complete');
+      }
+      const result = {
+        project,
+        environment,
+        status: 'ready',
+        address: `https://${project}-${environment}.example/`,
+        localSimulation: true,
+      };
+      document.getElementById('run-result').textContent = JSON.stringify(
+        result,
+        null,
+        2,
+      );
+      status.textContent = 'Sample preview ready';
+      log.textContent +=
+        'All local stages complete. No remote deployment occurred.\n';
+    } finally {
+      controller = null;
+      form
+        .querySelectorAll('input,select')
+        .forEach((control) => (control.disabled = false));
+      run.disabled = false;
+      cancel.disabled = true;
+    }
+  });
+  cancel.addEventListener('click', () => controller?.abort());
+}
+const builds = document.getElementById('build-usage');
+if (builds) {
+  const bandwidth = document.getElementById('bandwidth-usage');
+  const money = (value) => '$' + value.toFixed(2);
+  function update() {
+    const result = estimateUsage(Number(builds.value), Number(bandwidth.value));
+    document.getElementById('build-value').textContent =
+      builds.value + ' builds';
+    document.getElementById('bandwidth-value').textContent =
+      bandwidth.value + ' GB';
+    document.getElementById('estimate-base').textContent = money(result.base);
+    document.getElementById('estimate-builds').textContent = money(
+      result.buildCost,
+    );
+    document.getElementById('estimate-bandwidth').textContent = money(
+      result.bandwidthCost,
+    );
+    document.getElementById('estimate-total').textContent = money(result.total);
+  }
+  builds.addEventListener('input', update);
+  bandwidth.addEventListener('input', update);
+  update();
+}
+const menu = document.getElementById('menu-toggle');
+menu.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  menu.setAttribute('aria-expanded', String(open));
+  document.getElementById('main-nav').classList.toggle('open', open);
+  menu.textContent = open ? 'Close' : 'Menu';
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+    menu.click();
+    menu.focus();
+  }
+});
+</script></body></html>

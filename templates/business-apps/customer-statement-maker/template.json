@@ -1,0 +1,23 @@
+{
+  "slug": "customer-statement-maker",
+  "name": "Customer Statement Maker",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Paste CSV or enter customer, period, opening balance and dated invoice/payment/credit rows. Running balance = prior balance + invoices - payments - credits. Produce statement PDF and CSV, preserve source reference and date order.",
+  "tagline": "Every payment.\nOne clear balance.",
+  "style": "cream",
+  "palette": [],
+  "order": 31,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 38,
+  "notes": {
+    "interaction": "Paste CSV or enter customer, period, opening balance and dated invoice/payment/credit rows. Running balance = prior balance + invoices - payments - credits. Produce statement PDF and CSV, preserve source reference and date order."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

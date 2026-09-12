@@ -1,0 +1,23 @@
+{
+  "slug": "late-payment-reminder",
+  "name": "Late Payment Reminder",
+  "collection": "business-apps",
+  "category": "client-services",
+  "industry": "Client services",
+  "description": "Business and customer names, invoice number, issue/due dates, amount already paid, total, payment URL and tone. Generate an editable reminder with exact remaining balance. Copy text, download or open the user\u2019s mail client; never send automatically or invent late fees.",
+  "tagline": "A reminder,\nnot a hassle.",
+  "style": "pink",
+  "palette": [],
+  "order": 30,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 37,
+  "notes": {
+    "interaction": "Business and customer names, invoice number, issue/due dates, amount already paid, total, payment URL and tone. Generate an editable reminder with exact remaining balance. Copy text, download or open the user\u2019s mail client; never send automatically or invent late fees."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

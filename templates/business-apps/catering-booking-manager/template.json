@@ -1,0 +1,22 @@
+{
+  "slug": "catering-booking-manager",
+  "name": "Catering Booking Manager",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Event/date/location, menu versions, guest count, per-head and fixed charges, deposits, staffing, equipment checklist",
+  "tagline": "One plan for the whole event.",
+  "style": "rose",
+  "palette": [],
+  "order": 116,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 19,
+  "notes": {
+    "interaction": "Event/date/location, menu versions, guest count, per-head and fixed charges, deposits, staffing, equipment checklist"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

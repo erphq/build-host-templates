@@ -1,0 +1,23 @@
+{
+  "slug": "product-specification-sheet",
+  "name": "Product Specification Sheet",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Upload product photo and enter brand, SKU, dimensions with units, weight, materials, features, care, packaging, optional price and contact. Compose one-page printable PDF and responsive shareable page. Do not invent certifications or performance claims.",
+  "tagline": "Every detail,\nbeautifully clear.",
+  "style": "green",
+  "palette": [],
+  "order": 41,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 48,
+  "notes": {
+    "interaction": "Upload product photo and enter brand, SKU, dimensions with units, weight, materials, features, care, packaging, optional price and contact. Compose one-page printable PDF and responsive shareable page. Do not invent certifications or performance claims."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

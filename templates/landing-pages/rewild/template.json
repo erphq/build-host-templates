@@ -1,0 +1,31 @@
+{
+  "slug": "rewild",
+  "name": "REWILD",
+  "collection": "landing-pages",
+  "category": "research-nonprofits",
+  "industry": "Lifestyle",
+  "description": "A conservation field journal focused on real habitat stories and useful ways to participate.",
+  "tagline": "Let nature lead.",
+  "style": "Conservation documentary",
+  "palette": [
+    "#162c22",
+    "#e6eddc",
+    "#b9d58a"
+  ],
+  "order": 34,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "forest landscape, habitat story, project map list, volunteer opportunities, participation planner",
+    "motion": "landscape reveal, habitat tab transition, opportunity selection feedback",
+    "interaction": "filter projects by habitat; choose a volunteer opportunity and prepare a local participation plan",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

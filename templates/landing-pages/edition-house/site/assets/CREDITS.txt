@@ -1,0 +1,27 @@
+EDITION HOUSE — ASSET AND REFERENCE CREDITS
+
+Brand, copy, code, room illustrations, and six art-print compositions are original project work created for the fictional Edition House storefront, 2026.
+The six art compositions are authored vector artwork, not real artists' limited editions. Prices, edition sizes and material specifications are illustrative.
+
+Original artwork files: terra-study.svg/webp, blue-hour.svg/webp, intervals.svg/webp, soft-sun.svg/webp, architectural-notes.svg/webp, after-the-rain.svg/webp.
+Room scenes are original CSS illustrations using the original print assets. They are not photographs or measured previews.
+
+Hero interior photograph:
+Source: Unsplash, photo ID photo-1600210492486-724fe5c67fb0
+Image URL: https://images.unsplash.com/photo-1600210492486-724fe5c67fb0
+License: https://unsplash.com/license
+License permits downloaded images to be used and modified for commercial and non-commercial purposes. Interior image is illustrative; no relationship with the photographer or depicted property is implied.
+Local files: interior.jpg, hero.webp (WebP encoding of the downloaded photograph).
+
+Typeface: Geist, Vercel, SIL Open Font License 1.1.
+Local file: geist-variable.woff2. See GEIST-LICENSE.txt.
+Display type uses the user's system Georgia serif.
+
+DESIGN RESEARCH
+Discovery: https://minimal.gallery/tag/e-commerce/
+Listing: https://minimal.gallery/the-print-loft/
+Primary reference: https://www.theprintloft.art/
+Product page inspected: https://www.theprintloft.art/products/dusk-over-ridge
+Observed September 8, 2026: cinematic full-bleed home imagery and alternating collection labels, artwork/in-room image controls, room-image carousels, selected product archive, series narratives, editorial journal links; product page contains thumbnail gallery, size, framing and finish options, materials/care disclosures and related art.
+The Edition House implementation borrows general information architecture and interaction patterns. It uses original branding, writing, artworks and compositions. No reference artwork, trademark, customer quotation or site code is redistributed.
+The exact easing, autoplay timing, underlying framework, inventory behavior and checkout implementation were not verified. Edition House motion and local cart logic are original implementation choices.

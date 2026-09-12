@@ -1,0 +1,22 @@
+{
+  "slug": "bakery-custom-orders",
+  "name": "Bakery Custom Orders",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Customer, event date/time, pickup/delivery, cake size/flavour, dietary requests, inscription, reference images, price, deposit",
+  "tagline": "Every cake, exactly as promised.",
+  "style": "rose",
+  "palette": [],
+  "order": 115,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 18,
+  "notes": {
+    "interaction": "Customer, event date/time, pickup/delivery, cake size/flavour, dietary requests, inscription, reference images, price, deposit"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

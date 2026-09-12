@@ -1,0 +1,1465 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Field archive — Apogee</title><meta name="description" content="A fictional research initiative exploring Earth systems, orbital studies, and deep-space concepts. Browse the mission archive. "><meta name="theme-color" content="#080d16"><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --bg: #080d16;
+  --surface: #101925;
+  --ink: #edf2fa;
+  --muted: #99a8bd;
+  --line: #283446;
+  --blue: #9fc8ff;
+  --accent: #cdf269;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font:
+    16px/1.55 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 450;
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+.label {
+  font-size: 12px;
+  letter-spacing: 0.095em;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--muted);
+}
+.section {
+  padding: 100px clamp(22px, 5vw, 90px);
+  max-width: 1700px;
+  margin: auto;
+}
+.skip {
+  position: fixed;
+  left: 15px;
+  top: 10px;
+  padding: 12px 20px;
+  background: var(--accent);
+  color: var(--bg);
+  z-index: 50;
+  transform: translateY(-160%);
+}
+.skip:focus {
+  transform: none;
+}
+.nav {
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(22px, 5vw, 90px);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  z-index: 10;
+  background: var(--bg);
+  gap: 20px;
+}
+.brand {
+  font-size: 31px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 550;
+  letter-spacing: -1.5px;
+}
+.brand-mark {
+  font-size: 38px;
+  line-height: 1;
+  color: var(--accent);
+}
+.brand-suffix {
+  font-size: 9px;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  max-width: 90px;
+  margin-left: 16px;
+  color: var(--muted);
+}
+.nav nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 14px;
+}
+.nav nav a:hover,
+.nav nav a[aria-current='page'] {
+  color: var(--accent);
+}
+.nav-library {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+.menu-toggle {
+  display: none;
+}
+.hero {
+  position: relative;
+  min-height: 760px;
+  height: calc(100svh - 90px);
+  max-height: 1080px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  isolation: isolate;
+}
+.hero-planet {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  z-index: -2;
+}
+.hero:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #080d1680, transparent 65%),
+    linear-gradient(0deg, #080d16 0%, transparent 25%);
+  z-index: -1;
+}
+.hero-content {
+  padding: 65px clamp(22px, 5vw, 90px) 120px;
+  max-width: 1200px;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #c9d6e8;
+}
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.hero h1 {
+  font-size: clamp(80px, 9.6vw, 156px);
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  margin: 50px 0 30px;
+}
+.hero h1 > span {
+  color: #c2d5f3;
+}
+.hero-content > p {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #c4cfdf;
+  max-width: 460px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 36px;
+}
+.button {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 35px;
+  align-items: center;
+  padding: 14px 20px;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 550;
+  border: 1px solid var(--line);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.button.light {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+.button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+.text-link {
+  background: none;
+  border: 0;
+  padding: 10px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 14px;
+  color: inherit;
+}
+.text-link:hover {
+  color: var(--accent);
+}
+.hero-foot {
+  position: absolute;
+  bottom: 28px;
+  left: clamp(22px, 5vw, 90px);
+  right: clamp(22px, 5vw, 90px);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  color: #a5b5cc;
+}
+.index-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 28px clamp(22px, 5vw, 90px);
+  gap: 28px;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.index-strip > span {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  max-width: 140px;
+}
+.index-strip a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 10px;
+  border-left: 1px solid var(--line);
+  padding-left: 26px;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+}
+.index-strip a small {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--blue);
+  grid-column: 1/-1;
+}
+.index-strip a > span:not(:last-child) {
+  grid-column: 1;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0;
+}
+.index-strip a > span:last-child {
+  grid-column: 2;
+  grid-row: 2;
+  color: var(--blue);
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+.section-heading h2 {
+  font-size: clamp(42px, 4.6vw, 72px);
+  margin-top: 23px;
+}
+.section-heading > p {
+  max-width: 340px;
+  color: var(--muted);
+  font-size: 17px;
+}
+.mission-browser {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.mission-tabs {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 30px 16px 0;
+}
+.mission-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  padding: 30px 0;
+  color: var(--muted);
+}
+.mission-tabs button > span:first-child {
+  font-size: 11px;
+  color: var(--muted);
+}
+.mission-tabs button strong {
+  font-size: 29px;
+  font-weight: 450;
+  letter-spacing: -0.05em;
+  display: block;
+}
+.mission-tabs button small {
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+.mission-tabs button > span:last-child {
+  margin-left: auto;
+}
+.mission-tabs button[aria-selected='true'] {
+  color: var(--ink);
+}
+.mission-tabs button[aria-selected='true'] > span:first-child {
+  color: var(--accent);
+}
+.mission-panel {
+  position: relative;
+  min-height: 490px;
+  overflow: hidden;
+  border-left: 1px solid var(--line);
+  isolation: isolate;
+}
+.mission-panel > img {
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  z-index: -2;
+}
+.mission-panel:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    #070d16f5 0%,
+    #070d1690 45%,
+    transparent 85%
+  );
+  z-index: -1;
+}
+.panel-overlay {
+  position: absolute;
+  left: 35px;
+  right: 35px;
+  bottom: 50px;
+  max-width: 580px;
+}
+.panel-overlay > .label {
+  color: #b8cce5;
+}
+.panel-overlay h3 {
+  font-size: clamp(34px, 3.5vw, 56px);
+  margin: 15px 0 26px;
+}
+.image-credit {
+  position: absolute;
+  bottom: 14px;
+  right: 20px;
+  font-size: 10px;
+  color: #bdcbe0;
+}
+.approach {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 12%;
+  border-top: 1px solid var(--line);
+}
+.approach h2 {
+  font-size: clamp(48px, 5.4vw, 88px);
+  margin: 24px 0 28px;
+}
+.approach > div > p {
+  max-width: 500px;
+  color: var(--muted);
+  font-size: 18px;
+}
+.approach .text-link {
+  margin-top: 25px;
+}
+.principles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.principles li {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  display: flex;
+  gap: 30px;
+}
+.principles li > span {
+  color: var(--blue);
+  font-size: 12px;
+}
+.principles h3 {
+  font-size: 30px;
+  margin: 0 0 16px;
+}
+.principles p {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 350px;
+}
+.horizon {
+  position: relative;
+  min-height: 570px;
+  isolation: isolate;
+  overflow: hidden;
+}
+.horizon > img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.horizon:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #080d16dc, #080d1640);
+  z-index: -1;
+}
+.horizon > div {
+  padding: 75px clamp(22px, 5vw, 90px);
+}
+.horizon .label {
+  color: #c9d8ee;
+}
+.horizon h2 {
+  font-size: clamp(65px, 7.8vw, 124px);
+  margin: 25px 0 35px;
+}
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.archive-image {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+}
+.archive-image > img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+.archive-image:hover img {
+  transform: scale(1.04);
+}
+.archive-image > span {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: white;
+  text-shadow: 0 1px 5px #000;
+}
+.archive-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-top: 23px;
+}
+.archive-meta .label {
+  font-size: 10px;
+}
+.archive-meta h3 {
+  font-size: 34px;
+  margin-top: 9px;
+}
+.archive-card > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.save-study {
+  background: none;
+  border: 1px solid var(--line);
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  flex-shrink: 0;
+}
+.save-study[aria-pressed='true'] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.save-notice {
+  display: block;
+  margin-top: 20px;
+  min-height: 24px;
+  color: var(--blue);
+  font-size: 14px;
+}
+.footer {
+  padding: 65px clamp(22px, 5vw, 90px) 28px;
+  border-top: 1px solid var(--line);
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  padding-bottom: 60px;
+}
+.footer-wordmark {
+  font-size: clamp(80px, 15vw, 230px);
+  letter-spacing: -0.08em;
+  font-weight: 550;
+  line-height: 0.9;
+}
+.footer-wordmark > span {
+  font-size: 0.5em;
+  color: var(--accent);
+  vertical-align: top;
+  margin-left: 20px;
+}
+.footer-top > p {
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+}
+.disclosure {
+  font-size: 11px;
+  max-width: 850px;
+  color: var(--muted);
+  margin-top: 25px;
+}
+.archive-intro {
+  padding-bottom: 70px;
+}
+.archive-intro h1 {
+  font-size: clamp(64px, 8vw, 128px);
+  margin: 30px 0;
+}
+.archive-intro > p {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 510px;
+}
+.archive-section {
+  padding-top: 0;
+}
+.archive-controls {
+  border-top: 1px solid var(--line);
+  padding-top: 35px;
+}
+.search-label {
+  display: block;
+  max-width: 510px;
+}
+.search-label input {
+  display: block;
+  width: 100%;
+  margin: 14px 0 25px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #657792;
+  color: var(--ink);
+  padding: 12px 0;
+  font-size: 22px;
+  border-radius: 0;
+}
+.archive-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.archive-filters button {
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 9px 15px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.archive-filters button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--bg);
+}
+.archive-result-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 22px;
+  font-size: 12px;
+  color: var(--muted);
+}
+#empty {
+  border-top: 1px solid var(--line);
+  padding: 50px 0;
+}
+#empty h2 {
+  font-size: 36px;
+}
+#empty p {
+  margin: 20px 0;
+  color: var(--muted);
+}
+[hidden] {
+  display: none !important;
+}
+.mission-detail-intro {
+  padding-top: 42px;
+  padding-bottom: 0;
+}
+.back {
+  font-size: 14px;
+  color: var(--muted);
+}
+.mission-detail-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-end;
+  margin: 65px 0 55px;
+}
+.mission-detail-heading h1 {
+  font-size: clamp(80px, 10.8vw, 170px);
+  margin-top: 25px;
+}
+.mission-detail-heading h1 > span {
+  color: var(--blue);
+  font-size: 0.5em;
+  vertical-align: top;
+  margin-left: 15px;
+}
+.mission-detail-heading > p {
+  max-width: 430px;
+  color: var(--muted);
+  font-size: 18px;
+}
+.mission-facts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+}
+.mission-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mission-facts strong {
+  font-size: 14px;
+  font-weight: 450;
+}
+.mission-facts .save-study {
+  width: auto;
+  height: auto;
+  border: 0;
+  font-size: 14px;
+}
+.mission-detail-image {
+  margin: 0 clamp(22px, 5vw, 90px);
+}
+.mission-detail-image > img {
+  max-height: 740px;
+  aspect-ratio: 16/8.5;
+  object-fit: cover;
+}
+.mission-detail-image figcaption {
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 12px;
+}
+.question {
+  max-width: 1260px;
+}
+.question h2 {
+  font-size: clamp(42px, 5.2vw, 78px);
+  line-height: 1.08;
+  margin: 30px 0;
+}
+.question > p {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 680px;
+  margin-left: auto;
+}
+.stage-section {
+  padding-top: 60px;
+  border-top: 1px solid var(--line);
+}
+.stage-layout {
+  border-top: 1px solid var(--line);
+}
+.stage-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stage-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  border: 0;
+  border-bottom: 2px solid var(--line);
+  background: none;
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 19px;
+}
+.stage-buttons button > span {
+  font-size: 12px;
+}
+.stage-buttons button[aria-selected='true'] {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+#stage-panel {
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 80px;
+  max-width: 1000px;
+}
+#stage-number {
+  font-size: 12px;
+  color: var(--accent);
+  grid-row: span 2;
+}
+#stage-title {
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+#stage-description {
+  font-size: 19px;
+  color: var(--muted);
+}
+.related {
+  padding-top: 30px;
+}
+.related-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 25px;
+}
+.related-links a {
+  border-top: 1px solid var(--line);
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.related-links small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.related-links strong {
+  font-weight: 450;
+  font-size: clamp(38px, 5vw, 65px);
+  letter-spacing: -0.04em;
+}
+.related-links strong > span {
+  float: right;
+  color: var(--blue);
+}
+@media (max-width: 1100px) {
+  .brand-suffix {
+    display: none;
+  }
+  .nav nav {
+    gap: 24px;
+  }
+  .nav-library {
+    padding-left: 20px;
+  }
+  .hero {
+    min-height: 720px;
+  }
+  .hero-content {
+    padding-top: 70px;
+  }
+  .hero h1 {
+    font-size: 100px;
+  }
+  .mission-browser {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+  .mission-tabs {
+    padding-right: 20px;
+  }
+  .mission-tabs button {
+    gap: 12px;
+  }
+  .panel-overlay {
+    left: 25px;
+    right: 25px;
+  }
+  .approach {
+    gap: 8%;
+  }
+  .mission-detail-heading {
+    display: block;
+  }
+  .mission-detail-heading > p {
+    max-width: 650px;
+    margin-top: 30px;
+  }
+  .section-heading > p {
+    max-width: 290px;
+  }
+  .index-strip {
+    gap: 18px;
+  }
+  .index-strip a {
+    padding-left: 18px;
+  }
+}
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 20px;
+  }
+  .nav {
+    height: 74px;
+    padding: 0 22px;
+  }
+  .brand {
+    font-size: 29px;
+  }
+  .menu-toggle {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    border: 0;
+    background: none;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+  .nav nav {
+    display: none;
+    position: absolute;
+    top: 73px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .nav nav.open {
+    display: flex;
+  }
+  .nav nav a {
+    padding: 15px 0;
+    font-size: 18px;
+  }
+  .nav-library {
+    border: 0;
+  }
+  .hero {
+    height: calc(100svh - 74px);
+    min-height: 720px;
+    max-height: 1000px;
+  }
+  .hero-planet {
+    object-position: 60% center;
+    opacity: 0.72;
+  }
+  .hero:after {
+    background:
+      linear-gradient(90deg, #080d1680, transparent),
+      linear-gradient(0deg, #080d16 0%, transparent 40%);
+  }
+  .hero-content {
+    padding: 50px 22px 130px;
+  }
+  .hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    gap: 8px;
+    max-width: 310px;
+  }
+  .hero h1 {
+    font-size: clamp(62px, 11.5vw, 95px);
+    margin: 75px 0 26px;
+    line-height: 0.96;
+  }
+  .hero-content > p {
+    font-size: 18px;
+  }
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .hero-foot {
+    left: 22px;
+    right: 22px;
+    bottom: 25px;
+    font-size: 9px;
+  }
+  .hero-foot > span:last-child {
+    display: none;
+  }
+  .index-strip {
+    grid-template-columns: 1fr;
+    padding: 25px 22px;
+    gap: 20px;
+  }
+  .index-strip > span {
+    max-width: none;
+  }
+  .index-strip a {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 18px 0 0;
+    grid-template-columns: 60px 1fr auto;
+    align-items: center;
+  }
+  .index-strip a small {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .index-strip a > span:not(:last-child) {
+    grid-column: 2;
+    font-size: 12px;
+  }
+  .index-strip a > span:last-child {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .section {
+    padding: 65px 22px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 32px;
+  }
+  .section-heading h2 {
+    font-size: 44px;
+    margin-top: 18px;
+  }
+  .section-heading > p {
+    margin-top: 25px;
+    max-width: 440px;
+    font-size: 16px;
+  }
+  .section-heading > .text-link {
+    margin-top: 25px;
+  }
+  .mission-browser {
+    display: flex;
+    flex-direction: column;
+  }
+  .mission-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 0;
+    gap: 12px;
+  }
+  .mission-tabs button {
+    display: block;
+    padding: 20px 0;
+    border-bottom: 2px solid transparent;
+  }
+  .mission-tabs button[aria-selected='true'] {
+    border-color: var(--accent);
+  }
+  .mission-tabs button > span:first-child {
+    font-size: 10px;
+  }
+  .mission-tabs button strong {
+    font-size: 24px;
+    margin-top: 8px;
+  }
+  .mission-tabs button small {
+    font-size: 10px;
+  }
+  .mission-tabs button > span:last-child {
+    display: none;
+  }
+  .mission-panel {
+    border: 0;
+    min-height: 430px;
+  }
+  .panel-overlay {
+    left: 22px;
+    right: 22px;
+    bottom: 50px;
+  }
+  .panel-overlay h3 {
+    font-size: 36px;
+  }
+  .image-credit {
+    font-size: 9px;
+  }
+  .approach {
+    display: block;
+  }
+  .approach h2 {
+    font-size: 54px;
+  }
+  .approach > div > p {
+    font-size: 17px;
+  }
+  .principles {
+    margin-top: 40px;
+  }
+  .principles li {
+    gap: 25px;
+  }
+  .principles h3 {
+    font-size: 30px;
+  }
+  .horizon {
+    min-height: 480px;
+  }
+  .horizon > div {
+    padding: 60px 22px;
+  }
+  .horizon h2 {
+    font-size: 68px;
+  }
+  .archive-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .archive-image > img {
+    aspect-ratio: 16/10;
+  }
+  .archive-meta {
+    margin-top: 20px;
+  }
+  .archive-meta h3 {
+    font-size: 36px;
+  }
+  .archive-meta .label {
+    font-size: 12px;
+  }
+  .footer {
+    padding: 45px 22px 22px;
+  }
+  .footer-top {
+    display: block;
+    padding-bottom: 35px;
+  }
+  .footer-wordmark {
+    font-size: clamp(78px, 17vw, 125px);
+  }
+  .footer-wordmark > span {
+    margin-left: 12px;
+  }
+  .footer-top > p {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .footer-bottom > span {
+    grid-column: 1/-1;
+  }
+  .disclosure {
+    font-size: 11px;
+    margin-top: 30px;
+  }
+  .archive-intro h1 {
+    font-size: 66px;
+    margin: 25px 0;
+  }
+  .archive-intro > p {
+    font-size: 18px;
+  }
+  .archive-section {
+    padding-top: 0;
+  }
+  .archive-filters {
+    gap: 8px;
+  }
+  .archive-filters button {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+  .search-label input {
+    font-size: 18px;
+  }
+  .archive-result-row {
+    font-size: 10px;
+    gap: 20px;
+  }
+  .mission-detail-intro {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  .mission-detail-heading {
+    margin: 40px 0 35px;
+  }
+  .mission-detail-heading h1 {
+    font-size: clamp(66px, 15vw, 110px);
+    margin-top: 18px;
+  }
+  .mission-detail-heading > p {
+    font-size: 17px;
+  }
+  .mission-facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .mission-facts .label {
+    font-size: 10px;
+  }
+  .mission-facts strong {
+    font-size: 13px;
+  }
+  .mission-facts .save-study {
+    justify-content: flex-start;
+  }
+  .mission-detail-image {
+    margin: 0 22px;
+  }
+  .mission-detail-image > img {
+    aspect-ratio: 4/3;
+  }
+  .mission-detail-image figcaption {
+    font-size: 10px;
+  }
+  .question h2 {
+    font-size: 39px;
+    line-height: 1.1;
+    margin: 20px 0 28px;
+  }
+  .question > p {
+    font-size: 18px;
+  }
+  .stage-section {
+    padding-top: 50px;
+  }
+  .stage-buttons button {
+    display: block;
+    padding: 18px 4px;
+    font-size: 15px;
+  }
+  .stage-buttons button > span {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  #stage-panel {
+    padding: 30px 0;
+    display: block;
+  }
+  #stage-number {
+    display: block;
+    margin-bottom: 25px;
+  }
+  #stage-title {
+    font-size: 32px;
+  }
+  #stage-description {
+    font-size: 18px;
+  }
+  .related {
+    padding-top: 0;
+  }
+  .related-links {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .related-links strong {
+    font-size: 42px;
+  }
+  .related-links a {
+    padding: 22px 0;
+  }
+}
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: 59px;
+  }
+  .hero-eyebrow {
+    font-size: 8px;
+  }
+  .mission-tabs button strong {
+    font-size: 21px;
+  }
+  .mission-tabs button small {
+    font-size: 9px;
+  }
+  .section-heading h2 {
+    font-size: 38px;
+  }
+  .approach h2 {
+    font-size: 48px;
+  }
+  .panel-overlay h3 {
+    font-size: 32px;
+  }
+  .archive-intro h1 {
+    font-size: 56px;
+  }
+  .footer-wordmark {
+    font-size: 72px;
+  }
+  .hero-foot {
+    font-size: 8px;
+  }
+  .mission-detail-heading h1 {
+    font-size: 62px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="nav"><a href="index.html" class="brand">apogee<span class="brand-mark" aria-hidden="true">/</span><span class="brand-suffix">RESEARCH CONCEPTS</span></a><button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false">Menu <span>＋</span></button><nav id="navigation" aria-label="Main navigation"><a href="index.html#mission" >The missions</a><a href="archive.html" aria-current="page">Field archive</a><a href="index.html#approach">Our approach</a><a href="../../" class="nav-library">ProtoSites <span aria-hidden="true">↗</span></a></nav></header><main id="main"><header class="archive-intro section"><span class="label">APOGEE / FIELD ARCHIVE</span><h1>A collection<br>of questions.</h1><p>Browse three independent concept studies. Save a perspective to return to later.</p></header><section class="section archive-section"><div class="archive-controls"><label class="search-label"><span class="label">FIND A STUDY</span><input id="search" type="search" placeholder="Search missions or subjects" aria-label="Search studies"></label><div class="archive-filters" role="group" aria-label="Filter studies"><button type="button" data-filter="All studies" aria-pressed="true">All studies</button><button type="button" data-filter="Earth systems" aria-pressed="false">Earth systems</button><button type="button" data-filter="Orbital studies" aria-pressed="false">Orbital studies</button><button type="button" data-filter="Deep-space concepts" aria-pressed="false">Deep-space concepts</button><button type="button" data-filter="Saved" aria-pressed="false">Saved</button></div></div><div class="archive-result-row"><span id="result-count" aria-live="polite">3 studies</span><span>2026 / CONCEPT COLLECTION</span></div><div class="archive-grid"><article class="archive-card" data-field="Earth systems" data-title="Meridian Atmospheric patterns Earth systems" data-slug="meridian"><a href="meridian.html" class="archive-image"><img src="assets/earth.webp" alt="Earth photographed from the International Space Station" width="1200" height="700" loading="lazy"><span>AP–01 <span aria-hidden="true">↗</span></span></a><div class="archive-meta"><div><span class="label">Earth systems</span><h3><a href="meridian.html">Meridian</a></h3></div><button type="button" class="save-study" data-save="meridian" aria-pressed="false" aria-label="Save Meridian">＋</button></div><p>Atmospheric patterns</p></article><article class="archive-card" data-field="Orbital studies" data-title="Vesper Light and horizon Orbital studies" data-slug="vesper"><a href="vesper.html" class="archive-image"><img src="assets/sunset.webp" alt="Earth’s horizon from the International Space Station at sunset" width="1200" height="700" loading="lazy"><span>AP–02 <span aria-hidden="true">↗</span></span></a><div class="archive-meta"><div><span class="label">Orbital studies</span><h3><a href="vesper.html">Vesper</a></h3></div><button type="button" class="save-study" data-save="vesper" aria-pressed="false" aria-label="Save Vesper">＋</button></div><p>Light and horizon</p></article><article class="archive-card" data-field="Deep-space concepts" data-title="Aeon Planetary observation Deep-space concepts" data-slug="aeon"><a href="aeon.html" class="archive-image"><img src="assets/hero.webp" alt="Generated blue planetary concept" width="1200" height="700" loading="lazy"><span>AP–03 <span aria-hidden="true">↗</span></span></a><div class="archive-meta"><div><span class="label">Deep-space concepts</span><h3><a href="aeon.html">Aeon</a></h3></div><button type="button" class="save-study" data-save="aeon" aria-pressed="false" aria-label="Save Aeon">＋</button></div><p>Planetary observation</p></article></div><div id="empty" hidden><h2>No studies in this view.</h2><p>Try another subject, or clear the filters to see the full collection.</p><button class="button light" type="button" id="reset">Show all studies</button></div><output class="save-notice" aria-live="polite"></output></section></main><footer class="footer"><div class="footer-top"><a href="index.html" class="footer-wordmark">apogee<span>/</span></a><p>Curiosity is<br>a good place to start.</p></div><div class="footer-bottom"><span>Independent research concepts · 2026</span><a href="archive.html">Explore the archive <span aria-hidden="true">↗</span></a><a href="assets/CREDITS.txt">Images & credits <span aria-hidden="true">↗</span></a><a href="../../">Back to ProtoSites <span aria-hidden="true">↗</span></a></div><p class="disclosure">A fictional research initiative. Mission descriptions and stages are illustrative. NASA imagery is credited; no NASA affiliation or endorsement is implied.</p></footer><script type="application/json" id="apogee-data">{"missions":[{"slug":"meridian","name":"Meridian","code":"AP–01","field":"Earth systems","image":"earth.webp","title":"Read the planet. Understand the change.","description":"A concept for looking at the atmosphere as one connected system. Meridian explores how an observation program could make complex planetary patterns easier to understand.","focus":"Atmospheric patterns","instrument":"Multispectral imaging concept","question":"How could a sequence of observations reveal patterns that a single image cannot?","approach":"Study broad structures first, then compare smaller regions over time. This concept emphasizes consistent framing, visible uncertainty, and an understandable record of each observation.","stages":["Define the observation question and the limits of the sample.","Compare a consistent sequence of regional views.","Annotate patterns without inferring unsupported causes.","Publish the study with its assumptions and image provenance."]},{"slug":"vesper","name":"Vesper","code":"AP–02","field":"Orbital studies","image":"sunset.webp","title":"The edge of day. A different kind of horizon.","description":"An orbital-observation concept focused on transitions: light into darkness, one view into the next, and the thin line that separates the familiar from the unknown.","focus":"Light and horizon","instrument":"Optical observation concept","question":"What changes when the same horizon is observed under different illumination?","approach":"Treat light as context, not just decoration. Organize an observational sequence around the transition it records, with careful captions and a clear distinction between imagery and interpretation.","stages":["Define a repeatable observation window.","Collect a concept sequence across changing light.","Compare visible features and document limitations.","Prepare an illustrated research note for review."]},{"slug":"aeon","name":"Aeon","code":"AP–03","field":"Deep-space concepts","image":"hero.webp","title":"Ask a larger question.","description":"A speculative research concept about worlds beyond familiar horizons. Aeon is a visual exercise in long-distance observation, patient inquiry, and the scale of unanswered questions.","focus":"Planetary observation","instrument":"Remote sensing concept","question":"How do we communicate a distant world without confusing a hypothesis with an observation?","approach":"Separate what is seen, what is modeled, and what is imagined. This study uses an original generated planetary image to explore presentation rather than claim a scientific discovery.","stages":["State the question and distinguish speculation from evidence.","Plan an illustrative observation sequence.","Compare assumptions and communicate uncertainty.","Publish a concept study with transparent image credits."]}]}</script><script>(() => {
+  const data = JSON.parse(document.querySelector('#apogee-data').textContent);
+  const menu = document.querySelector('#navigation');
+  const toggle = document.querySelector('.menu-toggle');
+  function closeMenu() {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  menu
+    .querySelectorAll('a')
+    .forEach((a) => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+  function bindTabs(selector, choose) {
+    const tabs = [...document.querySelectorAll(selector)];
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => select(index));
+      tab.addEventListener('keydown', (event) => {
+        let next = index;
+        if (['ArrowDown', 'ArrowRight'].includes(event.key))
+          next = (index + 1) % tabs.length;
+        else if (['ArrowUp', 'ArrowLeft'].includes(event.key))
+          next = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        select(next);
+        tabs[next].focus();
+      });
+    });
+    function select(index) {
+      tabs.forEach((tab, i) => {
+        tab.setAttribute('aria-selected', String(i === index));
+        tab.tabIndex = i === index ? 0 : -1;
+      });
+      choose(index);
+    }
+  }
+  bindTabs('[data-mission]', (index) => {
+    const m = data.missions[index];
+    document.querySelector('#mission-image').src = 'assets/' + m.image;
+    document.querySelector('#mission-image').alt =
+      m.slug === 'aeon'
+        ? 'Original generated planetary concept'
+        : 'Earth observation photograph credited to NASA / ISS crew';
+    document.querySelector('#mission-code').textContent = m.code;
+    document.querySelector('#mission-title').textContent = m.title;
+    const link = document.querySelector('#mission-link');
+    link.href = m.slug + '.html';
+    link.textContent = 'Explore ' + m.name + ' ↗';
+    document.querySelector('#mission-credit').textContent =
+      m.slug === 'aeon'
+        ? 'Original generated concept'
+        : 'Image: NASA / ISS crew';
+    document
+      .querySelector('#mission-panel')
+      .setAttribute('aria-labelledby', 'tab-' + m.slug);
+  });
+  const current = data.missions.find((m) => m.slug === data.current);
+  bindTabs('[data-stage]', (index) => {
+    document.querySelector('#stage-number').textContent =
+      '0' + (index + 1) + ' / 04';
+    document.querySelector('#stage-title').textContent = [
+      'Frame the question',
+      'Observe the context',
+      'Interpret carefully',
+      'Share the perspective',
+    ][index];
+    document.querySelector('#stage-description').textContent =
+      current.stages[index];
+    document
+      .querySelector('#stage-panel')
+      .setAttribute('aria-labelledby', 'stage-' + index);
+  });
+  let saved = [];
+  try {
+    const stored = JSON.parse(localStorage.getItem('apogee-saved') || '[]');
+    if (Array.isArray(stored))
+      saved = stored.filter((slug) =>
+        data.missions.some((m) => m.slug === slug),
+      );
+  } catch {}
+  const saveButtons = [...document.querySelectorAll('[data-save]')];
+  function updateSaved() {
+    saveButtons.forEach((button) => {
+      const active = saved.includes(button.dataset.save);
+      const mission = data.missions.find((m) => m.slug === button.dataset.save);
+      button.setAttribute('aria-pressed', String(active));
+      button.setAttribute(
+        'aria-label',
+        (active ? 'Unsave ' : 'Save ') + mission.name,
+      );
+      button.textContent = button.classList.contains('text-link')
+        ? active
+          ? 'Saved ✓'
+          : 'Save study ＋'
+        : active
+          ? '✓'
+          : '＋';
+    });
+  }
+  const filters = [...document.querySelectorAll('[data-filter]')];
+  let filter = 'All studies';
+  const search = document.querySelector('#search');
+  function filterArchive() {
+    if (!search) return;
+    const query = search.value.trim().toLowerCase();
+    let count = 0;
+    document.querySelectorAll('.archive-card').forEach((card) => {
+      const field =
+        filter === 'All studies' ||
+        (filter === 'Saved'
+          ? saved.includes(card.dataset.slug)
+          : card.dataset.field === filter);
+      const matches = card.dataset.title.toLowerCase().includes(query);
+      card.hidden = !(field && matches);
+      if (!card.hidden) count++;
+    });
+    document.querySelector('#result-count').textContent =
+      count + ' ' + (count === 1 ? 'study' : 'studies');
+    document.querySelector('#empty').hidden = count > 0;
+  }
+  saveButtons.forEach((button) =>
+    button.addEventListener('click', () => {
+      const slug = button.dataset.save;
+      saved = saved.includes(slug)
+        ? saved.filter((x) => x !== slug)
+        : [...saved, slug];
+      let message = saved.includes(slug)
+        ? 'Study saved in this browser.'
+        : 'Study removed from your saved list.';
+      try {
+        localStorage.setItem('apogee-saved', JSON.stringify(saved));
+      } catch {
+        message = 'Saved for this visit only. Browser storage is unavailable.';
+      }
+      updateSaved();
+      filterArchive();
+      document
+        .querySelectorAll('.save-notice')
+        .forEach((output) => (output.textContent = message));
+    }),
+  );
+  updateSaved();
+  filters.forEach((button) =>
+    button.addEventListener('click', () => {
+      filter = button.dataset.filter;
+      filters.forEach((x) =>
+        x.setAttribute('aria-pressed', String(x === button)),
+      );
+      filterArchive();
+    }),
+  );
+  search?.addEventListener('input', filterArchive);
+  document.querySelector('#reset')?.addEventListener('click', () => {
+    search.value = '';
+    filter = 'All studies';
+    filters.forEach((x) =>
+      x.setAttribute('aria-pressed', String(x.dataset.filter === filter)),
+    );
+    filterArchive();
+  });
+})();
+</script></body></html>

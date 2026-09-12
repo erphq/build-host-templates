@@ -1,0 +1,31 @@
+{
+  "slug": "afterhours",
+  "name": "AFTERHOURS",
+  "collection": "landing-pages",
+  "category": "events-communities",
+  "industry": "Lifestyle",
+  "description": "An independent music gathering with expressive event typography and a personal set planner.",
+  "tagline": "Meet us after dark.",
+  "style": "Nightlife event poster",
+  "palette": [
+    "#201725",
+    "#f2dce5",
+    "#ed92b8"
+  ],
+  "order": 33,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "giant event title, performance image, day-switching lineup, venue guide, personal schedule, ticket selector",
+    "motion": "title stagger, lineup day transition, saved set feedback",
+    "interaction": "switch lineup day; add or remove acts from a local schedule; calculate sample ticket total",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

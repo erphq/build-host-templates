@@ -1,0 +1,26 @@
+[
+  {
+    "name": "coast",
+    "prompt": "Use case: photorealistic-natural. Original editorial campaign photograph for Afield, a fictional outdoor apparel label. Wide 16:9 cinematic photograph of a fictional adult walker seen from behind in an olive canvas overshirt and dark navy trousers, following a narrow grassy path above a rugged grey-blue sea. Wind-shaped coastal grasses, overcast soft light, calm expansive atmosphere. Person in right third, left half open coastal landscape for white text. Authentic restrained outdoor clothing campaign, subtle film grain. No logos, readable text, watermark, recognizable location, or celebrity. Generate one image.",
+    "method": "Generated original campaign/product image",
+    "disclosure": "Fictional apparel concept; no existing brand assets"
+  },
+  {
+    "name": "overshirt",
+    "prompt": "Use case: product-mockup. Original fictional outdoor apparel product. Portrait 4:5 studio photograph of an olive-green heavyweight canvas overshirt, full garment front view, collared neck, five dark buttons, two practical rectangular chest pockets, straight hem, relaxed sleeves. Invisible mannequin or naturally structured flat front presentation, no hanger. Centered on warm pale stone seamless background, soft directional light, tactile fabric, whole garment visible with space around it. No logos, text, watermark, people, or recognizable branded design. Generate one image.",
+    "method": "Generated original campaign/product image",
+    "disclosure": "Fictional apparel concept; no existing brand assets"
+  },
+  {
+    "name": "crew",
+    "prompt": "Use case: product-mockup. Original fictional outdoor apparel product. Portrait 4:5 studio photograph of an ecru wool crewneck sweater, full garment front view, clean ribbed neck cuffs and hem, subtle chunky knit texture, relaxed shoulders. Invisible mannequin or naturally structured flat front presentation, no hanger. Centered on warm pale stone seamless background, soft directional light, tactile fabric, whole garment visible with space around it. No logos, text, watermark, people, or recognizable branded design. Generate one image.",
+    "method": "Generated original campaign/product image",
+    "disclosure": "Fictional apparel concept; no existing brand assets"
+  },
+  {
+    "name": "daypack",
+    "prompt": "Use case: product-mockup. Original fictional outdoor carry product. Portrait 4:5 studio photograph of a burnt-orange canvas rolltop daypack, front three-quarter view, charcoal webbing straps, one simple outer pocket, understated matte metal hardware. Centered on warm pale stone seamless background matching premium clothing product photography, soft directional light, realistic grounding shadow, entire bag visible. No logos, text, watermark, people, or recognizable branded signature design. Generate one image.",
+    "method": "Generated original campaign/product image",
+    "disclosure": "Fictional apparel concept; no existing brand assets"
+  }
+]

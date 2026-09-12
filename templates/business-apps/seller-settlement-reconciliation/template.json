@@ -1,0 +1,22 @@
+{
+  "slug": "seller-settlement-reconciliation",
+  "name": "Seller Settlement Reconciliation",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Order CSV, settlement CSV, order ID, sale, refunds, fees, shipping deductions, net payout, payout ID",
+  "tagline": "Know what the marketplace owes you.",
+  "style": "orange",
+  "palette": [],
+  "order": 105,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 6,
+  "notes": {
+    "interaction": "Order CSV, settlement CSV, order ID, sale, refunds, fees, shipping deductions, net payout, payout ID"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

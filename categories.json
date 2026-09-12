@@ -1,0 +1,92 @@
+[
+  {
+    "id": "money-accounts",
+    "name": "Money & accounts",
+    "collection": "business-apps"
+  },
+  {
+    "id": "client-services",
+    "name": "Client services",
+    "collection": "business-apps"
+  },
+  {
+    "id": "orders-delivery",
+    "name": "Orders & delivery",
+    "collection": "business-apps"
+  },
+  {
+    "id": "services-repairs",
+    "name": "Services & repairs",
+    "collection": "business-apps"
+  },
+  {
+    "id": "local-business",
+    "name": "Local business",
+    "collection": "business-apps"
+  },
+  {
+    "id": "projects-sites",
+    "name": "Projects & sites",
+    "collection": "business-apps"
+  },
+  {
+    "id": "health-wellness",
+    "name": "Health & wellness",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "portfolios",
+    "name": "Portfolios",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "restaurants-caf-s",
+    "name": "Restaurants & caf\u00e9s",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "saas",
+    "name": "SaaS",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "property-spaces",
+    "name": "Property & spaces",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "research-nonprofits",
+    "name": "Research & nonprofits",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "events-communities",
+    "name": "Events & communities",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "e-commerce",
+    "name": "E-commerce",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "education-courses",
+    "name": "Education & courses",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "editorial",
+    "name": "Editorial",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "agencies",
+    "name": "Agencies",
+    "collection": "landing-pages"
+  },
+  {
+    "id": "travel-hospitality",
+    "name": "Travel & hospitality",
+    "collection": "landing-pages"
+  }
+]

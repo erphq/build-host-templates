@@ -1,0 +1,32 @@
+{
+  "slug": "fieldschool",
+  "name": "Fieldschool",
+  "collection": "landing-pages",
+  "category": "education-courses",
+  "industry": "Education",
+  "description": "A complete creative learning site with live color, typography and layout exercises, saved experiments and an exportable field notebook.",
+  "tagline": "Learn by making something.",
+  "style": "Tactile creative school",
+  "palette": [
+    "#f4f1e7",
+    "#272c25",
+    "#df5c36",
+    "#75919d"
+  ],
+  "order": 13,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Asymmetric paper-collage hero, original course posters, instructional manifesto, real lesson studios and a personal notebook",
+    "motion": "Restrained poster hover, specimen color transitions and responsive composition changes",
+    "interaction": "Filter courses, measure color contrast, adjust typography and layout, save reflections and export a notebook",
+    "provenance": "Six independently composed pages with original course content and artwork, three functioning browser exercises and local learning records."
+  },
+  "credits": {
+    "referenceName": "SuperHi",
+    "referenceUrl": "https://www.superhi.com/"
+  },
+  "pageCount": 6
+}

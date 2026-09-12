@@ -1,0 +1,23 @@
+{
+  "slug": "reorder-quantity-calculator",
+  "name": "Reorder Quantity Calculator",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Average daily demand, supplier lead time, review interval, safety stock, on-hand stock, incoming units and backorders. Target = demand times (lead + review) + safety. Order = max(0,target-onHand-incoming+backorders), rounded up to case pack/MOQ if configured.",
+  "tagline": "Never guess\nyour next order.",
+  "style": "purple",
+  "palette": [],
+  "order": 37,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 44,
+  "notes": {
+    "interaction": "Average daily demand, supplier lead time, review interval, safety stock, on-hand stock, incoming units and backorders. Target = demand times (lead + review) + safety. Order = max(0,target-onHand-incoming+backorders), rounded up to case pack/MOQ if configured."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

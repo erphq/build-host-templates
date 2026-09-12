@@ -1,0 +1,23 @@
+{
+  "slug": "cash-runway-calculator",
+  "name": "Cash Runway Calculator",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Opening cash, monthly operating cash in/out and optional dated one-time expenses. Calculate cumulative balances month by month; distinguish constant-burn estimate from detailed cash forecast. No investment advice.",
+  "tagline": "Make time\nfor what\u2019s next.",
+  "style": "green",
+  "palette": [],
+  "order": 29,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 36,
+  "notes": {
+    "interaction": "Opening cash, monthly operating cash in/out and optional dated one-time expenses. Calculate cumulative balances month by month; distinguish constant-burn estimate from detailed cash forecast. No investment advice."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

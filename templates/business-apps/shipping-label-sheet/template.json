@@ -1,0 +1,23 @@
+{
+  "slug": "shipping-label-sheet",
+  "name": "Shipping Label Sheet",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Paste CSV addresses, map recipient/company/street/unit/city/state/ZIP, choose label dimensions, sheet margins, row/column count and starting position. Preview US Letter sheet and export printable PDF at actual size. These are address labels, not purchased postage.",
+  "tagline": "From your list\nto their doorstep.",
+  "style": "pink",
+  "palette": [],
+  "order": 35,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 42,
+  "notes": {
+    "interaction": "Paste CSV addresses, map recipient/company/street/unit/city/state/ZIP, choose label dimensions, sheet margins, row/column count and starting position. Preview US Letter sheet and export printable PDF at actual size. These are address labels, not purchased postage."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

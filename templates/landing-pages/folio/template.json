@@ -1,0 +1,31 @@
+{
+  "slug": "folio",
+  "name": "Folio",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Creative",
+  "description": "A complete client-project workspace with original design boards, briefs, deliverable feedback, approvals, milestones and activity.",
+  "tagline": "A home for client work.",
+  "style": "Client workspace and approval flow",
+  "palette": [
+    "#f5f3e9",
+    "#29362d",
+    "#dfe8c5"
+  ],
+  "order": 40,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "centered product proposition, original portal preview, studio workspace, project tabs, review dialog and full brief creation",
+    "motion": "product entrance, workflow switching, card hover and dialog transitions with reduced-motion support",
+    "interaction": "search projects, create briefs, track milestones, review versions, save feedback, approve or request changes and switch sample plans",
+    "provenance": "Independent five-page client-work product with original visual system, project content, artwork and persistent local review behavior."
+  },
+  "credits": {
+    "referenceName": "Bonsai Client Portal",
+    "referenceUrl": "https://www.hellobonsai.com/client-portal"
+  },
+  "pageCount": 5
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "inventory-count-sheet",
+  "name": "Inventory Count Sheet",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Paste SKU, item, unit and location; group by location, assign date/counter and generate blank count columns. Blind count hides expected stock by default; optional reconciliation compares entered counts to imported expected stock.",
+  "tagline": "Count once.\nCount clearly.",
+  "style": "blue",
+  "palette": [],
+  "order": 38,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 45,
+  "notes": {
+    "interaction": "Paste SKU, item, unit and location; group by location, assign date/counter and generate blank count columns. Blind count hides expected stock by default; optional reconciliation compares entered counts to imported expected stock."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

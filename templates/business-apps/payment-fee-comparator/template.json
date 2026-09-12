@@ -1,0 +1,23 @@
+{
+  "slug": "payment-fee-comparator",
+  "name": "Payment Fee Comparator",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Monthly processed volume, transaction count, and user-entered provider percentage fee, fixed per-transaction fee and monthly charge. Cost = volume times percent + count times fixed fee + monthly fee. Use fictional Provider A/B, never present sample pricing as current offers.",
+  "tagline": "Keep more of\nevery payment.",
+  "style": "blue",
+  "palette": [],
+  "order": 28,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 35,
+  "notes": {
+    "interaction": "Monthly processed volume, transaction count, and user-entered provider percentage fee, fixed per-transaction fee and monthly charge. Cost = volume times percent + count times fixed fee + monthly fee. Use fictional Provider A/B, never present sample pricing as current offers."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

@@ -1,0 +1,83 @@
+AVEN / ORIGINAL DESIGN ASSETS
+
+[
+  {
+    "slug": "ivory-texture",
+    "prompt": "Create a subtle full-bleed warm ivory folded paper / vertically ribbed architectural plaster texture, low contrast, softly lit from upper left. No objects, no text, no logos. Horizontal 1536x1024. Intended as a quiet tactile background behind live HTML dashboard cards; photograph only, do not generate any UI or dashboard. Fine natural material texture, soft shallow vertical folds, restrained tonal variation.",
+    "generation_tool": "Built-in image generation",
+    "provenance": "Original AI-generated bitmap asset",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "slug": "stationery",
+    "prompt": "Create an editorial still-life photograph of blank soft mint and ivory stationery cards and a small brushed silver paperclip on a muted seafoam surface. Strong editorial light, overhead slightly angled composition. Horizontal 1536x1024. No text, no logos. Tactile uncoated paper, understated shadows, calm precise arrangement. Objects only; no UI mockup or screenshot.",
+    "generation_tool": "Built-in image generation",
+    "provenance": "Original AI-generated bitmap asset",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "slug": "speaker",
+    "prompt": "Create a small unbranded retro portable speaker in muted apricot, sculptural product composition on a lavender-gray studio surface. Horizontal 1536x1024. No text, no logos. Refined editorial product photograph, tactile finish, soft directional studio lighting, compact speaker with simple grille and understated controls. Objects only; no UI mockup or screenshot.",
+    "generation_tool": "Built-in image generation",
+    "provenance": "Original AI-generated bitmap asset",
+    "width": 1536,
+    "height": 1024
+  }
+]
+
+Morrow image: original generated skincare artwork from the ProtoSites MOSS collection.
+Primary image: original generated artwork
+{
+  "slug": "moss",
+  "prompt": "Premium unbranded frosted sage-green serum bottle and low ceramic moisturizer jar on pale cool-green stone, branch shadow, sparse botanical leaf, natural daylight, editorial skincare campaign. Vertical 1024x1536. No text or logo. NOT medical vials. Photorealistic high-end beauty campaign; subtle tactile textures, sophisticated quiet composition.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1024,
+  "height": 1536
+}
+
+
+Northline image: complementary developer-workspace photography from the ProtoSites STACKLINE collection.
+Primary image
+{
+  "subject": "developer",
+  "source_page": "https://www.pexels.com/photo/motherboard-in-close-up-shot-14887608/",
+  "author": "Nicolas Foster",
+  "image_url": "https://images.pexels.com/photos/14887608/pexels-photo-14887608.jpeg?cs=srgb&dl=pexels-nicolas-foster-65973708-14887608.jpg&fm=jpg",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "width": 6000,
+  "height": 4800
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "developer",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/close-up-of-a-computer-circuit-board-34924856/",
+  "image_url": "https://images.pexels.com/photos/34924856/pexels-photo-34924856.jpeg?cs=srgb&dl=pexels-iohichu-34924856.jpg&fm=jpg",
+  "author": "Ivan Chumak",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "computer circuit close up",
+  "width": 7728,
+  "height": 4344
+}
+
+Secondary image 2
+{
+  "site_slug": "developer",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/crop-faceless-developer-working-on-software-code-on-laptop-5926382/",
+  "image_url": "https://images.pexels.com/photos/5926382/pexels-photo-5926382.jpeg?cs=srgb&dl=pexels-sora-shimazaki-5926382.jpg&fm=jpg",
+  "author": "Sora Shimazaki",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "developer laptop coding",
+  "width": 6000,
+  "height": 4000
+}

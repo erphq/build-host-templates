@@ -1,0 +1,6 @@
+Kindred is an original fictional support-software concept. All conversation records and articles are original.
+conversation.webp and hero.webp: generated original editorial imagery; fictional adult subject, not a staff portrait or endorsement. Exact prompt in provenance.json.
+Geist Variable: SIL Open Font License, see GEIST-LICENSE.txt.
+DM Serif Display: SIL Open Font License, see DM-SERIF-LICENSE.txt.
+Lucide icons: ISC License, see LUCIDE-LICENSE.txt.
+Reference research: https://saaspo.com/pages/help-scout-product-page, https://www.helpscout.com/inbox/, https://www.helpscout.com/knowledge-base/. No reference assets, customer data, or source copied.

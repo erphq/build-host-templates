@@ -1,0 +1,2764 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Know what changed. Own what happens next. | Beacon</title><meta name="description" content="Original observability concept with synthetic checks, local incident-response exercises, and a public status-page preview."><link rel="preload" href="assets/geist-variable.woff2" as="font" type="font/woff2" crossorigin><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  --ink: #16323b;
+  --muted: #526a70;
+  --paper: #f2f6f5;
+  --line: #c7d9d7;
+  --teal: #126b61;
+  --mint: #ade4d8;
+  --night: #112830;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    16px/1.65 Geist,
+    Arial,
+    sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  outline-offset: 5px;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #bf6a32;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+p {
+  color: var(--muted);
+}
+[hidden] {
+  display: none !important;
+}
+main {
+  overflow: clip;
+}
+.container {
+  max-width: 1320px;
+  margin: auto;
+  padding-inline: 30px;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  background: var(--teal);
+  color: white;
+  padding: 12px;
+  z-index: 100;
+}
+.skip:focus {
+  top: 10px;
+}
+header {
+  height: 78px;
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  align-items: center;
+  padding: 0 max(30px, calc((100vw - 1260px) /2));
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: #f2f6f5f2;
+  backdrop-filter: blur(14px);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 29px;
+  font-weight: 550;
+  letter-spacing: -1px;
+}
+.beacon-mark {
+  width: 29px;
+  height: 29px;
+  display: inline-block;
+  position: relative;
+  flex: none;
+}
+.beacon-mark i {
+  position: absolute;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  inset: 0;
+}
+.beacon-mark i:nth-child(2) {
+  inset: 6px;
+}
+.beacon-mark b {
+  position: absolute;
+  inset: 12px;
+  background: currentColor;
+  border-radius: 50%;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 14px;
+}
+header a[aria-current='page'] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.button {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  background: var(--mint);
+  color: #153d36;
+  border: 1px solid #8bcbbc;
+  border-radius: 5px;
+  padding: 13px 21px;
+  min-height: 48px;
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.button:hover {
+  background: #c3eee4;
+  transform: translateY(-1px);
+}
+.button.dark {
+  background: #143d3e;
+  color: #f3fbf7;
+  border-color: #143d3e;
+}
+.plain {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--ink);
+  border: 1px solid #a7c5c0;
+  border-radius: 5px;
+  padding: 11px 16px;
+  min-height: 44px;
+  font-size: 14px;
+}
+.plain:hover {
+  background: #e5f2ee;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #7ea69f;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+.text-button {
+  border: 0;
+  background: none;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  padding: 10px 0;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  font-weight: 500;
+  color: #486970;
+  display: block;
+}
+body:has(.hero) {
+  background: var(--night);
+  color: #eaf7f3;
+}
+body:has(.hero) header {
+  background: #112830ee;
+  border-color: #315057;
+}
+body:has(.hero) header nav {
+  color: #c3dbd9;
+}
+body:has(.hero) .eyebrow {
+  color: #a8d2cb;
+}
+body:has(.hero) p {
+  color: #b5cfcd;
+}
+.hero {
+  padding-top: 60px;
+  padding-bottom: 65px;
+}
+.hero-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  font-size: 12px;
+  color: #b1d6cf;
+  margin-bottom: 30px;
+}
+.hero-topline > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.08em;
+}
+.hero-head {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+.hero h1 {
+  font-size: clamp(50px, 5.3vw, 74px);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+  margin: 0;
+}
+.hero-head p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.hero-console {
+  border: 1px solid #44656b;
+  border-radius: 9px;
+  background: #18373e;
+  box-shadow: 0 30px 70px #04151c66;
+  overflow: hidden;
+}
+.console-top {
+  padding: 19px 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  background: #23444a;
+  border-bottom: 1px solid #476168;
+  font-size: 14px;
+}
+.console-top > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sample-label {
+  font-size: 12px;
+  color: #b7d5d0;
+}
+.console-body {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+}
+.console-body aside {
+  padding: 38px;
+  border-right: 1px solid #3b5c63;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: #163239;
+}
+.console-body aside h2 {
+  font-size: 37px;
+  line-height: 1.12;
+  margin: 25px 0;
+}
+.console-body aside p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.console-body aside a {
+  margin-top: auto;
+  padding-top: 25px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+  color: #b4e9db;
+}
+.console-services {
+  padding: 12px 28px;
+}
+.console-services > a {
+  display: block;
+  padding: 20px 0;
+  border-bottom: 1px solid #3d5d63;
+}
+.console-services > a:last-child {
+  border: 0;
+}
+.console-services > a > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.console-services b {
+  font-size: 16px;
+  font-weight: 500;
+}
+.health {
+  font-size: 12px;
+  display: inline-block;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border: 1px solid #a0c8b8;
+  color: #21634d;
+  background: #e4f1e8;
+  border-radius: 4px;
+}
+.health.degraded {
+  background: #faf0d8;
+  color: #785618;
+  border-color: #d5bc81;
+}
+.health.outage {
+  background: #f8e3e0;
+  color: #963e36;
+  border-color: #d6a29b;
+}
+.check-bars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  height: 25px;
+}
+.check-bars > span {
+  display: block;
+  flex: 1;
+  min-width: 2px;
+  height: 100%;
+  background: #2d8467;
+  border-radius: 2px;
+}
+.check-bars > span.degraded {
+  background: #e4b75f;
+}
+.check-bars > span.outage {
+  background: #d87164;
+}
+.service-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  color: #b5d4cd;
+  margin-top: 10px;
+}
+.console-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 17px 27px;
+  background: #1d3c42;
+  border-top: 1px solid #45636a;
+  font-size: 12px;
+  color: #b9d8d1;
+}
+.statement {
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+.statement > p {
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin: 25px 0 0;
+  max-width: 1050px;
+  color: #f2faf7 !important;
+}
+.statement > p > span {
+  color: #a1c8c1;
+}
+.workflow-section {
+  padding-top: 35px;
+  padding-bottom: 85px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 40px;
+}
+.section-heading h2 {
+  font-size: 45px;
+  line-height: 1.08;
+  margin: 0;
+}
+.section-heading .eyebrow {
+  margin-bottom: 20px;
+}
+.section-heading > p {
+  font-size: 17px;
+  max-width: 420px;
+  margin: 0;
+}
+.workflow-map {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #44636a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.workflow-map > a {
+  padding: 30px;
+  background: #1c3940;
+  display: flex;
+  flex-direction: column;
+}
+.workflow-map > a + a {
+  border-left: 1px solid #44636a;
+}
+.workflow-map > a > span {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: #b5d7d0;
+}
+.workflow-map > a > svg:first-of-type {
+  margin-top: 35px;
+  color: #b2e6d8;
+}
+.workflow-map h3 {
+  font-size: 23px;
+  margin: 28px 0 18px;
+}
+.workflow-map p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+.workflow-map > a > svg:last-child {
+  margin-top: auto;
+  align-self: end;
+  color: #b9eadd;
+}
+.context-feature {
+  background: #d7eae3;
+  color: #193b3c;
+}
+.context-feature > .container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 85px;
+  align-items: center;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.context-feature .eyebrow {
+  color: #426960 !important;
+}
+.context-feature h2 {
+  font-size: 57px;
+  line-height: 1.02;
+  margin: 25px 0;
+}
+.context-feature p {
+  color: #43645f !important;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 475px;
+}
+.context-feature .button {
+  margin-top: 18px;
+}
+.timeline-preview {
+  padding: 35px;
+  background: #eef7f1;
+  border: 1px solid #abc9ba;
+  border-radius: 7px;
+}
+.timeline-preview > div:not(.timeline-next) {
+  display: flex;
+  gap: 25px;
+  position: relative;
+  padding: 8px 0 30px;
+}
+.timeline-preview time {
+  font-size: 14px;
+  color: #446c61;
+  min-width: 45px;
+  padding-top: 2px;
+}
+.timeline-preview span {
+  border-left: 1px solid #a4c8b6;
+  padding-left: 22px;
+}
+.timeline-preview b {
+  font-size: 17px;
+  font-weight: 500;
+}
+.timeline-preview p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+.timeline-next {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 15px;
+  border: 1px dashed #93b6a4;
+  font-size: 14px;
+  color: #41695b;
+  margin-top: 15px;
+}
+.status-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  align-items: center;
+  padding-top: 90px;
+  padding-bottom: 85px;
+}
+.status-sample {
+  background: #f5faf5;
+  border: 1px solid #b9d5ca;
+  border-radius: 7px;
+  color: #203f39;
+  padding: 30px;
+}
+.status-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 550;
+}
+.status-brand > span:last-child {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+.status-summary-sample {
+  padding: 35px 0;
+  text-align: center;
+}
+.status-summary-sample > svg {
+  color: #9a6b23;
+}
+.status-summary-sample h3 {
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 18px 0;
+}
+.status-summary-sample p {
+  font-size: 16px;
+  color: #4c6b5e !important;
+  max-width: 370px;
+  margin: auto;
+}
+.status-sample-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+  padding: 17px 0;
+  border-top: 1px solid #c4d6c8;
+}
+.status-sample-row b {
+  font-size: 12px;
+  font-weight: 500;
+  color: #815c23;
+}
+.status-sample-row b.green {
+  color: #286447;
+}
+.preview-notice {
+  display: block;
+  font-size: 12px;
+  color: #4b6a5a;
+  margin-top: 25px;
+}
+.status-story h2 {
+  font-size: 52px;
+  line-height: 1.05;
+  margin: 25px 0;
+}
+.status-story > div > p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.status-story .text-link {
+  margin-top: 18px;
+}
+.scenario-story {
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+.scenario-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.scenario-cards > a {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border: 1px solid #46666b;
+  background: #1a3940;
+  border-radius: 6px;
+}
+.scenario-number {
+  font-size: 45px;
+  line-height: 1;
+  color: #aadacf;
+  letter-spacing: -0.05em;
+  margin-bottom: 32px;
+}
+.scenario-cards .eyebrow {
+  font-size: 12px;
+}
+.scenario-cards h3 {
+  font-size: 25px;
+  margin: 18px 0;
+}
+.scenario-cards p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.scenario-cards > a > span:last-child {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: #b9e9dc;
+}
+.home-faq {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  padding-block: 25px 70px;
+}
+.home-faq h2 {
+  font-size: 43px;
+}
+.home-faq details {
+  padding: 22px 0;
+  border-top: 1px solid #46646a;
+}
+.home-faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 16px;
+}
+.home-faq summary:after {
+  content: '+';
+  color: #b6e5d7;
+}
+.home-faq details[open] summary:after {
+  content: '−';
+}
+.home-faq p {
+  font-size: 16px;
+  margin: 18px 0 0;
+}
+.closing {
+  padding-top: 60px;
+  padding-bottom: 90px;
+  border-top: 1px solid #46646a;
+}
+.closing h2 {
+  font-size: 76px;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  margin: 25px 0 35px;
+}
+footer {
+  padding: 40px max(30px, calc((100vw - 1260px) /2));
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+footer p {
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.7;
+}
+footer nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 25px;
+  font-size: 14px;
+}
+body:has(.hero) footer {
+  border-color: #46646a;
+}
+.scenario-bar {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding-top: 28px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--line);
+}
+.scenario-bar label {
+  font-size: 12px;
+  display: grid;
+  gap: 7px;
+  min-width: 260px;
+  color: #446b70;
+}
+.scenario-bar select {
+  border: 1px solid #a2bfbd;
+  background: white;
+  color: var(--ink);
+  padding: 11px 13px;
+  font-size: 14px;
+  min-height: 44px;
+  border-radius: 4px;
+}
+.scenario-bar p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+.scenario-bar > span {
+  font-size: 12px;
+  color: #336d60;
+  margin-left: auto;
+}
+.page-heading {
+  padding-top: 45px;
+  padding-bottom: 35px;
+}
+.page-heading h1 {
+  font-size: 52px;
+  line-height: 1.08;
+  margin: 22px 0;
+}
+.page-heading > p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 850px;
+  margin-bottom: 0;
+}
+.health-summary {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 0.8fr;
+  gap: 35px;
+  align-items: center;
+  background: #e2f0ea;
+  border: 1px solid #b5d0c6;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+}
+.health-summary span {
+  font-size: 12px;
+  color: #476b60;
+}
+.health-summary h2 {
+  font-size: 29px;
+  line-height: 1.2;
+  margin: 13px 0 0;
+}
+.health-summary strong {
+  font-size: 36px;
+  line-height: 1.3;
+  display: block;
+  font-weight: 450;
+  letter-spacing: -0.04em;
+}
+.health-summary > div:not(:first-child) > span {
+  display: block;
+  margin-top: 8px;
+}
+.monitor-toolbar {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.search-control {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: white;
+  border: 1px solid #abc5c1;
+  padding: 12px;
+  border-radius: 5px;
+  flex: 1;
+  max-width: 520px;
+}
+.search-control input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 14px;
+}
+.monitor-toolbar > label:not(.search-control) {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+.monitor-toolbar select {
+  background: white;
+  border: 1px solid #abc5c1;
+  border-radius: 4px;
+  color: var(--ink);
+  padding: 11px;
+  font-size: 14px;
+  min-height: 44px;
+}
+.monitor-toolbar > span {
+  margin-left: auto;
+  font-size: 14px;
+  color: #4e6f6c;
+}
+.monitor-service {
+  display: grid;
+  grid-template-columns: 1.1fr 110px 1.2fr 160px;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  border: 1px solid #c0d4ce;
+  border-bottom: 0;
+  background: white;
+  text-align: left;
+  padding: 25px;
+}
+.monitor-service:last-child {
+  border-bottom: 1px solid #c0d4ce;
+}
+.monitor-service[aria-pressed='true'] {
+  background: #eaf5ef;
+  box-shadow: inset 4px 0 #2e8a70;
+}
+.monitor-name b {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+}
+.monitor-name small {
+  display: block;
+  font-size: 12px;
+  color: #4d7468;
+  margin-top: 6px;
+}
+.monitor-service .health {
+  justify-self: start;
+}
+.monitor-history small {
+  display: block;
+  font-size: 12px;
+  color: #4e7267;
+  margin-top: 8px;
+}
+.monitor-latency {
+  font-size: 17px;
+  text-align: right;
+}
+.monitor-latency small {
+  display: block;
+  font-size: 12px;
+  color: #53716a;
+  margin-top: 6px;
+}
+.incident-link {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 24px;
+  background: #fcf0df;
+  border: 1px solid #d6bf96;
+  margin-top: 25px;
+  border-radius: 5px;
+}
+.incident-link > span {
+  font-size: 12px;
+  color: #77581f;
+}
+.incident-link > b {
+  font-size: 17px;
+  font-weight: 500;
+}
+.incident-link > span:last-child {
+  margin-left: auto;
+  font-size: 14px;
+}
+#bn-no-services {
+  padding: 50px;
+  background: #e5f1ec;
+  border: 1px solid #b7d0c5;
+  text-align: center;
+}
+#bn-no-services h2 {
+  font-size: 29px;
+}
+#bn-no-services p {
+  font-size: 16px;
+}
+.quiet-state {
+  font-size: 16px;
+  padding: 25px;
+  background: #e7f2ed;
+}
+.check-inspector {
+  padding-top: 65px;
+  padding-bottom: 75px;
+}
+.check-inspector .section-heading h2 {
+  font-size: 35px;
+  margin-top: 15px;
+}
+.check-inspector > p {
+  font-size: 16px;
+}
+.table-scroll {
+  overflow: auto;
+  border: 1px solid #bdd2cb;
+  border-radius: 5px;
+  max-height: 540px;
+  background: white;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 15px;
+}
+caption {
+  text-align: left;
+  padding: 18px;
+  font-size: 14px;
+  border-bottom: 1px solid #c3d7cf;
+  color: #476e61;
+}
+th,
+td {
+  padding: 13px 20px;
+  border-bottom: 1px solid #d4e2dc;
+  font-weight: 400;
+}
+thead th {
+  background: #e6f1eb;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c6655;
+}
+tbody tr:nth-child(even) {
+  background: #f3f8f4;
+}
+tbody th {
+  font-weight: 500;
+}
+.boundary-note {
+  font-size: 12px !important;
+  color: #49695f !important;
+  line-height: 1.7;
+}
+.incident-layout {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 70px;
+  padding-bottom: 70px;
+}
+.incident-layout > aside {
+  position: sticky;
+  top: 105px;
+  align-self: start;
+}
+.incident-facts {
+  border: 1px solid #b9d0c6;
+  background: #e2eee8;
+  padding: 25px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.severity {
+  font-size: 12px;
+  display: inline-block;
+  padding: 4px 7px;
+  background: #fae7d4;
+  color: #83552a;
+  border: 1px solid #d6b185;
+  border-radius: 3px;
+}
+.incident-facts h2 {
+  font-size: 30px;
+  margin: 20px 0;
+}
+.incident-facts dl {
+  margin: 0;
+}
+.incident-facts dl > div {
+  padding: 14px 0;
+  border-top: 1px solid #b9d0c6;
+}
+.incident-facts dt {
+  font-size: 12px;
+  color: #486e5e;
+}
+.incident-facts dd {
+  font-size: 15px;
+  margin: 6px 0 0;
+}
+.incident-layout aside > .button,
+.incident-layout aside > .plain {
+  width: 100%;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+.incident-layout aside > .text-button {
+  font-size: 14px;
+}
+#bn-action-status,
+#bn-update-status,
+#bn-monitor-export {
+  font-size: 14px;
+  color: #2a6550;
+}
+.timeline-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.timeline-heading h2 {
+  font-size: 29px;
+  margin: 0;
+}
+.timeline-heading > span {
+  font-size: 12px;
+  color: #527265;
+}
+.incident-timeline {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 40px;
+}
+.incident-timeline li {
+  display: grid;
+  grid-template-columns: 135px minmax(0, 1fr);
+  gap: 25px;
+  padding-bottom: 30px;
+}
+.incident-timeline time {
+  font-size: 12px;
+  color: #486e62;
+  overflow-wrap: anywhere;
+  padding-top: 5px;
+}
+.incident-timeline li > div {
+  position: relative;
+  border-left: 1px solid #abc9b9;
+  padding: 0 0 28px 25px;
+}
+.incident-timeline li > div:before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  background: #2f8770;
+  border-radius: 50%;
+}
+.event-kind {
+  font-size: 12px;
+  color: #496f60;
+  letter-spacing: 0.03em;
+}
+.incident-timeline h3 {
+  font-size: 21px;
+  margin: 15px 0;
+}
+.incident-timeline p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.local-event > div {
+  background: #eaf3eb;
+  padding: 20px !important;
+  border: 1px solid #c0d4c2 !important;
+  border-radius: 5px;
+}
+.local-event > div:before {
+  display: none;
+}
+.update-form {
+  background: white;
+  border: 1px solid #b7d1c5;
+  padding: 30px;
+  border-radius: 6px;
+}
+.update-form h2 {
+  font-size: 29px;
+  margin-bottom: 25px;
+}
+.update-form > label:not(.checkbox-label) {
+  display: grid;
+  gap: 9px;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.update-form select,
+.update-form textarea {
+  padding: 13px;
+  background: #f6faf6;
+  border: 1px solid #acc9b9;
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: 16px;
+  min-width: 0;
+  width: 100%;
+}
+.update-form textarea {
+  resize: vertical;
+  line-height: 1.75;
+}
+.checkbox-label {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  font-size: 14px;
+  margin: 25px 0;
+}
+.checkbox-label input {
+  height: 18px;
+  width: 18px;
+  accent-color: #26745b;
+  flex: none;
+  margin-top: 3px;
+}
+.incident-empty {
+  padding: 30px 30px 65px;
+}
+.incident-empty h2 {
+  font-size: 35px;
+}
+.incident-empty p {
+  font-size: 17px;
+}
+.incident-principles {
+  padding-top: 45px;
+  padding-bottom: 75px;
+  border-top: 1px solid var(--line);
+}
+.incident-principles h2 {
+  font-size: 35px;
+  margin-bottom: 35px;
+}
+.incident-principles > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+.incident-principles h3 {
+  font-size: 22px;
+}
+.incident-principles p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+dialog {
+  width: min(520px, calc(100% - 32px));
+  border: 1px solid #a9c7b9;
+  padding: 30px;
+  border-radius: 7px;
+  background: #f5faf5;
+  color: var(--ink);
+  box-shadow: 0 30px 80px #102e3240;
+}
+dialog::backdrop {
+  background: #08252e9c;
+  backdrop-filter: blur(5px);
+}
+dialog h2 {
+  font-size: 28px;
+}
+dialog p {
+  font-size: 16px;
+}
+dialog > div {
+  display: flex;
+  gap: 15px;
+  justify-content: end;
+  margin-top: 25px;
+}
+.public-preview {
+  max-width: 1000px;
+  padding: 0;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  background: white;
+  border: 1px solid #b8d0c4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px #2351410c;
+}
+.public-preview-label {
+  background: #dcece3;
+  border-bottom: 1px solid #b8d0c4;
+  padding: 13px 25px;
+  font-size: 12px;
+  color: #376652;
+  letter-spacing: 0.06em;
+}
+.public-status-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 28px 35px;
+  font-size: 28px;
+  font-weight: 550;
+  letter-spacing: -0.04em;
+}
+.public-status-brand > span:last-child {
+  margin-left: auto;
+  font-size: 14px;
+  color: #547766;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.public-overall {
+  padding: 25px 45px 40px;
+  text-align: center;
+}
+.overall-symbol {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto 20px;
+  background: #def1e1;
+  color: #267045;
+  font-size: 24px;
+  font-weight: 500;
+}
+.overall-symbol.affected {
+  color: #916525;
+  background: #f8ebcd;
+}
+.public-overall h2 {
+  font-size: 38px;
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+.public-overall p {
+  font-size: 17px;
+  max-width: 670px;
+  margin: 0 auto 18px;
+}
+.public-overall > span:last-child {
+  font-size: 12px;
+  color: #4e7160;
+}
+.public-components {
+  padding: 0 35px 25px;
+}
+.public-components > article {
+  padding: 25px 0;
+  border-top: 1px solid #c8dad0;
+}
+.public-components article > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 16px;
+}
+.public-components h3 {
+  font-size: 19px;
+  margin: 0;
+}
+.public-components .check-bars {
+  height: 33px;
+}
+.public-check-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #567662;
+  margin-top: 10px;
+}
+.public-incident {
+  padding: 25px 35px;
+  border-top: 1px solid #c4d8cd;
+}
+.public-incident > h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+.public-impact {
+  background: #fcf1df;
+  border: 1px solid #d8c69e;
+  padding: 24px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
+.public-impact > span {
+  font-size: 12px;
+  color: #755d29;
+}
+.public-impact h3 {
+  font-size: 23px;
+  margin: 17px 0;
+}
+.public-impact p {
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+.public-update {
+  border-top: 1px solid #c6dacd;
+  padding: 25px 0;
+}
+.public-update > span {
+  font-size: 12px;
+  color: #4f7160;
+}
+.public-update h3 {
+  font-size: 21px;
+  margin: 15px 0;
+}
+.public-update p {
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+.public-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+  padding: 22px 35px;
+  background: #edf5ee;
+  border-top: 1px solid #bfd6c8;
+  font-size: 12px;
+  color: #3e6952;
+}
+.public-footer > a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.status-explanation {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  padding-bottom: 75px;
+}
+.status-explanation h1 {
+  font-size: 47px;
+  line-height: 1.05;
+  margin: 22px 0;
+}
+.status-explanation p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.status-explanation .text-link {
+  margin-top: 12px;
+}
+.guide-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 85px;
+  padding-top: 20px;
+  padding-bottom: 75px;
+}
+.guide-layout aside {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+.guide-layout nav {
+  display: grid;
+  gap: 18px;
+  font-size: 14px;
+  color: #436c60;
+}
+.guide-layout article > section {
+  padding: 30px 0 45px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 100px;
+}
+.guide-layout h2 {
+  font-size: 37px;
+  line-height: 1.12;
+  margin: 22px 0;
+}
+.guide-layout p {
+  font-size: 17px;
+  line-height: 1.85;
+}
+.guide-layout table {
+  margin-block: 30px;
+  border: 1px solid #bcd3c7;
+}
+.guide-example {
+  background: #e2f0e5;
+  border: 1px solid #b5d1bc;
+  padding: 25px;
+  margin: 25px 0;
+}
+.guide-example b {
+  font-size: 14px;
+  font-weight: 500;
+}
+.guide-example p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 15px 0 0;
+}
+.hero-console.entered {
+  animation: bn-arrive 0.65s ease-out both;
+}
+.workflow-map.entered > a {
+  animation: bn-arrive 0.55s ease-out both;
+}
+.workflow-map.entered > a:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.workflow-map.entered > a:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.timeline-preview.entered > div {
+  animation: bn-arrive 0.6s ease-out both;
+}
+.timeline-preview.entered > div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.timeline-preview.entered > div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+@keyframes bn-arrive {
+  from {
+    opacity: 0.45;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1100px) {
+  header nav {
+    gap: 20px;
+  }
+  .hero-head {
+    gap: 40px;
+    grid-template-columns: 1.35fr 1fr;
+  }
+  .hero h1 {
+    font-size: 61px;
+  }
+  .console-body {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+  .console-body aside {
+    padding: 28px;
+  }
+  .console-body aside h2 {
+    font-size: 33px;
+  }
+  .section-heading {
+    gap: 50px;
+  }
+  .context-feature > .container,
+  .status-story {
+    gap: 50px;
+  }
+  .context-feature h2 {
+    font-size: 48px;
+  }
+  .status-story h2 {
+    font-size: 44px;
+  }
+  .scenario-cards {
+    gap: 18px;
+  }
+  .scenario-cards > a {
+    padding: 25px;
+  }
+  .monitor-service {
+    grid-template-columns: 1fr 110px 1.2fr;
+    gap: 20px;
+  }
+  .monitor-latency {
+    grid-column: 3;
+    text-align: left;
+  }
+  .incident-layout {
+    gap: 40px;
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
+  .incident-timeline li {
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .timeline-heading {
+    display: block;
+  }
+  .timeline-heading > span {
+    display: block;
+    margin-top: 14px;
+  }
+  .guide-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 50px;
+  }
+  .public-preview {
+    margin-inline: 30px;
+  }
+  .health-summary {
+    gap: 25px;
+  }
+  .health-summary h2 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    padding-inline: 24px;
+  }
+  header {
+    height: 72px;
+    padding: 0 24px;
+    gap: 25px;
+  }
+  .brand {
+    font-size: 26px;
+  }
+  header nav {
+    gap: 18px;
+    font-size: 14px;
+  }
+  .guide-nav {
+    display: none;
+  }
+  .hero {
+    padding-top: 40px;
+  }
+  .hero-topline > span:last-child {
+    display: none;
+  }
+  .hero-head {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .hero h1 {
+    font-size: 61px;
+    max-width: 700px;
+  }
+  .hero-head p {
+    font-size: 17px;
+    margin-top: 25px;
+  }
+  .hero-head .button {
+    margin-top: 0;
+  }
+  .console-body {
+    grid-template-columns: 1fr;
+  }
+  .console-body aside {
+    display: none;
+  }
+  .console-services {
+    padding: 12px 25px;
+  }
+  .console-top {
+    padding: 18px 25px;
+  }
+  .console-bottom {
+    font-size: 12px;
+  }
+  .statement {
+    padding-top: 25px;
+    padding-bottom: 55px;
+  }
+  .statement > p {
+    font-size: 38px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-heading h2 {
+    font-size: 39px;
+  }
+  .section-heading > p {
+    font-size: 17px;
+    margin-top: 25px;
+    max-width: 650px;
+  }
+  .section-heading > .text-link {
+    margin-top: 25px;
+  }
+  .workflow-map {
+    grid-template-columns: 1fr;
+  }
+  .workflow-map > a {
+    padding: 30px;
+  }
+  .workflow-map > a + a {
+    border-left: 0;
+    border-top: 1px solid #44636a;
+  }
+  .workflow-map > a > svg:first-of-type {
+    margin-top: 25px;
+  }
+  .workflow-map h3 {
+    font-size: 25px;
+    margin-top: 22px;
+  }
+  .workflow-map p {
+    max-width: 620px;
+  }
+  .context-feature > .container {
+    grid-template-columns: 1fr;
+    padding-block: 55px;
+    gap: 35px;
+  }
+  .context-feature h2 {
+    font-size: 47px;
+  }
+  .context-feature p {
+    max-width: 650px;
+    font-size: 17px;
+  }
+  .timeline-preview {
+    max-width: 650px;
+  }
+  .status-story {
+    grid-template-columns: 1fr;
+    padding-block: 60px;
+    gap: 40px;
+  }
+  .status-sample {
+    max-width: 650px;
+  }
+  .status-story h2 {
+    font-size: 45px;
+  }
+  .status-story > div > p {
+    font-size: 17px;
+  }
+  .scenario-story {
+    padding-bottom: 55px;
+  }
+  .scenario-cards {
+    grid-template-columns: 1fr;
+  }
+  .scenario-cards > a {
+    padding: 30px;
+  }
+  .scenario-number {
+    font-size: 39px;
+    margin-bottom: 22px;
+  }
+  .scenario-cards h3 {
+    font-size: 27px;
+  }
+  .home-faq {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-bottom: 50px;
+  }
+  .home-faq h2 {
+    font-size: 39px;
+  }
+  .closing {
+    padding-block: 50px 65px;
+  }
+  .closing h2 {
+    font-size: 64px;
+  }
+  footer {
+    padding: 35px 24px;
+    flex-wrap: wrap;
+  }
+  footer .brand {
+    width: 100%;
+  }
+  .scenario-bar {
+    flex-wrap: wrap;
+    gap: 18px;
+    padding-block: 22px;
+  }
+  .scenario-bar label {
+    min-width: 240px;
+  }
+  .scenario-bar > span {
+    width: 100%;
+    margin: 0;
+  }
+  .page-heading {
+    padding-block: 35px 30px;
+  }
+  .page-heading h1 {
+    font-size: 43px;
+  }
+  .page-heading p {
+    font-size: 17px;
+  }
+  .health-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+  .health-summary > div:first-child {
+    grid-column: 1/-1;
+  }
+  .health-summary strong {
+    font-size: 32px;
+  }
+  .monitor-toolbar {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .search-control {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  .monitor-toolbar > span {
+    margin-left: auto;
+  }
+  .monitor-service {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+  .monitor-history {
+    grid-column: 1/-1;
+  }
+  .monitor-latency {
+    grid-column: 1/-1;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 16px;
+  }
+  .monitor-latency small {
+    margin: 0;
+  }
+  .incident-link {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+  .incident-link > span:last-child {
+    width: 100%;
+    margin: 0;
+  }
+  .check-inspector {
+    padding-block: 45px 60px;
+  }
+  .check-inspector .section-heading h2 {
+    font-size: 31px;
+  }
+  .check-inspector .plain {
+    margin-top: 25px;
+  }
+  .incident-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .incident-layout > aside {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .incident-facts {
+    grid-column: 1/-1;
+    margin-bottom: 8px;
+  }
+  .incident-facts dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 25px;
+  }
+  .incident-layout aside > .button,
+  .incident-layout aside > .plain {
+    margin: 0;
+  }
+  .incident-layout aside > .boundary-note,
+  #bn-action-status {
+    grid-column: 1/-1;
+    margin: 0;
+  }
+  .incident-layout aside > .text-button {
+    justify-self: start;
+  }
+  .incident-timeline li {
+    grid-template-columns: 120px minmax(0, 1fr);
+  }
+  .incident-principles > div {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .incident-principles h2 {
+    font-size: 31px;
+  }
+  .incident-principles h3 {
+    margin-bottom: 12px;
+  }
+  .public-preview {
+    padding: 0;
+    margin: 30px 24px 45px;
+  }
+  .public-status-brand {
+    padding: 25px;
+  }
+  .public-overall {
+    padding: 20px 30px 35px;
+  }
+  .public-overall h2 {
+    font-size: 33px;
+  }
+  .public-components,
+  .public-incident {
+    padding-inline: 25px;
+  }
+  .public-footer {
+    padding: 20px 25px;
+    flex-wrap: wrap;
+  }
+  .status-explanation {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-bottom: 55px;
+  }
+  .status-explanation h1 {
+    font-size: 43px;
+  }
+  .guide-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .guide-layout aside {
+    position: static;
+  }
+  .guide-layout nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+  }
+  .guide-layout h2 {
+    font-size: 34px;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    padding-inline: 20px;
+  }
+  header {
+    height: 68px;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .brand {
+    font-size: 24px;
+    gap: 10px;
+  }
+  .beacon-mark {
+    width: 25px;
+    height: 25px;
+  }
+  .beacon-mark b {
+    inset: 10px;
+  }
+  .beacon-mark i:nth-child(2) {
+    inset: 5px;
+  }
+  header nav {
+    gap: 16px;
+    font-size: 14px;
+  }
+  header nav a:nth-child(2) {
+    display: none;
+  }
+  .hero-topline {
+    font-size: 12px;
+  }
+  .hero h1 {
+    font-size: 43px;
+    line-height: 1.05;
+  }
+  .hero-head p {
+    font-size: 17px;
+  }
+  .hero-head p br {
+    display: none;
+  }
+  .console-top {
+    padding: 16px 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .sample-label {
+    font-size: 12px;
+  }
+  .console-services {
+    padding: 7px 18px;
+  }
+  .console-services b {
+    font-size: 15px;
+  }
+  .console-services .health {
+    font-size: 12px;
+  }
+  .check-bars {
+    gap: 3px;
+    height: 25px;
+  }
+  .console-bottom {
+    padding: 15px 18px;
+    display: block;
+  }
+  .console-bottom > span {
+    display: block;
+    margin: 5px 0;
+  }
+  .service-meta {
+    font-size: 12px;
+  }
+  .statement > p {
+    font-size: 32px;
+  }
+  .section-heading h2 {
+    font-size: 34px;
+  }
+  .workflow-map > a {
+    padding: 25px;
+  }
+  .workflow-map h3 {
+    font-size: 23px;
+  }
+  .context-feature h2 {
+    font-size: 43px;
+  }
+  .timeline-preview {
+    padding: 25px;
+  }
+  .timeline-preview > div:not(.timeline-next) {
+    gap: 15px;
+  }
+  .timeline-preview span {
+    padding-left: 15px;
+  }
+  .timeline-preview b {
+    font-size: 16px;
+  }
+  .timeline-preview p {
+    font-size: 15px;
+  }
+  .timeline-next {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .status-sample {
+    padding: 24px;
+  }
+  .status-brand {
+    font-size: 22px;
+  }
+  .status-brand > span:last-child {
+    font-size: 12px;
+  }
+  .status-summary-sample h3 {
+    font-size: 28px;
+  }
+  .status-summary-sample p {
+    font-size: 16px;
+  }
+  .status-story h2 {
+    font-size: 39px;
+  }
+  .scenario-cards > a {
+    padding: 25px;
+  }
+  .home-faq h2 {
+    font-size: 35px;
+  }
+  .home-faq summary {
+    font-size: 16px;
+  }
+  .closing h2 {
+    font-size: 49px;
+  }
+  .scenario-bar {
+    padding-top: 20px;
+  }
+  .scenario-bar label {
+    width: 100%;
+    min-width: 0;
+  }
+  .scenario-bar p {
+    font-size: 12px;
+  }
+  .page-heading h1 {
+    font-size: 36px;
+  }
+  .page-heading p {
+    font-size: 17px;
+  }
+  .health-summary {
+    padding: 23px;
+    gap: 25px;
+  }
+  .health-summary h2 {
+    font-size: 25px;
+  }
+  .health-summary strong {
+    font-size: 30px;
+  }
+  .health-summary span {
+    font-size: 12px;
+  }
+  .monitor-toolbar > label:not(.search-control) {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .monitor-toolbar select {
+    flex: 1;
+    max-width: 230px;
+  }
+  .monitor-toolbar > span {
+    margin: 0;
+  }
+  .monitor-service {
+    padding: 22px 18px;
+  }
+  .monitor-name b {
+    font-size: 16px;
+  }
+  .monitor-history small,
+  .monitor-latency small {
+    font-size: 12px;
+  }
+  .monitor-latency {
+    font-size: 16px;
+    flex-wrap: wrap;
+  }
+  .incident-link {
+    padding: 22px 18px;
+  }
+  .incident-link b {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .check-inspector .section-heading h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  table {
+    font-size: 15px;
+  }
+  th,
+  td {
+    padding: 13px 15px;
+  }
+  .incident-layout > aside {
+    grid-template-columns: 1fr;
+  }
+  .incident-facts dl {
+    grid-template-columns: 1fr 1fr;
+  }
+  .incident-facts {
+    padding: 23px;
+  }
+  .incident-facts dd {
+    font-size: 14px;
+  }
+  .incident-layout aside > .button,
+  .incident-layout aside > .plain {
+    grid-column: 1;
+  }
+  .incident-timeline li {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+  .incident-timeline time {
+    font-size: 12px;
+  }
+  .incident-timeline li > div {
+    padding-left: 20px;
+    padding-bottom: 20px;
+  }
+  .incident-timeline h3 {
+    font-size: 21px;
+  }
+  .incident-timeline p {
+    font-size: 16px;
+  }
+  .event-kind {
+    font-size: 12px;
+  }
+  .update-form {
+    padding: 23px;
+  }
+  .update-form h2 {
+    font-size: 25px;
+  }
+  .checkbox-label {
+    font-size: 14px;
+  }
+  .public-preview {
+    padding: 0;
+    margin-inline: 12px;
+  }
+  .public-preview-label {
+    padding: 13px 20px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .public-status-brand {
+    padding: 22px 20px;
+    font-size: 25px;
+  }
+  .public-status-brand > span:last-child {
+    font-size: 14px;
+  }
+  .public-overall {
+    padding: 15px 23px 30px;
+  }
+  .public-overall h2 {
+    font-size: 29px;
+  }
+  .public-overall p {
+    font-size: 16px;
+  }
+  .public-components,
+  .public-incident {
+    padding-inline: 20px;
+  }
+  .public-components h3 {
+    font-size: 17px;
+  }
+  .public-components article > div:first-child {
+    gap: 15px;
+  }
+  .public-components .check-bars {
+    height: 29px;
+  }
+  .public-impact {
+    padding: 22px;
+  }
+  .public-impact h3 {
+    font-size: 21px;
+  }
+  .public-update h3 {
+    font-size: 20px;
+  }
+  .public-footer {
+    padding: 20px;
+    font-size: 12px;
+  }
+  .status-explanation h1 {
+    font-size: 38px;
+  }
+  .guide-layout h2 {
+    font-size: 30px;
+  }
+  .guide-layout p {
+    font-size: 17px;
+  }
+  .guide-example {
+    padding: 22px;
+  }
+  .guide-layout table {
+    font-size: 14px;
+  }
+  .guide-layout td,
+  .guide-layout th {
+    padding: 13px 12px;
+  }
+  dialog {
+    padding: 25px;
+  }
+  dialog > div {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body:has(.hero) .check-bars > span {
+  background: #5bba99;
+}
+body:has(.hero) .check-bars > span.degraded {
+  background: #e4b75f;
+}
+body:has(.hero) .check-bars > span.outage {
+  background: #d87164;
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html"><span class="beacon-mark" aria-hidden="true"><i></i><i></i><b></b></span>beacon</a><nav aria-label="Main navigation"><a  href="monitors.html">Monitors</a><a  href="incident.html">Incident room</a><a  href="status.html">Status preview</a><a class="guide-nav"  href="guide.html">Field guide</a></nav></header><main id="main"><section class="hero container"><div class="hero-topline"><span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radio" aria-hidden="true"><path d="M16.247 7.761a6 6 0 0 1 0 8.478"></path><path d="M19.075 4.933a10 10 0 0 1 0 14.134"></path><path d="M4.925 19.067a10 10 0 0 1 0-14.134"></path><path d="M7.753 16.239a6 6 0 0 1 0-8.478"></path><circle cx="12" cy="12" r="2"></circle></svg> SIGNAL, CONTEXT, RESPONSE</span><span>Original synthetic workspace</span></div><div class="hero-head"><h1>Know what changed.<br> Own what happens next.</h1><div><p>Service health with a timeline you can follow.<br> Incident response with a next step you can name.</p><a class="button" href="monitors.html">Explore the workspace <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div></div><div class="hero-console"><div class="console-top"><span><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg> Service overview</span><span class="sample-label">API slowdown / Synthetic example</span></div><div class="console-body"><aside><span class="eyebrow">CURRENT SIGNAL</span><h2>Something<br> needs attention.</h2><p>Two related services. One incident. A clear place to begin.</p><a href="incident.html?scenario=latency">Open the incident <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></aside><div class="console-services"><a href="monitors.html?scenario=latency&service=api"><div><b>Public API</b><span class="health degraded">Degraded</span></div><div class="check-bars" role="img" aria-label="17 of 24 synthetic checks operational"><span class="operational" title="Check 1: Operational"></span><span class="operational" title="Check 2: Operational"></span><span class="operational" title="Check 3: Operational"></span><span class="operational" title="Check 4: Operational"></span><span class="operational" title="Check 5: Operational"></span><span class="operational" title="Check 6: Operational"></span><span class="operational" title="Check 7: Operational"></span><span class="operational" title="Check 8: Operational"></span><span class="operational" title="Check 9: Operational"></span><span class="operational" title="Check 10: Operational"></span><span class="operational" title="Check 11: Operational"></span><span class="operational" title="Check 12: Operational"></span><span class="operational" title="Check 13: Operational"></span><span class="operational" title="Check 14: Operational"></span><span class="operational" title="Check 15: Operational"></span><span class="operational" title="Check 16: Operational"></span><span class="operational" title="Check 17: Operational"></span><span class="degraded" title="Check 18: Degraded"></span><span class="degraded" title="Check 19: Degraded"></span><span class="degraded" title="Check 20: Degraded"></span><span class="degraded" title="Check 21: Degraded"></span><span class="degraded" title="Check 22: Degraded"></span><span class="degraded" title="Check 23: Degraded"></span><span class="degraded" title="Check 24: Degraded"></span></div><div class="service-meta"><span>24 synthetic checks</span><span>381 ms</span></div></a><a href="monitors.html?scenario=latency&service=app"><div><b>Web dashboard</b><span class="health degraded">Degraded</span></div><div class="check-bars" role="img" aria-label="17 of 24 synthetic checks operational"><span class="operational" title="Check 1: Operational"></span><span class="operational" title="Check 2: Operational"></span><span class="operational" title="Check 3: Operational"></span><span class="operational" title="Check 4: Operational"></span><span class="operational" title="Check 5: Operational"></span><span class="operational" title="Check 6: Operational"></span><span class="operational" title="Check 7: Operational"></span><span class="operational" title="Check 8: Operational"></span><span class="operational" title="Check 9: Operational"></span><span class="operational" title="Check 10: Operational"></span><span class="operational" title="Check 11: Operational"></span><span class="operational" title="Check 12: Operational"></span><span class="operational" title="Check 13: Operational"></span><span class="operational" title="Check 14: Operational"></span><span class="operational" title="Check 15: Operational"></span><span class="operational" title="Check 16: Operational"></span><span class="operational" title="Check 17: Operational"></span><span class="degraded" title="Check 18: Degraded"></span><span class="degraded" title="Check 19: Degraded"></span><span class="degraded" title="Check 20: Degraded"></span><span class="degraded" title="Check 21: Degraded"></span><span class="degraded" title="Check 22: Degraded"></span><span class="degraded" title="Check 23: Degraded"></span><span class="degraded" title="Check 24: Degraded"></span></div><div class="service-meta"><span>24 synthetic checks</span><span>613 ms</span></div></a><a href="monitors.html?scenario=latency&service=auth"><div><b>Sign-in service</b><span class="health operational">Operational</span></div><div class="check-bars" role="img" aria-label="24 of 24 synthetic checks operational"><span class="operational" title="Check 1: Operational"></span><span class="operational" title="Check 2: Operational"></span><span class="operational" title="Check 3: Operational"></span><span class="operational" title="Check 4: Operational"></span><span class="operational" title="Check 5: Operational"></span><span class="operational" title="Check 6: Operational"></span><span class="operational" title="Check 7: Operational"></span><span class="operational" title="Check 8: Operational"></span><span class="operational" title="Check 9: Operational"></span><span class="operational" title="Check 10: Operational"></span><span class="operational" title="Check 11: Operational"></span><span class="operational" title="Check 12: Operational"></span><span class="operational" title="Check 13: Operational"></span><span class="operational" title="Check 14: Operational"></span><span class="operational" title="Check 15: Operational"></span><span class="operational" title="Check 16: Operational"></span><span class="operational" title="Check 17: Operational"></span><span class="operational" title="Check 18: Operational"></span><span class="operational" title="Check 19: Operational"></span><span class="operational" title="Check 20: Operational"></span><span class="operational" title="Check 21: Operational"></span><span class="operational" title="Check 22: Operational"></span><span class="operational" title="Check 23: Operational"></span><span class="operational" title="Check 24: Operational"></span></div><div class="service-meta"><span>24 synthetic checks</span><span>108 ms</span></div></a><a href="monitors.html?scenario=latency&service=exports"><div><b>Export worker</b><span class="health operational">Operational</span></div><div class="check-bars" role="img" aria-label="24 of 24 synthetic checks operational"><span class="operational" title="Check 1: Operational"></span><span class="operational" title="Check 2: Operational"></span><span class="operational" title="Check 3: Operational"></span><span class="operational" title="Check 4: Operational"></span><span class="operational" title="Check 5: Operational"></span><span class="operational" title="Check 6: Operational"></span><span class="operational" title="Check 7: Operational"></span><span class="operational" title="Check 8: Operational"></span><span class="operational" title="Check 9: Operational"></span><span class="operational" title="Check 10: Operational"></span><span class="operational" title="Check 11: Operational"></span><span class="operational" title="Check 12: Operational"></span><span class="operational" title="Check 13: Operational"></span><span class="operational" title="Check 14: Operational"></span><span class="operational" title="Check 15: Operational"></span><span class="operational" title="Check 16: Operational"></span><span class="operational" title="Check 17: Operational"></span><span class="operational" title="Check 18: Operational"></span><span class="operational" title="Check 19: Operational"></span><span class="operational" title="Check 20: Operational"></span><span class="operational" title="Check 21: Operational"></span><span class="operational" title="Check 22: Operational"></span><span class="operational" title="Check 23: Operational"></span><span class="operational" title="Check 24: Operational"></span></div><div class="service-meta"><span>24 synthetic checks</span><span>222 ms</span></div></a></div></div><div class="console-bottom"><span>Detection is the beginning.</span><span>Acknowledgment is not recovery.</span></div></div></section><section class="statement container"><span class="eyebrow">MAKE THE IMPORTANT PART LEGIBLE</span><p>A service changed.<br> <span>Now make the impact, the evidence, and the response clear.</span></p></section><section class="workflow-section container"><div class="section-heading"><h2>From the first signal<br> to the last update.</h2><p>Practice the whole loop with three repeatable scenarios. Nothing is live. Every interaction has a visible result.</p></div><div class="workflow-map"><a href="monitors.html"><span>01 / OBSERVE</span><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" aria-hidden="true"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg><h3>See the service picture.</h3><p>Filter health, inspect a component, and read its synthetic check history.</p><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a href="incident.html"><span>02 / RESPOND</span><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg><h3>Leave a useful timeline.</h3><p>Acknowledge ownership, record your thinking, and keep recovery explicit.</p><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a href="status.html"><span>03 / COMMUNICATE</span><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><h3>Show what matters outside.</h3><p>Preview impact and selected updates without exposing internal notes.</p><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div></section><section class="context-feature"><div class="container"><div><span class="eyebrow">A CHRONOLOGY, NOT A GUESS</span><h2>The story of<br> an incident is<br> in the details.</h2><p>Keep observed checks separate from your response. A local acknowledgment records ownership; it does not make a failing service healthy.</p><a class="button dark" href="incident.html?scenario=latency">Enter the incident room <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div><div class="timeline-preview"><div><time>09:12</time><span><b>Threshold crossed</b><p>API response checks exceed the example limit.</p></span></div><div><time>09:14</time><span><b>Impact scoped</b><p>The dashboard depends on the same API path.</p></span></div><div><time>09:18</time><span><b>A response needs an owner</b><p>Record the next action. Keep the uncertainty visible.</p></span></div><div class="timeline-next"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg> Your local update goes here</div></div></div></section><section class="status-story container"><div class="status-sample"><div class="status-brand"><span class="beacon-mark" aria-hidden="true"><i></i><i></i><b></b></span>beacon<span>STATUS</span></div><div class="status-summary-sample"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><h3>Some services<br> are degraded.</h3><p>We are investigating elevated API response times in this synthetic example.</p></div><div class="status-sample-row"><span>Public API</span><b>Degraded</b></div><div class="status-sample-row"><span>Sign-in service</span><b class="green">Operational</b></div><span class="preview-notice">Public-page preview. Nothing published.</span></div><div><span class="eyebrow">THE SAME FACTS, A DIFFERENT AUDIENCE</span><h2>Clear outside.<br> Detailed inside.</h2><p>Internal response notes belong in the incident room. Public-preview updates should explain impact and the next known step.</p><p>Choose explicitly which local updates appear in the preview. There is no publish button hiding a real external action.</p><a class="text-link" href="status.html">Open the public preview <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div></section><section class="scenario-story container"><div class="section-heading"><div><span class="eyebrow">THREE WAYS TO PRACTICE</span><h2>Repeat the scenario.<br> Improve the response.</h2></div><a href="guide.html" class="text-link">Read the exercise guide <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div><div class="scenario-cards"><a href="monitors.html?scenario=calm"><span class="scenario-number">01</span><span class="eyebrow">OPERATIONAL</span><h3>Routine afternoon</h3><p>A normal synthetic check window, with no active incident.</p><span>Load scenario <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a href="monitors.html?scenario=latency"><span class="scenario-number">02</span><span class="eyebrow">DEGRADED</span><h3>API slowdown</h3><p>Elevated API response times are also affecting the web dashboard.</p><span>Load scenario <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a><a href="monitors.html?scenario=outage"><span class="scenario-number">03</span><span class="eyebrow">INTERRUPTED</span><h3>Sign-in interruption</h3><p>The sign-in component is unavailable and dashboard access is affected.</p><span>Load scenario <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span></a></div></section><section class="home-faq container"><h2>A useful exercise.<br> An honest boundary.</h2><div><details><summary>Is Beacon checking real services?</summary><p>No. The monitor data is deterministic synthetic data. No endpoint, account, credential, or external monitoring connection is used.</p></details><details><summary>What does acknowledgment change?</summary><p>It records a local response event and ownership state. It does not change the simulated service health. Apply recovery explicitly when completing the exercise.</p></details><details><summary>Are updates published anywhere?</summary><p>No. You can include a local update in the public-page preview, but it remains in this browser. Internal notes are excluded from that preview.</p></details><details><summary>Can I keep the incident record?</summary><p>Download the current scenario, service states, baseline chronology, and local response updates as a Markdown report.</p></details></div></section><section class="closing container"><span class="eyebrow">A CLEARER NEXT STEP</span><h2>Turn a signal<br> into a response.</h2><a class="button" href="monitors.html">Open the exercise <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></section></main><footer><a class="brand" href="index.html"><span class="beacon-mark" aria-hidden="true"><i></i><i></i><b></b></span>beacon</a><p>An original observability concept.<br> Synthetic checks. Local responses. No live monitoring.</p><nav aria-label="Footer"><a href="monitors.html">Open monitors</a><a href="guide.html">Read the guide</a><a href="assets/CREDITS.txt">Credits</a><a href="../../">All designs ↗</a></nav></footer><script>const bnServices=[{"id":"api","name":"Public API","type":"HTTP endpoint","base":84,"description":"The fictional product’s request and data endpoint."},{"id":"app","name":"Web dashboard","type":"Web interface","base":142,"description":"The fictional signed-in product interface."},{"id":"auth","name":"Sign-in service","type":"Authentication","base":96,"description":"The synthetic account-access component."},{"id":"exports","name":"Export worker","type":"Background job","base":210,"description":"The synthetic document export queue."}];const bnScenarios={"calm":{"name":"Routine afternoon","summary":"All services operational","description":"A normal synthetic check window, with no active incident.","incident":null,"affected":[],"health":{}},"latency":{"name":"API slowdown","summary":"Some services degraded","description":"Elevated API response times are also affecting the web dashboard.","incident":"BN-204","affected":["api","app"],"health":{"api":"Degraded","app":"Degraded"}},"outage":{"name":"Sign-in interruption","summary":"Sign-in service interrupted","description":"The sign-in component is unavailable and dashboard access is affected.","incident":"BN-205","affected":["auth","app"],"health":{"auth":"Outage","app":"Degraded"}}};const bnIncidents={"BN-204":{"id":"BN-204","scenario":"latency","title":"Elevated API response times","severity":"SEV 3","started":"09:12","impact":"Some synthetic API requests take longer than expected. The dashboard may feel slow while waiting for data.","events":[{"time":"09:12","title":"Threshold crossed","text":"Three synthetic API checks exceeded the example response-time threshold."},{"time":"09:14","title":"Impact scoped","text":"The API and web dashboard are affected in this scenario. Sign-in and exports remain operational."},{"time":"09:18","title":"Investigation opened","text":"The exercise is ready for a local acknowledgment and an evidence-based update."}]},"BN-205":{"id":"BN-205","scenario":"outage","title":"Sign-in requests are failing","severity":"SEV 2","started":"10:04","impact":"The synthetic sign-in service is unavailable. Existing pages may load, but new access to the dashboard is interrupted.","events":[{"time":"10:04","title":"Failed checks observed","text":"The synthetic sign-in endpoint returned repeated failures."},{"time":"10:06","title":"Related impact identified","text":"Dashboard access is degraded because it depends on the sign-in component."},{"time":"10:09","title":"Response exercise opened","text":"Practice acknowledging ownership, communicating impact, and recording recovery."}]}};const bnStages=["Investigating","Identified","Monitoring"];
+function bnValidResponse(r) {
+  return (
+    r &&
+    typeof r === 'object' &&
+    typeof r.acknowledged === 'boolean' &&
+    typeof r.resolved === 'boolean' &&
+    bnStages.includes(r.stage) &&
+    Array.isArray(r.updates) &&
+    r.updates.length <= 40 &&
+    r.updates.every(
+      (u) =>
+        u &&
+        typeof u.text === 'string' &&
+        u.text.length <= 1000 &&
+        typeof u.time === 'string' &&
+        u.time.length <= 60 &&
+        typeof u.public === 'boolean' &&
+        typeof u.kind === 'string',
+    )
+  );
+}
+function bnEmptyResponse() {
+  return {
+    acknowledged: false,
+    resolved: false,
+    stage: 'Investigating',
+    updates: [],
+  };
+}
+function bnServiceState(service, scenario, response) {
+  const config = bnScenarios[scenario];
+  const affected = config.affected.includes(service.id);
+  const recovered = !!response?.resolved;
+  const health = recovered
+    ? 'Operational'
+    : config.health[service.id] || 'Operational';
+  const checks = Array.from({ length: 24 }, (_, n) => {
+    const issue = affected && n >= 17 && n <= 22;
+    return {
+      sequence: n + 1,
+      health: issue
+        ? config.health[service.id] || 'Operational'
+        : 'Operational',
+      ms: issue
+        ? config.health[service.id] === 'Outage'
+          ? null
+          : service.base * 3 + n * 9
+        : service.base + ((n * 7) % 29),
+    };
+  });
+  checks[23] = {
+    sequence: 24,
+    health,
+    ms:
+      health === 'Outage'
+        ? null
+        : health === 'Degraded'
+          ? service.base * 4 + 45
+          : service.base + 12,
+  };
+  return {
+    ...service,
+    health,
+    checks,
+    latency: checks[23].ms,
+    passed: checks.filter((c) => c.health === 'Operational').length,
+  };
+}
+function bnScenarioStates(scenario, response) {
+  return bnServices.map((s) => bnServiceState(s, scenario, response));
+}
+function bnExportText(scenario, response) {
+  const config = bnScenarios[scenario];
+  const incident = bnIncidents[config.incident];
+  const states = bnScenarioStates(scenario, response);
+  return (
+    '# Beacon scenario report\n\nSynthetic exercise: ' +
+    config.name +
+    '\nNo live monitoring or external notifications.\n\n## Service health\n\n' +
+    states
+      .map(
+        (s) =>
+          '- ' +
+          s.name +
+          ': ' +
+          s.health +
+          '; ' +
+          (s.latency === null ? 'no response' : s.latency + ' ms') +
+          '; ' +
+          s.passed +
+          '/24 synthetic checks operational',
+      )
+      .join('\n') +
+    '\n\n## Incident\n\n' +
+    (incident
+      ? incident.id +
+        ' — ' +
+        incident.title +
+        '\nAcknowledged locally: ' +
+        (response.acknowledged ? 'yes' : 'no') +
+        '\nRecovery applied locally: ' +
+        (response.resolved ? 'yes' : 'no') +
+        '\nResponse stage: ' +
+        response.stage +
+        '\n\n' +
+        incident.events
+          .map((e) => e.time + ' UTC · ' + e.title + ' — ' + e.text)
+          .join('\n')
+      : 'No active incident in this scenario.') +
+    '\n\n## Local exercise updates\n\n' +
+    (response.updates.length
+      ? response.updates
+          .map(
+            (u) =>
+              u.time +
+              ' · ' +
+              u.kind +
+              ' · ' +
+              (u.public ? 'public-preview' : 'internal') +
+              '\n' +
+              u.text,
+          )
+          .join('\n\n')
+      : 'No local updates recorded.') +
+    '\n'
+  );
+}
+const bnStorage = {
+  read(key) {
+    try {
+      return JSON.parse(localStorage.getItem(key) || 'null');
+    } catch {
+      return null;
+    }
+  },
+  write(key, value) {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+      return true;
+    } catch {
+      return false;
+    }
+  },
+};
+const bnEsc = (text) =>
+  String(text).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[
+        c
+      ],
+  );
+const bnRequested = new URLSearchParams(location.search).get('scenario');
+const bnSavedScenario = bnStorage.read('beacon-scenario-v1');
+let bnScenario = Object.hasOwn(bnScenarios, bnRequested)
+  ? bnRequested
+  : Object.hasOwn(bnScenarios, bnSavedScenario)
+    ? bnSavedScenario
+    : 'latency';
+const bnStoredResponses = bnStorage.read('beacon-responses-v1');
+let bnResponses = Object.fromEntries(
+  Object.keys(bnIncidents).map((id) => [
+    id,
+    bnValidResponse(bnStoredResponses?.[id])
+      ? bnStoredResponses[id]
+      : bnEmptyResponse(),
+  ]),
+);
+let bnSelectedService =
+  new URLSearchParams(location.search).get('service') || 'api';
+function bnCurrentIncident() {
+  return bnIncidents[bnScenarios[bnScenario].incident];
+}
+function bnCurrentResponse() {
+  const incident = bnCurrentIncident();
+  return incident ? bnResponses[incident.id] : bnEmptyResponse();
+}
+function bnCurrentStates() {
+  return bnScenarioStates(bnScenario, bnCurrentResponse());
+}
+function bnStatusSummary() {
+  const states = bnCurrentStates();
+  return states.some((s) => s.health === 'Outage')
+    ? 'A service is interrupted'
+    : states.some((s) => s.health === 'Degraded')
+      ? 'Some services are degraded'
+      : 'All services operational';
+}
+function bnRenderedBars(service) {
+  return `<div class="check-bars" role="img" aria-label="${service.passed} of 24 synthetic checks operational">${service.checks.map((c) => `<span class="${c.health.toLowerCase()}" title="Check ${c.sequence}: ${c.health}"></span>`).join('')}</div>`;
+}
+function bnCommitResponse(next) {
+  const incident = bnCurrentIncident();
+  if (!incident) return false;
+  const updated = { ...bnResponses, [incident.id]: next };
+  const saved = bnStorage.write('beacon-responses-v1', updated);
+  bnResponses = updated;
+  return saved;
+}
+function bnDownload(id) {
+  const text = bnExportText(bnScenario, bnCurrentResponse());
+  const url = URL.createObjectURL(
+    new Blob([text], { type: 'text/markdown;charset=utf-8' }),
+  );
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'beacon-' + bnScenario + '-scenario.md';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  document.getElementById(id).textContent =
+    'Scenario report prepared for download. Nothing was sent or published.';
+}
+function bnRenderMonitors() {
+  if (!document.getElementById('bn-service-list')) return;
+  const states = bnCurrentStates();
+  const q = document.getElementById('bn-search').value.trim().toLowerCase();
+  const health = document.getElementById('bn-health-filter').value;
+  const rows = states.filter(
+    (s) =>
+      (health === 'All services' || s.health === health) &&
+      (s.name + ' ' + s.type).toLowerCase().includes(q),
+  );
+  if (!rows.some((s) => s.id === bnSelectedService))
+    bnSelectedService = rows[0]?.id;
+  document.getElementById('bn-monitor-description').textContent =
+    bnCurrentResponse().resolved
+      ? 'Local recovery has been applied in this synthetic scenario. Earlier failure history remains visible.'
+      : bnScenarios[bnScenario].description;
+  document.getElementById('bn-health-summary').innerHTML =
+    `<div><span>Current scenario</span><h2>${bnStatusSummary()}</h2></div><div><strong>${states.filter((s) => s.health === 'Operational').length} / 4</strong><span>services operational</span></div><div><strong>${bnCurrentIncident() && !bnCurrentResponse().resolved ? '1' : '0'}</strong><span>active synthetic incident</span></div>`;
+  document.getElementById('bn-service-count').textContent =
+    rows.length + (rows.length === 1 ? ' service' : ' services');
+  document.getElementById('bn-service-list').innerHTML = rows
+    .map(
+      (s) =>
+        `<button class="monitor-service" data-service="${s.id}" aria-pressed="${s.id === bnSelectedService}"><span class="monitor-name"><b>${s.name}</b><small>${s.type}</small></span><span class="health ${s.health.toLowerCase()}">${s.health}</span><span class="monitor-history">${bnRenderedBars(s)}<small>${s.passed}/24 checks operational</small></span><span class="monitor-latency">${s.latency === null ? 'No response' : s.latency + ' ms'}<small>Latest synthetic check</small></span></button>`,
+    )
+    .join('');
+  document.getElementById('bn-no-services').hidden = rows.length > 0;
+  const incident = bnCurrentIncident();
+  document.getElementById('bn-active-incident').innerHTML = incident
+    ? `<a class="incident-link" href="incident.html"><span>${incident.severity} · ${incident.id}</span><b>${incident.title}</b><span>${bnCurrentResponse().resolved ? 'Recovered locally' : bnCurrentResponse().acknowledged ? 'Acknowledged locally' : 'Needs acknowledgment'} →</span></a>`
+    : '<p class="quiet-state">No incident in the routine scenario. Choose another exercise to practice response.</p>';
+  const selected = states.find((s) => s.id === bnSelectedService);
+  document.querySelector('.check-inspector').hidden = !selected;
+  if (!selected) return;
+  document.getElementById('bn-inspector-title').textContent =
+    selected.name + ' / check history';
+  document.getElementById('bn-inspector-description').textContent =
+    selected.description;
+  document.getElementById('bn-check-table').innerHTML =
+    `<table><caption>24 ordered synthetic checks · selected service</caption><thead><tr><th>Check</th><th>State</th><th>Response</th></tr></thead><tbody>${selected.checks.map((c) => `<tr><th scope="row">${String(c.sequence).padStart(2, '0')}</th><td>${c.health}</td><td>${c.ms === null ? 'No response' : c.ms + ' ms'}</td></tr>`).join('')}</tbody></table>`;
+}
+function bnTimelineHtml(incident, response) {
+  return (
+    incident.events
+      .map(
+        (e) =>
+          `<li><time>${e.time} UTC</time><div><span class="event-kind">SYNTHETIC BASELINE</span><h3>${e.title}</h3><p>${e.text}</p></div></li>`,
+      )
+      .join('') +
+    response.updates
+      .map(
+        (u) =>
+          `<li class="local-event"><time>${bnEsc(u.time)}</time><div><span class="event-kind">LOCAL EXERCISE · ${u.public ? 'PUBLIC PREVIEW' : 'INTERNAL'}</span><h3>${bnEsc(u.kind)}</h3><p>${bnEsc(u.text)}</p></div></li>`,
+      )
+      .join('')
+  );
+}
+function bnRenderIncident() {
+  if (!document.getElementById('bn-incident-room')) return;
+  const incident = bnCurrentIncident();
+  document.getElementById('bn-incident-room').hidden = !incident;
+  document.getElementById('bn-incident-empty').hidden = !!incident;
+  document.getElementById('bn-incident-title').textContent =
+    incident?.title || 'A quiet service window.';
+  document.getElementById('bn-incident-impact').textContent =
+    incident?.impact || 'There is no active incident in the routine scenario.';
+  if (!incident) return;
+  const response = bnCurrentResponse();
+  document.getElementById('bn-incident-facts').innerHTML =
+    `<span class="severity">${incident.severity}</span><h2>${incident.id}</h2><dl><div><dt>Scenario</dt><dd>${bnScenarios[bnScenario].name}</dd></div><div><dt>Ownership</dt><dd>${response.acknowledged ? 'Acknowledged locally' : 'Not acknowledged'}</dd></div><div><dt>Response</dt><dd>${response.resolved ? 'Recovered locally' : response.stage}</dd></div><div><dt>Baseline start</dt><dd>${incident.started} UTC · Sep 8</dd></div></dl>`;
+  document.getElementById('bn-acknowledge').disabled = response.acknowledged;
+  document.getElementById('bn-acknowledge').textContent = response.acknowledged
+    ? 'Acknowledged locally'
+    : 'Acknowledge locally';
+  document.getElementById('bn-recover').disabled = response.resolved;
+  document.getElementById('bn-recover').textContent = response.resolved
+    ? 'Local recovery applied'
+    : 'Apply local recovery';
+  document.getElementById('bn-stage').value = response.stage;
+  document.getElementById('bn-timeline').innerHTML = bnTimelineHtml(
+    incident,
+    response,
+  );
+}
+function bnRenderPublic() {
+  if (!document.getElementById('bn-public-components')) return;
+  const response = bnCurrentResponse();
+  const states = bnCurrentStates();
+  const incident = bnCurrentIncident();
+  const bad = states.some((s) => s.health !== 'Operational');
+  document.getElementById('bn-public-overall').innerHTML =
+    `<span class="overall-symbol ${bad ? 'affected' : ''}">${bad ? '!' : '✓'}</span><h2>${bnStatusSummary()}</h2><p>${response.resolved ? 'Recovery was applied locally. Earlier synthetic failures remain in the history.' : bnScenarios[bnScenario].description}</p><span>Scenario snapshot · not a live status report</span>`;
+  document.getElementById('bn-public-components').innerHTML = states
+    .map(
+      (s) =>
+        `<article><div><h3>${s.name}</h3><span class="health ${s.health.toLowerCase()}">${s.health}</span></div>${bnRenderedBars(s)}<div class="public-check-labels"><span>Earlier checks</span><span>Latest</span></div></article>`,
+    )
+    .join('');
+  const updates = response.updates.filter((u) => u.public);
+  document.getElementById('bn-public-updates').innerHTML = incident
+    ? `<div class="public-impact"><span>${incident.id} · ${response.resolved ? 'Recovered locally' : 'Synthetic scenario'}</span><h3>${incident.title}</h3><p>Original scenario impact: ${incident.impact}</p></div>` +
+      updates
+        .map(
+          (u) =>
+            `<article class="public-update"><span>${bnEsc(u.time)} · LOCAL PREVIEW</span><h3>${bnEsc(u.kind)}</h3><p>${bnEsc(u.text)}</p></article>`,
+        )
+        .join('') +
+      (updates.length
+        ? ''
+        : '<p class="boundary-note">No local response update has been included in this preview.</p>')
+    : '<p>No incident or response updates in the routine scenario.</p>';
+}
+function bnRenderAll() {
+  bnRenderMonitors();
+  bnRenderIncident();
+  bnRenderPublic();
+}
+const bnScenarioSelect = document.getElementById('bn-scenario');
+if (bnScenarioSelect) {
+  bnScenarioSelect.value = bnScenario;
+  if (bnRequested && Object.hasOwn(bnScenarios, bnRequested))
+    bnStorage.write('beacon-scenario-v1', bnScenario);
+  bnScenarioSelect.addEventListener('change', () => {
+    bnScenario = bnScenarioSelect.value;
+    const ok = bnStorage.write('beacon-scenario-v1', bnScenario);
+    document.getElementById('bn-scenario-save').textContent = ok
+      ? 'Scenario saved locally.'
+      : 'Scenario changed on this page; browser storage is unavailable.';
+    if (document.getElementById('bn-update')) {
+      document.getElementById('bn-update').value = '';
+      document.getElementById('bn-public').checked = false;
+      document.getElementById('bn-action-status').textContent = '';
+      document.getElementById('bn-update-status').textContent = '';
+    }
+    bnRenderAll();
+  });
+}
+if (document.getElementById('bn-service-list')) {
+  document
+    .getElementById('bn-search')
+    .addEventListener('input', bnRenderMonitors);
+  document
+    .getElementById('bn-health-filter')
+    .addEventListener('change', bnRenderMonitors);
+  document
+    .getElementById('bn-service-list')
+    .addEventListener('click', (event) => {
+      const button = event.target.closest('[data-service]');
+      if (button) {
+        bnSelectedService = button.dataset.service;
+        bnRenderMonitors();
+      }
+    });
+  document.getElementById('bn-clear-filters').addEventListener('click', () => {
+    document.getElementById('bn-search').value = '';
+    document.getElementById('bn-health-filter').value = 'All services';
+    bnRenderMonitors();
+  });
+  document
+    .getElementById('bn-export-monitor')
+    .addEventListener('click', () => bnDownload('bn-monitor-export'));
+}
+if (document.getElementById('bn-incident-room')) {
+  document.getElementById('bn-acknowledge').addEventListener('click', () => {
+    const response = bnCurrentResponse();
+    if (response.acknowledged) return;
+    const ok = bnCommitResponse({
+      ...response,
+      acknowledged: true,
+      updates: [
+        ...response.updates,
+        {
+          time: new Date().toISOString(),
+          kind: 'Acknowledged locally',
+          text: 'You took ownership of this local response exercise. Service health was not changed.',
+          public: false,
+        },
+      ],
+    });
+    bnRenderIncident();
+    document.getElementById('bn-action-status').textContent = ok
+      ? 'Ownership recorded locally. No notification was sent.'
+      : 'Ownership recorded on this page only; storage is unavailable.';
+  });
+  document.getElementById('bn-recover').addEventListener('click', () => {
+    const response = bnCurrentResponse();
+    if (response.resolved) return;
+    const ok = bnCommitResponse({
+      ...response,
+      resolved: true,
+      updates: [
+        ...response.updates,
+        {
+          time: new Date().toISOString(),
+          kind: 'Recovery applied locally',
+          text: 'The final synthetic checks are now operational. Earlier failure history is preserved.',
+          public: false,
+        },
+      ],
+    });
+    bnRenderIncident();
+    document.getElementById('bn-action-status').textContent = ok
+      ? 'Local recovery applied. This did not change any real service.'
+      : 'Recovery applied on this page only; storage is unavailable.';
+  });
+  document
+    .getElementById('bn-update-form')
+    .addEventListener('submit', (event) => {
+      event.preventDefault();
+      const input = document.getElementById('bn-update');
+      input.setCustomValidity(
+        input.value.trim().length >= 10
+          ? ''
+          : 'Write at least 10 characters of useful context.',
+      );
+      if (!input.reportValidity()) return;
+      const response = bnCurrentResponse();
+      if (response.updates.length >= 38) {
+        document.getElementById('bn-update-status').textContent =
+          'This exercise has reached its update limit. Export the record before resetting.';
+        return;
+      }
+      const stage = document.getElementById('bn-stage').value;
+      const ok = bnCommitResponse({
+        ...response,
+        stage,
+        updates: [
+          ...response.updates,
+          {
+            time: new Date().toISOString(),
+            kind: stage,
+            text: input.value.trim(),
+            public: document.getElementById('bn-public').checked,
+          },
+        ],
+      });
+      input.value = '';
+      document.getElementById('bn-public').checked = false;
+      bnRenderIncident();
+      document.getElementById('bn-update-status').textContent = ok
+        ? 'Update saved to this local exercise. Nothing was published.'
+        : 'Update kept on this page only; storage is unavailable.';
+    });
+  document
+    .getElementById('bn-update')
+    .addEventListener('input', (event) => event.target.setCustomValidity(''));
+  document
+    .getElementById('bn-export-incident')
+    .addEventListener('click', () => bnDownload('bn-action-status'));
+  const dialog = document.getElementById('bn-reset-dialog');
+  document
+    .getElementById('bn-reset')
+    .addEventListener('click', () => dialog.showModal());
+  document
+    .getElementById('bn-cancel-reset')
+    .addEventListener('click', () => dialog.close());
+  document.getElementById('bn-confirm-reset').addEventListener('click', () => {
+    const ok = bnCommitResponse(bnEmptyResponse());
+    bnRenderIncident();
+    dialog.close();
+    document.getElementById('bn-action-status').textContent = ok
+      ? 'Local exercise reset.'
+      : 'Exercise reset on this page only; storage is unavailable.';
+  });
+}
+bnRenderAll();
+if ('IntersectionObserver' in window) {
+  const bnObserver = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('entered');
+          bnObserver.unobserve(entry.target);
+        }
+      }),
+    { threshold: 0.2 },
+  );
+  document
+    .querySelectorAll('.hero-console,.workflow-map,.timeline-preview')
+    .forEach((el) => bnObserver.observe(el));
+}
+</script></body></html>

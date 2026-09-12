@@ -1,0 +1,32 @@
+{
+  "slug": "afield",
+  "name": "Afield",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "An editorial outdoor clothing collection with detailed fit guidance, size-aware shopping and a local order draft.",
+  "tagline": "Outside is a good place to start.",
+  "style": "Coastal apparel editorial",
+  "palette": [
+    "#f7f6f1",
+    "#192e38",
+    "#e4e0d2",
+    "#dce0cf"
+  ],
+  "order": 9,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Original coastal campaign, considered collection, substantial product detail, garment measurements and a complete local bag",
+    "motion": "Campaign reveal, product-image hover and accessible image zoom",
+    "interaction": "Filter and sort apparel, choose sizes, compare measurements in centimeters or inches, manage variant quantities and export an order draft",
+    "provenance": "Seven original commerce pages with four original campaign/product photographs, three fictional products and a tested size-aware local bag."
+  },
+  "credits": {
+    "referenceName": "Finisterre",
+    "referenceUrl": "https://finisterre.com/en-us"
+  },
+  "pageCount": 7
+}

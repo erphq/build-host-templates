@@ -1,0 +1,31 @@
+{
+  "slug": "monograph",
+  "name": "Monograph",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Photography",
+  "description": "An immersive photographic journal with three original visual studies, a full-screen image archive and a considered inquiry flow.",
+  "tagline": "Images with a little room for interpretation.",
+  "style": "Immersive photographic editorial",
+  "palette": [
+    "#ede9df",
+    "#282b26",
+    "#263b3c"
+  ],
+  "order": 15,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Selectable photographic cover, asymmetric study archive, long visual essays and a focused inquiry page",
+    "motion": "Cover transitions, considered image hover, keyboard-operated native image viewer",
+    "interaction": "Select cover studies, filter the archive, explore images with keyboard navigation and prepare an editable inquiry draft",
+    "provenance": "Seven original portfolio pages with three generated photographic concepts, substantial fictional studies and a working local inquiry draft."
+  },
+  "credits": {
+    "referenceName": "Jason Bergh",
+    "referenceUrl": "https://www.jasonbergh.com/"
+  },
+  "pageCount": 7
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "bundle-price-builder",
+  "name": "Bundle Price Builder",
+  "collection": "business-apps",
+  "category": "local-business",
+  "industry": "Local business",
+  "description": "Select or enter products, quantities, regular prices, unit costs, bundle discount, packaging and fees. Standalone total = sum quantity times price; bundle price = standalone total minus discount; profit = bundle price minus total costs.",
+  "tagline": "Build a bundle\nthat pays.",
+  "style": "cream",
+  "palette": [],
+  "order": 40,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 47,
+  "notes": {
+    "interaction": "Select or enter products, quantities, regular prices, unit costs, bundle discount, packaging and fees. Standalone total = sum quantity times price; bundle price = standalone total minus discount; profit = bundle price minus total costs."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

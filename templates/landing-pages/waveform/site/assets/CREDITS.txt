@@ -1,0 +1,42 @@
+Primary image
+{
+  "subject": "audio",
+  "source_page": null,
+  "image_url": null,
+  "author": "AI image generation",
+  "license": "AI-generated original asset",
+  "generation_tool": "Built-in image generation",
+  "prompt": "Premium chrome and black over-ear headphones on saturated acid yellow seamless studio backdrop, sculptural lighting, horizontal 1536x1024, no text.",
+  "width": 1536,
+  "height": 1024
+}
+
+The imagery is used for a fictional design concept. No endorsement by depicted people, photographers or brands is implied.
+
+Secondary image 1
+{
+  "site_slug": "audio",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/close-up-of-headphones-7858756/",
+  "image_url": "https://images.pexels.com/photos/7858756/pexels-photo-7858756.jpeg?cs=srgb&dl=pexels-ron-lach-7858756.jpg&fm=jpg",
+  "author": "Ron Lach",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "headphones close up",
+  "width": 4480,
+  "height": 6720
+}
+
+Secondary image 2
+{
+  "site_slug": "audio",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/a-woman-listening-on-her-headphones-7382359/",
+  "image_url": "https://images.pexels.com/photos/7382359/pexels-photo-7382359.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-7382359.jpg&fm=jpg",
+  "author": "Polina Tankilevitch",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "woman listening headphones",
+  "width": 2000,
+  "height": 3000
+}

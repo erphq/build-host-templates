@@ -1,0 +1,37 @@
+Primary image: original generated artwork
+{
+  "slug": "other",
+  "prompt": "A polished chrome twisted ribbon sculpture on a saturated coral studio backdrop (#f15c45), bold contemporary art direction, graphic shadow, sculptural object occupying center. Horizontal 1536x1024. No text or logo. Photorealistic surreal sculptural studio photography, immaculate reflective metal, distinctive fluid twisting form and dramatic graphic composition.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1536,
+  "height": 1024
+}
+
+Secondary image 1
+{
+  "site_slug": "agency",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/abstract-sculpture-made-of-geometrical-shapes-7307615/",
+  "image_url": "https://images.pexels.com/photos/7307615/pexels-photo-7307615.jpeg?cs=srgb&dl=pexels-ekaterina-bolovtsova-7307615.jpg&fm=jpg",
+  "author": "KATRIN BOLOVTSOVA",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "abstract geometric sculpture",
+  "width": 3472,
+  "height": 5208
+}
+
+Secondary image 2
+{
+  "site_slug": "agency",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/creative-workspace-with-designer-at-desk-30008706/",
+  "image_url": "https://images.pexels.com/photos/30008706/pexels-photo-30008706.jpeg?cs=srgb&dl=pexels-rebornfilmes-30008706.jpg&fm=jpg",
+  "author": "Alexander Mass",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "design studio creative desk",
+  "width": 4160,
+  "height": 6240
+}

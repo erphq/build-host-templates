@@ -1,0 +1,31 @@
+{
+  "slug": "daybreak",
+  "name": "DAYBREAK",
+  "collection": "landing-pages",
+  "category": "restaurants-caf-s",
+  "industry": "Food",
+  "description": "A neighborhood roastery with bold orange type, brew knowledge, and a working coffee selector.",
+  "tagline": "Make mornings matter.",
+  "style": "Roastery print campaign",
+  "palette": [
+    "#f0ece5",
+    "#3b241c",
+    "#ac3d1c"
+  ],
+  "order": 21,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "wide masthead, coffee image with side rail, roast selector, brew guide, subscription configurator",
+    "motion": "masthead entrance, roast selection crossfade, brew step reveal",
+    "interaction": "select roast, grind, and delivery interval; update subscription summary and demo price",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

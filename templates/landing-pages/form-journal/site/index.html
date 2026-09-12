@@ -1,0 +1,2700 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="An independent architecture journal with a strong editorial grid and readable long-form stories."><meta name="theme-color" content="#eeefeb"><title>FORM JOURNAL | Ideas worth inhabiting.</title><link rel="preload" href="assets/hero.webp?v=2" as="image"><style>:root{--paper:#eeefeb;--ink:#2a2f2e;--accent:#435e55}
+@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 100 900;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    16px/1.65 Geist,
+    Arial,
+    sans-serif;
+}
+body[data-theme='dark'] {
+  --paper: #17201e;
+  --ink: #edf0e8;
+  --accent: #c3d398;
+}
+body[data-theme='light'] {
+  --paper: #ecefe9;
+  --ink: #202b26;
+  --accent: #405d3c;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation;
+}
+button {
+  cursor: pointer;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+h1 {
+  font-size: clamp(46px, 6.7vw, 104px);
+  letter-spacing: -0.065em;
+  line-height: 1.02;
+  max-width: 800px;
+}
+h2 {
+  font-size: clamp(36px, 4.6vw, 70px);
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+h3 {
+  font-size: 24px;
+  letter-spacing: -0.035em;
+  line-height: 1.3;
+}
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.wrap {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 60px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 88px;
+  padding: 0 4.2%;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.wordmark {
+  font-size: 23px;
+  font-weight: 650;
+  letter-spacing: -1px;
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+}
+.nav-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 13px;
+}
+.theme-button,
+.menu-button {
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  border-radius: 30px;
+  color: inherit;
+  background: none;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+.menu-button {
+  display: none;
+}
+.button {
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  padding: 14px 22px;
+  font-size: 14px;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    transform 0.25s,
+    opacity 0.25s;
+}
+.button:hover {
+  transform: translateY(-3px);
+  opacity: 0.86;
+}
+.button span {
+  font-size: 20px;
+}
+.small-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.hero-description {
+  max-width: 355px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+.hero .small-label {
+  margin-bottom: 26px;
+}
+.hero .button {
+  margin-top: 30px;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.giant-word {
+  font-weight: 650;
+  letter-spacing: -0.075em;
+  line-height: 0.84;
+}
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 22px 4.2%;
+}
+.forma > .giant-word {
+  font-size: 23.7vw;
+  text-align: center;
+  padding: 12px 2% 22px;
+}
+.image-stage {
+  position: relative;
+  height: 560px;
+}
+.image-caption {
+  position: absolute;
+  inset: auto 4.2% 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: #fff;
+}
+.image-caption h1 {
+  font-size: 64px;
+  max-width: 500px;
+  text-shadow: 0 2px 30px #14241dcc;
+}
+.image-caption .button {
+  background: #f0f1eb;
+  color: #24332c;
+  border-color: #f0f1eb;
+}
+.immersive,
+.orbital {
+  height: min(800px, calc(100svh - 88px));
+  min-height: 610px;
+}
+.immersive > .hero-image,
+.orbital > .hero-image,
+.common > .hero-image,
+.rewild > .hero-image {
+  position: absolute;
+  inset: 0;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #081716aa, transparent 85%);
+}
+.hero-copy {
+  position: relative;
+  color: #f5f7ed;
+  padding: 85px 6%;
+  max-width: 880px;
+}
+.hero-copy .hero-description {
+  margin-top: 25px;
+}
+.hero-copy .button {
+  background: #d0e881;
+  color: #20352c;
+  border-color: #d0e881;
+}
+.hero-side {
+  position: absolute;
+  right: 25px;
+  bottom: 40px;
+  writing-mode: vertical-rl;
+  color: #f2f6eb;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.orbital .hero-copy {
+  padding-top: 100px;
+  max-width: 850px;
+}
+.orbital .hero-image {
+  object-position: 70% center;
+}
+.orbital .hero-overlay {
+  background: linear-gradient(90deg, #080f19df 5%, #080f1944 60%);
+}
+.orbital .button {
+  background: #e6b687;
+  border-color: #e6b687;
+  color: #17212a;
+}
+.mission-label {
+  position: absolute;
+  bottom: 32px;
+  left: 6%;
+  color: #d6c5b4;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.product-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+}
+.product-copy {
+  padding: 80px 4% 70px 9%;
+  position: relative;
+  z-index: 1;
+}
+.product-copy h1 {
+  font-size: clamp(50px, 6.5vw, 102px);
+}
+.product-copy .hero-description {
+  margin-top: 25px;
+}
+.product-art {
+  position: relative;
+  overflow: hidden;
+}
+.product-art img {
+  mix-blend-mode: normal;
+}
+.product-code {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 100px;
+  font-weight: 650;
+  letter-spacing: -8px;
+  color: #17221b;
+}
+.moss {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4%;
+  padding: 55px 7% 65px;
+}
+.moss-copy {
+  align-self: center;
+  padding: 25px 0;
+}
+.moss-copy h1 {
+  font-size: clamp(65px, 8vw, 116px);
+}
+.moss-copy .hero-description {
+  margin-top: 30px;
+}
+.moss-art {
+  height: 560px;
+  border-radius: 45% 45% 0 0;
+  overflow: hidden;
+}
+.vertical-note {
+  position: absolute;
+  right: 20px;
+  top: 180px;
+  writing-mode: vertical-rl;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.daybreak {
+  padding: 35px 4.2% 65px;
+}
+.daybreak > .giant-word {
+  font-size: 16.7vw;
+  color: var(--accent);
+  margin-bottom: 35px;
+}
+.daybreak-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 0.6fr;
+  gap: 40px;
+  align-items: center;
+}
+.daybreak-grid h1 {
+  font-size: 58px;
+}
+.daybreak-grid img {
+  height: 410px;
+}
+.side-description span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 80px;
+}
+.pace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px 4.2%;
+  gap: 50px;
+}
+.pace-title {
+  align-self: center;
+}
+.pace-title h1 {
+  font-size: clamp(66px, 9vw, 135px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.92;
+}
+.pace-photo {
+  height: 610px;
+  position: relative;
+}
+.pace-photo span {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  color: #f0f4e8;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 650;
+}
+.casa {
+  padding: 40px 4.2%;
+}
+.casa-heading {
+  text-align: center;
+}
+.casa-heading > span {
+  font-size: 11px;
+  letter-spacing: 5px;
+}
+.casa-heading h1 {
+  font:
+    500 clamp(48px, 6vw, 88px)/1.1 Georgia,
+    serif;
+  letter-spacing: -3px;
+  margin: 15px auto 30px;
+}
+.casa-photo {
+  height: 430px;
+}
+.casa-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+.casa-bottom .button {
+  margin: 0;
+}
+.object {
+  padding: 40px 4.2%;
+}
+.object-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+.object-head h1 {
+  max-width: 750px;
+  font-size: clamp(50px, 6.7vw, 95px);
+}
+.object-head .small-label {
+  max-width: 150px;
+  margin-top: 10px;
+}
+.object-art {
+  height: 470px;
+  margin-top: 30px;
+}
+.object-art img {
+  object-position: center 55%;
+}
+.object-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.object-footer > span {
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+.object-footer .button {
+  margin: 0;
+}
+.nori {
+  display: grid;
+  grid-template-columns: 0.9fr 1.25fr 0.35fr;
+  gap: 40px;
+  padding: 50px 4.2%;
+}
+.nori-word {
+  font-size: clamp(80px, 10vw, 160px);
+  line-height: 1;
+  letter-spacing: -8px;
+}
+.nori-title {
+  align-self: center;
+}
+.nori-title h1 {
+  font:
+    400 48px/1.12 Georgia,
+    serif;
+  letter-spacing: -2px;
+  margin-top: 30px;
+}
+.nori-image {
+  height: 590px;
+}
+.nori-side {
+  align-self: flex-end;
+  padding-bottom: 20px;
+}
+.nori-side .hero-description {
+  font-size: 13px;
+}
+.other {
+  padding: 35px 4.2% 60px;
+}
+.other > .giant-word {
+  font-size: 23vw;
+}
+.other-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.55fr;
+  gap: 35px;
+  align-items: center;
+  margin-top: 30px;
+}
+.other-body h1 {
+  font-size: 65px;
+}
+.other-art {
+  height: 310px;
+}
+.other-art img {
+  border-radius: 50%;
+}
+.still {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 70px;
+  padding: 65px 6%;
+}
+.still-side {
+  align-self: center;
+}
+.still-side h1 {
+  font-size: 56px;
+}
+.still figure {
+  height: 580px;
+}
+.still figure img {
+  height: 95%;
+}
+.still figcaption {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+.common {
+  height: 730px;
+  color: #f6f7f0;
+}
+.common .hero-overlay {
+  background: linear-gradient(0deg, #17232dcc, transparent 65%);
+}
+.common-heading {
+  position: absolute;
+  bottom: 45px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+.common-heading .giant-word {
+  font-size: 11.5vw;
+}
+.common-heading h1 {
+  font-size: 44px;
+  max-width: 300px;
+}
+.common .button {
+  background: #eff3ef;
+  color: #25303c;
+}
+.tide {
+  padding: 40px 4.2%;
+}
+.tide-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.tide-heading .giant-word {
+  font-size: 24vw;
+}
+.tide-heading h1 {
+  font-size: 57px;
+  max-width: 430px;
+}
+.tide-image {
+  height: 380px;
+  margin-top: 30px;
+}
+.kiln {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 55px 6%;
+  position: relative;
+}
+.kiln-title {
+  align-self: center;
+}
+.kiln-title h1 {
+  font:
+    400 clamp(65px, 8vw, 105px)/1.04 Georgia,
+    serif;
+  letter-spacing: -5px;
+}
+.kiln-title > p:not(.small-label) {
+  margin-top: 25px;
+}
+.kiln-photo {
+  height: 600px;
+  border-radius: 200px 200px 4px 4px;
+  overflow: hidden;
+}
+.kiln-mark {
+  position: absolute;
+  bottom: 40px;
+  right: 25px;
+  font-size: 120px;
+  font-family: Georgia;
+  color: var(--paper);
+}
+.volt {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  padding: 0;
+  min-height: 650px;
+}
+.volt-title {
+  align-self: center;
+  padding: 50px 8%;
+}
+.volt-title h1 {
+  font-size: clamp(75px, 8vw, 116px);
+  font-weight: 680;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+.volt-art {
+  position: relative;
+}
+.volt-word {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  font-size: 13vw;
+  letter-spacing: -12px;
+  line-height: 1;
+  color: #dfef80;
+  font-weight: 700;
+}
+.journal {
+  padding: 25px 4.2% 50px;
+}
+.journal-masthead {
+  font:
+    500 10vw/0.95 Georgia,
+    serif;
+  text-align: center;
+  letter-spacing: -0.06em;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 25px;
+}
+.journal-lead {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  padding-top: 35px;
+  align-items: center;
+}
+.journal-lead h1 {
+  font:
+    400 clamp(48px, 5.4vw, 78px)/1.06 Georgia,
+    serif;
+  letter-spacing: -3px;
+}
+.journal-lead .hero-description {
+  margin-top: 25px;
+}
+.journal-lead figure {
+  height: 450px;
+}
+.journal-lead img {
+  height: 95%;
+}
+.journal-lead figcaption {
+  font-size: 9px;
+  margin-top: 8px;
+  letter-spacing: 1.4px;
+}
+.afterhours {
+  min-height: 700px;
+  padding: 30px 4.2%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  align-items: center;
+}
+.afterhours-title {
+  font-size: clamp(100px, 15vw, 225px);
+  font-weight: 750;
+  line-height: 0.79;
+  letter-spacing: -0.075em;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: flex-start;
+  margin-top: 30px;
+}
+.afterhours-image {
+  height: 600px;
+  grid-column: 2;
+  grid-row: 1;
+  transform: rotate(3deg);
+  overflow: hidden;
+}
+.afterhours-copy {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: flex-end;
+  padding: 0 25px 30px 0;
+  z-index: 1;
+}
+.afterhours-copy h1 {
+  font-size: 43px;
+  max-width: 420px;
+}
+.afterhours .small-label {
+  margin-bottom: 12px;
+}
+.rewild {
+  height: 730px;
+  color: #f0f5e8;
+}
+.rewild .hero-overlay {
+  background: linear-gradient(90deg, #10271fbb, transparent 80%);
+}
+.rewild-copy {
+  position: relative;
+  max-width: 680px;
+  padding: 60px 7%;
+}
+.rewild-copy h1 {
+  font-size: 74px;
+}
+.rewild-copy .hero-description {
+  margin-top: 22px;
+}
+.rewild .button {
+  background: #d4e5b6;
+  color: #163324;
+  border-color: #d4e5b6;
+}
+.rewild-word {
+  position: absolute;
+  bottom: -0.05em;
+  left: 4%;
+  font-size: 20.5vw;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+  font-weight: 650;
+  color: #e6eedd;
+}
+.stackline {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 65px;
+  padding: 100px 6%;
+  align-items: center;
+  min-height: 680px;
+}
+.stackline h1 {
+  font-size: 83px;
+}
+.stackline .hero-description {
+  margin-top: 30px;
+}
+.console-preview {
+  border: 1px solid #59675e;
+  border-radius: 9px;
+  background: #101b1a;
+  color: #e3eae1;
+  overflow: hidden;
+  box-shadow: 0 35px 90px #09171677;
+}
+.console-top {
+  border-bottom: 1px solid #37483d;
+  padding: 18px 24px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.console-top span {
+  font-size: 9px;
+  color: #a9b8aa;
+}
+.console-preview code {
+  display: block;
+  padding: 30px;
+  font: 14px/1.8 monospace;
+}
+.console-preview code span {
+  color: #a5d9bd;
+}
+.console-preview > a {
+  display: block;
+  padding: 18px 25px;
+  font-size: 12px;
+  border-top: 1px solid #37483d;
+  color: #b7dec8;
+}
+.story {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.story h2 {
+  max-width: 540px;
+}
+.story p {
+  font-size: 20px;
+  line-height: 1.75;
+  max-width: 520px;
+  opacity: 0.78;
+  padding-top: 6px;
+}
+.collection {
+  padding-top: 35px;
+  padding-bottom: 95px;
+}
+.section-heading {
+  margin-bottom: 45px;
+}
+.section-heading h2 {
+  font-size: 42px;
+}
+.filter-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.filter-button {
+  background: none;
+  border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  color: inherit;
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+.filter-button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 35px;
+}
+.item {
+  min-width: 0;
+}
+.item-image {
+  height: 260px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+.item-image img {
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s;
+  object-position: var(--position, center);
+}
+.item:nth-child(2) img {
+  object-position: 65% 70%;
+}
+.item:nth-child(3) img {
+  object-position: 30% 35%;
+}
+.item:hover img {
+  transform: scale(1.035);
+}
+.item-meta {
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin: 8px 0 14px;
+}
+.item p {
+  opacity: 0.8;
+  font-size: 15px;
+}
+.text-button {
+  color: inherit;
+  border: 0;
+  padding: 13px 0;
+  margin-top: 10px;
+  background: none;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.items.layout-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.layout-rows .item {
+  display: grid;
+  grid-template-columns: 130px 1fr 1fr auto;
+  align-items: center;
+  gap: 25px;
+  padding: 22px 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+}
+.layout-rows .item-image {
+  height: 95px;
+  margin: 0;
+}
+.layout-rows .item-meta {
+  margin: 0;
+}
+.layout-rows .item p {
+  max-width: 380px;
+}
+.items.layout-offset .item:nth-child(2) {
+  margin-top: 65px;
+}
+.items.layout-offset .item:nth-child(3) {
+  margin-top: 130px;
+}
+.items.layout-editorial {
+  grid-template-columns: 1.5fr 1fr;
+}
+.layout-editorial .item:first-child {
+  grid-row: span 2;
+}
+.layout-editorial .item:first-child .item-image {
+  height: 450px;
+}
+.layout-editorial .item:not(:first-child) {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+}
+.layout-editorial .item:not(:first-child) .item-image {
+  grid-row: span 3;
+  height: 180px;
+  margin: 0;
+}
+.layout-editorial .item:not(:first-child) p {
+  display: none;
+}
+.layout-editorial .item:not(:first-child) .text-button {
+  justify-self: start;
+  margin: 0;
+  padding: 0;
+}
+.faq {
+  padding-top: 20px;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.faq h2 {
+  font-size: 42px;
+}
+.faq details {
+  border-top: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  padding: 20px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-size: 17px;
+}
+.faq details p {
+  padding: 18px 20px 0 0;
+  opacity: 0.75;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.experience {
+  padding-top: 70px;
+  padding-bottom: 110px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+.experience-heading .small-label {
+  margin-bottom: 25px;
+}
+.experience-heading h2 {
+  max-width: 500px;
+}
+.experience-heading > p:last-child {
+  max-width: 360px;
+  margin-top: 25px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+.configurator {
+  background: color-mix(in srgb, var(--ink) 4%, var(--paper));
+  padding: 35px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+form label:has(textarea) {
+  grid-column: 1/-1;
+}
+input,
+select,
+textarea {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  padding: 12px;
+  border-radius: 3px;
+  font-size: 15px;
+}
+textarea {
+  min-height: 95px;
+  resize: vertical;
+}
+form .button {
+  grid-column: 1/-1;
+  margin-top: 6px;
+}
+.price {
+  font-size: 28px;
+  grid-column: 1/-1;
+}
+.price span {
+  font-size: 12px;
+  opacity: 0.6;
+}
+.result {
+  padding: 20px;
+  margin-top: 24px;
+  border-left: 3px solid var(--accent);
+  background: color-mix(in srgb, var(--ink) 6%, var(--paper));
+  white-space: pre-line;
+  font-size: 15px;
+}
+.result[hidden] {
+  display: none;
+}
+.result h3 {
+  margin-bottom: 10px;
+}
+.bag,
+.saved-list {
+  margin-top: 25px;
+  font-size: 14px;
+}
+.bag h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.bag-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+}
+.bag-row button {
+  background: none;
+  border: 0;
+  color: inherit;
+  text-decoration: underline;
+  font-size: 12px;
+}
+.bag-total {
+  font-weight: 600;
+  margin-top: 12px;
+}
+.footer {
+  padding: 45px 4.2% 25px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+}
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-main .wordmark {
+  font-size: 35px;
+}
+.footer-links {
+  display: flex;
+  gap: 25px;
+  font-size: 12px;
+}
+.demo-note {
+  font-size: 11px;
+  opacity: 0.58;
+  margin-top: 32px;
+}
+.demo-note a {
+  text-decoration: underline;
+}
+.detail-dialog {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  border-radius: 8px;
+  width: min(760px, calc(100% - 32px));
+  max-height: 85svh;
+  padding: 35px;
+  overflow: auto;
+}
+.detail-dialog::backdrop {
+  background: #0b171bb0;
+  backdrop-filter: blur(5px);
+}
+.dialog-close {
+  float: right;
+  position: sticky;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  border-radius: 25px;
+  padding: 8px 14px;
+  font-size: 12px;
+}
+.detail-dialog h2 {
+  font-size: 42px;
+  clear: both;
+  margin: 25px 0;
+}
+.detail-dialog p {
+  margin: 20px 0;
+}
+.detail-dialog img {
+  width: 100%;
+  max-height: 440px;
+  object-fit: cover;
+}
+.skip {
+  position: absolute;
+  top: -80px;
+  left: 20px;
+  z-index: 20;
+  padding: 10px;
+  background: var(--paper);
+}
+.skip:focus {
+  top: 10px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 {
+    animation: title-in 0.85s both;
+  }
+  .hero .button {
+    animation: title-in 0.9s 0.15s both;
+  }
+  .reveal.visible {
+    animation: title-in 0.75s both;
+  }
+  .item:hover .text-button {
+    transform: translateX(4px);
+  }
+  @keyframes title-in {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .orbital .hero-image,
+  .immersive .hero-image {
+    animation: landscape 18s ease-out both;
+  }
+  @keyframes landscape {
+    from {
+      transform: scale(1.07);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  body.motion-paused * {
+    animation-play-state: paused !important;
+  }
+}
+@media (max-width: 1050px) {
+  .wrap {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .nav-links {
+    gap: 18px;
+  }
+  .nav-right > a {
+    display: none;
+  }
+  h1 {
+    font-size: 70px;
+  }
+  .story,
+  .faq,
+  .experience {
+    gap: 45px;
+  }
+  .daybreak-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .side-description {
+    display: none;
+  }
+  .nori {
+    grid-template-columns: 1fr 1.3fr;
+  }
+  .nori-side {
+    display: none;
+  }
+  .other-body {
+    grid-template-columns: 1fr 1fr;
+  }
+  .other-body > div:last-child {
+    display: none;
+  }
+  .stackline {
+    gap: 35px;
+    padding: 70px 4%;
+  }
+  .stackline h1 {
+    font-size: 65px;
+  }
+  .console-preview code {
+    font-size: 12px;
+    padding: 20px;
+  }
+  .items {
+    gap: 22px;
+  }
+  .layout-rows .item {
+    grid-template-columns: 100px 1fr 1fr;
+  }
+  .layout-rows .text-button {
+    grid-column: 2;
+  }
+  .items.layout-editorial {
+    grid-template-columns: 1fr 1fr;
+  }
+  .layout-editorial .item:not(:first-child) {
+    display: block;
+  }
+  .layout-editorial .item:not(:first-child) .item-image {
+    height: 160px;
+    margin-bottom: 20px;
+  }
+  .layout-editorial .item:not(:first-child) p {
+    display: block;
+  }
+  .other-body h1 {
+    font-size: 55px;
+  }
+  .nori-image {
+    height: 500px;
+  }
+  .product-code {
+    font-size: 70px;
+  }
+  .pace-photo {
+    height: 520px;
+  }
+  .still {
+    gap: 35px;
+  }
+  .still-side h1 {
+    font-size: 48px;
+  }
+  .still figure {
+    height: 470px;
+  }
+  .experience {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+  .configurator {
+    padding: 25px;
+  }
+  .hero-description {
+    font-size: 14px;
+  }
+}
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+  .wrap {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .nav {
+    height: 72px;
+    padding: 0 22px;
+    position: relative;
+    z-index: 4;
+  }
+  .wordmark {
+    font-size: 19px;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    padding: 24px;
+    flex-direction: column;
+    border-bottom: 1px solid currentColor;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-right {
+    gap: 10px;
+  }
+  .menu-button {
+    display: block;
+  }
+  .theme-button {
+    font-size: 11px;
+    padding: 7px 10px;
+  }
+  .nav-right > a {
+    display: none;
+  }
+  h1 {
+    font-size: 56px;
+    letter-spacing: -0.06em;
+  }
+  .hero-description {
+    font-size: 15px;
+  }
+  .hero .small-label {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+  .hero .button {
+    margin-top: 25px;
+  }
+  .hero-top {
+    font-size: 9px;
+    padding: 20px 22px;
+    gap: 20px;
+  }
+  .hero-top span:last-child {
+    display: none;
+  }
+  .forma > .giant-word {
+    font-size: 23vw;
+    padding-bottom: 20px;
+  }
+  .image-stage {
+    height: 550px;
+  }
+  .image-caption {
+    left: 22px;
+    right: 22px;
+    bottom: 30px;
+    display: block;
+  }
+  .image-caption h1 {
+    font-size: 50px;
+    max-width: 330px;
+  }
+  .immersive,
+  .orbital {
+    height: calc(100svh - 72px);
+    min-height: 610px;
+    max-height: 850px;
+  }
+  .hero-copy {
+    padding: 65px 25px;
+  }
+  .hero-copy h1 {
+    font-size: 64px;
+    max-width: 360px;
+  }
+  .hero-copy .hero-description {
+    max-width: 310px;
+  }
+  .orbital .hero-copy {
+    padding: 75px 25px;
+  }
+  .orbital .hero-image {
+    object-position: 60% center;
+  }
+  .orbital .hero-overlay {
+    background: linear-gradient(90deg, #080f19ba, #080f1933);
+  }
+  .mission-label {
+    left: 25px;
+    max-width: 250px;
+    line-height: 1.8;
+  }
+  .product-hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-copy {
+    padding: 45px 25px 25px;
+  }
+  .product-copy h1 {
+    font-size: 68px;
+  }
+  .product-art {
+    height: 350px;
+  }
+  .product-code {
+    font-size: 70px;
+    bottom: 10px;
+  }
+  .moss {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 25px;
+  }
+  .moss-copy {
+    padding: 0;
+  }
+  .moss-copy h1 {
+    font-size: 76px;
+  }
+  .moss-art {
+    height: 390px;
+    margin-top: 35px;
+    border-radius: 150px 150px 0 0;
+  }
+  .vertical-note {
+    display: none;
+  }
+  .daybreak {
+    padding: 30px 22px;
+  }
+  .daybreak > .giant-word {
+    font-size: 16.3vw;
+    margin-bottom: 35px;
+  }
+  .daybreak-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .daybreak-grid h1 {
+    font-size: 61px;
+    max-width: 340px;
+  }
+  .daybreak-grid img {
+    height: 370px;
+    width: 100%;
+  }
+  .pace {
+    grid-template-columns: 1fr;
+    padding: 45px 22px;
+    gap: 35px;
+  }
+  .pace-title h1 {
+    font-size: 83px;
+    max-width: 370px;
+  }
+  .pace-photo {
+    height: 470px;
+  }
+  .casa {
+    padding: 35px 22px;
+  }
+  .casa-heading h1 {
+    font-size: 55px;
+    letter-spacing: -2px;
+  }
+  .casa-photo {
+    height: 400px;
+  }
+  .casa-bottom {
+    display: block;
+  }
+  .casa-bottom .button {
+    margin-top: 20px;
+  }
+  .object {
+    padding: 35px 22px;
+  }
+  .object-head {
+    display: block;
+  }
+  .object-head h1 {
+    font-size: 67px;
+  }
+  .object-art {
+    height: 390px;
+  }
+  .object-footer {
+    display: block;
+  }
+  .object-footer .button {
+    margin-top: 20px;
+  }
+  .nori {
+    grid-template-columns: 1fr;
+    padding: 40px 22px;
+    gap: 35px;
+  }
+  .nori-word {
+    font-size: 130px;
+    letter-spacing: -6px;
+  }
+  .nori-title h1 {
+    font-size: 48px;
+    max-width: 340px;
+    margin-top: 10px;
+  }
+  .nori-image {
+    height: 410px;
+  }
+  .other {
+    padding: 35px 22px;
+  }
+  .other > .giant-word {
+    font-size: 23vw;
+  }
+  .other-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .other-body h1 {
+    font-size: 65px;
+    max-width: 340px;
+  }
+  .other-art {
+    width: 100%;
+    height: 330px;
+  }
+  .still {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 22px;
+    gap: 35px;
+  }
+  .still-side h1 {
+    font-size: 61px;
+  }
+  .still figure {
+    height: auto;
+  }
+  .still figure img {
+    height: 470px;
+    width: 100%;
+  }
+  .common {
+    height: 760px;
+  }
+  .common-heading {
+    left: 22px;
+    right: 22px;
+    display: block;
+  }
+  .common-heading .giant-word {
+    font-size: 20.5vw;
+    margin-bottom: 30px;
+  }
+  .common-heading h1 {
+    font-size: 44px;
+  }
+  .tide {
+    padding: 35px 22px;
+  }
+  .tide-heading {
+    display: block;
+  }
+  .tide-heading .giant-word {
+    font-size: 43vw;
+  }
+  .tide-heading h1 {
+    font-size: 59px;
+    margin-top: 35px;
+  }
+  .tide-image {
+    height: 420px;
+  }
+  .kiln {
+    display: block;
+    padding: 45px 22px;
+  }
+  .kiln-title h1 {
+    font-size: 76px;
+    letter-spacing: -4px;
+  }
+  .kiln-photo {
+    height: 420px;
+    margin-top: 35px;
+  }
+  .kiln-mark {
+    font-size: 95px;
+  }
+  .volt {
+    display: flex;
+    flex-direction: column;
+  }
+  .volt-title {
+    padding: 45px 22px;
+  }
+  .volt-title h1 {
+    font-size: 83px;
+  }
+  .volt-art {
+    height: 450px;
+  }
+  .volt-word {
+    font-size: 27vw;
+    letter-spacing: -6px;
+  }
+  .journal {
+    padding: 30px 22px;
+  }
+  .journal-masthead {
+    font-size: 10vw;
+    padding-bottom: 20px;
+  }
+  .journal-lead {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .journal-lead h1 {
+    font-size: 59px;
+  }
+  .journal-lead figure {
+    height: auto;
+  }
+  .journal-lead img {
+    height: 390px;
+  }
+  .journal-lead figcaption {
+    font-size: 8px;
+  }
+  .afterhours {
+    padding: 35px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+  .afterhours-title {
+    font-size: 26vw;
+    line-height: 0.85;
+    margin-top: 0;
+  }
+  .afterhours-image {
+    height: 350px;
+    transform: rotate(1.5deg);
+  }
+  .afterhours-copy {
+    padding: 0;
+  }
+  .afterhours-copy h1 {
+    font-size: 45px;
+  }
+  .rewild {
+    height: 790px;
+  }
+  .rewild-copy {
+    padding: 55px 25px;
+  }
+  .rewild-copy h1 {
+    font-size: 70px;
+  }
+  .rewild-word {
+    font-size: 20vw;
+    bottom: 22px;
+  }
+  .stackline {
+    grid-template-columns: 1fr;
+    padding: 55px 22px;
+    gap: 40px;
+  }
+  .stackline h1 {
+    font-size: 67px;
+  }
+  .console-preview code {
+    font-size: 12px;
+    white-space: normal;
+  }
+  .story {
+    padding-top: 75px;
+    padding-bottom: 65px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .story h2 {
+    font-size: 46px;
+  }
+  .story p {
+    font-size: 17px;
+  }
+  .collection {
+    padding-top: 20px;
+    padding-bottom: 65px;
+  }
+  .section-heading {
+    margin-bottom: 30px;
+  }
+  .section-heading h2 {
+    font-size: 36px;
+  }
+  .items,
+  .items.layout-editorial {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .items.layout-offset .item:nth-child(n) {
+    margin-top: 0;
+  }
+  .layout-rows .item {
+    grid-template-columns: 90px 1fr;
+    gap: 15px;
+  }
+  .layout-rows .item p {
+    grid-column: 2;
+  }
+  .layout-rows .item-image {
+    grid-row: span 2;
+    height: 120px;
+  }
+  .layout-rows .text-button {
+    grid-column: 2;
+  }
+  .item-image,
+  .layout-editorial .item:first-child .item-image {
+    height: 340px;
+  }
+  .layout-editorial .item:not(:first-child) .item-image {
+    height: 300px;
+  }
+  .faq {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 70px;
+  }
+  .faq h2 {
+    font-size: 36px;
+  }
+  .experience {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+  .experience-heading h2 {
+    font-size: 47px;
+  }
+  .configurator {
+    padding: 23px;
+  }
+  form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer {
+    padding: 30px 22px;
+  }
+  .footer-main {
+    display: block;
+  }
+  .footer-links {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-main .wordmark {
+    font-size: 28px;
+  }
+  .detail-dialog {
+    padding: 25px;
+  }
+  .detail-dialog h2 {
+    font-size: 35px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.thumbnail .nav {
+  height: 70px;
+}
+.thumbnail .hero {
+  max-height: none;
+}
+.thumbnail .story,
+.thumbnail .collection,
+.thumbnail .faq,
+.thumbnail .experience,
+.thumbnail .footer {
+  display: none;
+}
+.thumbnail .hero h1,
+.thumbnail .hero .button {
+  animation: none !important;
+}
+.thumbnail .forma > .giant-word {
+  font-size: 22vw;
+}
+.thumbnail .forma .image-stage {
+  height: 580px;
+}
+.thumbnail .casa-photo {
+  height: 600px;
+}
+.thumbnail .tide-image {
+  height: 540px;
+}
+.thumbnail .journal-lead figure {
+  height: 600px;
+}
+.thumbnail .daybreak-grid img {
+  height: 550px;
+}
+.thumbnail .other-art {
+  height: 440px;
+}
+.thumbnail .product-hero,
+.thumbnail .moss,
+.thumbnail .pace,
+.thumbnail .object,
+.thumbnail .nori,
+.thumbnail .still,
+.thumbnail .common,
+.thumbnail .kiln,
+.thumbnail .volt,
+.thumbnail .afterhours,
+.thumbnail .rewild,
+.thumbnail .stackline {
+  min-height: 830px;
+}
+.thumbnail .hero-image {
+  animation: none !important;
+}
+@font-face {
+  font-family: Poster;
+  src: url('assets/display.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+.pace-title h1,
+.volt-title h1,
+.afterhours-title,
+.daybreak > .giant-word {
+  font-family: Poster, Geist, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.pace-title h1 {
+  font-size: clamp(80px, 11vw, 165px);
+}
+.volt-title h1 {
+  font-size: clamp(80px, 10vw, 150px);
+}
+.afterhours-title {
+  font-size: clamp(110px, 18vw, 270px);
+  line-height: 0.79;
+}
+.daybreak > .giant-word {
+  font-size: 20vw;
+  line-height: 0.85;
+}
+.signature {
+  padding-top: 25px;
+  padding-bottom: 120px;
+  display: grid;
+  gap: 35px;
+}
+.signature img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.signature figure {
+  min-width: 0;
+  min-height: 0;
+}
+.signature-copy h2 {
+  font-size: clamp(36px, 4.5vw, 66px);
+  max-width: 620px;
+}
+.signature-copy p {
+  max-width: 370px;
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.75;
+  margin-top: 25px;
+}
+.signature figcaption {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  margin-top: 13px;
+  opacity: 0.65;
+}
+.signature.spread {
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: end;
+}
+.spread .signature-copy {
+  grid-column: 1/-1;
+  margin-bottom: 10px;
+}
+.spread .signature-copy p {
+  margin-left: 52%;
+  margin-top: -30px;
+}
+.spread .study-one {
+  height: 520px;
+}
+.spread .study-two {
+  height: 350px;
+  margin-bottom: 50px;
+}
+.signature.diptych {
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+.diptych .signature-copy {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  margin-bottom: 20px;
+}
+.diptych .signature-copy p {
+  margin: 0;
+  max-width: 400px;
+}
+.diptych .study-one {
+  height: 470px;
+}
+.diptych .study-two {
+  height: 470px;
+  margin-top: 70px;
+}
+.signature.panorama {
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+}
+.panorama .study-one {
+  height: 530px;
+  grid-column: 1;
+  grid-row: 1/3;
+}
+.panorama .signature-copy {
+  padding-left: 30px;
+}
+.panorama .signature-copy h2 {
+  font-size: 45px;
+}
+.panorama .study-two {
+  height: 260px;
+  margin-left: 30px;
+}
+.signature.offset-study {
+  grid-template-columns: 0.7fr 1.3fr;
+  align-items: center;
+}
+.offset-study .signature-copy {
+  padding-right: 20px;
+}
+.offset-study .study-one {
+  height: 610px;
+  grid-column: 2;
+  grid-row: 1/3;
+}
+.offset-study .study-two {
+  height: 300px;
+  width: 80%;
+}
+.signature.contact-study {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+.contact-study .signature-copy {
+  grid-column: 2;
+  grid-row: 1;
+}
+.contact-study .study-one {
+  height: 580px;
+  grid-column: 1;
+  grid-row: 1/3;
+}
+.contact-study .study-two {
+  height: 290px;
+  width: 85%;
+  grid-column: 2;
+}
+.signature + .collection {
+  padding-top: 15px;
+}
+.thumbnail .signature {
+  display: none;
+}
+.collection .item-image img {
+  object-position: center;
+}
+.theme-button {
+  font-size: 11px;
+}
+.hero-description {
+  font-weight: 400;
+}
+.hero .small-label {
+  font-weight: 500;
+}
+.nav-links {
+  font-weight: 400;
+}
+@media (max-width: 1000px) {
+  .signature {
+    gap: 25px;
+  }
+  .spread .signature-copy p {
+    margin-left: 0;
+    margin-top: 25px;
+  }
+  .signature-copy h2 {
+    font-size: 49px;
+  }
+  .signature.diptych .signature-copy {
+    display: block;
+  }
+  .diptych .signature-copy p {
+    margin-top: 25px;
+  }
+  .panorama .signature-copy {
+    padding-left: 0;
+  }
+  .panorama .study-two {
+    margin-left: 0;
+  }
+  .signature.contact-study {
+    gap: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .signature {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 30px !important;
+    padding-top: 10px;
+    padding-bottom: 70px;
+  }
+  .signature-copy {
+    padding: 0 !important;
+  }
+  .signature-copy h2,
+  .panorama .signature-copy h2 {
+    font-size: 43px;
+  }
+  .signature-copy p {
+    margin: 22px 0 0 !important;
+    font-size: 16px;
+  }
+  .signature .study-one {
+    height: 420px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .signature .study-two {
+    height: 330px !important;
+    width: 85% !important;
+    margin: 0 0 15px auto !important;
+  }
+  .signature figcaption {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .pace-title h1 {
+    font-size: 100px;
+  }
+  .volt-title h1 {
+    font-size: 97px;
+  }
+  .afterhours-title {
+    font-size: 32vw;
+  }
+  .daybreak > .giant-word {
+    font-size: 20vw;
+  }
+}
+.forma {
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - 88px);
+  min-height: 680px;
+}
+.forma > .giant-word {
+  font-size: min(23.7vw, 32svh);
+}
+.forma .image-stage {
+  height: auto;
+  min-height: 330px;
+  flex: 1;
+}
+.forma .image-caption {
+  bottom: 28px;
+}
+.forma .image-caption h1 {
+  font-size: 54px;
+  max-width: 440px;
+}
+.forma .image-stage::after {
+  content: '';
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, #0f231c80);
+  pointer-events: none;
+}
+.forma .image-caption {
+  z-index: 1;
+}
+.volt {
+  height: calc(100svh - 88px);
+  min-height: 620px;
+}
+.volt-art {
+  min-height: 0;
+}
+.volt-art img {
+  position: absolute;
+  inset: 0;
+}
+.common > .hero-image {
+  object-position: center 20%;
+}
+.still figure img {
+  object-position: center 25%;
+}
+.afterhours-title {
+  font-size: clamp(110px, 17vw, 250px);
+}
+.afterhours-copy {
+  padding-bottom: 20px;
+}
+.afterhours-copy .small-label {
+  margin-bottom: 20px;
+}
+.pace-photo span {
+  background: #16261f99;
+  padding: 12px 15px;
+}
+.thumbnail .forma {
+  height: auto;
+  min-height: 850px;
+}
+.thumbnail .forma > .giant-word {
+  font-size: 22vw;
+}
+.thumbnail .forma .image-stage {
+  height: 580px;
+  flex: auto;
+}
+.thumbnail .volt {
+  height: 850px;
+}
+.hero .button {
+  animation-delay: 0s !important;
+}
+@media (max-width: 700px) {
+  .forma {
+    height: auto;
+    min-height: 0;
+  }
+  .forma > .giant-word {
+    font-size: 23vw;
+  }
+  .forma .image-stage {
+    height: 550px;
+    flex: auto;
+  }
+  .forma .image-caption h1 {
+    font-size: 48px;
+    max-width: 310px;
+  }
+  .volt {
+    height: auto;
+    min-height: 0;
+  }
+  .volt-art {
+    height: 450px;
+    min-height: 450px;
+  }
+  .afterhours-title {
+    font-size: 32vw;
+  }
+  .pace-photo span {
+    font-size: 23px;
+  }
+  .common > .hero-image {
+    object-position: center 20%;
+  }
+}
+@media (max-width: 700px) {
+  .pace-title h1 {
+    font-size: clamp(62px, 21vw, 82px);
+  }
+  .casa {
+    display: flex;
+    flex-direction: column;
+  }
+  .casa-heading {
+    order: 0;
+  }
+  .casa-bottom {
+    order: 1;
+    padding-top: 0;
+  }
+  .casa-photo {
+    order: 2;
+    margin-top: 30px;
+  }
+  .casa-bottom .hero-description {
+    max-width: 330px;
+  }
+  .casa-bottom .button {
+    margin-top: 20px;
+  }
+  .theme-button,
+  .menu-button {
+    min-height: 40px;
+  }
+  .nav-right {
+    gap: 7px;
+  }
+  .nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .nav .wordmark {
+    font-size: 18px;
+  }
+}
+.object-art{background:#e0e1df}.object-art img{object-fit:contain;object-position:center}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header class="nav"><a class="wordmark" href="#main">FORM JOURNAL</a><nav class="nav-links" id="navigation" aria-label="Main navigation"><a href="#story">Our approach</a><a href="#collection">Latest stories</a><a href="#experience">Explore the journal</a></nav><div class="nav-right"><a href="../../">ProtoSites ↗</a><button class="theme-button" type="button">Change theme</button><button class="menu-button" type="button" aria-controls="navigation" aria-expanded="false">Menu</button></div></header><main id="main"><section class="hero journal"><div class="journal-masthead">FORM JOURNAL</div><div class="journal-lead"><div><p class="small-label">An independent journal of architecture &amp; place</p><h1>Ideas worth inhabiting.</h1><p class="hero-description">An independent journal of architecture, materials, and the ways we make a place our own.</p><a class="button" href="#experience">Explore the journal <span aria-hidden="true">↗</span></a></div><figure><img class="hero-image" src="assets/hero.webp?v=2" alt="architecture magazine photograph for FORM JOURNAL" width="1536" height="1024" fetchpriority="high"><figcaption>ON ARCHITECTURE, MATERIAL, AND THE EVERYDAY</figcaption></figure></div></section><section id="story" class="story wrap reveal"><h2>A different way of looking.</h2><p>Beyond the finished photograph are the decisions, materials, and human habits that make a place. We explore those stories through essays, interviews, and observations.</p></section><section class="signature panorama wrap reveal"><div class="signature-copy"><h2>The spaces between the stories.</h2><p>A building is never only an image. It is a collection of decisions that continue to unfold through the people who use it.</p></div><figure class="study-one"><img src="assets/detail-1.webp" alt="architecture magazine: complementary visual study" width="1600" height="1200" loading="lazy"></figure><figure class="study-two"><img src="assets/detail-2.webp" alt="architecture magazine: second complementary visual study" width="1600" height="1200" loading="lazy"><figcaption>On material, memory, and daily life.</figcaption></figure></section><section class="collection wrap reveal" id="collection"><div class="section-heading"><h2>Latest stories.</h2><div class="filter-row" role="group" aria-label="Filter Latest stories"><button type="button" class="filter-button" data-filter="All" aria-pressed="true">All</button><button type="button" class="filter-button" data-filter="Living" aria-pressed="false">Living</button><button type="button" class="filter-button" data-filter="Materials" aria-pressed="false">Materials</button><button type="button" class="filter-button" data-filter="Ideas" aria-pressed="false">Ideas</button></div></div><div class="items layout-offset"><article class="item" data-group="Living"><div class="item-image"><img src="assets/hero.webp" alt="architecture magazine visual study" loading="lazy" width="900" height="600"></div><div><h3>The generous threshold</h3><div class="item-meta">Living</div></div><p>On the spaces between the street and the front door.</p><button class="text-button" type="button" data-detail="0">Read story ↗</button></article><article class="item" data-group="Materials"><div class="item-image"><img src="assets/detail-1.webp" alt="architecture magazine visual study" loading="lazy" width="900" height="600"></div><div><h3>A second life for concrete</h3><div class="item-meta">Materials</div></div><p>What adaptation can offer an existing structure.</p><button class="text-button" type="button" data-detail="1">Read story ↗</button></article><article class="item" data-group="Ideas"><div class="item-image"><img src="assets/detail-2.webp" alt="architecture magazine visual study" loading="lazy" width="900" height="600"></div><div><h3>Windows as a way of thinking</h3><div class="item-meta">Ideas</div></div><p>How a view changes the room around it.</p><button class="text-button" type="button" data-detail="2">Read story ↗</button></article></div></section><section class="faq wrap reveal"><h2>A little more to know.</h2><div><details><summary>Can I save a story?</summary><p>Yes. Your reading list is stored locally in this browser. It is not synced to an account.</p></details><details><summary>Are the essays original?</summary><p>The short concept essays are written for this demo. Image sources are credited in the asset file.</p></details></div></section><section class="experience wrap reveal" id="experience"><div class="experience-heading"><p class="small-label">TRY IT FOR YOURSELF</p><h2>Explore the journal.</h2><p>Explore this interactive concept. Choices stay on your device; no booking, order, or message is sent.</p></div><div class="configurator"><form id="experience-form" data-kind="journal"><label>Read a story<select name="story"><option value="The generous threshold">The generous threshold</option><option value="A second life for concrete">A second life for concrete</option><option value="Windows as a way of thinking">Windows as a way of thinking</option></select></label><button class="button" type="submit">Read story <span aria-hidden="true">↗</span></button></form><div id="result" class="result" role="status" aria-live="polite" hidden></div><div id="saved-list" class="saved-list" aria-live="polite"></div></div></section></main><footer class="footer"><div class="footer-main"><a class="wordmark" href="#main">FORM JOURNAL</a><div class="footer-links"><a href="../../">Back to ProtoSites</a><a href="assets/CREDITS.txt">Asset credits</a><button type="button" id="motion-toggle" class="text-button" aria-pressed="false" style="margin:0;padding:0">Pause motion</button></div></div><p class="demo-note">An original ProtoSites concept. Names, products, prices, projects, and services are fictional demo content. No transactions or messages are submitted.</p></footer><dialog id="detail-dialog" class="detail-dialog"><button class="dialog-close" type="button" autofocus>Close</button><div id="detail-content"></div></dialog><script type="application/json" id="site-data">{"site":{"slug":"form-journal","websiteType":"Editorial","name":"FORM JOURNAL","category":"Creative","line":"Ideas worth inhabiting.","description":"An independent architecture journal with a strong editorial grid and readable long-form stories.","palette":["#eeefeb","#2a2f2e","#435e55"],"style":"Architecture magazine","layout":"publication masthead, lead story image, asymmetric article grid, essay preview, reading list","motion":"article image reveal, saved story feedback, category transition","interaction":"filter articles by topic; read complete local articles in a modal; save stories locally","asset":"architecture magazine","tag":"Editorial"},"content":{"eyebrow":"An independent journal of architecture & place","storyTitle":"A different way of looking.","story":"Beyond the finished photograph are the decisions, materials, and human habits that make a place. We explore those stories through essays, interviews, and observations.","section":"Latest stories","items":[["The generous threshold","Living","On the spaces between the street and the front door."],["A second life for concrete","Materials","What adaptation can offer an existing structure."],["Windows as a way of thinking","Ideas","How a view changes the room around it."]],"faq":[["Can I save a story?","Yes. Your reading list is stored locally in this browser. It is not synced to an account."],["Are the essays original?","The short concept essays are written for this demo. Image sources are credited in the asset file."]],"action":"Explore the journal","kind":"journal"}}</script><script>const data = JSON.parse(document.getElementById('site-data').textContent);
+const { site, content } = data;
+const form = document.getElementById('experience-form'),
+  result = document.getElementById('result');
+function message(text) {
+  result.hidden = false;
+  result.textContent = text;
+}
+function readLocal(key, fallback) {
+  try {
+    return JSON.parse(localStorage.getItem(site.slug + ':' + key)) ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+function saveLocal(key, value) {
+  try {
+    localStorage.setItem(site.slug + ':' + key, JSON.stringify(value));
+    return true;
+  } catch {
+    return false;
+  }
+}
+function dollars(value) {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+  }).format(value);
+}
+function values() {
+  return Object.fromEntries(new FormData(form));
+}
+function count(v, name) {
+  return Number(v[name]);
+}
+function plan(lines) {
+  message(
+    lines.join('\n') +
+      '\n\nDemo summary only. Nothing has been submitted or charged.',
+  );
+}
+function futureDate(value) {
+  const now = new Date();
+  const today = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, '0'),
+    String(now.getDate()).padStart(2, '0'),
+  ].join('-');
+  return value >= today;
+}
+let bag = readLocal('bag', []);
+if (!Array.isArray(bag)) bag = [];
+bag = bag.filter(
+  (item) =>
+    item &&
+    typeof item.product === 'string' &&
+    typeof item.option === 'string' &&
+    Number.isFinite(item.price) &&
+    Number.isInteger(item.quantity) &&
+    item.quantity > 0,
+);
+function renderBag() {
+  const box = document.getElementById('bag');
+  if (!box) return;
+  box.replaceChildren();
+  const title = document.createElement('h3');
+  title.textContent = 'Your demo bag';
+  box.append(title);
+  if (!bag.length) {
+    const p = document.createElement('p');
+    p.textContent = 'Your bag is empty.';
+    box.append(p);
+    return;
+  }
+  bag.forEach((item, i) => {
+    const row = document.createElement('div');
+    row.className = 'bag-row';
+    const label = document.createElement('span');
+    label.textContent = `${item.quantity} × ${item.product} / ${item.option}${item.size ? ' / ' + item.size : ''}${item.mode ? ' / ' + item.mode : ''}${item.color ? ' / ' + item.color : ''} · ${dollars(item.price * item.quantity)}`;
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.textContent = 'Remove';
+    remove.setAttribute(
+      'aria-label',
+      'Remove ' + item.product + ' ' + item.option,
+    );
+    remove.addEventListener('click', () => {
+      bag.splice(i, 1);
+      saveLocal('bag', bag);
+      renderBag();
+    });
+    row.append(label, remove);
+    box.append(row);
+  });
+  const total = document.createElement('p');
+  total.className = 'bag-total';
+  total.textContent =
+    'Sample total: ' +
+    dollars(bag.reduce((sum, item) => sum + item.price * item.quantity, 0));
+  box.append(total);
+}
+const handlers = {
+  projects: (v) =>
+    plan([
+      `${v.type} project / ${v.phase}`,
+      v.notes,
+      'Suggested next step: gather site photographs, a short brief, and your working budget.',
+    ]),
+  trip: (v) => {
+    if (!futureDate(v.departure))
+      return message('Please choose a departure today or later.');
+    const rates = { dolomites: 1450, iceland: 1850, alpine: 420 };
+    plan([
+      `Expedition: ${v.destination} / preferred difficulty: ${v.difficulty}`,
+      `Departure: ${v.departure} / ${v.guests} travelers`,
+      `Illustrative group total: ${dollars(rates[v.destination] * count(v, 'guests'))}`,
+    ]);
+  },
+  cart: (v) => {
+    bag.push({
+      product: content.product,
+      option: v.option,
+      size: v.size || '',
+      mode: v.mode || '',
+      color: v.color || '',
+      quantity: count(v, 'quantity'),
+      price: content.price,
+    });
+    const saved = saveLocal('bag', bag);
+    renderBag();
+    message(
+      `${v.quantity} × ${content.product} added to your demo bag.${saved ? '' : ' Storage is unavailable; this bag lasts for this visit only.'} No order has been placed.`,
+    );
+  },
+  mission: (v) => {
+    const mission = content.items.find((i) => i[0] === v.mission);
+    const specifics = {
+      Overview: mission[2],
+      Payload:
+        mission[1] === 'Earth'
+          ? 'Concept payload: multispectral imager, thermal sensor, and calibration target.'
+          : 'Concept payload: solar spectrometer and particle detector.',
+      Orbit:
+        mission[1] === 'Earth'
+          ? 'Concept orbit: sun-synchronous low Earth orbit.'
+          : 'Concept trajectory: a solar observation orbit.',
+    };
+    message(
+      `${v.mission} / ${v.view}\n\n${specifics[v.view]}\n\nFictional mission data for this interactive concept.`,
+    );
+  },
+  routine: (v) => {
+    const products =
+      count(v, 'steps') === 3
+        ? ['The Cleanser', 'The Serum', 'The Cream']
+        : [
+            'The Cleanser',
+            v.feel === 'Lightweight' ? 'The Serum' : 'The Cream',
+          ];
+    message(
+      `Your ${v.feel.toLowerCase()} sample ritual\n\n${products.map((p, i) => `${i + 1}. ${p}`).join('\n')}\n\nIllustrative product guidance only. Review verified ingredients and individual suitability before using any real product.`,
+    );
+  },
+  coffee: (v) =>
+    plan([
+      `${v.roast} / ${v.grind}`,
+      `${v.bags} × 250g bags every ${v.interval} weeks`,
+      `Sample price per delivery: ${dollars(count(v, 'bags') * 18)}`,
+      `Approximate 4-week cost: ${dollars((count(v, 'bags') * 18 * 4) / count(v, 'interval'))}`,
+    ]),
+  pace: (v) => {
+    const time = count(v, 'hours') * 60 + count(v, 'minutes');
+    if (time <= 0)
+      return message('Enter a target finish time greater than zero.');
+    const pace = Math.round((time * 60) / count(v, 'distance'));
+    message(
+      `Target pace: ${Math.floor(pace / 60)}:${String(pace % 60).padStart(2, '0')} / km\nDistance: ${v.distance} km\nFinish time: ${v.hours}h ${v.minutes}m\n\nUse this as a planning reference and adjust effort to your fitness and conditions.`,
+    );
+  },
+  stay: (v) => {
+    const nights = (Date.parse(v.departure) - Date.parse(v.arrival)) / 86400000;
+    if (!futureDate(v.arrival))
+      return message('Please choose an arrival today or later.');
+    if (!Number.isFinite(nights) || nights <= 0)
+      return message('Departure must be after arrival.');
+    if (nights > 30)
+      return message(
+        'For this sample planner, choose a stay of 30 nights or fewer.',
+      );
+    const rate = {
+      'Garden Room': 220,
+      'Courtyard Suite': 310,
+      'The Terrace': 360,
+    }[v.room];
+    plan([
+      `${v.room} / ${nights} ${nights === 1 ? 'night' : 'nights'} / ${v.guests} guests`,
+      `${v.arrival} to ${v.departure}`,
+      `Illustrative room total: ${dollars(rate * nights)}. Taxes and extras are not included.`,
+    ]);
+  },
+  restaurant: (v) => {
+    if (!futureDate(v.date))
+      return message('Please choose a date today or later.');
+    plan([
+      `Table request: ${v.guests} guests / ${v.date}`,
+      `Service: ${v.service}`,
+      v.notes ? 'Dietary notes: ' + v.notes : 'No dietary notes provided.',
+    ]);
+  },
+  estimate: (v) => {
+    const base = { Identity: 4500, Website: 6500, 'Identity + Website': 9500 }[
+      v.scope
+    ];
+    const total = base * (v.size === 'Comprehensive' ? 1.6 : 1);
+    plan([
+      `${v.scope} / ${v.size}`,
+      `Ideal timing: ${v.timing}`,
+      `Illustrative range: ${dollars(total)}–${dollars(total * 1.35)}`,
+      'Scope, research, and production requirements would need to be reviewed before a real quote.',
+    ]);
+  },
+  print: (v) =>
+    plan([
+      `Print: ${v.frame}`,
+      `Size: ${v.size}`,
+      'A real print order would confirm paper, edition, framing, shipping, and the final price.',
+    ]),
+  surf: (v) => {
+    if (!futureDate(v.date))
+      return message('Please choose a lesson date today or later.');
+    const lessons = {
+      'First time': ['First Wave', 65],
+      'Finding my feet': ['Find Your Line', 85],
+      Confident: ['Open Session', 95],
+    };
+    const [lesson, price] = lessons[v.level];
+    plan([
+      `Recommended session: ${lesson}`,
+      `${v.guests} ${count(v, 'guests') === 1 ? 'person' : 'people'} / ${v.date}`,
+      `Illustrative group total: ${dollars(price * count(v, 'guests'))}`,
+    ]);
+  },
+  workshop: (v) => {
+    if (!futureDate(v.date))
+      return message('Please choose a workshop date today or later.');
+    plan([
+      `${v.session} / ${v.glaze} glaze / ${v.vessel}`,
+      `${v.guests} ${count(v, 'guests') === 1 ? 'seat' : 'seats'} / ${v.date}`,
+      `Illustrative workshop total: ${dollars(count(v, 'guests') * 75)}`,
+    ]);
+  },
+  range: (v) => {
+    const terrain = { Flat: 1, Mixed: 0.8, Hilly: 0.62 }[v.terrain],
+      assist = { Eco: 1, Balanced: 0.78, High: 0.6 }[v.assist];
+    const range = Math.round(
+      80 * terrain * assist * Math.min(1.2, 80 / count(v, 'load')),
+    );
+    message(
+      `Illustrative range: about ${range} km\n${v.terrain} terrain / ${v.assist} assist / ${v.load} kg load\nSelected finish: ${v.color}\n\nThis simplified concept model is not a tested product specification. Actual range depends on conditions and equipment.`,
+    );
+  },
+  journal: (v) => openDetail(content.items.findIndex((i) => i[0] === v.story)),
+  festival: (v) =>
+    plan([
+      `${v.day} / ${v.guests} ${count(v, 'guests') === 1 ? 'ticket' : 'tickets'}`,
+      `Illustrative total: ${dollars((v.day === 'Weekend' ? 95 : 55) * count(v, 'guests'))}`,
+      'The event and lineup are fictional.',
+    ]),
+  volunteer: (v) =>
+    plan([
+      `${v.project} / ${v.activity}`,
+      `${v.guests} ${count(v, 'guests') === 1 ? 'participant' : 'participants'}`,
+      'Suggested next step: check a real local organization’s dates, training requirements, and access guidance.',
+    ]),
+  developer: (v) =>
+    message(
+      `$ stackline deploy --environment ${v.environment.toLowerCase()}\n\n✓ Sample project connected\n✓ Demo build prepared\n✓ ${v.environment} simulation complete\n\nIllustrative monthly price: ${dollars(12 + count(v, 'requests') * 2 + count(v, 'seats') * 5)}\nModel: $12 base + $2 per million requests + $5 per seat.\n\nSimulation only. No command ran and nothing was deployed.`,
+    ),
+};
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (form.reportValidity()) handlers[content.kind](values());
+});
+renderBag();
+const menu = document.querySelector('.menu-button');
+menu.addEventListener('click', () => {
+  const nav = document.querySelector('.nav-links');
+  const open = nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+  menu.textContent = open ? 'Close' : 'Menu';
+});
+document.querySelectorAll('.nav-links a').forEach((a) =>
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+    menu.textContent = 'Menu';
+  }),
+);
+const theme = document.querySelector('.theme-button');
+const storedTheme = readLocal('theme', null);
+if (['dark', 'light'].includes(storedTheme))
+  document.body.dataset.theme = storedTheme;
+theme.addEventListener('click', () => {
+  const next = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+  document.body.dataset.theme = next;
+  saveLocal('theme', next);
+  theme.textContent = next === 'dark' ? 'Light mode' : 'Dark mode';
+});
+if (document.body.dataset.theme)
+  theme.textContent =
+    document.body.dataset.theme === 'dark' ? 'Light mode' : 'Dark mode';
+document.querySelectorAll('[data-filter]').forEach((button) =>
+  button.addEventListener('click', () => {
+    document
+      .querySelectorAll('[data-filter]')
+      .forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+    document
+      .querySelectorAll('[data-group]')
+      .forEach(
+        (item) =>
+          (item.hidden =
+            button.dataset.filter !== 'All' &&
+            item.dataset.group !== button.dataset.filter),
+      );
+  }),
+);
+let saved = readLocal('saved', []);
+if (!Array.isArray(saved)) saved = [];
+saved = saved.filter((x) => typeof x === 'string');
+function renderSaved() {
+  const el = document.getElementById('saved-list');
+  if (!el) return;
+  el.replaceChildren();
+  const p = document.createElement('p');
+  p.textContent = saved.length
+    ? 'Saved on this device: ' + saved.join(', ')
+    : 'No saved selections yet.';
+  el.append(p);
+}
+function toggleSave(name, button) {
+  saved = saved.includes(name)
+    ? saved.filter((x) => x !== name)
+    : [...saved, name];
+  saveLocal('saved', saved);
+  button.textContent = saved.includes(name)
+    ? 'Remove from saved'
+    : 'Save on this device';
+  renderSaved();
+}
+const dialog = document.getElementById('detail-dialog');
+document
+  .querySelector('.dialog-close')
+  .addEventListener('click', () => dialog.close());
+function openDetail(index) {
+  const item = content.items[index];
+  if (!item) return;
+  const panel = document.getElementById('detail-content');
+  panel.replaceChildren();
+  const title = document.createElement('h2');
+  title.textContent = item[0];
+  const photo = document.createElement('img');
+  photo.src =
+    index === 0 ? 'assets/hero.webp' : 'assets/detail-' + index + '.webp';
+  photo.alt = item[0] + ' / ' + site.style;
+  const p = document.createElement('p');
+  p.textContent = item[2];
+  const body = document.createElement('p');
+  body.textContent =
+    content.kind === 'journal'
+      ? `A threshold is more than an edge. It is a place where habits meet architecture: putting down a bag, greeting a neighbor, watching the light change. The most generous spaces often begin with these ordinary acts.\n\n${item[2]} Rather than treating a building as a finished image, we can read it as a set of invitations. A deep sill becomes a seat; a sheltered entry gives a conversation somewhere to linger; a material that ages visibly records the life around it.\n\nGood design does not need to prescribe every moment. It can make room for the unplanned. That is the question behind this short concept essay: what becomes possible when a space is allowed to be used, interpreted, and changed?`
+      : content.story;
+  body.style.whiteSpace = 'pre-line';
+  const note = document.createElement('p');
+  note.className = 'demo-note';
+  note.textContent =
+    'Original fictional concept content. Image provenance is included in the download.';
+  panel.append(title, photo, p, body, note);
+  if (['journal', 'festival', 'pace'].includes(content.kind)) {
+    const save = document.createElement('button');
+    save.className = 'button';
+    save.textContent = saved.includes(item[0])
+      ? 'Remove from saved'
+      : 'Save on this device';
+    save.addEventListener('click', () => toggleSave(item[0], save));
+    panel.append(save);
+  }
+  dialog.showModal();
+}
+document
+  .querySelectorAll('[data-detail]')
+  .forEach((button) =>
+    button.addEventListener('click', () =>
+      openDetail(Number(button.dataset.detail)),
+    ),
+  );
+renderSaved();
+const observer = new IntersectionObserver(
+  (entries) =>
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    }),
+  { threshold: 0.08 },
+);
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+const motionButton = document.getElementById('motion-toggle');
+motionButton.addEventListener('click', () => {
+  const paused = document.body.classList.toggle('motion-paused');
+  motionButton.textContent = paused ? 'Resume motion' : 'Pause motion';
+  motionButton.setAttribute('aria-pressed', String(paused));
+});
+if (new URLSearchParams(location.search).has('preview')) {
+  document.body.classList.add('thumbnail');
+  document
+    .querySelectorAll('a,button,input,select,textarea')
+    .forEach((el) => (el.tabIndex = -1));
+}
+</script></body></html>

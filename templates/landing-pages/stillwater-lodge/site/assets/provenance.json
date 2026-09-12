@@ -1,0 +1,55 @@
+{
+  "license": "https://unsplash.com/license",
+  "photos": [
+    {
+      "file": "hero.webp",
+      "source": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "cabin.webp",
+      "source": "https://images.unsplash.com/photo-1510798831971-661eb04b3739",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "room.webp",
+      "source": "https://images.unsplash.com/photo-1611892440504-42a792e24d32",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "suite.webp",
+      "source": "https://images.unsplash.com/photo-1618773928121-c32242e63f39",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "forest.webp",
+      "source": "https://images.unsplash.com/photo-1448375240586-882707db888b",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "lake.webp",
+      "source": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "dining.webp",
+      "source": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "breakfast.webp",
+      "source": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    },
+    {
+      "file": "lounge.webp",
+      "source": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+      "usage": "Licensed illustrative photography; does not depict a real Stillwater Lodge property."
+    }
+  ],
+  "font": {
+    "name": "Geist",
+    "license": "SIL Open Font License 1.1",
+    "file": "GEIST-LICENSE.txt"
+  }
+}

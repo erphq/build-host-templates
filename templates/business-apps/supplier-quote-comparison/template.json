@@ -1,0 +1,23 @@
+{
+  "slug": "supplier-quote-comparison",
+  "name": "Supplier Quote Comparison",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Compare equivalent quantities, unit costs, shipping, discounts, explicitly entered taxes, lead time, payment terms and validity date. Keep currencies consistent and normalize per unit. Highlight cheapest without overriding delivery requirements.",
+  "tagline": "The right quote.\nAll costs included.",
+  "style": "green",
+  "palette": [],
+  "order": 36,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 43,
+  "notes": {
+    "interaction": "Compare equivalent quantities, unit costs, shipping, discounts, explicitly entered taxes, lead time, payment terms and validity date. Keep currencies consistent and normalize per unit. Highlight cheapest without overriding delivery requirements."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

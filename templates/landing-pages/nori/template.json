@@ -1,0 +1,31 @@
+{
+  "slug": "nori",
+  "name": "NORI",
+  "collection": "landing-pages",
+  "category": "restaurants-caf-s",
+  "industry": "Food",
+  "description": "A modern Japanese dining room with restrained type and a seasonal menu.",
+  "tagline": "A season at the counter.",
+  "style": "Japanese restaurant editorial",
+  "palette": [
+    "#172926",
+    "#f2f0e8",
+    "#d2bb84"
+  ],
+  "order": 25,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "narrow title beside food photograph, seasonal tasting menu, chef approach, dining notes, table request",
+    "motion": "dish entrance, menu accordion, reservation status transition",
+    "interaction": "switch seasonal menu; choose service, party size, and date; generate a local reservation request",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "packing-slip-maker",
+  "name": "Packing Slip Maker",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Business identity, order number, recipient and shipping address, ordered/packed/backordered quantities, SKU, item name and note. Generate print-ready packing slip with no prices; preserve partial shipments.",
+  "tagline": "Everything in\nthe box.",
+  "style": "cream",
+  "palette": [],
+  "order": 34,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 41,
+  "notes": {
+    "interaction": "Business identity, order number, recipient and shipping address, ordered/packed/backordered quantities, SKU, item name and note. Generate print-ready packing slip with no prices; preserve partial shipments."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

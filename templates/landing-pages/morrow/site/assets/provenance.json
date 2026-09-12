@@ -1,0 +1,23 @@
+[
+  {
+    "file": "portrait.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original editorial photograph for Morrow photographer and art director portfolio.\nPrimary request: Tall 3:4 portrait photograph of an adult person in a black sculptural coat, their face partly obscured by fabric, in a warm gray architectural studio. Cinematic soft natural light, refined fashion magazine still. Authentic fine textile texture, poised editorial composition, subtle film grain. No text, no logos, no watermark. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "originalFile": "portrait-editorial.png"
+  },
+  {
+    "file": "vessel.webp",
+    "prompt": "Use case: product-mockup\nAsset type: original editorial photograph for Morrow photographer and art director portfolio.\nPrimary request: Landscape 4:3 still life of a single sculptural cobalt blue glass vessel on pale blue stone, beautiful dramatic refracted afternoon light, large quiet negative space. Premium art direction, photographic realism, luminous glass with honest material texture, calm geometric composition. No text, no logos, no watermark. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "originalFile": "cobalt-vessel.png"
+  },
+  {
+    "file": "book.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original editorial photograph for Morrow photographer and art director portfolio.\nPrimary request: Landscape 4:3 photograph of an open art book with abstract black and vivid tangerine photographic spreads, on a cobalt blue tabletop. Editorial graphic design still life, subtle natural paper texture and beautiful directional daylight, sophisticated composition. No readable brand or text, no UI, no logos, no watermark. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "originalFile": "art-book-editorial.png"
+  }
+]

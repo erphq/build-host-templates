@@ -1,0 +1,8 @@
+RAMBLE / IMAGE CREDITS
+
+mountains.webp, coast.webp, forest.webp: Three original generated landscape photographs, AI image generation, 2026-09-08. These depict imagined landscapes, not real destinations or documentary location photographs. Exact prompts and generation method are retained in provenance.json.
+hero.webp duplicates mountains.webp for gallery compatibility; it is not another image.
+
+Font: Geist, SIL Open Font License, included. Icons: Lucide through the project’s installed library.
+
+Research reference: Travora by Pilgrims Design, https://www.framer.com/marketplace/templates/71443/ and https://travora.framer.website/ . Listing, live homepage, and a destination page inspected read-only. No reference code, branding, imagery, reviews, or prose included. Ramble has its own gallery-led composition, generated landscapes, and local trip planner.

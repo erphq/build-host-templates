@@ -1,0 +1,22 @@
+{
+  "slug": "customer-credit-collections",
+  "name": "Customer Credit & Collections",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Customer ledger, opening balance, credit sales, allocated repayments, due dates, promised dates, follow-up notes",
+  "tagline": "Record credit. Collect what is due.",
+  "style": "cream",
+  "palette": [],
+  "order": 103,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 3,
+  "notes": {
+    "interaction": "Customer ledger, opening balance, credit sales, allocated repayments, due dates, promised dates, follow-up notes"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "file": "hero.webp",
+    "prompt": "Use case: photorealistic-natural\nAsset type: original hero photograph for a space research concept called Apogee.\nPrimary request: Wide 16:9 cinematic space image. An enormous blue Earth-like planet occupies the right two thirds, its curved limb lit by a thin icy-blue atmospheric rim. Crisp swirling white cloud bands and dark deep oceans. The left third is pure near-black negative space for typography.\nStyle: Photorealistic speculative world, not presented as a real satellite observation.\nConstraints: No text, logos, spacecraft, UI, lens flare, or decorative orbital lines. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated speculative world, not a real satellite observation"
+  }
+]

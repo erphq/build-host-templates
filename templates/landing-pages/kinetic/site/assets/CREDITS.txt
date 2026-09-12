@@ -1,0 +1,12 @@
+KINETIC — ORIGINAL MOVEMENT-STUDIO CONCEPT
+
+Kinetic, its class formats, studios, area names and schedule are fictional original content. No real instructor, availability, booking, membership, payment or health outcome is claimed. Descriptions concern format and atmosphere, not exercise instructions, training recommendations or medical advice.
+
+Photography: licensed Unsplash images. Exact source identifiers, URLs and local filenames appear in provenance.json. License: https://unsplash.com/license. Images are illustrative and do not depict Kinetic premises or staff. No endorsement is implied.
+
+Display font: Barlow Condensed Bold, from the official Google Fonts repository, SIL Open Font License 1.1. See BARLOW-LICENSE.txt.
+Body font: Geist variable, Vercel, SIL Open Font License 1.1. See GEIST-LICENSE.txt.
+
+Reference research: https://gymbox.com/ and https://gymbox.com/class/
+Supporting public context: https://moveyourframe.com/
+Observed live Gymbox homepage, class categories, detail links and studio-timetable entry selector. No registration, booking, membership, payment or contact action taken. Authenticated timetable, real capacity, instructor availability and backend behavior were not verified. All Kinetic branding, writing, schedule data and interaction code are original; no source photographs, campaign copy, customer claims or health/performance claims are redistributed.

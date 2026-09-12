@@ -1,0 +1,1432 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A slower kind of seeing | Monograph</title><meta name="description" content="Monograph is an original editorial photography concept exploring architecture, landscape, and still life through generated visual studies."><link rel="preload" href="assets/geist-variable.woff2" as="font" type="font/woff2" crossorigin><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+body {
+  margin: 0;
+  background: #ede9df;
+  color: #282b26;
+  font:
+    16px/1.6 Geist,
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #9a623f;
+  outline-offset: 5px;
+}
+::selection {
+  background: #c2c9b4;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 15px;
+  z-index: 99;
+  padding: 15px;
+  background: #ede9df;
+  color: #242720;
+}
+.skip:focus {
+  top: 0;
+}
+.header {
+  height: 84px;
+  padding: 0 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #b9bdae;
+  position: relative;
+  z-index: 10;
+}
+.wordmark {
+  font:
+    italic 30px/1 Georgia,
+    serif;
+  letter-spacing: -1.3px;
+}
+.nav {
+  display: flex;
+  gap: 35px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+.nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.menu {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+}
+.cover-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: #fff;
+  border-color: #ffffff45;
+}
+.cover {
+  height: min(100svh, 1050px);
+  min-height: 680px;
+  position: relative;
+  color: #fff;
+  background: #173b53;
+  overflow: hidden;
+}
+.cover-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  transition: opacity 0.25s;
+}
+.cover:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #071e2da0,
+    #071e2d10 35%,
+    #071e2d80 58%,
+    #071e2dc8
+  );
+  pointer-events: none;
+}
+.cover-body {
+  position: relative;
+  z-index: 1;
+  padding: 132px 36px 36px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cover-kicker {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  line-height: 1.7;
+}
+.cover-title {
+  font:
+    400 clamp(78px, 8.8vw, 146px)/0.96 Georgia,
+    serif;
+  letter-spacing: -0.058em;
+  margin: 50px 0 25px;
+  max-width: 900px;
+  text-shadow: 0 2px 25px #152b3535;
+}
+.cover-title em {
+  font-weight: 400;
+}
+.cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+}
+.cover-caption {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.cover-caption a {
+  border-bottom: 1px solid #fff9;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-top: 9px;
+}
+.cover-controls {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+.cover-controls button {
+  background: #10232d75;
+  border: 1px solid #fff8;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 17px;
+}
+.cover-controls button[aria-pressed='true'] {
+  background: #ede9df;
+  color: #203743;
+  border-color: #ede9df;
+}
+.cover-controls .cover-number {
+  font-size: 12px;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+}
+.micro {
+  font-size: 12px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: #646b5f;
+}
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding: 100px 6% 95px;
+}
+.intro h2 {
+  font:
+    400 clamp(36px, 4.6vw, 69px)/1.12 Georgia,
+    serif;
+  letter-spacing: -2px;
+  margin: 0 0 28px;
+  max-width: 870px;
+}
+.intro p {
+  max-width: 520px;
+  font-size: 15px;
+  color: #5e6658;
+  line-height: 1.8;
+}
+.text-link {
+  display: inline-flex;
+  gap: 35px;
+  border-bottom: 1px solid #707965;
+  padding: 8px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-top: 15px;
+}
+.text-link:hover {
+  color: #875536;
+}
+.work {
+  padding: 0 6% 90px;
+}
+.work-head {
+  border-top: 1px solid #b9bdae;
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 45px;
+}
+.work-head h2 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+.filters button {
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: none;
+  padding: 7px 0;
+  font-size: 12px;
+  color: #5e6658;
+}
+.filters button[aria-pressed='true'] {
+  border-bottom-color: #333c2b;
+  color: #22281d;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 80px 8%;
+  align-items: start;
+}
+.study-card {
+  min-width: 0;
+}
+.study-card:nth-child(2) {
+  margin-top: 150px;
+}
+.study-card:nth-child(3) {
+  grid-column: 1/-1;
+  max-width: 900px;
+  width: 75%;
+  margin: 0 0 0 12%;
+}
+.image-button {
+  padding: 0;
+  border: 0;
+  background: #c5cbbb;
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.image-button img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1.35;
+  object-fit: cover;
+  transition: transform 0.65s;
+}
+.study-card:nth-child(2) .image-button img {
+  aspect-ratio: 0.82;
+}
+.study-card:nth-child(3) .image-button img {
+  aspect-ratio: 1.65;
+}
+.image-button:hover img {
+  transform: scale(1.025);
+}
+.image-button .zoom-label {
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  background: #ede9df;
+  color: #293223;
+  width: 33px;
+  height: 33px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+.image-button:hover .zoom-label,
+.image-button:focus-visible .zoom-label {
+  opacity: 1;
+  transform: none;
+}
+.study-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+.study-caption .index {
+  font-size: 12px;
+  color: #505b48;
+  padding-top: 7px;
+}
+.study-caption h3 {
+  font:
+    400 32px/1.15 Georgia,
+    serif;
+  letter-spacing: -0.9px;
+  margin: 0 0 10px;
+}
+.study-caption p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #505b48;
+}
+.study-caption a:hover h3 {
+  color: #875536;
+}
+.work-count {
+  font-size: 12px;
+  color: #505b48;
+  margin: 25px 0 0;
+}
+.filtered .study-card {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  grid-column: auto;
+}
+.filtered .image-button img {
+  aspect-ratio: 1.35;
+}
+.statement {
+  background: #263b3c;
+  color: #eeefe2;
+  padding: 80px 6%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+}
+.statement .micro {
+  color: #c0cec2;
+}
+.statement h2 {
+  font:
+    italic 400 clamp(45px, 5.6vw, 83px)/1.08 Georgia,
+    serif;
+  letter-spacing: -2px;
+  margin: 0 0 30px;
+  max-width: 850px;
+}
+.statement p {
+  max-width: 570px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #c1cfc4;
+}
+.statement .text-link {
+  color: #f2f0e2;
+  border-color: #a9bcae;
+}
+.footer {
+  padding: 45px 36px 30px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 1px solid #b9bdae;
+  padding-bottom: 35px;
+}
+.footer-top > a {
+  font:
+    italic 400 clamp(45px, 5.5vw, 80px)/1 Georgia,
+    serif;
+  letter-spacing: -2px;
+}
+.footer-top p {
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 250px;
+  margin: 0;
+  color: #5e6658;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding-top: 24px;
+  font-size: 12px;
+  color: #5e6658;
+}
+.footer-bottom nav {
+  display: flex;
+  gap: 25px;
+}
+.page-title {
+  padding: 65px 6% 55px;
+}
+.page-title h1 {
+  font:
+    400 clamp(60px, 8.5vw, 130px)/1.02 Georgia,
+    serif;
+  letter-spacing: -0.055em;
+  margin: 30px 0;
+}
+.page-title p {
+  font-size: 16px;
+  color: #5e6658;
+  line-height: 1.8;
+  max-width: 560px;
+}
+.case-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: end;
+}
+.case-title h1 {
+  max-width: 920px;
+}
+.case-title > div:last-child {
+  max-width: 250px;
+  padding-bottom: 20px;
+}
+.case-full {
+  padding: 0 3%;
+}
+.case-full .image-button img {
+  aspect-ratio: 1.85;
+}
+.case-full figcaption {
+  font-size: 12px;
+  color: #636c5b;
+  margin-top: 12px;
+}
+.case-copy {
+  padding: 90px 9%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 12%;
+}
+.case-copy h2 {
+  font:
+    400 46px/1.12 Georgia,
+    serif;
+  letter-spacing: -1.5px;
+  margin: 20px 0;
+}
+.case-copy p {
+  font-size: 15px;
+  color: #5e6658;
+  line-height: 1.9;
+  margin: 0 0 24px;
+}
+.case-detail {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 7%;
+  align-items: center;
+  padding: 0 9% 90px;
+}
+.detail-frame {
+  margin: 0;
+  overflow: hidden;
+  background: #c9cfbf;
+}
+.detail-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 0.9;
+  object-fit: cover;
+  transform: scale(1.13);
+}
+.detail-copy h2 {
+  font:
+    italic 400 48px/1.1 Georgia,
+    serif;
+  letter-spacing: -1.5px;
+  margin: 18px 0 25px;
+}
+.detail-copy p {
+  font-size: 14px;
+  color: #5e6658;
+  line-height: 1.9;
+  max-width: 400px;
+}
+.palette {
+  display: flex;
+  gap: 8px;
+  margin: 28px 0;
+}
+.palette span {
+  height: 28px;
+  width: 54px;
+  border: 1px solid #0001;
+}
+.next-study {
+  border-top: 1px solid #b9bdae;
+  padding: 50px 6%;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+}
+.next-study strong {
+  font:
+    400 clamp(36px, 5.5vw, 82px)/1.1 Georgia,
+    serif;
+  letter-spacing: -2px;
+  display: block;
+  margin-top: 15px;
+}
+.next-study .arrow {
+  font-size: 60px;
+}
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  padding: 10px 6% 80px;
+  align-items: center;
+}
+.about-split img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 0.85;
+  object-fit: cover;
+}
+.about-split h2 {
+  font:
+    400 44px/1.15 Georgia,
+    serif;
+  letter-spacing: -1.4px;
+}
+.about-split p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #5e6658;
+}
+.practice {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  padding: 60px 6%;
+  border-top: 1px solid #b9bdae;
+}
+.practice-list article {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 25px;
+  border-top: 1px solid #b9bdae;
+  padding: 28px 0;
+}
+.practice-list h3 {
+  font:
+    400 31px/1.15 Georgia,
+    serif;
+  margin: 0 0 15px;
+}
+.practice-list p {
+  font-size: 14px;
+  color: #5e6658;
+  line-height: 1.8;
+  max-width: 650px;
+}
+.inquiry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11%;
+  padding: 65px 6% 90px;
+}
+.inquiry h1 {
+  font:
+    400 clamp(58px, 7vw, 100px)/1 Georgia,
+    serif;
+  letter-spacing: -4px;
+  margin: 30px 0;
+}
+.inquiry aside p {
+  max-width: 360px;
+  font-size: 15px;
+  color: #5e6658;
+  line-height: 1.85;
+}
+.form label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+.form input,
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #929d86;
+  padding: 14px 0;
+  background: none;
+  border-radius: 0;
+  color: #2c3526;
+  margin-top: 7px;
+}
+.form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+.primary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #263b3c;
+  color: #fff;
+  border: 1px solid #263b3c;
+  font-size: 12px;
+}
+.primary:hover {
+  background: #354d4e;
+}
+.form-note {
+  font-size: 12px;
+  color: #64705a;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.draft {
+  border-top: 1px solid #929d86;
+  padding-top: 25px;
+}
+.draft h2 {
+  font:
+    400 36px/1.1 Georgia,
+    serif;
+  letter-spacing: -1px;
+}
+.draft pre {
+  font:
+    14px/1.85 Geist,
+    sans-serif;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.draft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+.draft-actions button,
+.draft-actions a {
+  background: #263b3c;
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  font-size: 12px;
+}
+.draft output {
+  font-size: 12px;
+  display: block;
+  margin-top: 15px;
+}
+.lightbox {
+  border: 0;
+  padding: 0;
+  background: #172122;
+  color: #f5f1e7;
+  max-width: none;
+  max-height: none;
+  width: 100vw;
+  height: 100svh;
+  margin: 0;
+  overflow: hidden;
+}
+.lightbox::backdrop {
+  background: #172122;
+}
+.lightbox-inner {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 24px 30px;
+  gap: 20px;
+}
+.lightbox-top,
+.lightbox-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  font-size: 12px;
+}
+.lightbox-top button,
+.lightbox-bottom button {
+  background: transparent;
+  border: 1px solid #71877d;
+  color: #f2f0e4;
+  padding: 10px 17px;
+  font-size: 12px;
+}
+.lightbox-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  min-height: 0;
+}
+.lightbox-caption {
+  display: flex;
+  gap: 25px;
+  align-items: baseline;
+}
+.lightbox-caption strong {
+  font:
+    400 26px/1.1 Georgia,
+    serif;
+  font-weight: 400;
+}
+.lightbox-caption span {
+  font-size: 12px;
+  color: #c4d0c5;
+}
+.lightbox-nav {
+  display: flex;
+  gap: 10px;
+}
+.lightbox-status {
+  font-size: 12px;
+  color: #c4d0c5;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+[hidden] {
+  display: none !important;
+}
+.cover-changing .cover-photo {
+  opacity: 0.6;
+}
+@media (max-width: 950px) {
+  .header {
+    padding: 0 25px;
+  }
+  .nav {
+    gap: 25px;
+  }
+  .cover-body {
+    padding: 120px 25px 30px;
+  }
+  .cover-title {
+    font-size: 100px;
+  }
+  .intro,
+  .statement {
+    gap: 35px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .work {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .work-grid {
+    gap: 55px 6%;
+  }
+  .study-caption h3 {
+    font-size: 27px;
+  }
+  .case-copy {
+    padding: 65px 6%;
+    gap: 8%;
+  }
+  .case-detail {
+    padding: 0 6% 65px;
+    gap: 6%;
+  }
+  .case-title {
+    display: block;
+  }
+  .case-title > div:last-child {
+    max-width: 500px;
+  }
+  .about-split {
+    gap: 7%;
+  }
+  .inquiry {
+    gap: 7%;
+  }
+  .footer {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 700px) {
+  .header {
+    height: 72px;
+    padding: 0 18px;
+  }
+  .wordmark {
+    font-size: 27px;
+  }
+  .nav {
+    gap: 17px;
+    font-size: 12px;
+  }
+  .cover {
+    min-height: 650px;
+    height: 90svh;
+  }
+  .cover-body {
+    padding: 105px 20px 25px;
+  }
+  .cover-kicker {
+    font-size: 12px;
+    gap: 25px;
+  }
+  .cover-kicker span:last-child {
+    max-width: 120px;
+    text-align: right;
+  }
+  .cover-title {
+    font-size: clamp(63px, 12vw, 90px);
+    letter-spacing: -3.5px;
+    margin: 40px 0 28px;
+  }
+  .cover-bottom {
+    align-items: end;
+    gap: 15px;
+  }
+  .cover-controls {
+    gap: 7px;
+  }
+  .cover-controls button {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+  .cover-controls .cover-number {
+    display: none;
+  }
+  .cover-caption {
+    font-size: 12px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 50px 20px;
+  }
+  .intro h2 {
+    font-size: 40px;
+    letter-spacing: -1.4px;
+  }
+  .intro p {
+    font-size: 14px;
+  }
+  .work {
+    padding: 0 20px 55px;
+  }
+  .work-head {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 28px;
+    gap: 17px;
+  }
+  .filters {
+    gap: 19px;
+  }
+  .filters button {
+    font-size: 12px;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+  .study-card:nth-child(2),
+  .study-card:nth-child(3) {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    grid-column: auto;
+  }
+  .study-card:nth-child(2) .image-button img {
+    aspect-ratio: 1.05;
+  }
+  .study-card:nth-child(3) .image-button img {
+    aspect-ratio: 1.35;
+  }
+  .image-button .zoom-label {
+    opacity: 1;
+    transform: none;
+  }
+  .study-caption {
+    margin-top: 15px;
+  }
+  .study-caption h3 {
+    font-size: 29px;
+  }
+  .statement {
+    padding: 50px 20px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .statement h2 {
+    font-size: 46px;
+    letter-spacing: -1.6px;
+  }
+  .statement p {
+    font-size: 13px;
+  }
+  .footer {
+    padding: 35px 20px 25px;
+  }
+  .footer-top {
+    gap: 25px;
+    flex-direction: column;
+    padding-bottom: 25px;
+  }
+  .footer-top > a {
+    font-size: 51px;
+  }
+  .footer-bottom {
+    gap: 17px;
+    flex-direction: column;
+  }
+  .footer-bottom nav {
+    gap: 22px;
+  }
+  .page-title {
+    padding: 40px 20px 30px;
+  }
+  .page-title h1 {
+    font-size: 62px;
+    letter-spacing: -3px;
+    margin: 24px 0;
+  }
+  .page-title p {
+    font-size: 14px;
+  }
+  .case-full {
+    padding: 0 20px;
+  }
+  .case-full .image-button img {
+    aspect-ratio: 1.3;
+  }
+  .case-copy {
+    padding: 45px 20px;
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .case-copy h2 {
+    font-size: 38px;
+    margin: 15px 0;
+  }
+  .case-copy p {
+    font-size: 14px;
+  }
+  .case-detail {
+    grid-template-columns: 1fr;
+    padding: 0 20px 50px;
+    gap: 30px;
+  }
+  .detail-frame img {
+    aspect-ratio: 1.1;
+  }
+  .detail-copy h2 {
+    font-size: 39px;
+    letter-spacing: -1px;
+  }
+  .next-study {
+    padding: 35px 20px;
+    gap: 25px;
+  }
+  .next-study strong {
+    font-size: 38px;
+    letter-spacing: -1px;
+  }
+  .next-study .arrow {
+    font-size: 35px;
+  }
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 5px 20px 50px;
+  }
+  .about-split img {
+    aspect-ratio: 1.15;
+  }
+  .about-split h2 {
+    font-size: 36px;
+  }
+  .about-split p {
+    font-size: 14px;
+  }
+  .practice {
+    padding: 40px 20px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .practice-list article {
+    grid-template-columns: 25px 1fr;
+    gap: 15px;
+  }
+  .practice-list h3 {
+    font-size: 29px;
+  }
+  .inquiry {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px 55px;
+  }
+  .inquiry h1 {
+    font-size: 70px;
+    letter-spacing: -3px;
+  }
+  .inquiry aside p {
+    font-size: 14px;
+  }
+  .lightbox-inner {
+    padding: 18px 16px;
+    gap: 15px;
+  }
+  .lightbox-top {
+    font-size: 12px;
+  }
+  .lightbox-bottom {
+    align-items: start;
+    gap: 18px;
+    flex-direction: column;
+  }
+  .lightbox-caption {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .lightbox-caption strong {
+    font-size: 24px;
+  }
+  .lightbox-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .lightbox-top button,
+  .lightbox-bottom button {
+    padding: 10px 14px;
+  }
+  .lightbox-status {
+    display: none;
+  }
+}
+@media (max-width: 390px) {
+  .nav {
+    gap: 13px;
+  }
+  .nav a:nth-child(2) {
+    display: none;
+  }
+  .cover-title {
+    font-size: 63px;
+  }
+  .cover-controls {
+    gap: 5px;
+  }
+  .cover-caption {
+    max-width: 190px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.nav {
+  font-size: 14px;
+}
+.filters button,
+.primary,
+.text-link,
+.draft-actions button,
+.draft-actions a,
+.lightbox-top button,
+.lightbox-bottom button {
+  font-size: 14px;
+}
+.form label,
+.form input,
+.form select,
+.form textarea {
+  font-size: 16px;
+}
+.intro p,
+.statement p,
+.page-title p,
+.case-copy p,
+.detail-copy p,
+.about-split p,
+.practice-list p,
+.inquiry aside p {
+  font-size: 16px;
+}
+.cover-caption {
+  font-size: 14px;
+}
+.footer-top p {
+  font-size: 14px;
+}
+.lightbox-caption span,
+.footer-bottom,
+.micro {
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .nav {
+    font-size: 14px;
+    gap: 20px;
+  }
+  .filters {
+    gap: 16px;
+  }
+  .filters button {
+    font-size: 14px;
+  }
+  .intro p,
+  .statement p,
+  .page-title p,
+  .case-copy p,
+  .detail-copy p,
+  .about-split p,
+  .practice-list p,
+  .inquiry aside p {
+    font-size: 16px;
+  }
+  .cover-kicker {
+    font-size: 12px;
+  }
+  .cover-caption {
+    font-size: 12px;
+  }
+  .cover-title {
+    font-size: clamp(59px, 12vw, 84px);
+  }
+}
+
+.draft pre {
+  font-size: 16px;
+}
+.cover-controls button {
+  min-width: 42px;
+  min-height: 42px;
+}
+.lightbox-nav .text-link {
+  color: #f5f1e7;
+  border-color: #aabcb0;
+}
+
+.case-full {
+  margin: 0;
+}
+.form input,
+.form select,
+.form textarea {
+  min-height: 48px;
+}
+.lightbox-top button,
+.lightbox-bottom button {
+  min-height: 44px;
+}
+.cover-controls .cover-number {
+  font-size: 14px;
+}
+
+.footer-bottom nav a {
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .inquiry h1 {
+    font-size: 56px;
+    letter-spacing: -2.6px;
+  }
+  .inquiry h1 br {
+    display: none;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><section class="cover"><header class="header cover-header"><a class="wordmark" href="index.html">Monograph</a><nav class="nav" aria-label="Main navigation"><a href="archive.html">Studies</a><a href="about.html">The practice</a><a href="inquiry.html">Inquire ↗</a></nav></header><img class="cover-photo" id="cover-image" src="assets/blue-hour.webp" alt="Original generated photograph of ivory courtyard walls and a deep blue reflecting pool in strong sunlight" width="1536" height="1024" fetchpriority="high"><div class="cover-body"><div class="cover-kicker"><span>A visual journal.<br>Of places, light, and ordinary things.</span><span>Independent creative practice<br>Selected studies, 2026</span></div><div><h1 class="cover-title">A slower kind<br><em>of seeing.</em></h1><div class="cover-bottom"><div class="cover-caption"><span id="cover-category">Architecture / 2026</span><br><strong id="cover-study" style="font-weight:400">Rooms for light</strong><br><a id="cover-link" href="blue-hour.html">Explore the study ↗</a></div><div class="cover-controls" role="group" aria-label="Choose cover image"><button type="button" id="cover-prev" aria-label="Previous cover image">←</button><button class="cover-number" data-cover-index="0" aria-pressed="true" aria-label="Show Rooms for light cover">01</button><button class="cover-number" data-cover-index="1" aria-pressed="false" aria-label="Show The long way home cover">02</button><button class="cover-number" data-cover-index="2" aria-pressed="false" aria-label="Show Ordinary, considered cover">03</button><button type="button" id="cover-next" aria-label="Next cover image">→</button></div></div></div><span class="visually-hidden" id="cover-status" aria-live="polite"></span></div></section><main id="main"><section class="intro"><span class="micro">A NOTE ON THE PRACTICE</span><div><h2>Noticing what remains<br>when the noise falls away.</h2><p>Monograph is a fictional creative practice exploring the way an image can hold a place, a feeling, or a small detail in mind. These original generated studies are made with an editorial eye and a little space for interpretation.</p><a class="text-link" href="about.html">About the practice ↗</a></div></section><section class="work" id="studies"><div class="work-head"><h2>Selected visual studies / 2026</h2><div class="filters" role="group" aria-label="Filter visual studies"><button type="button" data-filter="All studies" aria-pressed="true">All studies</button><button type="button" data-filter="Architecture" aria-pressed="false">Architecture</button><button type="button" data-filter="Landscape" aria-pressed="false">Landscape</button><button type="button" data-filter="Still life" aria-pressed="false">Still life</button></div></div><div class="work-grid"><article class="study-card" data-category="Architecture"><button class="image-button" type="button" data-lightbox="blue-hour" aria-label="Open Rooms for light photograph in the image viewer"><img src="assets/blue-hour.webp" srcset="assets/blue-hour-640.webp 640w, assets/blue-hour.webp 1536w" sizes="(max-width:700px) 90vw, 55vw" width="1536" height="1024" loading="lazy" alt="Original generated photograph of ivory courtyard walls and a deep blue reflecting pool in strong sunlight"><span class="zoom-label" aria-hidden="true">+</span></button><div class="study-caption"><a href="blue-hour.html"><h3>Rooms for light</h3><p>Architecture / 2026</p></a><span class="index">01</span></div><a class="text-link" href="blue-hour.html">Read the study ↗</a></article><article class="study-card" data-category="Landscape"><button class="image-button" type="button" data-lightbox="tideline" aria-label="Open The long way home photograph in the image viewer"><img src="assets/tideline.webp" srcset="assets/tideline-640.webp 640w, assets/tideline.webp 1536w" sizes="(max-width:700px) 90vw, 55vw" width="1536" height="1024" loading="lazy" alt="Original generated coastal photograph with a lone windswept tree, dark beach, teal waves, and silver clouded sky"><span class="zoom-label" aria-hidden="true">+</span></button><div class="study-caption"><a href="tideline.html"><h3>The long way home</h3><p>Landscape / 2026</p></a><span class="index">02</span></div><a class="text-link" href="tideline.html">Read the study ↗</a></article><article class="study-card" data-category="Still life"><button class="image-button" type="button" data-lightbox="small-rituals" aria-label="Open Ordinary, considered photograph in the image viewer"><img src="assets/small-rituals.webp" srcset="assets/small-rituals-640.webp 640w, assets/small-rituals.webp 1536w" sizes="(max-width:700px) 90vw, 55vw" width="1536" height="1024" loading="lazy" alt="Original generated still-life photograph of a cream ceramic vessel, orange persimmon, and linen on walnut in warm afternoon light"><span class="zoom-label" aria-hidden="true">+</span></button><div class="study-caption"><a href="small-rituals.html"><h3>Ordinary, considered</h3><p>Still life / 2026</p></a><span class="index">03</span></div><a class="text-link" href="small-rituals.html">Read the study ↗</a></article></div><p class="work-count" id="work-count" aria-live="polite">3 studies shown · Original generated photographic concepts.</p></section><section class="statement"><span class="micro">LOOKING, THEN LOOKING AGAIN.</span><div><h2>The ordinary has<br>more to say.</h2><p>A wall in afternoon light. The curve of a shoreline. A piece of fruit on a table. Each study begins with something simple and follows it a little further.</p><a class="text-link" href="inquiry.html">Start a conversation ↗</a></div></section></main><footer class="footer"><div class="footer-top"><a href="inquiry.html">A conversation,<br>perhaps?</a><p>Images with a little room<br>for interpretation.<br>Architecture, landscape, and still life.</p></div><div class="footer-bottom"><span>© 2026 Monograph. Original generated photographic concepts.</span><nav aria-label="Footer navigation"><a href="about.html">The practice</a><a href="assets/CREDITS.txt">Image credits</a><a href="archive.html">All studies</a></nav></div></footer><dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title"><div class="lightbox-inner"><div class="lightbox-top"><span id="lightbox-count">1 / 3</span><span class="lightbox-status">Use ← and → to explore the image archive</span><button type="button" id="lightbox-close" autofocus>Close ×</button></div><img class="lightbox-image" id="lightbox-image" alt=""><div class="lightbox-bottom"><div class="lightbox-caption"><strong id="lightbox-title"></strong><span id="lightbox-meta"></span></div><div class="lightbox-nav"><button type="button" id="lightbox-prev" aria-label="Previous image">← Previous</button><a class="text-link" id="lightbox-study">Read the study ↗</a><button type="button" id="lightbox-next" aria-label="Next image">Next →</button></div></div><span id="lightbox-announcement" class="visually-hidden" aria-live="polite"></span></div></dialog><script type="application/json" id="monograph-data">[{"slug":"blue-hour","title":"Rooms for light","category":"Architecture","year":"2026","index":"01","location":"An imagined Mediterranean courtyard","line":"Space, held open.","image":"blue-hour.webp","alt":"Original generated photograph of ivory courtyard walls and a deep blue reflecting pool in strong sunlight","brief":"An architectural image begins with a relationship: a surface and the light that finds it. Rooms for light is a self-initiated study of an imagined courtyard, built around the meeting of warm stone, white plaster, and a precise field of blue.","direction":"The composition follows the pool’s edge toward a small opening in the far wall. It is a simple line of attention: from the tactile foreground, through the reflected architecture, to a fragment of sea. The empty space is part of the subject.","observation":"Hard light can reveal softness. The plaster is not perfectly smooth, the water breaks every reflected line, and the tree’s shadow introduces a different rhythm to the geometry. Those small disruptions keep the image from becoming an architectural diagram.","palette":["#e7dfcc","#c5b99e","#17498a"],"detail":"Water loosens the geometry.","crop":"50% 75%"},{"slug":"tideline","title":"The long way home","category":"Landscape","year":"2026","index":"02","location":"An imagined Atlantic coastline","line":"Following the edge.","image":"tideline.webp","alt":"Original generated coastal photograph with a lone windswept tree, dark beach, teal waves, and silver clouded sky","brief":"The long way home is a landscape study about the place where two kinds of movement meet. The land holds its shape while the sea redraws the boundary. An imagined coastline gives that relationship room to unfold.","direction":"The eye enters through a small windswept tree and follows the curve of the beach toward the distant headland. There is no single dramatic subject. The image is built from distances, repeated wave lines, and the quiet persistence of the horizon.","observation":"The palette stays close to the weather: muted green, dark volcanic sand, silver cloud, and deep water. The lack of a bright focal point asks for a slower reading. What first appears to be one gray field gradually separates into many textures.","palette":["#b7bcb9","#536d70","#293a3c"],"detail":"A boundary that never stays still.","crop":"70% 65%"},{"slug":"small-rituals","title":"Ordinary, considered","category":"Still life","year":"2026","index":"03","location":"A constructed afternoon still life","line":"The things we keep close.","image":"small-rituals.webp","alt":"Original generated still-life photograph of a cream ceramic vessel, orange persimmon, and linen on walnut in warm afternoon light","brief":"Ordinary, considered is a still-life study of three familiar materials: ceramic, fruit, and linen. The arrangement is deliberately spare. Its interest comes from the way each object receives the same afternoon light differently.","direction":"A vessel provides height, the fruit provides a concentrated color, and the cloth draws a soft line across the tabletop. The objects are not arranged as products to be sold. They are a small conversation between weight, surface, and shadow.","observation":"The terracotta wall holds the warmth of the scene while the cream vessel creates a place for the eye to rest. A narrow leaf shadow and the cloth’s uneven edge give the arrangement a sense of life beyond the frame.","palette":["#b66b3e","#e0d2b5","#583a27"],"detail":"Texture is a kind of memory.","crop":"55% 60%"}]</script><script>const studies = JSON.parse(
+  document.getElementById('monograph-data').textContent,
+);
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const cover = document.querySelector('.cover');
+let coverIndex = 0;
+function showCover(index) {
+  coverIndex = (index + studies.length) % studies.length;
+  const study = studies[coverIndex];
+  document.querySelector('#cover-image').src = 'assets/' + study.image;
+  document.querySelector('#cover-image').alt = study.alt;
+  document.querySelector('#cover-study').textContent = study.title;
+  document.querySelector('#cover-category').textContent =
+    study.category + ' / ' + study.year;
+  document.querySelector('#cover-link').href = study.slug + '.html';
+  document
+    .querySelectorAll('[data-cover-index]')
+    .forEach((button) =>
+      button.setAttribute(
+        'aria-pressed',
+        String(Number(button.dataset.coverIndex) === coverIndex),
+      ),
+    );
+  document.querySelector('#cover-status').textContent =
+    `Cover ${coverIndex + 1} of ${studies.length}: ${study.title}`;
+  if (!reduced.matches) {
+    cover.classList.add('cover-changing');
+    setTimeout(() => cover.classList.remove('cover-changing'), 250);
+  }
+}
+if (cover) {
+  document
+    .querySelectorAll('[data-cover-index]')
+    .forEach((button) =>
+      button.addEventListener('click', () =>
+        showCover(Number(button.dataset.coverIndex)),
+      ),
+    );
+  document
+    .querySelector('#cover-prev')
+    .addEventListener('click', () => showCover(coverIndex - 1));
+  document
+    .querySelector('#cover-next')
+    .addEventListener('click', () => showCover(coverIndex + 1));
+}
+document.querySelectorAll('[data-filter]').forEach((button) =>
+  button.addEventListener('click', () => {
+    const category = button.dataset.filter;
+    let count = 0;
+    document.querySelectorAll('[data-category]').forEach((card) => {
+      card.hidden =
+        category !== 'All studies' && card.dataset.category !== category;
+      if (!card.hidden) count++;
+    });
+    document
+      .querySelector('.work-grid')
+      .classList.toggle('filtered', category !== 'All studies');
+    document
+      .querySelectorAll('[data-filter]')
+      .forEach((other) =>
+        other.setAttribute('aria-pressed', String(other === button)),
+      );
+    document.querySelector('#work-count').textContent =
+      `${count} ${count === 1 ? 'study' : 'studies'} shown · Original generated photographic concepts.`;
+  }),
+);
+const lightbox = document.querySelector('#lightbox');
+let photoIndex = 0;
+let previousFocus = null;
+function renderPhoto() {
+  const study = studies[photoIndex];
+  const image = document.querySelector('#lightbox-image');
+  image.src = 'assets/' + study.image;
+  image.alt = study.alt;
+  document.querySelector('#lightbox-title').textContent = study.title;
+  document.querySelector('#lightbox-meta').textContent =
+    study.category + ' / ' + study.year;
+  document.querySelector('#lightbox-count').textContent =
+    `${photoIndex + 1} / ${studies.length}`;
+  document.querySelector('#lightbox-study').href = study.slug + '.html';
+  document.querySelector('#lightbox-announcement').textContent =
+    `Image ${photoIndex + 1} of ${studies.length}: ${study.title}`;
+}
+function movePhoto(direction) {
+  photoIndex = (photoIndex + direction + studies.length) % studies.length;
+  renderPhoto();
+}
+document.querySelectorAll('[data-lightbox]').forEach((button) =>
+  button.addEventListener('click', () => {
+    photoIndex = Math.max(
+      0,
+      studies.findIndex((study) => study.slug === button.dataset.lightbox),
+    );
+    previousFocus = button;
+    renderPhoto();
+    lightbox.showModal();
+    document.body.style.overflow = 'hidden';
+  }),
+);
+lightbox?.addEventListener('close', () => {
+  document.body.style.overflow = '';
+  previousFocus?.focus();
+});
+document
+  .querySelector('#lightbox-close')
+  ?.addEventListener('click', () => lightbox.close());
+document
+  .querySelector('#lightbox-prev')
+  ?.addEventListener('click', () => movePhoto(-1));
+document
+  .querySelector('#lightbox-next')
+  ?.addEventListener('click', () => movePhoto(1));
+lightbox?.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight') {
+    event.preventDefault();
+    movePhoto(1);
+  }
+  if (event.key === 'ArrowLeft') {
+    event.preventDefault();
+    movePhoto(-1);
+  }
+});
+const form = document.querySelector('#inquiry-form');
+let draft = '';
+let draftUrl = '';
+function readText(data, key) {
+  const value = data.get(key);
+  return typeof value === 'string' ? value.trim() : '';
+}
+if (form) {
+  for (const field of ['name', 'idea']) {
+    const control = form.elements.namedItem(field);
+    control?.addEventListener('input', () => control.setCustomValidity(''));
+  }
+  const requested = new URLSearchParams(location.search).get('study');
+  if (studies.some((study) => study.slug === requested))
+    document.querySelector('#interest').value = requested;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const idea = form.elements.namedItem('idea');
+    const name = form.elements.namedItem('name');
+    if (idea instanceof HTMLTextAreaElement)
+      idea.setCustomValidity(
+        idea.value.trim().length >= 20
+          ? ''
+          : 'Describe the idea in at least 20 characters.',
+      );
+    if (name instanceof HTMLInputElement)
+      name.setCustomValidity(name.value.trim() ? '' : 'Add your name.');
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const chosen = studies.find(
+      (study) => study.slug === readText(data, 'interest'),
+    );
+    draft = `MONOGRAPH — INQUIRY DRAFT\n\nName: ${readText(data, 'name')}\nEmail: ${readText(data, 'email')}\nInterest: ${chosen ? chosen.title : 'A new direction'}\nTiming: ${readText(data, 'timing')}\n\nThe idea\n${readText(data, 'idea')}\n\nLocal, unsent draft. Monograph is a fictional creative practice using original generated photographic studies.`;
+    document.querySelector('#draft-text').textContent = draft;
+    if (draftUrl) URL.revokeObjectURL(draftUrl);
+    draftUrl = URL.createObjectURL(
+      new Blob([draft], { type: 'text/plain;charset=utf-8' }),
+    );
+    document.querySelector('#download-draft').href = draftUrl;
+    form.hidden = true;
+    const result = document.querySelector('#draft-result');
+    result.hidden = false;
+    result.focus();
+  });
+}
+document.querySelector('#edit-draft')?.addEventListener('click', () => {
+  document.querySelector('#draft-result').hidden = true;
+  form.hidden = false;
+  form.querySelector('input').focus();
+});
+document.querySelector('#copy-draft')?.addEventListener('click', async () => {
+  const output = document.querySelector('#copy-status');
+  try {
+    await navigator.clipboard.writeText(draft);
+    output.textContent = 'Draft copied.';
+  } catch {
+    output.textContent =
+      'Copy is unavailable here. Download the draft instead.';
+  }
+});
+</script></body></html>

@@ -1,0 +1,23 @@
+{
+  "slug": "bulk-discount-calculator",
+  "name": "Bulk Discount Calculator",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Unit cost, base price, quantity tiers, discount percentage, per-order overhead and shipping subsidy. Use all-units tier pricing and label it clearly. Revenue = quantity times tier price; profit = revenue minus quantity times unit cost minus order costs.",
+  "tagline": "More volume.\nStill profitable.",
+  "style": "purple",
+  "palette": [],
+  "order": 27,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 34,
+  "notes": {
+    "interaction": "Unit cost, base price, quantity tiers, discount percentage, per-order overhead and shipping subsidy. Use all-units tier pricing and label it clearly. Revenue = quantity times tier price; profit = revenue minus quantity times unit cost minus order costs."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

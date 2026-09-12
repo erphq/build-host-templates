@@ -1,0 +1,31 @@
+{
+  "slug": "common-soil",
+  "name": "Common Soil",
+  "collection": "landing-pages",
+  "category": "research-nonprofits",
+  "industry": "Culture",
+  "description": "A community-garden concept with a linked map and project explorer, original place-led stories, a volunteer draft and an activity planner.",
+  "tagline": "A little more common ground.",
+  "style": "Place-led garden nonprofit",
+  "palette": [
+    "#f5f2e5",
+    "#244633",
+    "#d6e78a"
+  ],
+  "order": 7,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Immersive garden photography, original schematic explorer, substantial project stories, volunteer interest draft and an activity planner",
+    "motion": "Photographic settle, image-hover response and linked map and list states",
+    "interaction": "Combine garden filters and search, explore project narratives, prepare and save an interest draft, check activity overlaps and export a plan",
+    "provenance": "Eight original routes with four fictional garden-detail variants, three story variants, a schematic map and tested local participation workflows."
+  },
+  "credits": {
+    "referenceName": "Burkinow: Bissiri",
+    "referenceUrl": "https://burkinow.com/en"
+  },
+  "pageCount": 8
+}

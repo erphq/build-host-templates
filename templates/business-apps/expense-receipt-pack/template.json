@@ -1,0 +1,23 @@
+{
+  "slug": "expense-receipt-pack",
+  "name": "Expense Receipt Pack",
+  "collection": "business-apps",
+  "category": "client-services",
+  "industry": "Client services",
+  "description": "Upload receipt images/PDFs, enter or confirm merchant, date, purpose, category, currency and amount, reorder and remove files. OCR is optional only with a real configured provider, confidence and manual review. Export expense PDF and ZIP of original receipts with CSV manifest.",
+  "tagline": "Receipts in.\nReport out.",
+  "style": "purple",
+  "palette": [],
+  "order": 32,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 39,
+  "notes": {
+    "interaction": "Upload receipt images/PDFs, enter or confirm merchant, date, purpose, category, currency and amount, reorder and remove files. OCR is optional only with a real configured provider, confidence and manual review. Export expense PDF and ZIP of original receipts with CSV manifest."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

@@ -1,0 +1,2828 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your activity plan — Common Soil</title><meta name="description" content="An original community-garden nonprofit concept. Explore imaginary garden projects, read original stories and make a local interest or activity plan."><meta name="theme-color" content="#244633"><style>@font-face {
+  font-family: Soil;
+  src: url('assets/geist-variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --ink: #244633;
+  --muted: #52654c;
+  --paper: #f5f2e5;
+  --lime: #d6e78a;
+  --line: #cbd1b8;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 115px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font:
+    16px/1.6 Soil,
+    Arial,
+    sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a,
+input,
+select,
+textarea,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+}
+h2 {
+  font-size: clamp(40px, 4.5vw, 68px);
+}
+p {
+  line-height: 1.7;
+}
+em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+.eyebrow {
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+:focus-visible {
+  outline: 3px solid #a04c29;
+  outline-offset: 5px;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  padding: 15px;
+  background: white;
+  z-index: 1000;
+}
+.skip:focus {
+  top: 10px;
+}
+header {
+  height: 104px;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: #f5f2e5;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid #d8dcc8;
+}
+.logo {
+  font-size: 29px;
+  font-weight: 650;
+  letter-spacing: -1.6px;
+  line-height: 0.85;
+  position: relative;
+  display: block;
+  padding-right: 20px;
+}
+.logo > span {
+  font-size: 17px;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  color: #a7653d;
+}
+header nav {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+}
+header > div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  background: #244633;
+  color: white;
+  padding: 16px 23px;
+  border-radius: 3px;
+  font-size: 16px;
+  min-height: 54px;
+  transition:
+    background 0.25s,
+    transform 0.25s;
+}
+.button:hover {
+  background: #3c6044;
+  transform: translateY(-2px);
+}
+.button.small {
+  padding: 12px 19px;
+  min-height: 46px;
+  font-size: 14px;
+}
+.text-link {
+  display: inline-block;
+  border-bottom: 1px solid #7e9270;
+  padding-bottom: 5px;
+  font-size: 14px;
+}
+.light-link {
+  display: inline-block;
+  border-bottom: 1px solid #d6e0c8;
+  padding-bottom: 7px;
+  font-size: 16px;
+}
+.menu-toggle {
+  display: none;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  background: #244633;
+  color: #f3f2dc;
+}
+.hero > div:first-child {
+  padding: 70px 11%;
+  align-self: center;
+}
+.hero h1 {
+  font-size: clamp(65px, 6.4vw, 101px);
+  line-height: 0.97;
+  margin: 27px 0 30px;
+  letter-spacing: -0.06em;
+}
+.hero h1 > span {
+  color: #d6e78a;
+}
+.hero > div > p:not(.eyebrow):not(.hero-note) {
+  font-size: 18px;
+  max-width: 390px;
+  line-height: 1.65;
+  color: #e2e7d2;
+}
+.hero .button {
+  background: #d6e78a;
+  color: #244633;
+  margin-top: 30px;
+}
+.hero .button:hover {
+  background: #e8f0b1;
+}
+.hero-note {
+  font-size: 14px;
+  color: #c4d2b6;
+  margin-top: 20px;
+}
+.hero-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 740px;
+}
+.hero-photo > img {
+  height: 100%;
+  animation: photo-in 1.2s ease-out;
+}
+.hero-photo > span {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  right: 25px;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 6px #0008;
+}
+.section {
+  padding: 85px 6%;
+}
+.welcome {
+  display: grid;
+  grid-template-columns: 0.7fr 1.8fr;
+  gap: 40px 8%;
+  padding: 100px 8%;
+}
+.welcome > .eyebrow {
+  max-width: 230px;
+  color: #52654c;
+}
+.welcome h2 {
+  font-size: 59px;
+}
+.welcome > p:last-child {
+  grid-column: 2;
+  font-size: 18px;
+  max-width: 680px;
+  color: #52654c;
+}
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.section-heading .eyebrow {
+  margin-bottom: 20px;
+}
+.section-heading h2 {
+  font-size: 56px;
+}
+.home-gardens {
+  background: #e7ead6;
+}
+.garden-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.garden-card {
+  min-width: 0;
+}
+.garden-card img {
+  height: 340px;
+  transition: filter 0.3s;
+}
+.garden-card:hover img {
+  filter: brightness(0.94);
+}
+.garden-card > a > div {
+  padding: 25px 0 10px;
+}
+.garden-card .eyebrow {
+  font-size: 14px;
+}
+.garden-card h3 {
+  font-size: 34px;
+  margin: 14px 0;
+}
+.garden-card p {
+  font-size: 16px;
+  color: #52654c;
+}
+.garden-card .text-link {
+  margin-top: 20px;
+}
+.map-story {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 9%;
+  padding: 95px 7%;
+  align-items: center;
+}
+.map-story h2 {
+  font-size: 57px;
+  margin: 25px 0;
+}
+.map-story > div > p:not(.eyebrow) {
+  font-size: 17px;
+  color: #52654c;
+  max-width: 380px;
+  margin-bottom: 30px;
+}
+.map-preview {
+  position: relative;
+  display: block;
+  background: #e9ead7;
+  border: 1px solid #c8d0b3;
+  overflow: hidden;
+}
+.map-preview > img {
+  aspect-ratio: 1.2;
+  object-fit: cover;
+}
+.map-preview-pin {
+  position: absolute;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #244633;
+  color: #f1f2d7;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  box-shadow: 0 3px 0 #10231722;
+}
+.p1 {
+  left: 21%;
+  top: 23%;
+}
+.p2 {
+  left: 75%;
+  top: 20%;
+}
+.p3 {
+  left: 26%;
+  top: 63%;
+}
+.p4 {
+  left: 74%;
+  top: 66%;
+}
+.map-preview > p {
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+  right: 20px;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #4c6343;
+}
+.wide-story {
+  position: relative;
+  height: 680px;
+  overflow: hidden;
+}
+.wide-story > img {
+  height: 100%;
+  object-position: center;
+}
+.wide-story:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #142c1ba8, transparent);
+}
+.wide-story > div {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 1;
+}
+.wide-story h2 {
+  font-size: clamp(58px, 6.5vw, 100px);
+  margin: 25px 0 30px;
+}
+.participation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12%;
+  padding-inline: 8%;
+  align-items: center;
+}
+.participation h2 {
+  font-size: 58px;
+  margin: 25px 0;
+}
+.participation > div > p:not(.eyebrow) {
+  font-size: 17px;
+  color: #52654c;
+  max-width: 430px;
+  margin-bottom: 30px;
+}
+.ways-list article {
+  display: flex;
+  gap: 25px;
+  padding: 27px 0;
+  border-top: 1px solid #bfcbae;
+}
+.ways-list article > span {
+  font-size: 14px;
+  color: #52654c;
+}
+.ways-list h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.ways-list p {
+  font-size: 16px;
+  color: #52654c;
+}
+.home-stories {
+  background: #e9dfc7;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.story-card img {
+  height: 300px;
+  transition: filter 0.3s;
+}
+.story-card:hover img {
+  filter: brightness(0.94);
+}
+.story-card .eyebrow {
+  margin: 23px 0 15px;
+  font-size: 14px;
+}
+.story-card h3 {
+  font-size: 34px;
+  line-height: 1.08;
+}
+.story-card p:not(.eyebrow) {
+  font-size: 16px;
+  color: #52654c;
+  margin: 18px 0 23px;
+}
+.next-morning {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  padding: 75px 8%;
+  background: #d6e78a;
+  align-items: center;
+}
+.next-morning h2 {
+  font-size: 56px;
+  margin-top: 25px;
+}
+.next-morning > div > p:not(.eyebrow) {
+  font-size: 18px;
+  max-width: 450px;
+  margin-bottom: 25px;
+}
+.closing {
+  text-align: center;
+  padding: 80px 20px 90px;
+  border-top: 1px solid #cbd1b8;
+}
+.closing .eyebrow {
+  max-width: 650px;
+  margin: auto;
+}
+.closing h2 {
+  font-size: 66px;
+  margin: 25px 0 35px;
+}
+.closing .button {
+  font-size: 16px;
+}
+footer {
+  background: #244633;
+  color: #f0f3df;
+  padding: 60px 6% 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+}
+footer > div {
+  display: flex;
+  gap: 65px;
+  align-items: start;
+}
+footer .logo > span {
+  color: #d6e78a;
+}
+footer > div > p {
+  font-size: 25px;
+  line-height: 1.35;
+}
+footer nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 35px;
+  font-size: 14px;
+}
+.footer-note {
+  grid-column: 1/-1;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #d1ddc2;
+  padding-top: 25px;
+  border-top: 1px solid #58794e;
+}
+.page-intro {
+  padding: 65px 7% 55px;
+  background: #e5e9cf;
+}
+.page-intro h1 {
+  font-size: clamp(58px, 6.5vw, 96px);
+  margin: 25px 0;
+}
+.page-intro > p:not(.eyebrow) {
+  font-size: 18px;
+  color: #52654c;
+  max-width: 800px;
+}
+.explorer {
+  padding-top: 35px;
+}
+.explorer-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.explorer-tools label {
+  font-size: 14px;
+}
+.explorer-tools input {
+  display: block;
+  border: 1px solid #b9c6a3;
+  background: #fffdf4;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 8px;
+  min-width: 270px;
+  border-radius: 3px;
+}
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.filters button {
+  font-size: 14px;
+  border: 1px solid #b7c49e;
+  padding: 12px 17px;
+  border-radius: 3px;
+}
+.filters [aria-pressed='true'] {
+  background: #244633;
+  color: #fff;
+  border-color: #244633;
+}
+.explorer-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 14px;
+  color: #52654c;
+  margin: 25px 0;
+}
+.explorer-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 25px;
+  align-items: stretch;
+}
+.garden-map {
+  position: relative;
+  border: 1px solid #c1cba9;
+  background: #e9ead7;
+  min-height: 560px;
+  overflow: hidden;
+}
+.garden-map > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+}
+.garden-map > p {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  right: 20px;
+  font-size: 14px;
+  color: #435c37;
+  background: #eff0dddb;
+  padding: 9px 12px;
+  z-index: 2;
+}
+.map-pins {
+  position: absolute;
+  inset: 0;
+}
+.map-pins > button {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 5px;
+  max-width: 165px;
+}
+.map-pins > button > span {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #244633;
+  color: white;
+  font-size: 16px;
+  border: 3px solid #f5f2e5;
+  box-shadow: 0 3px 8px #21371830;
+}
+.map-pins > button > b {
+  font-size: 14px;
+  font-weight: 500;
+  background: #f5f2e5;
+  padding: 5px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.map-pins > [aria-pressed='true'] > span {
+  background: #b56336;
+}
+.map-pins > [aria-pressed='true'] > b {
+  outline: 2px solid #b56336;
+}
+.garden-selected {
+  border: 1px solid #c1cba9;
+  background: #fffdf4;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.garden-selected > img {
+  height: 235px;
+}
+.garden-selected > div {
+  padding: 28px;
+}
+.garden-selected h2 {
+  font-size: 36px;
+  margin: 17px 0;
+}
+.garden-selected p:not(.eyebrow) {
+  font-size: 16px;
+  color: #52654c;
+}
+.garden-selected .button {
+  margin-top: 25px;
+  font-size: 14px;
+  gap: 20px;
+}
+.garden-selected .text-link {
+  display: table;
+  margin-top: 20px;
+}
+.explorer-list-title {
+  font-size: 38px;
+  margin: 60px 0 30px;
+}
+#garden-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.garden-list-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid #becbad;
+  padding-top: 20px;
+}
+.garden-list-item > button {
+  padding: 0;
+  text-align: left;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 1;
+}
+.garden-list-item img {
+  width: 100px;
+  height: 90px;
+}
+.garden-list-item h3 {
+  font-size: 25px;
+  margin-bottom: 9px;
+}
+.garden-list-item p {
+  font-size: 14px;
+  color: #52654c;
+}
+.garden-list-item > a {
+  font-size: 25px;
+  align-self: center;
+}
+.garden-list-item button[aria-pressed='true'] h3 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+#garden-empty {
+  font-size: 17px;
+  padding: 40px 0;
+}
+.garden-detail-hero {
+  position: relative;
+  height: 660px;
+}
+.garden-detail-hero > img {
+  height: 100%;
+}
+.garden-detail-hero:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #162d20b3, transparent 85%);
+}
+.garden-detail-hero > div {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  bottom: 12%;
+  color: white;
+  z-index: 1;
+}
+.garden-detail-hero h1 {
+  font-size: 90px;
+  margin: 25px 0;
+}
+.garden-detail-hero p:not(.eyebrow) {
+  font-size: 20px;
+  max-width: 650px;
+}
+.garden-detail-intro {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12%;
+  padding: 70px 8%;
+}
+.garden-detail-intro > div > p {
+  font-size: 21px;
+  line-height: 1.65;
+  margin: 25px 0;
+  color: #52654c;
+}
+.garden-detail-intro h2 {
+  font-size: 48px;
+}
+.garden-features {
+  background: #e3e9ce;
+  padding: 30px;
+  align-self: start;
+}
+.garden-features h3 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+.garden-features li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+.garden-features p {
+  font-size: 14px;
+  color: #52654c;
+  border-top: 1px solid #b9c8a1;
+  padding-top: 20px;
+  margin-top: 25px;
+}
+.garden-story {
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 10%;
+  padding: 30px 8% 75px;
+}
+.garden-story > div:first-child h2 {
+  font-size: 47px;
+  position: sticky;
+  top: 140px;
+}
+.garden-story article {
+  padding: 30px 0;
+  border-top: 1px solid #c0cdab;
+}
+.garden-story h3 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.garden-story p {
+  font-size: 18px;
+  line-height: 1.85;
+  color: #52654c;
+}
+.garden-needs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  background: #d6e78a;
+  padding: 65px 8%;
+}
+.garden-needs h2 {
+  font-size: 48px;
+}
+.garden-needs ul {
+  padding-left: 20px;
+  margin: 0 0 25px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.garden-needs li {
+  margin-bottom: 13px;
+}
+.garden-needs .button {
+  font-size: 16px;
+}
+.garden-detail-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 45px 8%;
+}
+.story-principle {
+  display: grid;
+  grid-template-columns: 0.7fr 1.2fr 1fr;
+  gap: 40px;
+  background: #e2e8ce;
+}
+.story-principle h2 {
+  font-size: 47px;
+}
+.story-principle p:not(.eyebrow) {
+  font-size: 17px;
+  color: #52654c;
+}
+.story-principle .text-link {
+  grid-column: 3;
+  justify-self: start;
+}
+.story-opener {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #e9dfc7;
+  min-height: 590px;
+}
+.story-opener > div {
+  padding: 65px 11%;
+  align-self: center;
+}
+.story-opener h1 {
+  font-size: 68px;
+  margin: 25px 0;
+}
+.story-opener p:not(.eyebrow) {
+  font-size: 19px;
+  line-height: 1.65;
+  color: #52654c;
+}
+.story-opener > img {
+  height: 100%;
+  min-height: 590px;
+}
+.story-body {
+  max-width: 840px;
+  margin: auto;
+  padding: 65px 35px 75px;
+}
+.story-body > .back-link {
+  font-size: 14px;
+  color: #52654c;
+  display: inline-block;
+  margin-bottom: 45px;
+}
+.story-body h2 {
+  font-size: 36px;
+  margin: 35px 0 23px;
+}
+.story-body p {
+  font:
+    21px/1.85 Georgia,
+    serif;
+  color: #30452c;
+  margin-bottom: 30px;
+}
+.story-end {
+  border-top: 1px solid #becbab;
+  padding-top: 30px;
+  margin-top: 45px;
+}
+.story-end p {
+  font:
+    16px/1.8 Soil,
+    sans-serif;
+  color: #52654c;
+}
+.volunteer-intro {
+  background: #e8dcc4;
+}
+.volunteer-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 9%;
+  align-items: start;
+  padding-inline: 8%;
+}
+.volunteer-layout fieldset {
+  border: 0;
+  border-top: 1px solid #bfcca9;
+  padding: 25px 0;
+  margin: 0 0 35px;
+}
+.volunteer-layout legend {
+  font-size: 23px;
+  font-weight: 450;
+  letter-spacing: -0.6px;
+  padding-right: 15px;
+}
+.volunteer-layout legend > span {
+  font-size: 14px;
+  color: #52654c;
+  margin-right: 12px;
+}
+.volunteer-layout label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 22px;
+}
+.volunteer-layout select,
+.volunteer-layout textarea {
+  display: block;
+  width: 100%;
+  background: #fffdf6;
+  border: 1px solid #b7c5a0;
+  border-radius: 3px;
+  padding: 13px;
+  font-size: 16px;
+  margin-top: 9px;
+  resize: vertical;
+}
+.availability-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.availability-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  border: 1px solid #bfcca9;
+  padding: 14px;
+  margin: 0;
+  cursor: pointer;
+}
+.availability-options input {
+  width: 17px;
+  height: 17px;
+  accent-color: #244633;
+  flex-shrink: 0;
+}
+.interest-preview {
+  background: #e2e9cf;
+  border: 1px solid #c0d1a6;
+  padding: 35px;
+  position: sticky;
+  top: 130px;
+}
+.interest-preview h2 {
+  font-size: 42px;
+  margin: 25px 0;
+}
+.interest-preview > p,
+.interest-preview p {
+  font-size: 16px;
+  color: #52654c;
+  line-height: 1.8;
+}
+.interest-preview .eyebrow {
+  font-size: 14px;
+  color: #244633;
+}
+.draft-row {
+  padding: 18px 0;
+  border-top: 1px solid #b8cba0;
+}
+.draft-row > span {
+  font-size: 14px;
+  color: #52654c;
+  display: block;
+  margin-bottom: 7px;
+}
+.draft-row > strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 500;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+.interest-preview .button {
+  font-size: 14px;
+  width: 100%;
+  margin-top: 25px;
+  justify-content: center;
+}
+.interest-preview .text-link {
+  font-size: 14px;
+  display: table;
+  margin: 20px auto 0;
+}
+.local-note {
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+  color: #52654c;
+  margin-top: 25px !important;
+}
+#interest-error {
+  font-size: 16px;
+  color: #944429;
+  margin-top: 20px;
+}
+#interest-status {
+  font-size: 14px;
+  margin-top: 20px;
+}
+.first-visit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  background: #e9dfc7;
+}
+.first-visit h2 {
+  font-size: 50px;
+}
+.first-visit p {
+  font-size: 18px;
+  color: #52654c;
+  margin-bottom: 25px;
+}
+.activities-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 6%;
+  align-items: start;
+}
+.sample-calendar-note {
+  font-size: 14px;
+  color: #52654c;
+  margin: 25px 0;
+}
+.event-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 25px;
+  padding: 30px 0;
+  border-top: 1px solid #bdc9a8;
+}
+.event-date {
+  background: #e0e8cc;
+  align-self: start;
+  text-align: center;
+  padding: 15px 5px;
+}
+.event-date strong {
+  font-size: 35px;
+  font-weight: 450;
+  display: block;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.event-date span {
+  font-size: 14px;
+  display: block;
+}
+.event-card .eyebrow {
+  font-size: 14px;
+}
+.event-card h2 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin: 13px 0;
+}
+.event-card p:not(.eyebrow) {
+  font-size: 16px;
+  color: #52654c;
+  line-height: 1.8;
+}
+.event-time {
+  font-size: 14px;
+  display: block;
+  margin: 15px 0;
+}
+.event-card > div:last-child > div {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.event-card .button {
+  font-size: 14px;
+  padding: 12px 17px;
+  min-height: 45px;
+}
+.event-card [aria-pressed='true'] {
+  background: #d7e5b6;
+  color: #244633;
+  border: 1px solid #92ab6e;
+}
+.event-card .text-link {
+  font-size: 14px;
+}
+.activity-plan {
+  background: #244633;
+  color: #f2f4df;
+  padding: 32px;
+  position: sticky;
+  top: 130px;
+}
+.activity-plan h2 {
+  font-size: 42px;
+  margin: 23px 0 30px;
+}
+.activity-plan .eyebrow {
+  font-size: 14px;
+}
+.activity-plan .local-note {
+  color: #d2dfbf;
+}
+.planned-event {
+  border-top: 1px solid #648452;
+  padding: 20px 0;
+}
+.planned-event h3 {
+  font-size: 21px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.planned-event p {
+  font-size: 14px;
+  color: #d3dfc3;
+  line-height: 1.7;
+}
+.planned-event button {
+  font-size: 14px;
+  color: #e6eccd;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 13px;
+}
+.activity-plan > .button {
+  width: 100%;
+  font-size: 14px;
+  background: #d6e78a;
+  color: #244633;
+  padding: 14px;
+  margin: 23px 0 0;
+  justify-content: center;
+}
+.activity-plan > .button:disabled {
+  background: #8fa775;
+  color: #243c22;
+  cursor: default;
+  transform: none;
+}
+.activity-plan > .text-link {
+  display: table;
+  font-size: 14px;
+  color: #e6eccd;
+  margin: 18px auto 0;
+  border-color: #90a77c;
+}
+#plan-total {
+  font-size: 18px;
+  margin-top: 22px;
+}
+#plan-conflicts:not(:empty) {
+  background: #e9c5a4;
+  color: #66371f;
+  padding: 18px;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+.activity-plan-empty {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #d4e0c4;
+}
+.about-hero {
+  background: #244633;
+  color: white;
+  padding: 75px 8%;
+}
+.about-hero h1 {
+  font-size: 90px;
+  line-height: 1.02;
+  margin: 25px 0;
+}
+.about-hero h1 > span {
+  color: #d6e78a;
+}
+.about-hero > p:not(.eyebrow) {
+  font-size: 20px;
+  color: #d7e2c6;
+}
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12%;
+  padding-inline: 8%;
+}
+.about-story h2 {
+  font-size: 52px;
+}
+.about-story p {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #52654c;
+  margin-bottom: 25px;
+}
+.about-photo {
+  margin: 0 5%;
+}
+.about-photo img {
+  height: 620px;
+}
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+.values h3 {
+  font-size: 32px;
+  margin-bottom: 22px;
+}
+.values p {
+  font-size: 17px;
+  color: #52654c;
+}
+.about-faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  background: #e5e9d2;
+}
+.about-faq h2 {
+  font-size: 54px;
+}
+details {
+  border-top: 1px solid #b6c4a1;
+  padding: 23px 0;
+}
+summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  font-size: 16px;
+}
+summary:after {
+  content: '+';
+}
+details[open] summary:after {
+  content: '−';
+}
+details p {
+  font-size: 16px;
+  color: #52654c;
+  margin-top: 17px;
+  line-height: 1.8;
+}
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 15px);
+  padding: 15px 23px;
+  font-size: 14px;
+  background: #244633;
+  color: white;
+  max-width: 90vw;
+  border-radius: 4px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s;
+}
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+[hidden] {
+  display: none !important;
+}
+@keyframes photo-in {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media (max-width: 1100px) {
+  header nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+  .hero > div:first-child {
+    padding: 55px 9%;
+  }
+  .hero h1 {
+    font-size: 76px;
+  }
+  .hero-photo {
+    min-height: 700px;
+  }
+  .welcome {
+    gap: 35px 6%;
+    padding-inline: 6%;
+  }
+  .welcome h2 {
+    font-size: 49px;
+  }
+  .garden-card h3 {
+    font-size: 30px;
+  }
+  .garden-card img {
+    height: 280px;
+  }
+  .map-story {
+    gap: 6%;
+    padding-inline: 6%;
+  }
+  .map-story h2 {
+    font-size: 47px;
+  }
+  .map-preview > p {
+    font-size: 14px;
+  }
+  .participation {
+    gap: 7%;
+    padding-inline: 6%;
+  }
+  .participation h2 {
+    font-size: 47px;
+  }
+  .story-card h3 {
+    font-size: 29px;
+  }
+  .story-card img {
+    height: 260px;
+  }
+  .explorer-layout {
+    grid-template-columns: 1fr;
+  }
+  .garden-map {
+    height: 520px;
+    min-height: 0;
+  }
+  .garden-selected {
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+  }
+  .garden-selected > img {
+    height: 100%;
+    min-height: 300px;
+  }
+  .garden-selected > div {
+    padding: 30px;
+  }
+  .garden-selected h2 {
+    font-size: 36px;
+  }
+  .garden-selected .text-link {
+    display: inline-block;
+    margin: 20px 0 0 20px;
+  }
+  .garden-story {
+    gap: 7%;
+  }
+  .story-principle {
+    grid-template-columns: 1fr 1fr;
+  }
+  .story-principle > .eyebrow {
+    grid-column: 1/-1;
+  }
+  .story-principle .text-link {
+    grid-column: 2;
+  }
+  .story-opener h1 {
+    font-size: 55px;
+  }
+  .volunteer-layout {
+    gap: 6%;
+    padding-inline: 5%;
+  }
+  .interest-preview {
+    padding: 27px;
+  }
+  .availability-options {
+    grid-template-columns: 1fr;
+  }
+  .activities-layout {
+    gap: 4%;
+    padding-inline: 4%;
+  }
+  .activity-plan {
+    padding: 25px;
+  }
+  .activity-plan h2 {
+    font-size: 36px;
+  }
+  .event-card {
+    grid-template-columns: 65px 1fr;
+    gap: 20px;
+  }
+  .event-card h2 {
+    font-size: 27px;
+  }
+  .about-story h2 {
+    font-size: 46px;
+  }
+}
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero > div:first-child {
+    padding: 55px 7%;
+  }
+  .hero h1 {
+    font-size: 80px;
+  }
+  .hero h1 br:nth-child(2) {
+    display: none;
+  }
+  .hero-photo {
+    min-height: 0;
+    height: 540px;
+  }
+  .hero > div > p:not(.eyebrow):not(.hero-note) {
+    max-width: 550px;
+  }
+  .garden-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .garden-card:last-child {
+    grid-column: 1/-1;
+    max-width: 65%;
+  }
+  .map-story {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .map-story > div {
+    max-width: 680px;
+  }
+  .map-story h2 br {
+    display: none;
+  }
+  .map-story > div > p:not(.eyebrow) {
+    max-width: 600px;
+  }
+  .map-preview {
+    max-width: 700px;
+  }
+  .map-preview > img {
+    aspect-ratio: 1.5;
+  }
+  .participation {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+  .story-card > a {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 0 25px;
+  }
+  .story-card img {
+    grid-row: 1/5;
+    height: 100%;
+    min-height: 300px;
+  }
+  .story-card .eyebrow {
+    margin-top: 0;
+  }
+  .story-card .text-link {
+    justify-self: start;
+  }
+  .story-card p:not(.eyebrow) {
+    margin: 17px 0 20px;
+  }
+  .story-card h3 {
+    font-size: 34px;
+  }
+  .next-morning {
+    gap: 6%;
+    padding-inline: 6%;
+  }
+  .next-morning h2 {
+    font-size: 47px;
+  }
+  .volunteer-layout {
+    grid-template-columns: 1fr;
+  }
+  .interest-preview {
+    position: static;
+    margin-top: 15px;
+  }
+  .activities-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .activity-plan {
+    position: static;
+  }
+  .activity-plan h2 {
+    font-size: 43px;
+  }
+  .event-card {
+    grid-template-columns: 75px 1fr;
+  }
+  .event-card h2 {
+    font-size: 31px;
+  }
+  .garden-detail-intro {
+    gap: 7%;
+    padding-inline: 6%;
+  }
+  .garden-story {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .garden-story > div:first-child h2 {
+    position: static;
+  }
+  .garden-needs {
+    gap: 6%;
+    padding-inline: 6%;
+  }
+  .garden-needs h2 {
+    font-size: 42px;
+  }
+  .values {
+    gap: 30px;
+  }
+  .values h3 {
+    font-size: 29px;
+  }
+}
+@media (max-width: 650px) {
+  header {
+    height: 86px;
+    padding: 0 5%;
+    gap: 15px;
+  }
+  .logo {
+    font-size: 26px;
+    letter-spacing: -1.4px;
+  }
+  .logo > span {
+    font-size: 15px;
+  }
+  header nav {
+    display: none;
+    position: absolute;
+    top: 86px;
+    left: 0;
+    right: 0;
+    background: #f5f2e5;
+    padding: 25px 7%;
+    flex-direction: column;
+    gap: 23px;
+    font-size: 16px;
+    border-bottom: 1px solid #bac9a4;
+  }
+  header.menu-open nav {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    font-size: 14px;
+  }
+  header > div {
+    gap: 13px;
+  }
+  .button.small {
+    font-size: 14px;
+    min-height: 42px;
+    padding: 11px 13px;
+    gap: 12px;
+  }
+  .hero > div:first-child {
+    padding: 40px 7% 45px;
+  }
+  .hero .eyebrow {
+    font-size: 14px;
+    max-width: 300px;
+  }
+  .hero h1 {
+    font-size: 69px;
+    line-height: 0.99;
+    margin: 25px 0;
+  }
+  .hero h1 br:nth-child(2) {
+    display: block;
+  }
+  .hero > div > p:not(.eyebrow):not(.hero-note) {
+    font-size: 17px;
+  }
+  .hero .button {
+    font-size: 16px;
+    padding: 15px 18px;
+    margin-top: 25px;
+  }
+  .hero-note {
+    font-size: 14px;
+  }
+  .hero-photo {
+    height: 470px;
+  }
+  .hero-photo > span {
+    font-size: 14px;
+    left: 25px;
+    right: 25px;
+    bottom: 22px;
+  }
+  .section {
+    padding: 55px 7%;
+  }
+  .welcome {
+    display: block;
+    padding: 55px 7%;
+  }
+  .welcome > .eyebrow {
+    max-width: 300px;
+    margin-bottom: 25px;
+  }
+  .welcome h2 {
+    font-size: 43px;
+    line-height: 1.08;
+  }
+  .welcome > p:last-child {
+    font-size: 17px;
+    margin-top: 27px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .section-heading h2 {
+    font-size: 44px;
+  }
+  .section-heading .text-link {
+    margin-top: 25px;
+    font-size: 14px;
+  }
+  .section-heading .eyebrow {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .garden-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .garden-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+  .garden-card img {
+    height: 320px;
+  }
+  .garden-card h3 {
+    font-size: 35px;
+  }
+  .garden-card .eyebrow {
+    font-size: 14px;
+  }
+  .garden-card p {
+    font-size: 16px;
+  }
+  .garden-card .text-link {
+    font-size: 14px;
+  }
+  .map-story {
+    padding: 55px 7%;
+    gap: 30px;
+  }
+  .map-story h2 {
+    font-size: 46px;
+    line-height: 1.08;
+  }
+  .map-story > div > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+  .map-preview > img {
+    aspect-ratio: 1.1;
+  }
+  .map-preview > p {
+    font-size: 14px;
+    left: 14px;
+    right: 14px;
+    line-height: 1.5;
+  }
+  .map-preview-pin {
+    width: 37px;
+    height: 37px;
+    font-size: 14px;
+  }
+  .wide-story {
+    height: 560px;
+  }
+  .wide-story > div {
+    top: auto;
+    bottom: 12%;
+    transform: none;
+    left: 8%;
+    right: 8%;
+  }
+  .wide-story:after {
+    background: linear-gradient(0deg, #142c1bcc, transparent);
+  }
+  .wide-story h2 {
+    font-size: 54px;
+    line-height: 1.04;
+  }
+  .wide-story .eyebrow,
+  .wide-story .light-link {
+    font-size: 14px;
+  }
+  .participation {
+    gap: 35px;
+  }
+  .participation h2 {
+    font-size: 45px;
+    line-height: 1.08;
+  }
+  .participation > div > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+  .ways-list article {
+    gap: 18px;
+    padding: 25px 0;
+  }
+  .ways-list h3 {
+    font-size: 29px;
+  }
+  .ways-list p {
+    font-size: 16px;
+  }
+  .story-card > a {
+    display: block;
+  }
+  .story-card img {
+    height: 320px;
+    min-height: 0;
+  }
+  .story-card .eyebrow {
+    font-size: 14px;
+    margin: 22px 0 15px;
+  }
+  .story-card h3 {
+    font-size: 36px;
+  }
+  .story-card p:not(.eyebrow) {
+    font-size: 16px;
+    margin: 18px 0 22px;
+  }
+  .story-grid {
+    gap: 40px;
+  }
+  .next-morning {
+    grid-template-columns: 1fr;
+    padding: 55px 7%;
+    gap: 25px;
+  }
+  .next-morning h2 {
+    font-size: 45px;
+  }
+  .next-morning > div > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+  .closing {
+    padding: 55px 7% 65px;
+  }
+  .closing .eyebrow {
+    font-size: 14px;
+  }
+  .closing h2 {
+    font-size: 46px;
+    line-height: 1.08;
+  }
+  .closing .button {
+    font-size: 16px;
+    padding: 15px 18px;
+  }
+  footer {
+    grid-template-columns: 1fr;
+    padding: 45px 7% 25px;
+    gap: 35px;
+  }
+  footer > div {
+    gap: 45px;
+  }
+  footer > div > p {
+    font-size: 24px;
+  }
+  footer nav {
+    font-size: 14px;
+    gap: 16px 25px;
+  }
+  .footer-note {
+    font-size: 14px;
+  }
+  .page-intro {
+    padding: 45px 7% 40px;
+  }
+  .page-intro h1 {
+    font-size: 57px;
+    line-height: 1.06;
+  }
+  .page-intro > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+  .page-intro br {
+    display: none;
+  }
+  .explorer {
+    padding-top: 25px;
+  }
+  .explorer-tools {
+    display: block;
+  }
+  .explorer-tools label {
+    font-size: 14px;
+  }
+  .explorer-tools input {
+    min-width: 0;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+  .explorer-tools .filters {
+    margin-top: 20px;
+  }
+  .filters {
+    gap: 8px;
+  }
+  .filters button {
+    font-size: 14px;
+    padding: 10px 13px;
+  }
+  .explorer-heading {
+    display: block;
+    margin: 22px 0;
+  }
+  .explorer-heading p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .explorer-heading p + p {
+    margin-top: 10px;
+  }
+  .garden-map {
+    height: 400px;
+    overflow: hidden;
+  }
+  .garden-map > img {
+    object-fit: cover;
+  }
+  .map-pins > button {
+    max-width: 145px;
+  }
+  .map-pins > button > span {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .map-pins > button > b {
+    font-size: 14px;
+    padding: 5px 7px;
+    max-width: 140px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  .garden-map > p {
+    font-size: 14px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    padding: 8px;
+  }
+  .garden-selected {
+    display: block;
+  }
+  .garden-selected > img {
+    height: 240px;
+    min-height: 0;
+  }
+  .garden-selected > div {
+    padding: 25px;
+  }
+  .garden-selected h2 {
+    font-size: 35px;
+  }
+  .garden-selected .eyebrow {
+    font-size: 14px;
+  }
+  .garden-selected p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  .garden-selected .button {
+    font-size: 14px;
+    width: 100%;
+    padding: 14px 17px;
+  }
+  .garden-selected .text-link {
+    display: table;
+    margin: 20px 0 0;
+    font-size: 14px;
+  }
+  .explorer-list-title {
+    font-size: 34px;
+    margin-top: 40px;
+  }
+  #garden-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .garden-list-item {
+    gap: 12px;
+  }
+  .garden-list-item > button {
+    gap: 15px;
+  }
+  .garden-list-item img {
+    width: 80px;
+    height: 85px;
+  }
+  .garden-list-item h3 {
+    font-size: 25px;
+  }
+  .garden-list-item p {
+    font-size: 14px;
+  }
+  .garden-list-item > a {
+    font-size: 25px;
+  }
+  .garden-detail-hero {
+    height: 570px;
+  }
+  .garden-detail-hero > div {
+    left: 8%;
+    right: 8%;
+    bottom: 10%;
+  }
+  .garden-detail-hero h1 {
+    font-size: 58px;
+    line-height: 1.04;
+  }
+  .garden-detail-hero .eyebrow {
+    font-size: 14px;
+  }
+  .garden-detail-hero p:not(.eyebrow) {
+    font-size: 18px;
+  }
+  .garden-detail-intro {
+    grid-template-columns: 1fr;
+    padding: 50px 7%;
+    gap: 25px;
+  }
+  .garden-detail-intro h2 {
+    font-size: 42px;
+  }
+  .garden-detail-intro > div > p {
+    font-size: 19px;
+  }
+  .garden-features {
+    padding: 25px;
+  }
+  .garden-features h3 {
+    font-size: 27px;
+  }
+  .garden-features li {
+    font-size: 16px;
+  }
+  .garden-features p {
+    font-size: 14px;
+  }
+  .garden-story {
+    padding: 5px 7% 50px;
+    gap: 25px;
+  }
+  .garden-story > div:first-child h2 {
+    font-size: 43px;
+  }
+  .garden-story h3 {
+    font-size: 31px;
+  }
+  .garden-story p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  .garden-needs {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 50px 7%;
+  }
+  .garden-needs h2 {
+    font-size: 43px;
+  }
+  .garden-needs ul {
+    font-size: 17px;
+  }
+  .garden-needs .button {
+    font-size: 16px;
+    padding: 15px 18px;
+  }
+  .garden-detail-bottom {
+    display: block;
+    padding: 35px 7%;
+  }
+  .garden-detail-bottom > a {
+    display: table;
+    margin: 15px 0;
+    font-size: 14px;
+  }
+  .story-principle {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .story-principle > .eyebrow,
+  .story-principle .text-link {
+    grid-column: auto;
+  }
+  .story-principle h2 {
+    font-size: 43px;
+  }
+  .story-principle p:not(.eyebrow) {
+    font-size: 17px;
+  }
+  .story-opener {
+    grid-template-columns: 1fr;
+  }
+  .story-opener > div {
+    padding: 45px 7%;
+  }
+  .story-opener h1 {
+    font-size: 56px;
+    line-height: 1.05;
+  }
+  .story-opener p:not(.eyebrow) {
+    font-size: 18px;
+  }
+  .story-opener > img {
+    height: 380px;
+    min-height: 0;
+  }
+  .story-body {
+    padding: 45px 7% 50px;
+  }
+  .story-body h2 {
+    font-size: 32px;
+  }
+  .story-body p {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+  .story-end p {
+    font:
+      16px/1.8 Soil,
+      sans-serif;
+  }
+  .volunteer-layout {
+    padding: 40px 7% 55px;
+  }
+  .volunteer-layout legend {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .volunteer-layout label {
+    font-size: 16px;
+  }
+  .volunteer-layout select,
+  .volunteer-layout textarea {
+    font-size: 16px;
+  }
+  .availability-options {
+    grid-template-columns: 1fr;
+  }
+  .availability-options label {
+    font-size: 16px;
+    padding: 14px;
+  }
+  .volunteer-layout form > .button {
+    width: 100%;
+    font-size: 16px;
+    padding: 15px 17px;
+  }
+  .interest-preview {
+    padding: 25px;
+  }
+  .interest-preview h2 {
+    font-size: 39px;
+  }
+  .interest-preview .button {
+    font-size: 14px;
+    padding: 14px;
+  }
+  .interest-preview .text-link {
+    font-size: 14px;
+  }
+  .first-visit {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .first-visit h2 {
+    font-size: 43px;
+  }
+  .first-visit p {
+    font-size: 17px;
+  }
+  .activities-layout {
+    padding: 35px 6% 55px;
+  }
+  .sample-calendar-note {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .event-card {
+    grid-template-columns: 60px 1fr;
+    gap: 18px;
+    padding: 27px 0;
+  }
+  .event-date {
+    padding: 12px 3px;
+  }
+  .event-date strong {
+    font-size: 31px;
+  }
+  .event-date span {
+    font-size: 14px;
+  }
+  .event-card h2 {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+  .event-card .eyebrow {
+    font-size: 14px;
+  }
+  .event-card p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  .event-time {
+    font-size: 14px;
+  }
+  .event-card > div:last-child > div {
+    display: block;
+  }
+  .event-card .button {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .event-card .text-link {
+    display: table;
+    margin-top: 17px;
+    font-size: 14px;
+  }
+  .activity-plan {
+    padding: 27px;
+  }
+  .activity-plan h2 {
+    font-size: 42px;
+  }
+  .planned-event h3 {
+    font-size: 23px;
+  }
+  .planned-event p,
+  .planned-event button {
+    font-size: 14px;
+  }
+  .activity-plan > .button {
+    font-size: 14px;
+    padding: 14px;
+  }
+  #plan-conflicts:not(:empty) {
+    font-size: 14px;
+  }
+  #plan-total {
+    font-size: 18px;
+  }
+  .about-hero {
+    padding: 50px 7%;
+  }
+  .about-hero h1 {
+    font-size: 61px;
+    line-height: 1.04;
+  }
+  .about-hero > p:not(.eyebrow) {
+    font-size: 18px;
+  }
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-story h2 {
+    font-size: 43px;
+  }
+  .about-story p {
+    font-size: 18px;
+  }
+  .about-photo img {
+    height: 430px;
+  }
+  .values {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .values h3 {
+    font-size: 32px;
+  }
+  .values p {
+    font-size: 17px;
+  }
+  .about-faq {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-faq h2 {
+    font-size: 46px;
+  }
+  summary,
+  details p {
+    font-size: 16px;
+  }
+  .toast {
+    font-size: 14px;
+    padding: 13px 19px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 650px) {
+  .hero > div:first-child {
+    padding: 32px 7% 36px;
+  }
+  .hero h1 {
+    font-size: 59px;
+    margin: 20px 0;
+  }
+  .hero-note {
+    margin-top: 15px;
+  }
+}
+.map-pins > button {
+  width: 150px;
+  max-width: 150px;
+}
+@media (max-width: 650px) {
+  .map-pins > button {
+    width: 145px;
+    max-width: 145px;
+  }
+  .map-pins > button > b {
+    max-width: 140px;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><a class="logo" href="index.html">common<br>soil</a><nav aria-label="Main navigation"><a href="gardens.html">Our gardens</a><a href="stories.html">Growing stories</a><a href="activities.html">What's on</a><a href="about.html">Our approach</a></nav><div><a class="button small" href="volunteer.html">Find your part ↗</a><button class="menu-toggle" aria-expanded="false">Menu</button></div></header><main id="main"><section class="page-intro"><p class="eyebrow">MAKE A LITTLE ROOM IN THE WEEK</p><h1>A few ways<br>to spend a morning.</h1><p>Explore sample activities and keep a personal plan. No places are reserved.</p></section><section class="activities-layout section"><div><div class="filters" role="group" aria-label="Filter activities"><button data-event-filter="All activities" aria-pressed="true">All activities</button><button data-event-filter="Hands-on" aria-pressed="false">Hands-on</button><button data-event-filter="Learning" aria-pressed="false">Learning</button><button data-event-filter="Walk & notice" aria-pressed="false">Walk & notice</button></div><p class="sample-calendar-note">SAMPLE OCTOBER 2026 PROGRAMME / FICTIONAL EVENTS</p><div id="event-list"></div><p id="event-empty" hidden>No activities match this filter.</p></div><aside class="activity-plan"><p class="eyebrow">YOUR LITTLE PLAN</p><h2>Leave room<br>for the day.</h2><div id="planned-events"></div><div id="plan-conflicts" role="status"></div><p id="plan-total"></p><button class="button" id="download-plan" disabled>Download my activity plan ↓</button><button class="text-link" id="clear-plan" hidden>Clear my plan</button><p class="local-note">Saved locally. No booking, attendance, travel time or availability is confirmed.</p></aside></section></main><section class="closing"><p class="eyebrow">THERE'S MORE THAN ONE WAY TO HELP SOMETHING GROW</p><h2>Bring your curiosity.<br>We'll start there.</h2><a class="button" href="volunteer.html">Make an interest draft ↗</a></section><footer><div><a class="logo" href="index.html">common<br>soil</a><p>More green.<br>More shared ground.</p></div><nav aria-label="Footer navigation"><a href="gardens.html">Explore the gardens</a><a href="activities.html">Plan an activity</a><a href="volunteer.html">Volunteer interest</a><a href="stories.html">Project stories</a><a href="about.html">About this concept</a><a href="assets/CREDITS.txt">Credits & reference</a><a href="../../">Template library ↗</a></nav><p class="footer-note">A fictional community-garden nonprofit concept. Places, activities and stories are illustrative. Drafts and plans stay in your browser; no registrations, messages or donations are sent.</p></footer><div class="toast" role="status"></div><script type="application/json" id="soil-data">{"gardens":[{"id":"station-patch","name":"Station Patch","area":"Station Quarter","kind":"Food growing","image":"garden","x":24,"y":25,"tag":"A useful little piece of the neighbourhood","intro":"An imagined growing space beside an old station yard, built around shared beds, practical learning and a place to stop for a conversation.","features":["Shared growing beds","A tool-library idea","A gathering bench"],"story":[{"title":"Begin with a place to meet","text":"The proposal starts with an ordinary question: where can neighbours spend an hour together without needing to buy anything? A few growing beds are part of the answer, but so are a generous gate, somewhere to put a bag, and a bench that does not belong to anyone in particular."},{"title":"Make the work shareable","text":"Station Patch imagines small tasks that can be explained and finished in a single visit. Watering, labelling, checking a bed, or putting tools away all create ways to contribute. The intention is to make a first visit feel possible without expecting every newcomer to become an expert."},{"title":"Leave room to learn","text":"A shared garden needs more than a planting plan. It needs a way to decide what changes, who keeps the notes, and how a person can ask for help. This concept puts a noticeboard and a regular open session beside the beds, so the social work is as visible as the growing."}],"needs":["Help plan a welcoming first visit","Think through shared-tool routines","Explore a simple growing diary"]},{"id":"orchard-room","name":"The Orchard Room","area":"Orchard Rise","kind":"Learning space","image":"flowers","x":76,"y":24,"tag":"A garden with a little room for questions","intro":"A learning-garden concept where seasonal observation, seed stories and creative activities can happen around one shared table.","features":["Outdoor learning table","Seasonal observation beds","Seed-library concept"],"story":[{"title":"Learning at a different pace","text":"The Orchard Room is imagined as a place where a question can take its time. A leaf, a seed pod or a patch of soil offers something to observe before anyone needs the right answer. The proposal leaves space for drawing, comparing and returning to the same small detail over several visits."},{"title":"A table as common ground","text":"The central table matters as much as the beds. It gives people a place to sort materials, share a notebook, or begin a conversation while their hands are occupied. The concept includes different kinds of participation, from practical activity to simply looking and listening."},{"title":"Keep the invitation clear","text":"A learning space is easier to enter when visitors know what to expect. The project proposes short session descriptions, a visible meeting point and an explanation of what is optional. These details are intentions in a fictional design, not verified facilities or a promise about a real venue."}],"needs":["Develop a simple seasonal activity","Organise a seed-story session","Help make instructions welcoming"]},{"id":"river-bed","name":"River Bed","area":"Eastbank","kind":"Pollinator space","image":"woods","x":29,"y":68,"tag":"A softer edge between the path and the water","intro":"An imagined planted corridor that makes room for seasonal flowers, observation and slower journeys along a neighbourhood path.","features":["Seasonal planting concept","Observation stops","Shared care rota"],"story":[{"title":"Notice the edges","text":"River Bed begins with the overlooked strip beside a familiar route. Instead of treating that edge as leftover space, the concept asks what a more varied planting scheme and a few places to pause might make possible. It is a design proposal, not a claim about restored habitat or measured biodiversity."},{"title":"Care before spectacle","text":"A planting plan can be exciting at the beginning and difficult to maintain later. This project puts the care routine into the first conversation: who checks the path, how observations are recorded, and what can be changed when an idea does not work as expected."},{"title":"Observe, then decide","text":"The proposal includes a modest observation practice: visit, describe what is visible, and keep the date with the note. A useful record distinguishes a sighting from a trend and a hope from an outcome. That habit is part of the Common Soil approach to telling an honest project story."}],"needs":["Plan an observation walk","Help maintain a care diary","Consider a clear path-side sign"]},{"id":"canal-table","name":"The Canal Table","area":"Canal End","kind":"Food growing","image":"harvest","x":78,"y":70,"tag":"Growing is only one part of sharing","intro":"A food-growing and shared-table concept connecting a small kitchen garden with conversations about what we grow, cook and pass on.","features":["Kitchen-garden concept","Shared harvest table","Recipe-notebook idea"],"story":[{"title":"From a bed to a table","text":"The Canal Table imagines a garden whose story does not end at harvest. A table gives the produce a social setting: a place to compare a leaf, write down a recipe, or talk about how an ingredient is used in different homes. The emphasis is on exchange rather than a claim about food distribution."},{"title":"Make participation flexible","text":"Not everyone wants to dig, and not every useful contribution happens in the beds. The concept includes organising labels, setting out a table, keeping notes and welcoming visitors. A shared project becomes more generous when it can recognise different kinds of work."},{"title":"Tell the story carefully","text":"This project would need a clear way to record what actually happened before describing its impact. Attendance, activities and participant observations answer different questions. The design proposes a simple learning log and a habit of asking what could be improved, rather than reaching immediately for an impressive total."}],"needs":["Collect a sample recipe story","Plan a welcoming table layout","Help structure a learning log"]}],"events":[{"id":"open-beds","title":"An open morning in the beds","garden":"station-patch","category":"Hands-on","date":"2026-10-03","start":"09:00","end":"11:00","description":"A sample introduction to shared growing tasks, tools and the rhythm of an open garden session."},{"id":"seed-stories","title":"Seeds, stories & a shared table","garden":"orchard-room","category":"Learning","date":"2026-10-03","start":"10:00","end":"12:00","description":"An imagined session for sorting seeds, comparing notes and thinking about what a seed library could hold."},{"id":"slow-walk","title":"A slower walk along the edge","garden":"river-bed","category":"Walk & notice","date":"2026-10-10","start":"10:00","end":"11:30","description":"A sample observation walk focused on noticing seasonal details and keeping useful notes."},{"id":"table-talk","title":"From garden to table","garden":"canal-table","category":"Learning","date":"2026-10-10","start":"13:00","end":"15:00","description":"An imagined gathering around ingredients, recipes and the different ways people contribute."},{"id":"care-day","title":"A little care goes a long way","garden":"station-patch","category":"Hands-on","date":"2026-10-17","start":"09:30","end":"11:30","description":"A sample morning for considering bed care, labels, shared tools and the next set of small jobs."},{"id":"notice-season","title":"A notebook for the season","garden":"orchard-room","category":"Walk & notice","date":"2026-10-17","start":"11:00","end":"12:30","description":"An imagined creative session using words and sketches to describe what is changing in the garden."}],"stories":[{"id":"a-bench-belongs","title":"A bench belongs in the plan","category":"Places & people","image":"garden","dek":"The social life of a garden starts before anyone picks up a spade.","sections":[{"title":"Somewhere to arrive","text":"A garden can have a beautiful planting plan and still be difficult to enter. A visitor may not know where to stand, what is expected, or whether they are interrupting something. The first useful piece of infrastructure might be a place to sit while those questions settle. A bench makes room for arrival without requiring an immediate contribution."},{"title":"Participation has more than one shape","text":"The person watching a task may be learning how to join it. The person who comes for a conversation may return with an idea. A shared place becomes narrower when every visit must be justified by visible work. This does not mean that care happens by itself. It means that the invitation can recognise different rhythms of participation."},{"title":"Design the pause","text":"A seat placed beside an activity offers a different experience from one hidden at the edge. The relationship between a bench, a path and a working area can make a conversation easier without blocking the task. Shade, a clear approach and a view of what is happening are design questions worth asking early. In this fictional project, they remain questions to investigate rather than verified features."},{"title":"A modest measure","text":"If a real project wanted to understand whether a bench helped, it could begin by observing and asking. Who uses it? When does it feel welcoming? What makes it difficult to reach or comfortable to stay? A photograph of an empty bench cannot answer those questions. The useful story comes from the relationship between the place and the people who choose to use it."}]},{"id":"shared-rhythm","title":"Growing a shared rhythm","category":"Ways of working","image":"seedlings","dek":"Small, repeatable tasks can make a shared project easier to enter and easier to keep going.","sections":[{"title":"The work between the big days","text":"A launch event is easy to describe. The smaller visits between events are less dramatic, but they shape the experience of a shared garden. A label is replaced, a tool returns to its shelf, a note explains what happened yesterday. These actions are not a separate category from the project. They are how the project continues to exist."},{"title":"Make the next task legible","text":"A newcomer should not need to understand the entire garden before doing one useful thing. A clear task has a beginning, a reasonable stopping point and someone or something to consult when a question appears. The aim is not to turn every visit into a checklist, but to reduce the uncertainty that can make a person feel they are in the way."},{"title":"Keep a record that someone will use","text":"A shared notebook does not need to become an elaborate reporting system. A date, a short description and a practical next step may be enough. The record is useful when the next person can understand it without finding the author. It should support continuity rather than becoming another obligation that only one person knows how to maintain."},{"title":"Leave room to change the routine","text":"A routine that works for the first group may not suit the next. People arrive with different schedules, experience and interests. A regular conversation about what is easy, what is unclear and what has become too much can keep the project from depending on invisible effort. Common Soil imagines that conversation as part of the growing work, not as an administrative interruption."}]},{"id":"honest-impact","title":"What we choose to notice","category":"Learning in public","image":"flowers","dek":"An honest project story starts by separating what happened, what changed and what we still do not know.","sections":[{"title":"Begin with the question","text":"A number can make a project look certain before the question behind it is clear. Counting sessions tells us that sessions happened. Counting visits tells us something about attendance. Neither automatically explains whether people felt welcome, learned something useful, or wanted to return. A good account starts by asking what the project is trying to understand."},{"title":"Keep the evidence attached","text":"A short observation becomes more useful when its context stays with it. When was it made? What was happening? Was it one person’s impression or a repeated pattern? These details do not make a story less human. They help a reader understand what the observation can reasonably support and where uncertainty remains."},{"title":"Make room for the awkward result","text":"A project may discover that an activity was difficult to join, that a sign was unclear, or that a care routine asked too much of a few people. Those findings can be valuable even when they do not fit a celebratory headline. Describing a change in response to feedback is often more informative than presenting every decision as a success from the beginning."},{"title":"A proposal is not an outcome","text":"Common Soil’s gardens and activities are fictional concepts. Their stories describe intentions, design questions and possible ways of working. They do not establish real participation, harvest, biodiversity or social outcomes. Keeping that distinction visible is part of the design: a useful invitation can be hopeful without asking the reader to mistake a possibility for evidence."}]}]}</script><script>function durationMinutes(event) {
+  const minutes = (value) =>
+    Number(value.slice(0, 2)) * 60 + Number(value.slice(3));
+  return minutes(event.end) - minutes(event.start);
+}
+function overlappingEvents(events) {
+  const conflicts = [];
+  for (let i = 0; i < events.length; i++)
+    for (let j = i + 1; j < events.length; j++) {
+      const a = events[i],
+        b = events[j];
+      if (a.date === b.date && a.start < b.end && b.start < a.end)
+        conflicts.push([a.id, b.id]);
+    }
+  return conflicts;
+}
+function planSummary(ids, events) {
+  const selected = events
+    .filter((event) => ids.includes(event.id))
+    .sort(
+      (a, b) => a.date.localeCompare(b.date) || a.start.localeCompare(b.start),
+    );
+  return {
+    selected,
+    minutes: selected.reduce((sum, event) => sum + durationMinutes(event), 0),
+    conflicts: overlappingEvents(selected),
+  };
+}
+function validateInterest(draft, gardens) {
+  if (
+    draft.garden !== 'any' &&
+    !gardens.some((garden) => garden.id === draft.garden)
+  )
+    return 'Choose a garden or any garden.';
+  if (
+    ![
+      'Growing & care',
+      'Welcoming & organising',
+      'Learning & sharing',
+      'Making & practical help',
+    ].includes(draft.role)
+  )
+    return 'Choose a way you might like to help.';
+  if (
+    !Array.isArray(draft.days) ||
+    !draft.days.some((day) =>
+      [
+        'Weekday mornings',
+        'Weekday afternoons',
+        'Saturday mornings',
+        'Flexible',
+      ].includes(day),
+    )
+  )
+    return 'Choose at least one availability option.';
+  return '';
+}
+
+(() => {
+  'use strict';
+  const { gardens, events, stories } = JSON.parse(
+    document.getElementById('soil-data').textContent,
+  );
+  const gardenById = new Map(gardens.map((garden) => [garden.id, garden]));
+  const eventById = new Map(events.map((event) => [event.id, event]));
+  const e = (value) =>
+    String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;');
+  const key = 'common-soil-plan-v1';
+  const allowedDays = [
+    'Weekday mornings',
+    'Weekday afternoons',
+    'Saturday mornings',
+    'Flexible',
+  ];
+  const allowedExperience = [
+    "I'm new and curious",
+    "I've tried a little before",
+    'I have experience to share',
+  ];
+  let state = { plan: [], draft: null };
+  try {
+    const stored = JSON.parse(localStorage.getItem(key) || 'null');
+    if (stored && typeof stored === 'object' && !Array.isArray(stored)) {
+      if (Array.isArray(stored.plan))
+        state.plan = [
+          ...new Set(stored.plan.filter((id) => eventById.has(id))),
+        ];
+      if (stored.draft && typeof stored.draft === 'object') {
+        const draft = {
+          garden: stored.draft.garden,
+          role: stored.draft.role,
+          experience: allowedExperience.includes(stored.draft.experience)
+            ? stored.draft.experience
+            : allowedExperience[0],
+          days: Array.isArray(stored.draft.days)
+            ? [
+                ...new Set(
+                  stored.draft.days.filter((day) => allowedDays.includes(day)),
+                ),
+              ]
+            : [],
+          note:
+            typeof stored.draft.note === 'string'
+              ? stored.draft.note.slice(0, 1000)
+              : '',
+        };
+        if (!validateInterest(draft, gardens)) state.draft = draft;
+      }
+    }
+  } catch {
+    state = { plan: [], draft: null };
+  }
+  let toastTimer;
+  function notify(message) {
+    const toast = document.querySelector('.toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 3300);
+  }
+  function persist() {
+    try {
+      localStorage.setItem(key, JSON.stringify(state));
+      return true;
+    } catch {
+      notify('Available for this visit. Browser saving is unavailable.');
+      return false;
+    }
+  }
+  function download(name, text) {
+    const url = URL.createObjectURL(
+      new Blob([text], { type: 'text/plain;charset=utf-8' }),
+    );
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = name;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  const dateLabel = (date) =>
+    new Date(date + 'T12:00:00Z').toLocaleDateString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'UTC',
+    });
+  const menu = document.querySelector('.menu-toggle');
+  menu.addEventListener('click', () => {
+    const open = document.querySelector('header').classList.toggle('menu-open');
+    menu.setAttribute('aria-expanded', String(open));
+    menu.textContent = open ? 'Close' : 'Menu';
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      document.querySelector('header').classList.remove('menu-open');
+      menu.setAttribute('aria-expanded', 'false');
+      menu.textContent = 'Menu';
+    }
+  });
+  const selection = document.getElementById('garden-selection');
+  let selectedGarden = gardens[0].id;
+  let gardenFilter = 'All gardens';
+  function renderSelection(id) {
+    const garden = gardenById.get(id);
+    if (!selection || !garden) return;
+    selectedGarden = id;
+    selection.innerHTML = `<article class="garden-selected"><img src="assets/${garden.image}.webp" alt="${garden.name} illustrative photography"><div><p class="eyebrow">${garden.area} / ${garden.kind}</p><h2>${garden.name}</h2><p>${garden.intro}</p><a href="garden.html?id=${garden.id}" class="button">Explore the project ↗</a><a href="volunteer.html?garden=${garden.id}" class="text-link">Imagine taking part →</a></div></article>`;
+    document
+      .querySelectorAll('[data-map-garden]')
+      .forEach((button) =>
+        button.setAttribute(
+          'aria-pressed',
+          String(button.dataset.mapGarden === id),
+        ),
+      );
+    document
+      .querySelectorAll('[data-list-garden]')
+      .forEach((button) =>
+        button.setAttribute(
+          'aria-pressed',
+          String(button.dataset.listGarden === id),
+        ),
+      );
+  }
+  function filterGardens() {
+    const query = document
+      .getElementById('garden-search')
+      .value.trim()
+      .toLowerCase();
+    const visible = gardens.filter(
+      (garden) =>
+        (gardenFilter === 'All gardens' || garden.kind === gardenFilter) &&
+        `${garden.name} ${garden.area} ${garden.kind} ${garden.intro}`
+          .toLowerCase()
+          .includes(query),
+    );
+    document.getElementById('garden-count').textContent =
+      `${visible.length} ${visible.length === 1 ? 'project concept' : 'project concepts'}`;
+    document.querySelectorAll('[data-map-garden]').forEach((button) => {
+      button.hidden = !visible.some(
+        (garden) => garden.id === button.dataset.mapGarden,
+      );
+    });
+    document
+      .querySelectorAll('[data-garden-filter]')
+      .forEach((button) =>
+        button.setAttribute(
+          'aria-pressed',
+          String(button.dataset.gardenFilter === gardenFilter),
+        ),
+      );
+    document.getElementById('garden-list').innerHTML = visible
+      .map(
+        (garden) =>
+          `<article class="garden-list-item"><button data-list-garden="${garden.id}" aria-pressed="${garden.id === selectedGarden}"><img src="assets/${garden.image}.webp" alt=""><div><h3>${garden.name}</h3><p>${garden.area} / ${garden.kind}</p></div></button><a href="garden.html?id=${garden.id}" aria-label="Read about ${garden.name}">↗</a></article>`,
+      )
+      .join('');
+    document.getElementById('garden-empty').hidden = visible.length > 0;
+    if (!visible.length) {
+      selection.innerHTML =
+        '<article class="garden-selected"><div><h2>A different search?</h2><p>No garden concepts match. Try another word or choose All gardens.</p></div></article>';
+      return;
+    }
+    renderSelection(
+      visible.some((garden) => garden.id === selectedGarden)
+        ? selectedGarden
+        : visible[0].id,
+    );
+  }
+  if (selection) {
+    document.querySelectorAll('[data-garden-filter]').forEach((button) =>
+      button.addEventListener('click', () => {
+        gardenFilter = button.dataset.gardenFilter;
+        filterGardens();
+      }),
+    );
+    document
+      .getElementById('garden-search')
+      .addEventListener('input', filterGardens);
+    document
+      .querySelectorAll('[data-map-garden]')
+      .forEach((button) =>
+        button.addEventListener('click', () =>
+          renderSelection(button.dataset.mapGarden),
+        ),
+      );
+    document
+      .getElementById('garden-list')
+      .addEventListener('click', (event) => {
+        const button = event.target.closest('[data-list-garden]');
+        if (button) renderSelection(button.dataset.listGarden);
+      });
+    filterGardens();
+  }
+  const gardenDetail = document.getElementById('garden-detail');
+  if (gardenDetail) {
+    const garden =
+      gardenById.get(new URLSearchParams(location.search).get('id')) ||
+      gardens[0];
+    gardenDetail.innerHTML = `<section class="garden-detail-hero"><img src="assets/${garden.image}.webp" alt="${garden.name} illustrative project photography"><div><p class="eyebrow">${garden.area} / ${garden.kind} / PROJECT CONCEPT</p><h1>${garden.name}</h1><p>${garden.tag}</p></div></section><section class="garden-detail-intro"><div><h2>A place to begin.</h2><p>${garden.intro}</p><a href="volunteer.html?garden=${garden.id}" class="button">Find a way to take part ↗</a></div><aside class="garden-features"><h3>The project idea</h3><ul>${garden.features.map((feature) => `<li>${feature}</li>`).join('')}</ul><p>Illustrative proposal. Facilities, access and activity arrangements are not verified real-world details.</p></aside></section><section class="garden-story"><div><h2>From a patch<br>to a shared place.</h2></div><div>${garden.story.map((section) => `<article><h3>${section.title}</h3><p>${section.text}</p></article>`).join('')}</div></section><section class="garden-needs"><h2>A few ways<br>to help the idea grow.</h2><div><ul>${garden.needs.map((need) => `<li>${need}</li>`).join('')}</ul><a class="button" href="volunteer.html?garden=${garden.id}">Make an interest draft ↗</a></div></section><div class="garden-detail-bottom"><a href="gardens.html" class="text-link">← Back to the neighbourhood</a><a href="activities.html?garden=${garden.id}" class="text-link">Explore related sample activities ↗</a></div>`;
+    document.title = `${garden.name} — Common Soil`;
+  }
+  const storyDetail = document.getElementById('story-detail');
+  if (storyDetail) {
+    const story =
+      stories.find(
+        (item) => item.id === new URLSearchParams(location.search).get('id'),
+      ) || stories[0];
+    storyDetail.innerHTML = `<article><section class="story-opener"><div><p class="eyebrow">${story.category} / ORIGINAL REFLECTION</p><h1>${story.title}</h1><p>${story.dek}</p></div><img src="assets/${story.image}.webp" alt="${story.title} illustrative photography"></section><div class="story-body"><a class="back-link" href="stories.html">← Growing stories</a>${story.sections.map((section) => `<section><h2>${section.title}</h2><p>${section.text}</p></section>`).join('')}<div class="story-end"><p>Original project writing. Common Soil's places and activities are fictional concepts; this is not a report of measured real-world impact.</p><a href="gardens.html" class="text-link">Explore the project ideas ↗</a></div></div></article>`;
+    document.title = `${story.title} — Common Soil`;
+  }
+  const interestForm = document.getElementById('interest-form');
+  let currentDraft = null;
+  function draftText(draft) {
+    return [
+      'COMMON SOIL / MY VOLUNTEER-INTEREST DRAFT',
+      '',
+      `Garden: ${draft.garden === 'any' ? 'Open to any garden' : gardenById.get(draft.garden).name}`,
+      `Interest: ${draft.role}`,
+      `Experience: ${draft.experience}`,
+      `Availability: ${draft.days.join(', ')}`,
+      `Notes: ${draft.note || 'No additional notes.'}`,
+      '',
+      'This is a local draft for a fictional community-garden concept. No application, registration or message has been sent.',
+    ].join('\n');
+  }
+  function renderDraft(draft) {
+    const rows = [
+      [
+        'Garden',
+        draft.garden === 'any'
+          ? 'Open to any garden'
+          : gardenById.get(draft.garden).name,
+      ],
+      ['A way to help', draft.role],
+      ['Experience', draft.experience],
+      ['Availability', draft.days.join(', ')],
+      ['A note or question', draft.note || 'No additional notes.'],
+    ];
+    document.getElementById('interest-summary').innerHTML = rows
+      .map(
+        ([label, value]) =>
+          `<div class="draft-row"><span>${label}</span><strong>${e(value)}</strong></div>`,
+      )
+      .join('');
+    document.getElementById('interest-actions').hidden = false;
+  }
+  if (interestForm) {
+    if (state.draft) {
+      currentDraft = state.draft;
+      interestForm.elements.namedItem('garden').value = currentDraft.garden;
+      interestForm.elements.namedItem('role').value = currentDraft.role;
+      interestForm.elements.namedItem('experience').value =
+        currentDraft.experience;
+      interestForm.elements.namedItem('note').value = currentDraft.note;
+      interestForm.querySelectorAll('[name="days"]').forEach((input) => {
+        input.checked = currentDraft.days.includes(input.value);
+      });
+      renderDraft(currentDraft);
+      document.getElementById('interest-status').textContent =
+        'Your saved local draft is ready to review.';
+    }
+    const requested = new URLSearchParams(location.search).get('garden');
+    if (gardenById.has(requested)) {
+      interestForm.elements.namedItem('garden').value = requested;
+      currentDraft = null;
+      document.getElementById('interest-actions').hidden = true;
+      document.getElementById('interest-status').textContent =
+        'Garden selected. Preview your draft to confirm the details.';
+    }
+    interestForm.addEventListener('input', () => {
+      currentDraft = null;
+      document.getElementById('interest-actions').hidden = true;
+      document.getElementById('interest-status').textContent =
+        'Your answers changed. Preview again to update the draft.';
+    });
+    interestForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(interestForm);
+      const draft = {
+        garden: data.get('garden'),
+        role: data.get('role'),
+        experience: data.get('experience'),
+        days: data.getAll('days'),
+        note: interestForm.elements
+          .namedItem('note')
+          .value.trim()
+          .slice(0, 1000),
+      };
+      const error = validateInterest(draft, gardens);
+      document.getElementById('interest-error').textContent = error;
+      if (error) return;
+      currentDraft = draft;
+      renderDraft(draft);
+      document.getElementById('interest-status').textContent =
+        'Draft ready. Review it, then save locally or download a copy.';
+    });
+    document.getElementById('save-interest').addEventListener('click', () => {
+      if (!currentDraft) return;
+      state.draft = currentDraft;
+      document.getElementById('interest-status').textContent = persist()
+        ? 'Saved in this browser. No organiser receives this draft.'
+        : 'Available for this visit only. You can still download it.';
+    });
+    document.getElementById('clear-interest').addEventListener('click', () => {
+      state.draft = null;
+      currentDraft = null;
+      interestForm.reset();
+      persist();
+      document.getElementById('interest-actions').hidden = true;
+      document.getElementById('interest-summary').innerHTML =
+        '<p>Your draft will appear here after you choose an interest and availability.</p>';
+      document.getElementById('interest-status').textContent =
+        'The saved interest draft has been cleared.';
+    });
+    document
+      .getElementById('download-interest')
+      .addEventListener('click', () => {
+        if (!currentDraft) return;
+        download('common-soil-interest-draft.txt', draftText(currentDraft));
+        document.getElementById('interest-status').textContent =
+          'Your draft is ready to download. Nothing was submitted.';
+      });
+  }
+  const eventList = document.getElementById('event-list');
+  let eventFilter = 'All activities';
+  const requestedGarden = new URLSearchParams(location.search).get('garden');
+  function renderEvents() {
+    if (!eventList) return;
+    const visible = events.filter(
+      (event) =>
+        (eventFilter === 'All activities' || event.category === eventFilter) &&
+        (!gardenById.has(requestedGarden) || event.garden === requestedGarden),
+    );
+    eventList.innerHTML = visible
+      .map((event) => {
+        const garden = gardenById.get(event.garden);
+        const selected = state.plan.includes(event.id);
+        return `<article class="event-card"><div class="event-date"><strong>${event.date.slice(-2)}</strong><span>OCT</span><span>2026</span></div><div><p class="eyebrow">${event.category} / ${garden.name}</p><h2>${event.title}</h2><p>${event.description}</p><span class="event-time">${event.start}–${event.end} / ${durationMinutes(event) / 60} hours / Sample activity</span><div><button data-plan-event="${event.id}" aria-pressed="${selected}" class="button">${selected ? 'Added to my plan ✓' : 'Add to my plan +'}</button><a href="garden.html?id=${garden.id}" class="text-link">Meet the garden ↗</a></div></div></article>`;
+      })
+      .join('');
+    document.getElementById('event-empty').hidden = visible.length > 0;
+    document
+      .querySelectorAll('[data-event-filter]')
+      .forEach((button) =>
+        button.setAttribute(
+          'aria-pressed',
+          String(button.dataset.eventFilter === eventFilter),
+        ),
+      );
+  }
+  function renderPlan() {
+    if (!eventList) return;
+    const summary = planSummary(state.plan, events);
+    document.getElementById('planned-events').innerHTML = summary.selected
+      .length
+      ? summary.selected
+          .map(
+            (event) =>
+              `<article class="planned-event"><h3>${event.title}</h3><p>${dateLabel(event.date)} / ${event.start}–${event.end}<br>${gardenById.get(event.garden).name}</p><button data-remove-event="${event.id}">Remove from plan</button></article>`,
+          )
+          .join('')
+      : '<p class="activity-plan-empty">Choose an activity that interests you. Your ideas will stay here as you explore.</p>';
+    document.getElementById('plan-total').textContent = summary.selected.length
+      ? `${summary.selected.length} ${summary.selected.length === 1 ? 'activity' : 'activities'} / ${summary.minutes / 60} hours of selected activity`
+      : '';
+    document.getElementById('plan-conflicts').innerHTML = summary.conflicts
+      .length
+      ? `<strong>A little overlap to consider.</strong><p>${summary.conflicts.map(([a, b]) => `${eventById.get(a).title} and ${eventById.get(b).title} overlap on ${dateLabel(eventById.get(a).date)}.`).join(' ')}</p><p>Choose which you prefer. Travel time is not calculated.</p>`
+      : '';
+    document.getElementById('download-plan').disabled =
+      !summary.selected.length;
+    document.getElementById('clear-plan').hidden = !summary.selected.length;
+  }
+  if (eventList) {
+    if (gardenById.has(requestedGarden))
+      document.querySelector('.sample-calendar-note').innerHTML =
+        `SAMPLE OCTOBER 2026 / ${gardenById.get(requestedGarden).name.toUpperCase()} / <a href="activities.html">All gardens ↗</a>`;
+    document.querySelectorAll('[data-event-filter]').forEach((button) =>
+      button.addEventListener('click', () => {
+        eventFilter = button.dataset.eventFilter;
+        renderEvents();
+      }),
+    );
+    eventList.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-plan-event]');
+      if (!button) return;
+      const id = button.dataset.planEvent;
+      state.plan = state.plan.includes(id)
+        ? state.plan.filter((item) => item !== id)
+        : [...state.plan, id];
+      persist();
+      renderEvents();
+      renderPlan();
+    });
+    document
+      .getElementById('planned-events')
+      .addEventListener('click', (event) => {
+        const button = event.target.closest('[data-remove-event]');
+        if (!button) return;
+        state.plan = state.plan.filter(
+          (id) => id !== button.dataset.removeEvent,
+        );
+        persist();
+        renderEvents();
+        renderPlan();
+      });
+    document.getElementById('clear-plan').addEventListener('click', () => {
+      state.plan = [];
+      persist();
+      renderEvents();
+      renderPlan();
+    });
+    document.getElementById('download-plan').addEventListener('click', () => {
+      const summary = planSummary(state.plan, events);
+      const text = [
+        'COMMON SOIL / MY SAMPLE ACTIVITY PLAN',
+        '',
+        ...summary.selected.map(
+          (event) =>
+            `${dateLabel(event.date)} / ${event.start}–${event.end}\n${event.title}\n${gardenById.get(event.garden).name}\n`,
+        ),
+        `${summary.minutes / 60} hours of selected activity (overlaps counted separately).`,
+        ...summary.conflicts.map(
+          ([a, b]) =>
+            `OVERLAP: ${eventById.get(a).title} / ${eventById.get(b).title}`,
+        ),
+        '',
+        'Fictional activities. No attendance, registration, availability or travel arrangements are confirmed.',
+      ].join('\n');
+      download('common-soil-activity-plan.txt', text);
+      notify('Your sample plan is ready to download. No place was reserved.');
+    });
+    renderEvents();
+    renderPlan();
+  }
+})();
+</script></body></html>

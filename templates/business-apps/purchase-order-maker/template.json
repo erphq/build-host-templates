@@ -1,0 +1,23 @@
+{
+  "slug": "purchase-order-maker",
+  "name": "Purchase Order Maker",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Buyer/vendor names, addresses, PO number, date, delivery address, line SKU, quantity, unit price, discount, shipping, tax and terms. Recalculate line extensions and totals with decimal arithmetic. Preview and export a printable PO.",
+  "tagline": "Give every order\na clear start.",
+  "style": "blue",
+  "palette": [],
+  "order": 33,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 40,
+  "notes": {
+    "interaction": "Buyer/vendor names, addresses, PO number, date, delivery address, line SKU, quantity, unit price, discount, shipping, tax and terms. Recalculate line extensions and totals with decimal arithmetic. Preview and export a printable PO."
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "pageCount": 1
+}

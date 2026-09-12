@@ -1,0 +1,3 @@
+Circa is an original fictional relationship CRM concept. All contacts, companies, roles, locations, deals, and values are invented demonstration data. Email addresses use reserved .example domains. No messages, enrichment, or external CRM connections occur. Relationship diagrams, interface graphics, initials badges, and hero.svg are original code-authored visuals; hero.webp is a raster derivative.
+Geist by Vercel, SIL Open Font License1.1; see GEIST-LICENSE.txt.
+Live research reference: https://attio.com/ . No reference branding, source code, customer claims, or artwork copied.

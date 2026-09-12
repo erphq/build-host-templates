@@ -1,0 +1,31 @@
+{
+  "slug": "firstword",
+  "name": "Firstword",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "An original brief-writing SaaS with an immediate composer, editable structured document, original starters, and Markdown export.",
+  "tagline": "Big ideas. A better beginning.",
+  "style": "Editorial writing workspace",
+  "palette": [
+    "#f6f4ef",
+    "#24251f",
+    "#f5dc60"
+  ],
+  "order": 50,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "centered working composer, large three-view product demonstration, sticky workflow panels, filterable starter dossiers, enhanced editor",
+    "motion": "product-demo state transitions, scroll-linked workflow selection, staged panel arrivals, directional arrows, reduced-motion fallback",
+    "interaction": "arrange notes into a local brief, choose starters, edit every section, preview Markdown, copy and download the result",
+    "provenance": "Original three-page SaaS study with its own identity, composition, writing, generated asset, and deterministic local brief workflow. No reference source or assets included."
+  },
+  "credits": {
+    "referenceName": "Lovable, discovered through Saaspo",
+    "referenceUrl": "https://lovable.dev/"
+  },
+  "pageCount": 3
+}

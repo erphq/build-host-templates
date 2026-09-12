@@ -1,0 +1,52 @@
+{
+  "photos": [
+    {
+      "file": "hero.webp",
+      "source": "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+      "license": "https://unsplash.com/license"
+    },
+    {
+      "file": "architecture.webp",
+      "source": "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      "license": "https://unsplash.com/license"
+    },
+    {
+      "file": "books.webp",
+      "source": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
+      "license": "https://unsplash.com/license"
+    },
+    {
+      "file": "interior.webp",
+      "source": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+      "license": "https://unsplash.com/license"
+    },
+    {
+      "file": "city.webp",
+      "source": "https://images.unsplash.com/photo-1519501025264-65ba15a82390",
+      "license": "https://unsplash.com/license"
+    },
+    {
+      "file": "studio.webp",
+      "source": "https://images.unsplash.com/photo-1497366811353-6870744d04b2",
+      "license": "https://unsplash.com/license"
+    }
+  ],
+  "artwork": [
+    {
+      "file": "colour.svg",
+      "credit": "Original vector editorial artwork created for Offprint."
+    },
+    {
+      "file": "objects.svg",
+      "credit": "Original vector editorial artwork created for Offprint."
+    },
+    {
+      "file": "issue-cover.svg",
+      "credit": "Original vector editorial cover created for Offprint."
+    }
+  ],
+  "font": {
+    "file": "geist-variable.woff2",
+    "license": "SIL Open Font License 1.1; see GEIST-LICENSE.txt"
+  }
+}

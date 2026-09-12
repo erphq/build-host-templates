@@ -1,0 +1,22 @@
+{
+  "slug": "returns-replacement-desk",
+  "name": "Returns & Replacement Desk",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Original order/customer,item/quantity,reason,photos,received date,inspection,resolution,refund reference,replacement dispatch",
+  "tagline": "Resolve the return, end to end.",
+  "style": "purple",
+  "palette": [],
+  "order": 121,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 27,
+  "notes": {
+    "interaction": "Original order/customer,item/quantity,reason,photos,received date,inspection,resolution,refund reference,replacement dispatch"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

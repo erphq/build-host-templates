@@ -1,0 +1,31 @@
+{
+  "slug": "fieldnotes",
+  "name": "Fieldnotes",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A qualitative research workspace connecting original fictional interviews, manual highlights, themes and evidence-backed insight notes.",
+  "tagline": "Keep the voice. Find the meaning.",
+  "style": "Editorial research workspace",
+  "palette": [
+    "#e7a287",
+    "#f6f3eb",
+    "#30392d"
+  ],
+  "order": 10,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Peach proposition, annotated transcript visual, research library, long-form study pages and a source-linked insight notebook",
+    "motion": "Passage highlighting, theme changes, contextual evidence selection and export-panel focus",
+    "interaction": "Filter interviews, highlight passages, assign themes, write and edit source-cited insights, preserve evidence and export Markdown",
+    "provenance": "Seven original pages with three fictional interviews, nine source passages and manual, evidence-based local research workflows."
+  },
+  "credits": {
+    "referenceName": "Dovetail",
+    "referenceUrl": "https://dovetail.com/"
+  },
+  "pageCount": 7
+}

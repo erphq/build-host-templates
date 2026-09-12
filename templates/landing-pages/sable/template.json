@@ -1,0 +1,32 @@
+{
+  "slug": "sable",
+  "name": "Sable",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Creative",
+  "description": "A material-focused artist studio with original sculptural studies, an accessible image exhibition and thoughtful local commission drafts.",
+  "tagline": "The weight of an idea.",
+  "style": "Charcoal sculptural exhibition",
+  "palette": [
+    "#1d1c1a",
+    "#efebe2",
+    "#d7cdbd",
+    "#b49a70"
+  ],
+  "order": 1,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Isolated sculpture imagery, horizontal material catalogue, substantial object studies, process narrative and a commission draft",
+    "motion": "Exhibition hover, image exploration, full-object and detail modes, and accessible viewer transitions",
+    "interaction": "Combine material filters and search, explore original sculptures, navigate full/detail images and prepare a validated commission draft",
+    "provenance": "Seven original pages with three newly generated sculpture concepts and tested local collection, image-viewer and inquiry interactions."
+  },
+  "credits": {
+    "referenceName": "Marylou Faure",
+    "referenceUrl": "https://maryloufaure.com/"
+  },
+  "pageCount": 7
+}

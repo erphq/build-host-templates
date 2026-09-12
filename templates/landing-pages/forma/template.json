@@ -1,0 +1,31 @@
+{
+  "slug": "forma",
+  "name": "FORMA",
+  "collection": "landing-pages",
+  "category": "agencies",
+  "industry": "Architecture",
+  "description": "A coastal architecture practice, framed through monumental imagery and precise editorial typography.",
+  "tagline": "Spaces for a slower life.",
+  "style": "Architectural editorial",
+  "palette": [
+    "#eef0ed",
+    "#242b28",
+    "#39614a"
+  ],
+  "order": 16,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "oversized wordmark, full-bleed landscape, offset project index, material study, project inquiry",
+    "motion": "image reveal, project hover pan, staggered section entrance",
+    "interaction": "filter projects by Residential, Retreats, and Public; open project details; prepare a project inquiry",
+    "provenance": ""
+  },
+  "credits": {
+    "referenceName": "",
+    "referenceUrl": ""
+  },
+  "pageCount": 1
+}

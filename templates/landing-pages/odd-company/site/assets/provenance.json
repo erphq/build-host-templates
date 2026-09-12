@@ -1,0 +1,23 @@
+[
+  {
+    "file": "open.webp",
+    "prompt": "Use case: ads-marketing\nAsset type: original branding study photograph for Odd Company, a fictional creative-studio portfolio.\nPrimary request: OPEN: a single bright yellow sparkling-water can, with only the word \"OPEN\" in bold black type, slight condensation, on a cobalt-blue studio surface, crisp product advertising photograph.\nStyle: Wide 4:3 editorial studio photograph with strong, clean art direction.\nConstraints: Original fictional branding study, not real commissioned client work. No UI, watermark, or existing brand logos. Render the requested single word accurately. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated original fictional branding study, not real commissioned client work"
+  },
+  {
+    "file": "shift.webp",
+    "prompt": "Use case: ads-marketing\nAsset type: original branding study photograph for Odd Company, a fictional creative-studio portfolio.\nPrimary request: SHIFT: a large black-and-white exhibition poster with the word \"SHIFT\" in bold architectural type and one vermilion geometric accent, photographed leaning against a light concrete wall, clean museum-poster art direction.\nStyle: Wide 4:3 editorial studio photograph with strong, clean art direction.\nConstraints: Original fictional branding study, not real commissioned client work. No UI, watermark, or existing brand logos. Render the requested single word accurately. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated original fictional branding study, not real commissioned client work"
+  },
+  {
+    "file": "together.webp",
+    "prompt": "Use case: ads-marketing\nAsset type: original branding study photograph for Odd Company, a fictional creative-studio portfolio.\nPrimary request: TOGETHER: a cobalt tote bag and a white printed invitation with the word \"TOGETHER\" in simple bold type, arranged as a premium cultural-community identity still life on a pale gray surface.\nStyle: Wide 4:3 editorial studio photograph with strong, clean art direction.\nConstraints: Original fictional branding study, not real commissioned client work. No UI, watermark, or existing brand logos. Render the requested single word accurately. Generate one image.",
+    "method": "built-in image generation",
+    "generated": "2026-09-08",
+    "disclosure": "AI-generated original fictional branding study, not real commissioned client work"
+  }
+]

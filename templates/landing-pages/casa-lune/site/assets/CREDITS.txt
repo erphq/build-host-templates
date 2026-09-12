@@ -1,0 +1,37 @@
+Primary image: original generated artwork
+{
+  "slug": "casa-lune",
+  "prompt": "Intimate minimalist boutique hotel suite opening onto a Mediterranean terrace and pool, cool silver-blue linen, pale stone, no ornate gold, soft morning daylight, understated hospitality photograph. Horizontal 1536x1024. No text or logos. Photorealistic refined architectural interior photograph, coherent natural perspective and inviting understated atmosphere.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1536,
+  "height": 1024
+}
+
+Secondary image 1
+{
+  "site_slug": "hotel",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/bed-in-hotel-room-8089081/",
+  "image_url": "https://images.pexels.com/photos/8089081/pexels-photo-8089081.jpeg?cs=srgb&dl=pexels-artbovich-8089081.jpg&fm=jpg",
+  "author": "Max Vakhtbovych",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "hotel bedroom luxury",
+  "width": 7360,
+  "height": 4912
+}
+
+Secondary image 2
+{
+  "site_slug": "hotel",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/infinity-pool-overlooking-ocean-at-luxury-resort-30615183/",
+  "image_url": "https://images.pexels.com/photos/30615183/pexels-photo-30615183.jpeg?cs=srgb&dl=pexels-viniciusvieirafotografia-30615183.jpg&fm=jpg",
+  "author": "Vin\u00edcius Vieira ft",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "hotel swimming pool",
+  "width": 3500,
+  "height": 2336
+}

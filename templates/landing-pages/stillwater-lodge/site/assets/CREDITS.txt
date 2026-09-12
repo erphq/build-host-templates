@@ -1,0 +1,17 @@
+STILLWATER LODGE — CREDITS AND CONTEXT
+
+Stillwater Lodge is a fictional hospitality concept. All brand writing, code and itinerary logic are original project work. Room sizes, capacities, rates, menus, activity prices and policies are illustrative. No bookings or payments are processed.
+
+Photography: licensed Unsplash images. Exact source image IDs, local filenames and source URLs are recorded in provenance.json beside this file.
+License: https://unsplash.com/license
+These photographs are illustrative mood images from different locations. They do not document one real Stillwater property or imply endorsement by any photographer, owner or depicted business.
+
+Font: Geist variable, Vercel. SIL Open Font License 1.1. See GEIST-LICENSE.txt.
+Display typography uses system Georgia.
+
+Reference research: Hyll Hotel, https://hyllhotel.com/
+Discovered through https://minimal.gallery/tag/hotel-venue/ and https://minimal.gallery/hyll/
+Directly inspected home, full navigation menu, stays page, and inline room details on September 8, 2026.
+Observed: pale canvas; centered serif wordmark; inset immersive photography; split fullscreen menu with large links and room photograph; editorial narratives; room-family filters; large room rows; inline amenities; image carousel controls.
+Not verified: exact animation timing/easing, inventory, checkout, live rates, underlying framework or backend behavior.
+Stillwater uses original layout interpretation, copy, licensed independent photography and local planning interactions. No Hyll artwork, photography, brand assets, customer claims or site code is redistributed.

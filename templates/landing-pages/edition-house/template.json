@@ -1,0 +1,31 @@
+{
+  "slug": "edition-house",
+  "name": "Edition House",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Commerce",
+  "description": "An art-print storefront with six original editions, artwork and room views, product configuration, a persistent local bag, and a complete editorial journal.",
+  "tagline": "Art for the everyday.",
+  "style": "Editorial art commerce",
+  "palette": [
+    "#f3f0e8",
+    "#30372c",
+    "#bf512e"
+  ],
+  "order": 52,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "full-bleed interior hero, art archive, artwork/room views, series stories, room gallery, six product pages and journal",
+    "motion": "room carousel, artwork-view transitions, product-detail disclosure, reduced-motion fallback",
+    "interaction": "filter and sort art, switch room views, choose print size/frame/finish, calculate a local bag, search and export a selection",
+    "provenance": "Original ten-page commerce study with independent art, brand, writing, room scenes and local shopping behavior. Prices and editions are illustrative; no orders or payments are submitted."
+  },
+  "credits": {
+    "referenceName": "The Print Loft, discovered through Minimal Gallery",
+    "referenceUrl": "https://www.theprintloft.art/"
+  },
+  "pageCount": 10
+}

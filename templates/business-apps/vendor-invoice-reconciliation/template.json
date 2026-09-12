@@ -1,0 +1,22 @@
+{
+  "slug": "vendor-invoice-reconciliation",
+  "name": "Vendor Invoice Reconciliation",
+  "collection": "business-apps",
+  "category": "money-accounts",
+  "industry": "Money & accounts",
+  "description": "Purchase ledger and vendor statement file upload, column mapping, vendor ID, invoice number, dates, subtotal, sales tax",
+  "tagline": "Find the bills that do not match.",
+  "style": "sage",
+  "palette": [],
+  "order": 101,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 1,
+  "notes": {
+    "interaction": "Purchase ledger and vendor statement file upload, column mapping, vendor ID, invoice number, dates, subtotal, sales tax"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

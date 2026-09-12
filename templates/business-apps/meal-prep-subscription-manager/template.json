@@ -1,0 +1,22 @@
+{
+  "slug": "meal-prep-subscription-manager",
+  "name": "Meal Prep Subscription Manager",
+  "collection": "business-apps",
+  "category": "orders-delivery",
+  "industry": "Orders & delivery",
+  "description": "Subscriber, meal plan, quantity, address/route, delivery days, start/end, pauses, cutoff time, renewals",
+  "tagline": "Tomorrow\u2019s meals, counted correctly.",
+  "style": "sage",
+  "palette": [],
+  "order": 114,
+  "contributor": "build-host",
+  "previewKind": "concept",
+  "prompt": "PROMPT.md",
+  "legacyId": 17,
+  "notes": {
+    "interaction": "Subscriber, meal plan, quantity, address/route, delivery days, start/end, pauses, cutoff time, renewals"
+  },
+  "entry": "site/index.html",
+  "sharedAssets": "business",
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+}

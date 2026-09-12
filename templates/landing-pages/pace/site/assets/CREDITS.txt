@@ -1,0 +1,37 @@
+Primary image: original generated artwork
+{
+  "slug": "pace",
+  "prompt": "Athletic adult runner in dark olive technical running clothes on coastal asphalt, dynamic side profile, sunlit grey stone backdrop, stylish performance campaign. Vertical 1024x1536. No race bibs, no logos or text. Motion hinted but sharp main subject. Photorealistic editorial sports campaign, authentic athletic running posture.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1024,
+  "height": 1536
+}
+
+Secondary image 1
+{
+  "site_slug": "running",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/close-up-of-a-pair-of-running-shoes-13525579/",
+  "image_url": "https://images.pexels.com/photos/13525579/pexels-photo-13525579.jpeg?cs=srgb&dl=pexels-arturoaez225-13525579.jpg&fm=jpg",
+  "author": "Arturo A\u00f1ez.",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "running shoes detail",
+  "width": 2667,
+  "height": 4000
+}
+
+Secondary image 2
+{
+  "site_slug": "running",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/hands-on-starting-line-12659362/",
+  "image_url": "https://images.pexels.com/photos/12659362/pexels-photo-12659362.jpeg?cs=srgb&dl=pexels-boom-12659362.jpg&fm=jpg",
+  "author": "BOOM \ud83d\udca5 Photography",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "runners track",
+  "width": 5142,
+  "height": 3428
+}

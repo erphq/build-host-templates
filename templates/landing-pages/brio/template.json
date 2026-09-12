@@ -1,0 +1,32 @@
+{
+  "slug": "brio",
+  "name": "Brio",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Technology",
+  "description": "A bright forms product with a complete field studio, local respondent preview and versioned response review.",
+  "tagline": "Ask better. Start something.",
+  "style": "Bright interactive forms studio",
+  "palette": [
+    "#17234d",
+    "#2846e8",
+    "#fbfcff",
+    "#ffbf98"
+  ],
+  "order": 4,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "Apricot question playground, graphic feature spreads, three-pane field editor, respondent preview and response review",
+    "motion": "Form-sheet entrance, theme and card hover, and native dialog movement",
+    "interaction": "Add and edit five field types, reorder and undo, validate required answers, apply templates, review historical responses and export JSON or CSV",
+    "provenance": "Six original pages with a tested form schema, local responses that preserve question snapshots, original templates and clear browser-only behavior."
+  },
+  "credits": {
+    "referenceName": "Fillout",
+    "referenceUrl": "https://www.fillout.com/"
+  },
+  "pageCount": 6
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "ramble",
+  "name": "Ramble",
+  "collection": "landing-pages",
+  "category": "travel-hospitality",
+  "industry": "Travel",
+  "description": "A gallery-led travel concept with three imagined landscapes, animated journey browsing, complete journey pages, and a date-aware local trip planner.",
+  "tagline": "Make room for wonder.",
+  "style": "Bright travel gallery",
+  "palette": [
+    "#f2f7fb",
+    "#142d42",
+    "#1469b8"
+  ],
+  "order": 45,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "notes": {
+    "layout": "compact left-aligned introduction, horizontal landscape gallery, pace selector, journey pages, separate trip planner",
+    "motion": "native scroll-snap gallery, active-image transitions, Web Animations API arrivals and state changes, reduced-motion support",
+    "interaction": "browse journeys by swipe or keyboard, filter landscapes, choose pace, create a dated trip draft, edit and download it",
+    "provenance": "Original six-page travel concept informed by destination-planning research. Own gallery composition, motion, copy, generated landscapes, and local planner. No reference source or assets included."
+  },
+  "credits": {
+    "referenceName": "Travora by Pilgrims Design",
+    "referenceUrl": "https://www.framer.com/marketplace/templates/71443/"
+  },
+  "pageCount": 6
+}

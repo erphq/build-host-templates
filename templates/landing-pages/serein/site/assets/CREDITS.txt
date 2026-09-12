@@ -1,0 +1,6 @@
+Serein is an original fictional analytics concept.
+All dataset records, charts, product surfaces, writing, and CSS brand artwork are original.
+hero.webp: original raster chart illustration generated from the same synthetic sample, not a screenshot of a real analytics provider.
+Geist Variable: Vercel, SIL Open Font License; see GEIST-LICENSE.txt.
+Lucide icons: ISC License; see LUCIDE-LICENSE.txt.
+Research: https://saaspo.com/pages/posthog-landing-page and https://posthog.com/product-analytics. No reference assets, mascot, wallpaper, logos, customer data, or code copied.

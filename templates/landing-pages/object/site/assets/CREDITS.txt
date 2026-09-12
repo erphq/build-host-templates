@@ -1,0 +1,37 @@
+Primary image: original generated artwork
+{
+  "slug": "object",
+  "prompt": "Full sculptural lounge chair, natural oak curved frame and deep forest-green leather seat, centered on light cool-gray seamless studio, entire chair visible. Architectural product photography, horizontal 1536x1024. No logo or text. Refined realistic wood grain, precise joinery, comfortable sculptural form, premium furniture campaign.",
+  "generation_tool": "Built-in image generation",
+  "provenance": "Original AI-generated campaign asset",
+  "width": 1536,
+  "height": 1024
+}
+
+Secondary image 1
+{
+  "site_slug": "furniture",
+  "position": 1,
+  "source_page": "https://www.pexels.com/photo/crafted-wooden-chair-18334983/",
+  "image_url": "https://images.pexels.com/photos/18334983/pexels-photo-18334983.jpeg?cs=srgb&dl=pexels-darkshadephotos-18334983.jpg&fm=jpg",
+  "author": "Darkshade Photos",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "wooden furniture detail",
+  "width": 1825,
+  "height": 2738
+}
+
+Secondary image 2
+{
+  "site_slug": "furniture",
+  "position": 2,
+  "source_page": "https://www.pexels.com/photo/lounge-chair-in-front-of-coffee-table-7195554/",
+  "image_url": "https://images.pexels.com/photos/7195554/pexels-photo-7195554.jpeg?cs=srgb&dl=pexels-artbovich-7195554.jpg&fm=jpg",
+  "author": "Max Vakhtbovych",
+  "license": "Pexels License",
+  "license_url": "https://www.pexels.com/license/",
+  "art_direction": "living room lounge chair",
+  "width": 5520,
+  "height": 3685
+}

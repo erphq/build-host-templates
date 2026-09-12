@@ -1,0 +1,8 @@
+PLINTH / PRODUCT IMAGE CREDITS
+
+chair.webp, table.webp, lamp.webp: Three original generated product photographs created with the AI image generation on 2026-09-08. They depict fictional design concepts, not commercially available products. Exact prompts and generation method are recorded in provenance.json.
+hero.webp is an identical compatibility copy of chair.webp, not another image.
+
+Font: Geist, SIL Open Font License; license included. Georgia is a system font.
+
+Research reference: Integro by Mr. Cosmos, https://www.framer.com/marketplace/templates/integro/ and https://gleaming-imagine-750604.framer.app/ . Marketplace, live homepage, and a product page inspected read-only. No template source, branding, copy, or imagery is included. Plinth uses a different object-first composition, its own objects, and its own local shopping-bag behavior.
