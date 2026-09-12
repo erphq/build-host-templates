@@ -18,5 +18,26 @@
   },
   "entry": "site/index.html",
   "sharedAssets": "business",
-  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle."
+  "sourceStatus": "Original project requested; preview preserved from owner-supplied deployed bundle.",
+  "thumbnail": "thumbnail.webp",
+  "sharedFiles": [
+    "README.md",
+    "sample-perfume.jpg",
+    "sample-payment.svg",
+    "favicon.svg",
+    "fonts/geist-8ac0455e797f/geist-001175b1.woff2",
+    "fonts/geist-8ac0455e797f/geist-ff2310f5.woff2",
+    "fonts/geist-8ac0455e797f/geist-875ccdd4.woff2",
+    "fonts/geist-8ac0455e797f/geist-52306abf.woff2",
+    "fonts/geist-8ac0455e797f/geist-98bbbccb.woff2",
+    "fonts/geist-mono-00e989178794/geist-mono-44e03052.woff2",
+    "fonts/geist-mono-00e989178794/geist-mono-44745446.woff2",
+    "fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2",
+    "fonts/geist-mono-00e989178794/geist-mono-f6b33328.woff2",
+    "fonts/geist-mono-00e989178794/geist-mono-0638449e.woff2",
+    "fonts/geist-mono-00e989178794/geist-mono-971fb274.woff2",
+    "assets/index-C7o4psEm.js",
+    "assets/index-1r6jE2um.css",
+    "app-photos/27.jpg"
+  ]
 }

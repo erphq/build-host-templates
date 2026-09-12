@@ -27,5 +27,6 @@
     "referenceName": "Resend, discovered through Saaspo",
     "referenceUrl": "https://resend.com/"
   },
-  "pageCount": 4
+  "pageCount": 4,
+  "thumbnail": "thumbnail.webp"
 }

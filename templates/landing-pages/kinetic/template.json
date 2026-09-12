@@ -27,5 +27,6 @@
     "referenceName": "Gymbox",
     "referenceUrl": "https://gymbox.com/"
   },
-  "pageCount": 6
+  "pageCount": 6,
+  "thumbnail": "thumbnail.webp"
 }

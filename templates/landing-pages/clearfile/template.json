@@ -5,7 +5,7 @@
   "category": "saas",
   "industry": "Technology",
   "description": "A full product-led SaaS with cinematic opening, three-view interactive document workspace, sticky workflow narrative, and a working local review room.",
-  "tagline": "The work\u2019s ready. Bring everyone with it.",
+  "tagline": "The work’s ready. Bring everyone with it.",
   "style": "Quiet operational SaaS",
   "palette": [
     "#f3f5f2",
@@ -27,5 +27,6 @@
     "referenceName": "Papermark, discovered through Saaspo",
     "referenceUrl": "https://www.papermark.com/"
   },
-  "pageCount": 3
+  "pageCount": 3,
+  "thumbnail": "thumbnail.webp"
 }

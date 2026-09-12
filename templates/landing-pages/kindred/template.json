@@ -27,5 +27,6 @@
     "referenceName": "Help Scout",
     "referenceUrl": "https://www.helpscout.com/inbox/"
   },
-  "pageCount": 9
+  "pageCount": 9,
+  "thumbnail": "thumbnail.webp"
 }

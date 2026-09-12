@@ -46,8 +46,10 @@ def load_catalog():
             assert not file.is_symlink(), f'{file}: symlinks are not allowed'
             assert file.name not in ('.env', '.env.local', 'credentials.json'), f'{file}: private configuration is not allowed'
             assert not file.is_file() or file.stat().st_size < 25 * 1024 * 1024, f'{file}: asset exceeds 25 MiB'
+        assert item.get('thumbnail') == 'thumbnail.webp' and (path.parent / 'thumbnail.webp').is_file(), f'{path}: missing preview image'
         item['id'] = f"{item['collection']}/{item['slug']}"
         item['previewPath'] = f"{item['id']}/{entry}"
+        item['thumbnailPath'] = f"{item['id']}/thumbnail.webp"
         item['promptPath'] = f"{item['id']}/PROMPT.md"
         item['downloadPath'] = f"downloads/{item['collection']}-{item['slug']}.zip"
         templates.append(item)
@@ -78,9 +80,11 @@ def build(output):
             if item.get('sharedAssets'):
                 shared_source = ROOT / 'shared' / item['sharedAssets']
                 assert shared_source.is_dir(), 'Missing shared preview assets'
-                for file in sorted(shared_source.rglob('*')):
-                    if file.is_file():
-                        archive.write(file, Path('shared') / item['sharedAssets'] / file.relative_to(shared_source))
+                for relative in item.get('sharedFiles', []):
+                    assert not Path(relative).is_absolute() and '..' not in Path(relative).parts and '\\' not in relative, 'Unsafe shared asset path'
+                    file = shared_source / relative
+                    assert file.is_file() and not file.is_symlink(), 'Missing shared asset'
+                    archive.write(file, Path('shared') / item['sharedAssets'] / relative)
     shared = ROOT / 'shared'
     if shared.exists():
         shutil.copytree(shared, output / 'shared', dirs_exist_ok=True)

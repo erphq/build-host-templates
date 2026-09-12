@@ -28,5 +28,6 @@
     "referenceName": "Fillout",
     "referenceUrl": "https://www.fillout.com/"
   },
-  "pageCount": 6
+  "pageCount": 6,
+  "thumbnail": "thumbnail.webp"
 }

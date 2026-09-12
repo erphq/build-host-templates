@@ -27,5 +27,6 @@
     "referenceName": "Float",
     "referenceUrl": "https://www.float.com/"
   },
-  "pageCount": 5
+  "pageCount": 5,
+  "thumbnail": "thumbnail.webp"
 }

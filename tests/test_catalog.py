@@ -21,8 +21,9 @@ class CatalogContract(unittest.TestCase):
         self.template = module.ROOT / 'templates/landing-pages/example'
         (self.template / 'site').mkdir(parents=True)
         (self.template / 'site/index.html').write_text('<h1>Example</h1>')
+        (self.template / 'thumbnail.webp').write_bytes(b'preview-fixture')
         (self.template / 'PROMPT.md').write_text('Complete prompt. ' * 30)
-        self.item = {'slug': 'example', 'name': 'Example', 'description': 'A working example.', 'collection': 'landing-pages', 'category': 'saas', 'contributor': 'alice', 'previewKind': 'interactive', 'prompt': 'PROMPT.md', 'entry': 'site/index.html'}
+        self.item = {'slug': 'example', 'name': 'Example', 'description': 'A working example.', 'collection': 'landing-pages', 'category': 'saas', 'contributor': 'alice', 'previewKind': 'interactive', 'prompt': 'PROMPT.md', 'entry': 'site/index.html', 'thumbnail': 'thumbnail.webp'}
         self.write()
 
     def write(self):

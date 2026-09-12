@@ -21,11 +21,12 @@
     "layout": "independently scrollable information rail, tall portrait beside two landscape studies, dedicated project pages",
     "motion": "subtle image hover, focus reveal, reduced-motion support",
     "interaction": "filter three project categories, switch persistent theme, explore project pages, prepare and download a local inquiry brief",
-    "provenance": "Coded adaptation of Kima\u2019s split portfolio principle, with original code, identity, content, and three generated images. Four HTML pages; not a Framer-native remix."
+    "provenance": "Coded adaptation of Kima’s split portfolio principle, with original code, identity, content, and three generated images. Four HTML pages; not a Framer-native remix."
   },
   "credits": {
     "referenceName": "Kima by Thaer Swailem",
     "referenceUrl": "https://www.framer.com/marketplace/templates/kima/"
   },
-  "pageCount": 4
+  "pageCount": 4,
+  "thumbnail": "thumbnail.webp"
 }

@@ -27,5 +27,6 @@
     "referenceName": "PostHog, discovered through Saaspo",
     "referenceUrl": "https://posthog.com/product-analytics"
   },
-  "pageCount": 4
+  "pageCount": 4,
+  "thumbnail": "thumbnail.webp"
 }

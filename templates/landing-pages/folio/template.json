@@ -27,5 +27,6 @@
     "referenceName": "Bonsai Client Portal",
     "referenceUrl": "https://www.hellobonsai.com/client-portal"
   },
-  "pageCount": 5
+  "pageCount": 5,
+  "thumbnail": "thumbnail.webp"
 }
