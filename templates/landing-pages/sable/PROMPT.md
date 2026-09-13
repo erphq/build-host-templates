@@ -108,7 +108,7 @@ Long titles such as Counterform need explicit narrow-width attention. Do not all
 
 Contrast is important on the dark surfaces. Supporting text should be a light taupe with adequate contrast, not a faint gray chosen only for visual quietness. Placeholder text must also remain readable. The light material section needs its own dark hover color for links so a global gold hover treatment does not disappear against the pale background. Focus outlines should be visible on both dark and light surfaces.
 
-Use one main landmark, one h1 per page, logical h2/h3 nesting, a skip link, visible labels, native select controls, and meaningful button names. Decorative image affordances should not be announced twice. Image alt text identifies the original generated object and its material direction. Do not use unsupported ARIA attributes on generic decorative containers. All visual states remain understandable without relying only on color or motion.
+Use one main landmark, one h1 per page, logical h2/h3 nesting, a skip link, visible labels, styled select controls, and meaningful button names. Decorative image affordances should not be announced twice. Image alt text identifies the original generated object and its material direction. Do not use unsupported ARIA attributes on generic decorative containers. All visual states remain understandable without relying only on color or motion.
 
 ## Build contract and verification
 

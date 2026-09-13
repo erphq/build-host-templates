@@ -70,7 +70,7 @@ Practical questions explain that no real studio is operating, no reservation can
 
 The sample programme covers October 5 through October 11, 2026, with twelve sessions. The exact records are appended below. Sessions have a safe id, class id, studio id, date, start time and end time. Use padded twenty-four-hour times so sorting and overlap comparisons remain clear. The page labels the week as fictional and avoids availability badges such as Only two spots left or Booking now.
 
-Provide day controls for All week and each Monday-through-Sunday date. Add native selects for class style, studio and time of day. Time periods are Morning before 12:00, Midday from 12:00 to before 17:00, and Evening from 17:00 onward. Filters combine. Selecting a class through a query parameter should set its style filter; selecting a studio should set that studio filter. Reset filters returns to the complete week and clears all four dimensions.
+Provide day controls for All week and each Monday-through-Sunday date. Add styled selects for class style, studio and time of day. Time periods are Morning before 12:00, Midday from 12:00 to before 17:00, and Evening from 17:00 onward. Filters combine. Selecting a class through a query parameter should set its style filter; selecting a studio should set that studio filter. Reset filters returns to the complete week and clears all four dimensions.
 
 Render matching sessions grouped by date and ordered chronologically. Each row shows a prominent start time, duration and end time, class name linked to detail, coloured style label, studio name, area and Add to my plan. The live count reports sample sessions matching the current view. If nothing matches, show a useful empty state with a direct action to restore the whole week.
 

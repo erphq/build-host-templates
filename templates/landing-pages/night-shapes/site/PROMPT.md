@@ -22,7 +22,7 @@ Use the parent project's standalone native HTML/CSS/JavaScript architecture. The
 
 Use one sharp-edged visual system. The light theme has near-white green-tinted paper, dark ink, quiet green-gray borders, and acid-lime action surfaces. The dark theme has charcoal-green paper, light text, and the same lime action color. Maintain an accessible darker accent-text variant in light mode. Keep one consistent theme through every section; photographs retain their original stage colors.
 
-The exact implemented tokens are in the source stylesheet. Primary controls must have dark text on the lime background, not white text with weak contrast. Secondary copy and native select labels must remain readable in both themes. Avoid decorative gradients, glowing borders, fake scarcity counters, and random colored status dots.
+The exact implemented tokens are in the source stylesheet. Primary controls must have dark text on the lime background, not white text with weak contrast. Secondary copy and styled select labels must remain readable in both themes. Avoid decorative gradients, glowing borders, fake scarcity counters, and random colored status dots.
 
 ## Header and poster opening
 

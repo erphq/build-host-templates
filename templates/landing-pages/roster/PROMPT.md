@@ -78,7 +78,7 @@ At tablet and phone widths, replace the five-column schedule with a day selector
 
 ## Allocation editing and local persistence
 
-An allocation contains a safe identifier, person id, project id, weekday date, integer duration and optional planning note. The modal form contains native selects for person and project, a date input, a number input constrained to one through twelve whole hours, and a note textarea limited to three hundred characters. It is the same form for adding, editing, reassigning and rescheduling. The heading and remove action make the mode clear.
+An allocation contains a safe identifier, person id, project id, weekday date, integer duration and optional planning note. The modal form contains styled selects for person and project, a date input, a number input constrained to one through twelve whole hours, and a note textarea limited to three hundred characters. It is the same form for adding, editing, reassigning and rescheduling. The heading and remove action make the mode clear.
 
 Before saving, preview the resulting daily load. Exclude the currently edited allocation from existing booked hours before adding its new duration. This prevents an edit from double-counting itself. The preview states the person's name, planned hours, daily capacity and either remaining room or daily excess. Overbooking is allowed as a visible planning condition, not rejected as an invalid record. Invalid dates, weekend dates, unknown people, unknown projects, fractional hours, zero hours and more than twelve hours are rejected.
 
@@ -106,7 +106,7 @@ Explain the useful test loop: find the overloaded Monday, open the extra Dayligh
 
 ## Accessibility, motion and delivery requirements
 
-Use semantic navigation, main landmarks, one h1 per route, coherent heading levels, labelled form fields, native selects, buttons and dialogs. The mobile day selector uses aria-pressed, time-off controls expose pressed state, and overbooking always has text. Provide strong visible focus rings. Never hide the only accessible name behind an icon. Keep body text at sixteen to eighteen pixels and controls and secondary labels at fourteen or larger.
+Use semantic navigation, main landmarks, one h1 per route, coherent heading levels, labelled form fields, styled selects, buttons and dialogs. The mobile day selector uses aria-pressed, time-off controls expose pressed state, and overbooking always has text. Provide strong visible focus rings. Never hide the only accessible name behind an icon. Keep body text at sixteen to eighteen pixels and controls and secondary labels at fourteen or larger.
 
 Motion is restrained: a schedule entrance in the hero, a slight lift on linked sample blocks, a responsive perspective switch and a short dialog movement. Respect reduced-motion preferences. No autoplay video, perpetual animation, fake loading delay or artificial typing is necessary. The working planner should respond immediately to edits, and animation must never obscure a capacity warning or make a control harder to use.
 

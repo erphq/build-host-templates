@@ -12,6 +12,8 @@
 
 A preview may be a working `interactive` demo or a `concept`; label it accurately. Do not present a screenshot or a mock control as a working integration. Business prompts should describe the real data storage, validation, and integrations required.
 
+Dropdowns must use designed menus that match the template: readable options, a clear selected checkmark, hover/focus/disabled states, keyboard arrows and typeahead, Escape/outside dismissal, and viewport-bounded placement. Do not expose OS-native select popups. The catalog builder bundles `shared/controls/select.js` into every preview and downloadable site, including the shared business previews. This progressively enhances ordinary single selects while retaining their values, validation, reset behavior, and input/change events. Existing custom dropdowns remain owned by their template. Run the built `dist` version when verifying the published behavior.
+
 ## Propose a category
 
 Open a **Propose a category** issue with its parent collection, intended users, and example templates. A maintainer approves the category by merging its entry in `categories.json`. Contributors can then submit templates using that category ID. Categories are data, so a new category does not require a build.host UI change.

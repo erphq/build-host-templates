@@ -46,7 +46,7 @@ The sample unit price is $249. Options are Graphite or Silver. Quantity must be 
 Empty state: explain what the user can choose without fabricating a result. Editing state: allow native controls and preserve related values. Invalid state: keep the form values, show a specific recoverable validation message, and do not alter the cart or saved list. Success state: expose a readable result in the live region and clearly distinguish a local demonstration from a real external transaction. Repeated submit must be safe: calculators replace their result; cart additions are intentional new items; saved-list toggles do not create duplicates.
 
 ## Motion choreography
-Listening mode is a native selector; preserve its selected option in the bag. Product imagery enters smoothly and cart feedback is immediate. Never play audio automatically.
+Listening mode is a styled selector; preserve its selected option in the bag. Product imagery enters smoothly and cart feedback is immediate. Never play audio automatically.
 Use the entrance easing cubic-bezier(.16,1,.3,1) for title and section transitions. Hero headline duration 850ms; CTA duration 900ms with 150ms offset. Use a 750ms section entrance with 20–22px translation. Hover image scale may reach 1.035 over 600ms. Button hover translates upward by no more than 3px over 250ms. Avoid animating width, height, padding, or top/left. The complete page remains readable if IntersectionObserver is absent or animation is disabled. Prefer native CSS scroll timelines for optional image stories; do not hijack scrolling.
 
 ## Responsive geometry and layout invariants

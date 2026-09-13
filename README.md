@@ -35,6 +35,8 @@ python3 -m http.server 4174 --directory dist
 
 Open the template's `site/index.html` path from the generated `catalog.json`. ZIP downloads include the complete prompt, source, and assets.
 
+The build bundles the shared styled dropdown runtime into preview pages and ZIP downloads. To check form behavior in a real browser, install Playwright in your local tooling and run `node tests/select-browser.cjs` (or set `PLAYWRIGHT_MODULE` to your existing Playwright installation). This checks keyboard navigation, disabled choices, form values/events, reset/validation, dynamic options, and viewport bounds. `python3 -m unittest discover -s tests` verifies that every packaged page includes the runtime and its local references resolve.
+
 ## Publication
 
 Pull requests run validation and produce a downloadable preview artifact. Changes merged into `main` publish the static catalog and assets as an immutable GitHub Release. build.host consumes this catalog, so template updates do not require a platform-code release. Previews run on a separate origin from the authenticated platform.

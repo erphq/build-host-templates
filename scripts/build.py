@@ -1,6 +1,7 @@
 """Validate the reviewed catalog and build a static, independently published collection."""
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -10,6 +11,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 COLLECTIONS = ('business-apps', 'landing-pages')
 SLUG = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
+CONTROL_SOURCE = ROOT / 'shared/controls/select.js'
+
+
+def prepare_controls(site):
+    """Bundle the shared control in every standalone preview and source download."""
+    pages = list(site.rglob('*.html'))
+    if not pages:
+        return
+    runtime = site / '_build-host/select.js'
+    runtime.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(CONTROL_SOURCE, runtime)
+    for page in pages:
+        markup = page.read_text()
+        script_path = Path(os.path.relpath(runtime, page.parent)).as_posix()
+        script = f'<script src="{script_path}" defer data-build-host-controls></script>'
+        if 'data-build-host-controls' not in markup:
+            markup = re.sub(r'</head>', lambda _: script + '</head>', markup, count=1, flags=re.I) if re.search(r'</head>', markup, re.I) else script + markup
+            page.write_text(markup)
 
 
 def read_json(path):
@@ -65,18 +84,19 @@ def build(output):
     (output / 'downloads').mkdir(exist_ok=True)
     revision = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=ROOT, capture_output=True, text=True)
     catalog['revision'] = revision.stdout.strip() or 'local'
+    shared = ROOT / 'shared'
+    if shared.exists():
+        shutil.copytree(shared, output / 'shared', dirs_exist_ok=True)
+        prepare_controls(output / 'shared/business')
     for item in catalog['templates']:
         source = ROOT / 'templates' / item['id']
-        shutil.copytree(source, output / item['id'], dirs_exist_ok=True)
-        # Preview copies are not search landing pages. Downloadable source stays unchanged.
-        for page in (output / item['id'] / 'site').rglob('*.html'):
-            markup = page.read_text()
-            markup = re.sub(r'<head([^>]*)>', r'<head\1><meta name="robots" content="noindex, nofollow">', markup, count=1, flags=re.I)
-            page.write_text(markup)
+        destination = output / item['id']
+        shutil.copytree(source, destination, dirs_exist_ok=True)
+        prepare_controls(destination / 'site')
         with zipfile.ZipFile(output / item['downloadPath'], 'w', zipfile.ZIP_DEFLATED) as archive:
-            for file in sorted(source.rglob('*')):
+            for file in sorted(destination.rglob('*')):
                 if file.is_file():
-                    archive.write(file, Path(item['id']) / file.relative_to(source) if item.get('sharedAssets') else file.relative_to(source))
+                    archive.write(file, Path(item['id']) / file.relative_to(destination) if item.get('sharedAssets') else file.relative_to(destination))
             if item.get('sharedAssets'):
                 shared_source = ROOT / 'shared' / item['sharedAssets']
                 assert shared_source.is_dir(), 'Missing shared preview assets'
@@ -84,10 +104,13 @@ def build(output):
                     assert not Path(relative).is_absolute() and '..' not in Path(relative).parts and '\\' not in relative, 'Unsafe shared asset path'
                     file = shared_source / relative
                     assert file.is_file() and not file.is_symlink(), 'Missing shared asset'
-                    archive.write(file, Path('shared') / item['sharedAssets'] / relative)
-    shared = ROOT / 'shared'
-    if shared.exists():
-        shutil.copytree(shared, output / 'shared', dirs_exist_ok=True)
+                    archive.write(output / 'shared' / item['sharedAssets'] / relative, Path('shared') / item['sharedAssets'] / relative)
+                runtime = Path('shared') / item['sharedAssets'] / '_build-host/select.js'
+                archive.write(output / runtime, runtime)
+        # Preview copies are not search landing pages; downloaded sites own their SEO.
+        for page in (destination / 'site').rglob('*.html'):
+            markup = re.sub(r'<head([^>]*)>', r'<head\1><meta name="robots" content="noindex, nofollow">', page.read_text(), count=1, flags=re.I)
+            page.write_text(markup)
     # Each category can be downloaded independently, along with a prompts-only archive.
     for collection in COLLECTIONS:
         selected = [t for t in catalog['templates'] if t['collection'] == collection]

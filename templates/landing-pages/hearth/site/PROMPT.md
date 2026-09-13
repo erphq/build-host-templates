@@ -54,7 +54,7 @@ Continue with a rust-brown feature section about Foundry Loft. Pair its image wi
 
 ## Collection filters
 
-The collection page has its own large heading, explanation, and a properly labeled results section. Provide three native selects: home type, minimum bedrooms, and maximum fictional example price. Type options are All types, House, and Loft. Bedroom options are Any number, two or more, three or more, and four or more. Price options are up to £1,500,000, £1,000,000, and £700,000. Use inclusive comparisons so a home exactly at the selected threshold remains visible.
+The collection page has its own large heading, explanation, and a properly labeled results section. Provide three styled selects: home type, minimum bedrooms, and maximum fictional example price. Type options are All types, House, and Loft. Bedroom options are Any number, two or more, three or more, and four or more. Price options are up to £1,500,000, £1,000,000, and £700,000. Use inclusive comparisons so a home exactly at the selected threshold remains visible.
 
 All three filters combine with AND semantics. A house filter should include both Pine Reach and Olive Court. Three or more bedrooms should exclude Foundry Loft. A maximum of £700,000 should show only Foundry Loft when the other filters are unrestricted. A contradictory combination should produce a clear empty state rather than silently ignoring one of the controls. Reset restores every filter to its broadest value and shows all three homes.
 
@@ -108,7 +108,7 @@ At around one thousand pixels, reduce spacing and card typography slightly while
 
 All actual control text and navigation remain at least fourteen pixels, secondary labels at least twelve, and editorial body copy around sixteen to eighteen. Images use explicit intrinsic dimensions and responsive source sets to reduce layout movement and unnecessary transfer size. Use object-fit only where a deliberate crop is intended. The full-image dialog uses contain so the whole generated composition can be inspected.
 
-Include a skip link, one main landmark, logical headings, visible focus styles, native selects, semantic tables or definition lists, and pressed states for save controls. The full-image dialog has an accessible title, explicit close control, native Escape behavior, and focus restoration to its opener. Do not use unsupported ARIA attributes on decorative containers. Concept diagrams can use a genuine image role with a complete descriptive label because they represent a single visual relationship map.
+Include a skip link, one main landmark, logical headings, visible focus styles, styled selects, semantic tables or definition lists, and pressed states for save controls. The full-image dialog has an accessible title, explicit close control, native Escape behavior, and focus restoration to its opener. Do not use unsupported ARIA attributes on decorative containers. Concept diagrams can use a genuine image role with a complete descriptive label because they represent a single visual relationship map.
 
 Motion is restrained: images scale slightly on hover, and no content moves continuously. Respect reduced-motion preferences by disabling transitions and smooth scrolling. The static state must retain every piece of information and every working action. Do not hide document overflow globally to mask a layout defect; measure narrow pages and fix the element that is too wide.
 

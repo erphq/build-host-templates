@@ -59,6 +59,11 @@ class DownloadLinksTest(unittest.TestCase):
                     with zipfile.ZipFile(output / template['downloadPath']) as archive:
                         self.assertIsNone(archive.testzip())
                         self.assertEqual(missing_references(archive), [])
+                        pages = [name for name in archive.namelist() if name.endswith('.html')]
+                        self.assertTrue(pages)
+                        for page in pages:
+                            self.assertIn('data-build-host-controls', archive.read(page).decode('utf8'), page)
+                        self.assertTrue(any(name.endswith('/_build-host/select.js') for name in archive.namelist()))
 
     def test_detects_a_library_link_escaping_the_download(self):
         with tempfile.TemporaryDirectory() as temporary:

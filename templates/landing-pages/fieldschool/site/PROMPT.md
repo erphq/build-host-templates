@@ -66,7 +66,7 @@ The challenge is to find a useful reading rhythm around18–22px and compare fam
 
 ## Layout exercise
 
-Use a native selector for balanced columns or a two-to-one proportion. A range controls the gap from8 to48px in4px steps. A checkbox enables a narrow stacked preview. The specimen contains original composition artwork, a short label, a headline and supporting text. The wider image and narrower explanation should create a visible difference between the two proportion choices. Do not merely change a badge while keeping the layout fixed.
+Use a styled selector for balanced columns or a two-to-one proportion. A range controls the gap from8 to48px in4px steps. A checkbox enables a narrow stacked preview. The specimen contains original composition artwork, a short label, a headline and supporting text. The wider image and narrower explanation should create a visible difference between the two proportion choices. Do not merely change a badge while keeping the layout fixed.
 
 The narrow preview limits the specimen to360px and stacks its contents. Mobile styles also stack it automatically, regardless of the desktop proportion selection. The output explains the current composition and gap in plain language. Keep the checkbox meaningful on desktop and harmless on mobile. Saving stores proportion, gap, narrow-preview state and reflection. The next destination after the final lesson is the notebook rather than a nonexistent fourth course.
 

@@ -48,7 +48,7 @@ Applying local recovery changes the final check to Operational and restores its 
 
 ## Shared scenario selection and saved response records
 
-Operational pages have a scenario bar above their main content. It includes a labeled native selector, the fixed synthetic date context, and a visible local-only disclosure. Recognized scenario query parameters take precedence; otherwise use a valid saved choice, then default to API slowdown. Invalid values fall back safely. Store the choice under beacon-scenario-v1. A change updates the current page and persists for navigation when storage is available.
+Operational pages have a scenario bar above their main content. It includes a labeled styled selector with a custom option menu, the fixed synthetic date context, and a visible local-only disclosure. Recognized scenario query parameters take precedence; otherwise use a valid saved choice, then default to API slowdown. Invalid values fall back safely. Store the choice under beacon-scenario-v1. A change updates the current page and persists for navigation when storage is available.
 
 Use beacon-responses-v1 for a map keyed by known incident IDs. Every incident response record has acknowledged and resolved booleans, a recognized response stage, and a bounded updates array. A local update has text, timestamp, visibility boolean, and kind. Recover only validated records; malformed data returns to the empty response structure. The two incidents keep separate local histories. Switching scenarios never combines their notes. Routine afternoon has no response record and must show a useful no-incident state.
 
