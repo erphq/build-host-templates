@@ -1,0 +1,22 @@
+{
+  "slug": "nola-image",
+  "name": "Nola Vale",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Portfolio",
+  "description": "Nola Vale \u2014 original quiet photographic studies of coast, interiors and still life.",
+  "tagline": "",
+  "style": "Original portfolios study",
+  "palette": [],
+  "order": -70,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 6,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  }
+}

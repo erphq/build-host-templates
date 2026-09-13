@@ -1,0 +1,22 @@
+{
+  "slug": "ivo-object",
+  "name": "Ivo Marr",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Portfolio",
+  "description": "Original object concepts by fictional industrial designer Ivo Marr. A compact index of lighting, furniture and tableware.",
+  "tagline": "",
+  "style": "Original portfolios study",
+  "palette": [],
+  "order": -75,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 5,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  }
+}

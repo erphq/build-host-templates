@@ -1,0 +1,11 @@
+VESPER — ORIGINAL FICTIONAL HOTEL CONCEPT
+
+Nook, Corner, Afterhours Suite and Common Table: four original AI-generated architectural interior concepts, created for this demonstration in September 2026. Optimized WebP derivatives are included locally. Images are illustrative and do not document a real hotel, room, restaurant or verified physical configuration. Detail crops on room pages are clearly labeled as crops of the same generated image.
+
+The Marlow Quarter diagram is original HTML/CSS artwork, not a geographic navigation map.
+
+Geist variable font: Vercel, licensed under the SIL Open Font License 1.1. See GEIST-LICENSE.txt. Georgia is requested as a local system typeface and is not redistributed.
+
+The Hoxton was examined as a structural hospitality reference. Its name, logos, photography, copy, room inventory and booking service are not reused in this demo.
+
+All brand copy, room descriptions, fictional prices, place names, menu ideas and interaction code were created for Vesper. No real hotel reservation, payment or external message is made by this website.

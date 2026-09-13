@@ -1,0 +1,26 @@
+{
+  "slug": "parallax",
+  "name": "PARALLAX",
+  "collection": "landing-pages",
+  "category": "agencies",
+  "industry": "Creative studio",
+  "description": "An immersive black-hole journey with working WebGL approach, cinematic typography, interactive perspectives, and a local project brief.",
+  "tagline": "Beyond the known.",
+  "style": "Cinematic celestial exploration",
+  "palette": [
+    "#070b11",
+    "#eeeae1",
+    "#d8a775"
+  ],
+  "order": -97,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 1,
+  "notes": {
+    "provenance": "Original completed website, original copy and generated imagery. Source and asset licenses are included. Live demonstration: https://parallax-studio.build.host",
+    "interaction": "An immersive black-hole journey with working WebGL approach, cinematic typography, interactive perspectives, and a local project brief."
+  }
+}

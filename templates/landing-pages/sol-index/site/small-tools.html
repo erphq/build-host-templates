@@ -1,0 +1,473 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>On keeping a tool small — Sol Index</title><meta name="description" content="A minimal independent developer portfolio with a complete local text utility and original development notes."><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2');
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #181b1b;
+  color: #e8ebe6;
+  font:
+    16px/1.65 Geist,
+    Arial,
+    sans-serif;
+}
+.page {
+  max-width: 980px;
+  padding: 0 40px;
+  margin: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 42px 0;
+  font-size: 13px;
+}
+.name {
+  font-size: 17px;
+  font-weight: 500;
+}
+nav {
+  display: flex;
+  gap: 25px;
+}
+nav [aria-current] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.intro {
+  padding: 85px 0 75px;
+  max-width: 650px;
+  margin-left: 11%;
+}
+h1 {
+  font-size: clamp(28px, 3vw, 39px);
+  font-weight: 450;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+  margin: 0 0 25px;
+}
+.intro p {
+  font-size: 16px;
+  color: #b1b9b2;
+  line-height: 1.7;
+}
+.index-section {
+  margin: 0 0 55px;
+}
+.index-section h2 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #a7b1aa;
+  margin: 0 0 25px;
+}
+.project-row {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 25px;
+  align-items: baseline;
+  font-size: 15px;
+}
+.project-row p {
+  margin: 0;
+  color: #b1b9b2;
+}
+.project-row > span:last-child {
+  font-size: 12px;
+}
+.note-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 15px;
+}
+.note-row > span:last-child {
+  font-size: 12px;
+  color: #a7b1aa;
+}
+.short-about {
+  max-width: 470px;
+  margin: 75px 0 0 auto;
+  color: #b1b9b2;
+  font-size: 15px;
+}
+.short-about a {
+  font-size: 13px;
+  color: #e8ebe6;
+}
+.page-head {
+  padding: 55px 0 35px;
+}
+.page-head > a {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+.page-head h1 {
+  font-size: 44px;
+}
+.page-head p {
+  font-size: 19px;
+  color: #b1b9b2;
+}
+.text-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+label {
+  font-size: 13px;
+  display: grid;
+  gap: 10px;
+}
+textarea {
+  background: #202525;
+  color: #e8ebe6;
+  border: 1px solid #4c5851;
+  padding: 15px;
+  resize: vertical;
+  font:
+    15px/1.65 Geist,
+    Arial,
+    sans-serif;
+  width: 100%;
+  min-width: 0;
+  border-radius: 0;
+}
+textarea::placeholder {
+  color: #98a49b;
+}
+fieldset {
+  margin: 30px 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+}
+legend {
+  font-size: 12px;
+  color: #a7b1aa;
+  margin-bottom: 15px;
+}
+fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+input {
+  accent-color: #afc7ad;
+  width: 16px;
+  height: 16px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+button {
+  font:
+    13px Geist,
+    Arial,
+    sans-serif;
+  color: #e8ebe6;
+  border: 1px solid #68776a;
+  background: transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 0;
+}
+button:hover {
+  background: #303a31;
+}
+#process {
+  background: #b5c7ae;
+  color: #172317;
+  border-color: #b5c7ae;
+}
+#summary {
+  font-size: 13px;
+  color: #c7d4c5;
+  margin-top: 24px;
+}
+.local {
+  font-size: 12px;
+  color: #a7b1aa;
+}
+.explanation {
+  max-width: 650px;
+  margin-top: 65px;
+}
+.explanation h2 {
+  font-size: 20px;
+  font-weight: 450;
+}
+.explanation p {
+  color: #b1b9b2;
+}
+.explanation a {
+  color: #e8ebe6;
+  font-size: 14px;
+}
+.note {
+  max-width: 650px;
+  margin: 35px auto;
+}
+.note > a:first-child {
+  font-size: 13px;
+}
+.date {
+  font-size: 12px;
+  color: #a7b1aa;
+  margin-top: 50px;
+}
+.note h1 {
+  font-size: 45px;
+}
+.note .deck {
+  font-size: 22px;
+  color: #c7d4c5;
+  margin-bottom: 45px;
+}
+.note > p:not(.date):not(.deck) {
+  font-size: 18px;
+  line-height: 1.85;
+  color: #c3cbc4;
+  margin-bottom: 25px;
+}
+.end-link {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 30px;
+}
+.about {
+  max-width: 650px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #c3cbc4;
+}
+.about h2 {
+  font-size: 20px;
+  font-weight: 450;
+  color: #e8ebe6;
+  margin-top: 40px;
+}
+.about a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+footer {
+  display: flex;
+  gap: 25px;
+  font-size: 12px;
+  color: #a7b1aa;
+  padding: 85px 0 30px;
+}
+footer span {
+  margin-right: auto;
+}
+:focus-visible {
+  outline: 2px solid #c3dcbf;
+  outline-offset: 5px;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  background: #e8ebe6;
+  color: #181b1b;
+  padding: 12px;
+  z-index: 10;
+}
+.skip:focus {
+  top: 10px;
+}
+@media (max-width: 640px) {
+  .page {
+    padding: 0 23px;
+  }
+  header {
+    padding: 28px 0;
+    align-items: start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .intro {
+    margin: 0;
+    padding: 45px 0 50px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .intro p {
+    font-size: 15px;
+  }
+  .project-row {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+  .project-row p {
+    grid-row: 2;
+    grid-column: 1/3;
+    font-size: 14px;
+  }
+  .note-row {
+    display: block;
+  }
+  .note-row span {
+    display: block;
+  }
+  .note-row > span:last-child {
+    margin-top: 8px;
+  }
+  .short-about {
+    margin-top: 55px;
+  }
+  .page-head {
+    padding-top: 30px;
+  }
+  .page-head h1 {
+    font-size: 38px;
+  }
+  .text-pair {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  fieldset {
+    display: grid;
+    gap: 13px;
+  }
+  .actions {
+    gap: 8px;
+  }
+  button {
+    padding: 12px;
+  }
+  .note h1 {
+    font-size: 40px;
+  }
+  .note .deck {
+    font-size: 20px;
+  }
+  .note > p:not(.date):not(.deck) {
+    font-size: 17px;
+  }
+  .about {
+    font-size: 17px;
+  }
+  footer {
+    padding-top: 65px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  button {
+    transition: background 0.15s;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><div class="page"><header><a href="index.html" class="name">Sol Arden</a><nav aria-label="Main"><a href="linework.html" >Linework</a><a href="small-tools.html" aria-current="page">Notes</a><a href="about.html" >About</a></nav></header><main id="main"><article class="note"><a href="index.html">← Index</a><p class="date">Development notes · September 2026</p><h1>On keeping<br>a tool small.</h1><p class="deck">A few decisions behind Linework.</p><p>A small tool has an advantage that is easy to lose. It can make its whole purpose visible. A person arrives with a particular piece of work, changes one or two things and leaves with a result they understand. There is no need to learn a workspace, invite a team or choose a plan. The tool succeeds by making the task smaller than it was before.</p><p>I built Linework after repeatedly cleaning short lists by hand. The lists were not important enough to justify a large application, but they were long enough to make the repetition annoying. Some lines had extra spaces. Some appeared twice. Sometimes the order mattered and sometimes alphabetical order was more useful. The first prototype was a textarea and a button. That was enough to expose the actual decisions.</p><p>The central decision was to make every transformation explicit. Trimming whitespace is different from removing blank lines. Removing duplicates can be case-sensitive or case-insensitive. Sorting changes order and should not happen merely because it looks tidier. A tool that performs all of these actions automatically can destroy information while appearing helpful. I wanted the output to be predictable from the controls.</p><p>The implementation reads the input as lines and applies the selected operations in a fixed order. Trimming happens first, followed by blank-line removal, duplicate removal and optional sorting. That order is visible in the explanation. If duplicates are removed without trimming, two lines with different surrounding spaces remain different. If case is ignored for duplicate detection, the first original spelling is retained. Those details are small, but they are the behavior.</p><p>I deliberately kept the input and output separate. The source text remains available after processing, so a person can compare the result or change the options without reconstructing what they started with. Copying uses the visible output. Downloading uses the same output. There is no second transformation hidden inside the export path. The tool should not surprise someone at the moment they try to leave with their work.</p><p>Empty input is a valid state. It does not need an error banner or a red border. The tool can say that there are no lines to process and show an empty output. A clipboard failure is different: the person has requested an action that the browser did not permit. In that case, the interface explains the limitation and leaves the output selectable. The distinction keeps feedback proportional to what happened.</p><p>I also chose not to store the text automatically. A list can contain private material even when the tool itself seems harmless. The browser does all the processing locally, and the page does not send the input anywhere. Closing the page clears the working text. That behavior is explained beside the tool, where it matters. It is a deliberate limitation rather than an invitation to add an account system.</p><p>The result is not a revolutionary product. It is a useful object with a small surface area. I can explain its behavior in a few paragraphs, test its edge cases and maintain it without a large framework. That is the kind of development I want this portfolio to show: enough care to make the ordinary action dependable, and enough restraint to stop when the task is complete.</p><a class="end-link" href="linework.html">Try Linework ↗</a></article></main><footer><span>Sol Arden</span><a href="assets/CREDITS.txt">Credits</a><a href="https://build.host/landing-pages">All designs ↗</a></footer></div><script>(() => {
+  const input = document.getElementById('input');
+  if (!input) return;
+  const output = document.getElementById('output'),
+    status = document.getElementById('summary');
+  function process() {
+    let lines = input.value
+      ? input.value.replace(/\r\n?/g, '\n').split('\n')
+      : [];
+    const original = lines.length;
+    if (document.getElementById('trim').checked)
+      lines = lines.map((x) => x.trim());
+    if (document.getElementById('blank').checked)
+      lines = lines.filter((x) => x.trim() !== '');
+    if (document.getElementById('unique').checked) {
+      const seen = new Set(),
+        ignore = document.getElementById('ignore').checked;
+      lines = lines.filter((line) => {
+        const key = ignore ? line.toLowerCase() : line;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    }
+    if (document.getElementById('sort').checked)
+      lines.sort((a, b) =>
+        a.localeCompare(b, undefined, { sensitivity: 'base' }),
+      );
+    output.value = lines.join('\n');
+    status.textContent =
+      original +
+      ' input lines → ' +
+      lines.length +
+      ' output lines. Original text preserved.';
+  }
+  document.getElementById('process').addEventListener('click', process);
+  document.getElementById('example').addEventListener('click', () => {
+    input.value = '  Willow\nBirch\nWillow\n\ncedar\nCedar';
+    process();
+  });
+  document.getElementById('clear').addEventListener('click', () => {
+    input.value = '';
+    output.value = '';
+    status.textContent = 'Input and output cleared.';
+    input.focus();
+  });
+  document.getElementById('copy').addEventListener('click', async () => {
+    if (!output.value) {
+      status.textContent = 'Process a non-empty list before copying.';
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(output.value);
+      status.textContent = 'Output copied to the clipboard.';
+    } catch {
+      status.textContent =
+        'Clipboard unavailable. Select the output and copy it manually.';
+      output.focus();
+      output.select();
+    }
+  });
+  document.getElementById('download').addEventListener('click', () => {
+    if (!output.value) {
+      status.textContent = 'Process a non-empty list before saving.';
+      return;
+    }
+    const url = URL.createObjectURL(
+      new Blob([output.value + '\n'], { type: 'text/plain;charset=utf-8' }),
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'linework.txt';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+    status.textContent = 'Output text prepared for download.';
+  });
+  input.addEventListener(
+    'input',
+    () =>
+      (status.textContent =
+        'Input changed. Choose Process list to update the output.'),
+  );
+  document
+    .querySelector('fieldset')
+    .addEventListener(
+      'change',
+      () =>
+        (status.textContent =
+          'Options changed. Choose Process list to update the output.'),
+    );
+})();
+</script></body></html>

@@ -88,5 +88,10 @@
     "id": "travel-hospitality",
     "name": "Travel & hospitality",
     "collection": "landing-pages"
+  },
+  {
+    "id": "automotive",
+    "name": "Automotive",
+    "collection": "landing-pages"
   }
 ]

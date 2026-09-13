@@ -1,0 +1,32 @@
+{
+  "slug": "oren-type",
+  "name": "Oren Type",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Portfolio",
+  "description": "Oren Type, an original fictional archive of posters, books and graphic identities.",
+  "tagline": "",
+  "style": "Original portfolios study",
+  "palette": [
+    "#f7f7f3",
+    "#171916",
+    "#2746bb",
+    "#b9bcb5",
+    "#60675a"
+  ],
+  "order": -68,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 6,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  },
+  "credits": {
+    "referenceName": "Original design research",
+    "referenceUrl": "https://www.jetset.nl/"
+  }
+}

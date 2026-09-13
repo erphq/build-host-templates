@@ -1,0 +1,26 @@
+{
+  "slug": "thalassa",
+  "name": "THALASSA",
+  "collection": "landing-pages",
+  "category": "travel-hospitality",
+  "industry": "Travel",
+  "description": "An illustrated Mediterranean escape with three mood-based itineraries and a personal day-plan download.",
+  "tagline": "A journey worth telling.",
+  "style": "Ivory and cobalt illustrated travel",
+  "palette": [
+    "#f5eedb",
+    "#173d81",
+    "#c56629"
+  ],
+  "order": -98,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 1,
+  "notes": {
+    "provenance": "Original completed website, original copy and generated imagery. Source and asset licenses are included. Live demonstration: https://thalassa-journeys.build.host",
+    "interaction": "An illustrated Mediterranean escape with three mood-based itineraries and a personal day-plan download."
+  }
+}

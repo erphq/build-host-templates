@@ -1,0 +1,5 @@
+Seek is an original fictional search-product concept. The identity, document dataset, interface graphics, and hero.webp illustration are original work for this project.
+Geist font: Vercel, SIL Open Font License; see GEIST-LICENSE.txt.
+Space Grotesk font: Florian Karsten, SIL Open Font License; see SPACE-GROTESK-LICENSE.txt.
+Lucide icons: ISC license; see LUCIDE-LICENSE.txt.
+Reference study: Meilisearch homepage and faceted-search page. No reference brand assets, dataset, or code are included.

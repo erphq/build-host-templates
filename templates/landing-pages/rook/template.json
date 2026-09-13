@@ -1,0 +1,26 @@
+{
+  "slug": "rook",
+  "name": "ROOK",
+  "collection": "landing-pages",
+  "category": "agencies",
+  "industry": "Creative studio",
+  "description": "A vivid red studio with sculptural artwork, a scroll-controlled project stack, case-study dialogs, and a downloadable brief.",
+  "tagline": "Good trouble, by design.",
+  "style": "Red sculptural poster studio",
+  "palette": [
+    "#df251d",
+    "#fff5e5",
+    "#241919"
+  ],
+  "order": -96,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 1,
+  "notes": {
+    "provenance": "Original completed website, original copy and generated imagery. Source and asset licenses are included. Live demonstration: https://rook-red-studio.build.host",
+    "interaction": "A vivid red studio with sculptural artwork, a scroll-controlled project stack, case-study dialogs, and a downloadable brief."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "latch",
+  "name": "Latch",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "Developer tools",
+  "description": "An original local feature-flag bench. Edit simulated booleans, targeting conditions and deterministic rollouts, then inspect the exact result.",
+  "tagline": "",
+  "style": "Original saas study",
+  "palette": [],
+  "order": -74,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 5,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  },
+  "credits": {
+    "referenceName": "Original design research",
+    "referenceUrl": "https://www.getunleash.io/"
+  }
+}

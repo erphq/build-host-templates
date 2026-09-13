@@ -1,0 +1,1 @@
+(()=>{const toggle=document.querySelector('[data-reading]');toggle?.addEventListener('click',()=>{const body=document.querySelector('.article-body');const compact=body.classList.toggle('compact');toggle.setAttribute('aria-pressed',String(compact));toggle.textContent=compact?'Use comfortable reading size':'Use compact reading size';});})();

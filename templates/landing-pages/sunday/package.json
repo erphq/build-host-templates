@@ -1,0 +1,14 @@
+{
+  "name": "sunday-motor-atelier",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild source/showroom.js --bundle --minify --format=esm --outfile=site/showroom.js"
+  },
+  "dependencies": {
+    "three": "0.186.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

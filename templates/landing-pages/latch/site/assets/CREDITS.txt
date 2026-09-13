@@ -1,0 +1,8 @@
+LATCH — original fictional feature-flag simulation.
+Design, copy, circuit artwork and demonstration code are original ProtoSites work.
+Product research references:
+https://www.getunleash.io/
+https://docs.getunleash.io/concepts/activation-strategies
+These references informed the idea of inspectable feature control. No vendor identity, customer claims, assets or SDK code are included. Latch uses a deliberately smaller, incompatible local FNV-1a model.
+Geist: see GEIST-LICENSE.txt.
+IBM Plex Mono: see IBM-PLEX-LICENSE.txt.
