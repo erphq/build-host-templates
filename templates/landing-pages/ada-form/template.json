@@ -1,0 +1,32 @@
+{
+  "slug": "ada-form",
+  "name": "Ada Form",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Portfolio",
+  "description": "Ada Form, original interaction-design studies in continuity, context and attention.",
+  "tagline": "",
+  "style": "Original portfolios study",
+  "palette": [
+    "#282b28",
+    "#596c7b",
+    "#616760",
+    "#d8dcd7",
+    "#c2c9c0"
+  ],
+  "order": -79,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 5,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  },
+  "credits": {
+    "referenceName": "Original design research",
+    "referenceUrl": "https://nelson.co"
+  }
+}

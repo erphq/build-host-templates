@@ -1,0 +1,528 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Threshold court — Rue Space</title><meta name="description" content="Rue Space — original spatial studies in thresholds, shared rooms and temporary gathering places."><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2');
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #eeeae1;
+  color: #36392f;
+  font:
+    15px/1.6 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 10px 0;
+  min-height: 44px;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #7b4636;
+  outline-offset: 5px;
+}
+.skip {
+  position: absolute;
+  top: -80px;
+}
+.skip:focus {
+  top: 10px;
+  z-index: 30;
+  background: white;
+}
+.rail {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wordmark {
+  font-size: 32px;
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+}
+.wordmark span {
+  display: block;
+}
+.rail nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 45px;
+}
+.rail nav a[aria-current] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.rail .small {
+  font-size: 12px;
+  color: #68695e;
+}
+.content {
+  margin-left: 250px;
+  padding: 35px 35px 0 25px;
+}
+.opening {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 5px 0 45px;
+  align-items: start;
+}
+.opening h1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 330px;
+  margin: 0;
+}
+.opening p {
+  font-size: 13px;
+  color: #64685c;
+  max-width: 270px;
+  margin: 0;
+}
+.project {
+  margin-bottom: 65px;
+}
+.project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+.project:nth-child(2) {
+  width: 75%;
+  margin-left: auto;
+}
+.project:nth-child(3) {
+  width: 87%;
+}
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 12px;
+}
+.caption h2 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+}
+.caption span {
+  font-size: 12px;
+  color: #64685c;
+}
+.project a:hover img {
+  filter: brightness(0.98);
+}
+.case-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 40px;
+  padding: 15px 0 30px;
+}
+.case-top h1 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 5px 0;
+}
+.case-top p {
+  margin: 0;
+  max-width: 460px;
+  color: #64685c;
+}
+.back {
+  font-size: 13px;
+  white-space: nowrap;
+}
+.media-stage img,
+.media-stage svg {
+  display: block;
+  width: 100%;
+  max-height: 720px;
+  object-fit: contain;
+  background: #e5e1d7;
+}
+.media-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  border-bottom: 1px solid #c4c5b7;
+  padding: 8px 0;
+}
+.media-tools [aria-pressed='true'] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.view-tabs {
+  display: flex;
+  gap: 25px;
+}
+.media-tools button {
+  font-size: 13px;
+}
+.status {
+  font-size: 12px;
+  color: #64685c;
+  margin: 10px 0 25px;
+}
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 70px;
+  margin: 65px 0;
+}
+.facts {
+  font-size: 13px;
+}
+.facts dl {
+  margin: 0;
+}
+.facts dt {
+  color: #64685c;
+  margin-top: 20px;
+}
+.facts dt:first-child {
+  margin-top: 0;
+}
+.facts dd {
+  margin: 4px 0;
+}
+.story h2 {
+  font-size: 19px;
+  font-weight: 400;
+}
+.story p {
+  line-height: 1.9;
+}
+.story section {
+  margin-bottom: 38px;
+}
+.next {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #c4c5b7;
+  padding: 22px 0;
+}
+.practice {
+  max-width: 760px;
+  padding-top: 20px;
+}
+.practice h1 {
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 45px;
+  max-width: 500px;
+}
+.practice h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 40px;
+}
+.practice p {
+  line-height: 1.9;
+  max-width: 620px;
+}
+.shortlist {
+  margin-top: 45px;
+  border-top: 1px solid #b9bcad;
+  padding-top: 20px;
+}
+.saved-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d0d0c4;
+  padding: 10px 0;
+}
+.saved-row button {
+  font-size: 13px;
+}
+.copy-list {
+  border-bottom: 1px solid #757d66;
+}
+footer {
+  font-size: 12px;
+  color: #64685c;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 70px;
+  padding: 25px 0;
+  border-top: 1px solid #c4c5b7;
+}
+footer p {
+  margin: 0;
+  max-width: 510px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 850px) {
+  .rail {
+    position: static;
+    width: auto;
+    padding: 25px;
+    display: block;
+  }
+  .wordmark {
+    font-size: 25px;
+  }
+  .wordmark span {
+    display: inline;
+  }
+  .wordmark span + span:before {
+    content: ' ';
+  }
+  .rail > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  }
+  .rail nav {
+    flex-direction: row;
+    margin-top: 0;
+    gap: 20px;
+  }
+  .rail .small {
+    display: none;
+  }
+  .content {
+    margin: 0;
+    padding: 25px;
+  }
+  .opening {
+    gap: 25px;
+  }
+  .story-grid {
+    gap: 35px;
+  }
+}
+@media (max-width: 550px) {
+  .rail {
+    padding: 22px;
+  }
+  .content {
+    padding: 22px;
+  }
+  .opening {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .opening h1 {
+    font-size: 20px;
+    margin-bottom: 22px;
+  }
+  .opening p {
+    max-width: 100%;
+    font-size: 13px;
+  }
+  .project,
+  .project:nth-child(2),
+  .project:nth-child(3) {
+    width: 100%;
+    margin: 0 0 40px;
+  }
+  .caption {
+    gap: 15px;
+  }
+  .caption span {
+    max-width: 90px;
+    text-align: right;
+    font-size: 12px;
+  }
+  .case-top {
+    display: block;
+    padding-top: 0;
+  }
+  .back {
+    display: block;
+    margin-bottom: 25px;
+  }
+  .case-top h1 {
+    font-size: 27px;
+  }
+  .media-tools {
+    gap: 12px;
+    align-items: start;
+  }
+  .view-tabs {
+    gap: 14px;
+  }
+  .media-tools button {
+    font-size: 12px;
+  }
+  .story-grid {
+    display: block;
+    margin-top: 35px;
+  }
+  .facts dl {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+  }
+  .facts dt,
+  .facts dd {
+    margin: 0;
+  }
+  .story {
+    margin-top: 40px;
+  }
+  .practice h1 {
+    font-size: 29px;
+    margin-bottom: 30px;
+  }
+  footer {
+    display: block;
+    margin-top: 45px;
+  }
+  footer p {
+    margin-bottom: 15px;
+  }
+  .next {
+    font-size: 13px;
+    gap: 20px;
+  }
+  .saved-row {
+    gap: 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+}
+</style></head><body><a href="#main" class="skip">Skip to content</a><aside class="rail"><div><a class="wordmark" href="index.html" aria-label="Rue Space home"><span>rue</span><span>space</span></a><nav aria-label="Main navigation"><a href="index.html" >Projects</a><a href="practice.html" >Practice</a></nav></div><p class="small">Spatial studies<br>Interiors, thresholds,<br>places to gather.<br><br>Independent concept portfolio<br>2025—2026</p></aside><div class="content"><main id="main"><div class="case-top"><div><a class="back" href="index.html">← All projects</a><h1>Threshold court</h1><p>A small place between a street and a garden. The doorway is the room’s most important object.</p></div><span class="meta">Pavilion / 2026</span></div><div class="media-stage"><div id="photo-view"><img src="assets/court.webp" width="1536" height="1024" alt="A small place between a street and a garden. The doorway is the room’s most important object."></div><div id="diagram-view" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 580" role="img" aria-label="Original explanatory spatial diagram, not to scale"><rect width="750" height="580" fill="#f2efe6"/><g fill="none" stroke="#84715d" stroke-width="3"><path d="M180 90h400v260H440m-100 0H180V90"/><path d="M340 350v-50h100v50"/><path d="M390 350v90" stroke-dasharray="7 7"/><circle cx="200" cy="445" r="38"/><path d="M160 505h430" stroke-dasharray="4 9"/></g><text x="45" y="540" font-family="Arial,sans-serif" font-size="14" fill="#615b50">SPATIAL RELATIONSHIP / NOT TO SCALE</text><path d="M682 115v-45m-8 12 8-12 8 12" stroke="#615b50" fill="none" stroke-width="2"/></svg></div></div><div class="media-tools"><div class="view-tabs" role="group" aria-label="Project view"><button data-view="photo" aria-pressed="true">Image</button><button data-view="diagram" aria-pressed="false">Diagram</button></div><button id="save-project" data-project="threshold-court" aria-pressed="false">Save to selection</button></div><p id="view-status" class="status" aria-live="polite">Original generated spatial concept. Not a completed building.</p><p id="selection-status" class="status" aria-live="polite"></p><div class="story-grid"><aside class="facts"><dl><dt>Study</dt><dd>Pavilion</dd><dt>Year</dt><dd>2026</dd><dt>Illustrative area</dt><dd>42 m²</dd><dt>Material direction</dt><dd>Pale brick / terracotta / gravel</dd></dl></aside><div class="story"><section><h2>The space before the room</h2><p>Threshold court begins with the arrival rather than the enclosure. A gravel surface slows the approach, while one recessed opening draws the eye across an otherwise quiet wall. The tree gives the court a seasonal register without turning it into a planted display. The proposal imagines a place that can remain useful even when the door is closed.</p></section><section><h2>Depth instead of ornament</h2><p>The terracotta reveal is deliberately deeper than a simple painted frame. Its shadow changes the opening through the day and gives the threshold somewhere to pause. The pale brick keeps the rest of the elevation calm. Neither material is intended as a claim about a real supplier, structural system, or completed construction.</p></section><section><h2>A concept with limits</h2><p>The image and diagram are original speculative studies. The plan explains a relationship between approach, doorway, and enclosed space; it is not a measured survey or a permitting drawing. Drainage, access, structure, planting conditions, and weathering would require site-specific development.</p></section></div></div><div class="next"><a href="practice.html">View your selection</a><a href="north-reading-room.html">North reading room →</a></div></main><footer><p>Rue Space is a fictional spatial practice. Images and diagrams are original concepts, not completed buildings or construction documents.</p><a href="assets/CREDITS.txt">Credits ↗</a></footer></div><script type="application/json" id="project-data">[{"id":"threshold-court","name":"Threshold court"},{"id":"north-reading-room","name":"North reading room"},{"id":"common-stair","name":"Common stair"}]</script><script>const key = 'rue-space-selection-v1';
+const projects = JSON.parse(
+  document.querySelector('#project-data').textContent,
+);
+const selectionStatus = document.querySelector('#selection-status');
+function read() {
+  try {
+    const value = JSON.parse(localStorage.getItem(key) || '[]');
+    return Array.isArray(value)
+      ? value.filter((id) => projects.some((p) => p.id === id))
+      : [];
+  } catch {
+    return [];
+  }
+}
+function write(ids) {
+  try {
+    localStorage.setItem(key, JSON.stringify(ids));
+    return true;
+  } catch {
+    if (selectionStatus)
+      selectionStatus.textContent = 'This browser could not save your selection.';
+    return false;
+  }
+}
+const save = document.querySelector('#save-project');
+if (save) {
+  const id = save.dataset.project;
+  function render() {
+    const saved = read().includes(id);
+    save.textContent = saved ? 'Remove from selection' : 'Save to selection';
+    save.setAttribute('aria-pressed', String(saved));
+  }
+  render();
+  save.addEventListener('click', () => {
+    const ids = read();
+    const selected = ids.includes(id);
+    if (write(selected ? ids.filter((item) => item !== id) : [...ids, id])) {
+      render();
+      selectionStatus.textContent = selected
+        ? 'Removed from your local selection.'
+        : 'Saved to your local selection.';
+    }
+  });
+}
+for (const button of document.querySelectorAll('[data-view]'))
+  button.addEventListener('click', () => {
+    const diagram = button.dataset.view === 'diagram';
+    document.querySelector('#photo-view').hidden = diagram;
+    document.querySelector('#diagram-view').hidden = !diagram;
+    for (const other of document.querySelectorAll('[data-view]'))
+      other.setAttribute('aria-pressed', String(other === button));
+    document.querySelector('#view-status').textContent = diagram
+      ? 'Original explanatory diagram. Not to scale or for construction.'
+      : 'Original generated spatial concept. Not a completed building.';
+  });
+const list = document.querySelector('#saved-projects');
+if (list) {
+  function render() {
+    list.replaceChildren();
+    const ids = read();
+    document.querySelector('#copy-selection').disabled = !ids.length;
+    if (!ids.length) {
+      const p = document.createElement('p');
+      p.textContent =
+        'No projects selected yet. Open a study and choose Save to selection.';
+      list.append(p);
+      return;
+    }
+    for (const id of ids) {
+      const project = projects.find((p) => p.id === id);
+      const row = document.createElement('div');
+      row.className = 'saved-row';
+      const a = document.createElement('a');
+      a.href = id + '.html';
+      a.textContent = project.name;
+      const remove = document.createElement('button');
+      remove.textContent = 'Remove';
+      remove.setAttribute('aria-label', 'Remove ' + project.name);
+      remove.addEventListener('click', () => {
+        if (write(read().filter((item) => item !== id))) {
+          render();
+          selectionStatus.textContent = project.name + ' removed.';
+        }
+      });
+      row.append(a, remove);
+      list.append(row);
+    }
+  }
+  render();
+  document
+    .querySelector('#copy-selection')
+    .addEventListener('click', async () => {
+      const names = read().map((id) => projects.find((p) => p.id === id).name);
+      try {
+        await navigator.clipboard.writeText(
+          'RUE SPACE — SELECTED CONCEPTS\n\n' +
+            names.join('\n') +
+            '\n\nLocal reference list. No inquiry has been sent.',
+        );
+        selectionStatus.textContent = 'Selection copied.';
+      } catch {
+        selectionStatus.textContent =
+          'Copy unavailable. The selected project names remain visible above.';
+      }
+    });
+}
+</script></body></html>

@@ -1,0 +1,400 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Folio — Eli Mercer</title><meta name="description" content="Eli Mercer — original multidisciplinary design studies in identity, publication and interaction."><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2');
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #191b19;
+  color: #dbded5;
+  font:
+    16px/1.8 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: #7d8577;
+}
+a:hover {
+  text-decoration-color: #e3e9d8;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #d3dbbe;
+  outline-offset: 5px;
+}
+.skip {
+  position: absolute;
+  top: -80px;
+}
+.skip:focus {
+  top: 10px;
+  background: #191b19;
+  padding: 10px;
+  z-index: 9;
+}
+header {
+  max-width: 760px;
+  margin: 70px auto 0;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 14px;
+}
+header a {
+  text-decoration: none;
+}
+header a:hover {
+  text-decoration: underline;
+}
+.personal {
+  max-width: 760px;
+  margin: 70px auto;
+  padding: 0 30px;
+}
+.personal h1 {
+  font-size: 22px;
+  line-height: 1.55;
+  font-weight: 400;
+  margin: 0 0 28px;
+}
+.personal p {
+  margin: 0 0 25px;
+  color: #bac1b4;
+}
+.personal h2 {
+  font-size: 13px;
+  color: #a5b197;
+  font-weight: 400;
+  margin: 58px 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.work-note {
+  margin-bottom: 32px !important;
+}
+.work-note a {
+  color: #e0e6d7;
+  display: inline;
+  font-size: 18px;
+}
+.work-note span {
+  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #a7b09e;
+}
+.miniatures {
+  display: flex;
+  gap: 12px;
+  margin: 30px 0;
+}
+.miniatures a {
+  display: block;
+  flex: 1;
+}
+.miniatures img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 9/6.8;
+}
+.case {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 30px;
+}
+.case-head {
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+.case-head h1 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 20px 0;
+}
+.case-head p {
+  color: #b9c1b0;
+}
+.meta {
+  font-size: 12px;
+  color: #a5b197;
+}
+.work-surface {
+  background: var(--surface, #e5a25d);
+  color: #242720;
+  min-height: 540px;
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.signal-symbol {
+  width: 130px;
+  height: 130px;
+  border: 20px solid currentColor;
+  border-radius: 50%;
+  align-self: flex-end;
+}
+.signal-word {
+  font-size: clamp(80px, 12vw, 150px);
+  line-height: 1;
+  letter-spacing: -0.075em;
+}
+.surface-foot {
+  border-top: 2px solid currentColor;
+  padding-top: 18px;
+  font-size: 15px;
+}
+.cover-label {
+  font-size: 18px;
+}
+.cover-title {
+  font:
+    400 80px/1.08 Georgia,
+    serif;
+  max-width: 740px;
+  overflow-wrap: anywhere;
+  margin: 35px 0;
+}
+.publication {
+  background: #b7c7db;
+  color: #263140;
+}
+.field {
+  padding: 0;
+  background: #b5c2a1;
+  display: block;
+}
+.field svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 360px;
+}
+.controls {
+  border: 1px solid #4b5645;
+  border-top: 0;
+  padding: 17px 22px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.controls button {
+  background: none;
+  border: 0;
+  padding: 8px 0;
+  font-size: 14px;
+  min-height: 44px;
+}
+.controls button[aria-pressed='true'] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.controls label {
+  font-size: 14px;
+}
+.controls input[type='text'] {
+  background: #252b23;
+  border: 1px solid #68745f;
+  padding: 10px 13px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 600px;
+}
+.controls input[type='range'] {
+  flex: 1;
+  min-width: 160px;
+  accent-color: #bccda6;
+}
+.controls output {
+  font-size: 14px;
+}
+.status {
+  font-size: 12px;
+  color: #aab89b;
+  margin: 14px 0;
+}
+.writing {
+  max-width: 670px;
+  margin: 65px auto;
+}
+.writing section {
+  margin-bottom: 38px;
+}
+.writing h2 {
+  font-size: 19px;
+  font-weight: 400;
+}
+.writing p {
+  color: #bac1b4;
+  line-height: 1.9;
+}
+.next {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding-top: 22px;
+  border-top: 1px solid #4b5645;
+  font-size: 14px;
+}
+footer {
+  max-width: 1000px;
+  margin: 75px auto 30px;
+  padding: 0 30px;
+  color: #a5b197;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+footer p {
+  max-width: 550px;
+  margin: 0;
+}
+@media (max-width: 650px) {
+  header {
+    margin-top: 28px;
+    padding: 0 24px;
+  }
+  .personal {
+    margin: 45px auto;
+    padding: 0 24px;
+  }
+  .personal h1 {
+    font-size: 21px;
+  }
+  .personal h2 {
+    margin-top: 40px;
+  }
+  .miniatures {
+    gap: 8px;
+  }
+  .case {
+    margin-top: 40px;
+    padding: 0 24px;
+  }
+  .case-head h1 {
+    font-size: 27px;
+  }
+  .work-surface {
+    min-height: 380px;
+    padding: 30px;
+  }
+  .signal-symbol {
+    width: 80px;
+    height: 80px;
+    border-width: 13px;
+  }
+  .signal-word {
+    font-size: 80px;
+  }
+  .surface-foot {
+    font-size: 12px;
+  }
+  .cover-title {
+    font-size: 52px;
+  }
+  .cover-label {
+    font-size: 14px;
+  }
+  .field {
+    padding: 0;
+    min-height: 0;
+  }
+  .field svg {
+    min-height: 260px;
+  }
+  .controls {
+    padding: 12px 15px;
+    gap: 15px;
+  }
+  .controls input[type='text'] {
+    min-width: 0;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .writing {
+    margin-top: 40px;
+  }
+  footer {
+    padding: 0 24px;
+    display: block;
+    margin-top: 50px;
+  }
+  footer p {
+    margin-bottom: 15px;
+  }
+  .next {
+    font-size: 13px;
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><a href="index.html">Eli Mercer</a><span>Design / image / interaction</span></header><main class="personal" id="main"><h1>I’m Eli, a designer interested in the point where a clear idea becomes something you can see, hold, or change.</h1><p>This small folio moves between visual identity, publication, and digital experiments. The projects share an interest in understandable systems: a few parts, a visible rule, and enough room for the content to remain itself.</p><p>Eli Mercer is a fictional identity. The work below was created specifically for this portfolio. It is presented as a set of open studies, without invented clients, launches, or professional affiliations.</p><h2>Selected studies</h2><p class="work-note"><a href="signal.html">Signal, without noise ↗</a><span>Visual identity / 2026</span>A small identity study for an imagined listening room. One ring, one line, and a word that can hold its place.</p><p class="work-note"><a href="open-index.html">An open index ↗</a><span>Publication / 2025</span>A publication cover that makes room for a changing subject, with a stable relationship between title and index.</p><p class="work-note"><a href="field-lines.html">Field lines ↗</a><span>Digital experiment / 2026</span>A small drawing instrument that turns a single density value into a field of curved lines.</p><div class="miniatures"><a href="signal.html" aria-label="Open Signal, without noise"><img src="assets/signal.svg" width="900" height="680" alt="Original visual identity study"></a><a href="open-index.html" aria-label="Open An open index"><img src="assets/open-index.svg" width="900" height="680" alt="Original publication study"></a><a href="field-lines.html" aria-label="Open Field lines"><img src="assets/field-lines.svg" width="900" height="680" alt="Original digital experiment study"></a></div><h2>A way of working</h2><p>I like an experiment that is small enough to explain. A color choice should visibly change a color. A title field should change a title. A drawing control should reveal the rule it affects. These are modest interactions, but they make the work available to a reader rather than asking them to accept a polished image at face value.</p><p>The studies can be explored entirely in this browser. They do not submit a brief, collect personal details, or call an external service.</p></main><footer><p>A fictional independent designer’s folio. All projects are original studies, not real client work or commercial releases.</p><a href="assets/CREDITS.txt">Credits ↗</a></footer><script>const surface = document.querySelector('#surface');
+for (const button of document.querySelectorAll('[data-color]'))
+  button.addEventListener('click', () => {
+    surface.style.setProperty('--surface', button.dataset.color);
+    for (const other of document.querySelectorAll('[data-color]'))
+      other.setAttribute('aria-pressed', String(other === button));
+    document.querySelector('#status').textContent =
+      button.textContent + ' color study selected.';
+  });
+const titleInput = document.querySelector('#cover-input');
+if (titleInput) {
+  titleInput.addEventListener('input', () => {
+    document.querySelector('#cover-title').textContent =
+      titleInput.value.trim() || 'An untitled thought.';
+    document.querySelector('#status').textContent =
+      'Cover text updated locally.';
+  });
+  document.querySelector('#reset-title').addEventListener('click', () => {
+    titleInput.value = 'Ways of paying attention.';
+    document.querySelector('#cover-title').textContent = titleInput.value;
+    document.querySelector('#status').textContent =
+      'Original cover title restored.';
+  });
+}
+const density = document.querySelector('#density');
+if (density) {
+  const group = document.querySelector('#curves');
+  function draw() {
+    const count = Number(density.value);
+    group.replaceChildren();
+    for (let i = 0; i < count; i++) {
+      const y = 80 + i * (520 / (count - 1));
+      const path = document.createElementNS(
+        'http://www.w3.org/2000/svg',
+        'path',
+      );
+      path.setAttribute(
+        'd',
+        `M80 ${y} C${250 + i * 4} ${70 + i * 8},${650 - i * 5} ${620 - i * 6},820 ${y}`,
+      );
+      group.append(path);
+    }
+    document.querySelector('#density-value').textContent = count + ' lines';
+    document.querySelector('#status').textContent =
+      'Drawing updated to ' + count + ' curves.';
+  }
+  density.addEventListener('input', draw);
+  draw();
+}
+</script></body></html>

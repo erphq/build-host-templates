@@ -1,0 +1,22 @@
+{
+  "slug": "rue-space",
+  "name": "Rue Space",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Portfolio",
+  "description": "Rue Space \u2014 original spatial studies in thresholds, shared rooms and temporary gathering places.",
+  "tagline": "",
+  "style": "Original portfolios study",
+  "palette": [],
+  "order": -66,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 5,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "sunday",
+  "name": "SUNDAY",
+  "collection": "landing-pages",
+  "category": "e-commerce",
+  "industry": "Automotive",
+  "description": "A cinematic Porsche atelier with a real articulated 911, coordinated service scenes, and a local project brief.",
+  "tagline": "An icon. For life.",
+  "style": "Claret automotive editorial",
+  "palette": [
+    "#822635",
+    "#f5f2ed",
+    "#d85350"
+  ],
+  "order": -100,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 1,
+  "notes": {
+    "provenance": "Original completed website, original copy and generated imagery. Source and asset licenses are included. Live demonstration: https://sunday-motor-atelier.build.host",
+    "interaction": "A cinematic Porsche atelier with a real articulated 911, coordinated service scenes, and a local project brief."
+  }
+}

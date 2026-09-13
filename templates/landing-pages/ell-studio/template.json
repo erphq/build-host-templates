@@ -1,0 +1,26 @@
+{
+  "slug": "ell-studio",
+  "name": "Ell Mercer",
+  "collection": "landing-pages",
+  "category": "portfolios",
+  "industry": "Portfolio",
+  "description": "An independent art-direction portfolio. Original identity and editorial studies by fictional designer Ell Mercer.",
+  "tagline": "",
+  "style": "Original portfolios study",
+  "palette": [],
+  "order": -77,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 5,
+  "notes": {
+    "provenance": "Preserved original completed pages, original full build prompt, source artwork and supplied credits.",
+    "interaction": "Working local demonstration; read the supplied prompt for exact behavior and integration boundaries."
+  },
+  "credits": {
+    "referenceName": "Original design research",
+    "referenceUrl": "https://familyoffice.is/"
+  }
+}

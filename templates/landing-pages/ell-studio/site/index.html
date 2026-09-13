@@ -1,0 +1,568 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ell Mercer — Ell Studio</title><meta name="description" content="An independent art-direction portfolio. Original identity and editorial studies by fictional designer Ell Mercer."><style>@font-face {
+  font-family: Geist;
+  src: url('assets/geist-variable.woff2');
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #f9f8f3;
+  color: #25251f;
+  font:
+    16px/1.55 Geist,
+    Arial,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+:focus-visible {
+  outline: 2px solid #614530;
+  outline-offset: 5px;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 27px 38px;
+  font-size: 13px;
+}
+.wordmark {
+  font-size: 33px;
+  font-weight: 650;
+  letter-spacing: -0.08em;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 27px;
+}
+header > span {
+  text-align: right;
+  color: #66665c;
+}
+nav [aria-current] {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+main {
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 7vw;
+}
+.home-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 60px;
+  padding: 90px 0 85px;
+}
+h1 {
+  font-weight: 450;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  font-size: clamp(35px, 4.1vw, 62px);
+  margin: 0;
+}
+.home-intro p {
+  font-size: 15px;
+  max-width: 330px;
+  margin: 0 0 6px;
+}
+.sequence {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 8vw;
+  align-items: start;
+}
+.project.offset {
+  padding-top: 210px;
+}
+.plate {
+  aspect-ratio: 4/5;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.ochre {
+  background: #bd9e55;
+  color: #222c23;
+}
+.pink {
+  background: #e4b8b3;
+  color: #542e31;
+}
+.plate-top {
+  font-size: clamp(15px, 1.7vw, 24px);
+  letter-spacing: -0.035em;
+}
+.plate strong {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(37px, 5vw, 78px);
+  line-height: 0.99;
+  letter-spacing: -0.05em;
+  margin: auto 0;
+}
+.plate-bottom {
+  font-size: 12px;
+}
+.project-caption {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3px 15px;
+  padding-top: 17px;
+}
+.project-caption h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+.project-caption p {
+  margin: 0;
+  font-size: 13px;
+  color: #66665c;
+  grid-row: 2;
+}
+.project-caption span {
+  font-size: 13px;
+  grid-column: 2;
+  grid-row: 1;
+}
+.closing {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 110px 0 40px;
+  font-size: 14px;
+}
+.closing p {
+  margin: 0;
+}
+.project-heading {
+  padding: 70px 0 60px;
+  max-width: 900px;
+}
+.project-heading > a {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 50px;
+}
+.project-heading h1 {
+  font-size: clamp(45px, 6vw, 85px);
+}
+.project-heading > p {
+  font-size: 21px;
+  max-width: 600px;
+}
+dl {
+  display: flex;
+  gap: 65px;
+  margin: 45px 0 0;
+  font-size: 13px;
+}
+dt {
+  color: #66665c;
+}
+dd {
+  margin: 5px 0 0;
+}
+.project-heading + .plate {
+  aspect-ratio: 16/10;
+  max-width: 1100px;
+  margin: auto;
+  padding: 6%;
+}
+.project-heading + .plate strong {
+  font-size: clamp(55px, 9vw, 130px);
+}
+.project-text {
+  max-width: 880px;
+  margin: 85px auto;
+}
+.project-text section {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 65px;
+  margin-bottom: 55px;
+}
+.project-text h2 {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.project-text p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.7;
+}
+.alternate {
+  padding: 7%;
+  max-width: 770px;
+  margin: 70px auto;
+  aspect-ratio: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+.alternate > span {
+  font-size: 14px;
+}
+.alternate h2 {
+  font:
+    400 clamp(38px, 5vw, 70px)/1.05 Georgia,
+    serif;
+  letter-spacing: -0.04em;
+  margin: auto 0;
+}
+.alternate p {
+  font-size: 14px;
+  max-width: 330px;
+  margin: 20px 0 0;
+}
+.project-next {
+  padding: 45px 0;
+  font-size: 15px;
+  text-align: right;
+}
+.studio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9vw;
+  padding: 90px 0;
+}
+.studio h1 {
+  font-size: clamp(35px, 3.6vw, 55px);
+}
+.studio-body {
+  font-size: 18px;
+}
+.studio-body .lead {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.studio-body h2 {
+  font-size: 17px;
+  margin-top: 55px;
+}
+.studio-body details {
+  border-bottom: 1px solid #cbc9bf;
+  padding: 17px 0;
+  font-size: 16px;
+}
+.studio-body summary {
+  cursor: pointer;
+}
+.studio-body details p {
+  font-size: 16px;
+  color: #54544b;
+}
+.studio-body > a {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 15px;
+}
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10vw;
+  padding: 90px 0;
+}
+.contact > div > p {
+  margin: 0 0 40px;
+  font-size: 18px;
+}
+form {
+  display: grid;
+  gap: 27px;
+}
+label {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+  border: 1px solid #aaa89b;
+  background: transparent;
+  padding: 12px;
+  width: 100%;
+  border-radius: 0;
+}
+button {
+  cursor: pointer;
+  width: auto;
+  text-align: left;
+}
+button:hover {
+  background: #edeae0;
+}
+textarea {
+  resize: vertical;
+}
+#note {
+  margin-top: 40px;
+}
+#note h2 {
+  font-size: 20px;
+}
+#note pre {
+  font:
+    16px/1.6 Geist,
+    Arial,
+    sans-serif;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+#status {
+  font-size: 14px;
+  color: #54544b;
+}
+footer {
+  padding: 55px 38px 25px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  font-size: 13px;
+}
+footer span {
+  margin-right: auto;
+}
+.skip {
+  position: fixed;
+  top: -100px;
+  background: white;
+  padding: 12px;
+  z-index: 20;
+}
+.skip:focus {
+  top: 10px;
+  left: 10px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+  }
+  header nav {
+    justify-content: end;
+  }
+  header > span {
+    display: none;
+  }
+  .home-intro {
+    display: block;
+    padding: 65px 0;
+  }
+  .home-intro p {
+    margin-top: 30px;
+  }
+  .sequence {
+    gap: 5vw;
+  }
+  .project.offset {
+    padding-top: 100px;
+  }
+  .plate strong {
+    font-size: 5.7vw;
+  }
+  .studio,
+  .contact {
+    gap: 6vw;
+  }
+  .project-text section {
+    gap: 35px;
+    grid-template-columns: 150px 1fr;
+  }
+  .project-text p {
+    font-size: 18px;
+  }
+  dl {
+    gap: 30px;
+  }
+}
+@media (max-width: 640px) {
+  header {
+    padding: 20px 22px;
+  }
+  header nav {
+    gap: 20px;
+  }
+  .wordmark {
+    font-size: 30px;
+  }
+  main {
+    padding: 0 22px;
+  }
+  .home-intro {
+    padding: 40px 0 50px;
+  }
+  .home-intro h1 {
+    font-size: 36px;
+  }
+  .home-intro p {
+    font-size: 14px;
+  }
+  .sequence {
+    display: block;
+  }
+  .project.offset {
+    padding-top: 55px;
+  }
+  .plate strong {
+    font-size: 15vw;
+  }
+  .closing {
+    padding: 60px 0 15px;
+    display: block;
+  }
+  .closing > a {
+    display: block;
+    margin-top: 25px;
+  }
+  .studio,
+  .contact {
+    display: block;
+    padding: 40px 0;
+  }
+  .studio-body {
+    margin-top: 45px;
+  }
+  .studio-body .lead {
+    font-size: 22px;
+  }
+  .contact > div {
+    margin-top: 45px;
+  }
+  .project-heading {
+    padding: 40px 0;
+  }
+  .project-heading > a {
+    margin-bottom: 35px;
+  }
+  .project-heading > p {
+    font-size: 19px;
+  }
+  dl {
+    flex-wrap: wrap;
+    gap: 20px 30px;
+  }
+  .project-heading + .plate {
+    aspect-ratio: 4/5;
+  }
+  .project-heading + .plate strong {
+    font-size: 16vw;
+  }
+  .project-text {
+    margin: 50px 0;
+  }
+  .project-text section {
+    display: block;
+    margin-bottom: 35px;
+  }
+  .project-text h2 {
+    margin-bottom: 15px;
+  }
+  .alternate {
+    padding: 9%;
+    aspect-ratio: 4/5;
+    margin: 45px 0;
+  }
+  .alternate h2 {
+    font-size: 43px;
+  }
+  .project-next {
+    text-align: left;
+  }
+  footer {
+    padding: 45px 22px 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .contact h1 {
+    font-size: 41px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  button {
+    transition: background 0.15s;
+  }
+  .project .plate {
+    transition: filter 0.2s;
+  }
+  .project a:hover .plate {
+    filter: brightness(1.035);
+  }
+}
+</style></head><body><a class="skip" href="#main">Skip to content</a><header><a href="index.html" class="wordmark">ell.</a><nav aria-label="Main"><a href="index.html" aria-current="page">Work</a><a href="studio.html" >Studio</a><a href="contact.html" >Contact</a></nav><span>Independent art direction</span></header><main id="main"><section class="home-intro"><h1>Identity, image,<br>and the space between.</h1><p>Ell Mercer is an independent art director.<br>Working with words, form and a little restraint.</p></section><div class="sequence"><article class="project "><a href="common-ground.html"><div class="plate ochre" role="img" aria-label="Original typographic cover for Common Ground"><span class="plate-top">Common Ground</span><strong>A place<br>between places.</strong><span class="plate-bottom">Identity / Printed matter</span></div></a><div class="project-caption"><h2><a href="common-ground.html">Common Ground ↗</a></h2><p>Identity / Printed matter</p><span>2026</span></div></article><article class="project offset"><a href="soft-season.html"><div class="plate pink" role="img" aria-label="Original typographic cover for Soft Season"><span class="plate-top">Soft Season</span><strong>Nothing<br>in a hurry.</strong><span class="plate-bottom">Art direction / Editorial</span></div></a><div class="project-caption"><h2><a href="soft-season.html">Soft Season ↗</a></h2><p>Art direction / Editorial</p><span>2025</span></div></article></div><section class="closing"><p>Selected self-directed work.<br>Considered from the first word to the final edge.</p><a href="studio.html">A little about the practice ↗</a></section></main><footer><span>Ell Mercer</span><a href="assets/CREDITS.txt">Credits</a><a href="https://build.host/landing-pages">All designs ↗</a></footer><script>(() => {
+  function field(data, key) {
+    const value = data.get(key);
+    return typeof value === 'string' ? value : '';
+  }
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  let text = '';
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const idea = field(data, 'idea').trim();
+    if (idea.length < 20) {
+      form.elements.idea.setCustomValidity(
+        'Please write at least 20 meaningful characters.',
+      );
+      form.elements.idea.reportValidity();
+      return;
+    }
+    text =
+      'Collaboration note for Ell Mercer\n\nFrom: ' +
+      field(data, 'name').trim() +
+      '\nProject: ' +
+      field(data, 'kind') +
+      '\nTiming: ' +
+      field(data, 'timing').trim() +
+      '\n\n' +
+      idea +
+      '\n\nPrepared locally. This note has not been sent.\n';
+    document.getElementById('note-text').textContent = text;
+    document.getElementById('note').hidden = false;
+    document.getElementById('status').textContent =
+      'The note is ready to review. Nothing has been sent.';
+    document
+      .getElementById('note')
+      .scrollIntoView({ behavior: 'instant', block: 'nearest' });
+  });
+  form.elements.idea.addEventListener('input', () =>
+    form.elements.idea.setCustomValidity(''),
+  );
+  document.getElementById('save-note').addEventListener('click', () => {
+    if (!text) return;
+    const url = URL.createObjectURL(
+      new Blob([text], { type: 'text/plain;charset=utf-8' }),
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'ell-collaboration-note.txt';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
+    document.getElementById('status').textContent =
+      'Text file prepared for download. Nothing has been sent.';
+  });
+})();
+</script></body></html>

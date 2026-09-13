@@ -1,0 +1,26 @@
+{
+  "slug": "nocturne",
+  "name": "NOCTURNE",
+  "collection": "landing-pages",
+  "category": "editorial",
+  "industry": "Visual journal",
+  "description": "A gold-engraved celestial journal with landscape exploration, original essays, a quiet-minute timer, and downloadable artwork.",
+  "tagline": "For minds that wander.",
+  "style": "Engraved celestial editorial",
+  "palette": [
+    "#0d1519",
+    "#d6b97e",
+    "#e8dcc0"
+  ],
+  "order": -99,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 1,
+  "notes": {
+    "provenance": "Original completed website, original copy and generated imagery. Source and asset licenses are included. Live demonstration: https://nocturne-journal.build.host",
+    "interaction": "A gold-engraved celestial journal with landscape exploration, original essays, a quiet-minute timer, and downloadable artwork."
+  }
+}

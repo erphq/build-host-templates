@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(./assets/fonts/display-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(./assets/fonts/display-1.ttf) format('truetype');
+}
+
+@font-face{font-family:Body;src:url('./assets/fonts/body.ttf') format('truetype');font-display:swap;font-weight:400;}

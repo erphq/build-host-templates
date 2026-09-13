@@ -1,0 +1,26 @@
+{
+  "slug": "elsewhere",
+  "name": "Elsewhere",
+  "collection": "landing-pages",
+  "category": "saas",
+  "industry": "AI automation",
+  "description": "An atmospheric nature-led automation site with three runnable sample workflows and a layered floating landscape.",
+  "tagline": "Make room for more.",
+  "style": "Botanical spatial editorial",
+  "palette": [
+    "#294b37",
+    "#f6fbef",
+    "#e1edcf"
+  ],
+  "order": -95,
+  "contributor": "build-host",
+  "previewKind": "interactive",
+  "entry": "site/index.html",
+  "prompt": "PROMPT.md",
+  "thumbnail": "thumbnail.webp",
+  "pageCount": 1,
+  "notes": {
+    "provenance": "Original completed website, original copy and generated imagery. Source and asset licenses are included. Live demonstration: https://elsewhere-ai.build.host",
+    "interaction": "An atmospheric nature-led automation site with three runnable sample workflows and a layered floating landscape."
+  }
+}
