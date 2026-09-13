@@ -74,6 +74,24 @@ const assert = require("node:assert/strict");
   await page.waitForTimeout(40);
   await trigger.click();
   assert.equal(await page.getByRole("option").count(), 6);
+  await page.evaluate(() => {
+    const dark = document.createElement("style");
+    dark.textContent =
+      "body.dark select{color:rgb(240,240,230);background-color:rgb(25,30,35)}";
+    document.head.append(dark);
+    document.body.classList.add("dark");
+  });
+  await page.waitForTimeout(50);
+  assert.equal(
+    await trigger.evaluate((node) => getComputedStyle(node).color),
+    "rgb(240, 240, 230)",
+  );
+  assert.equal(
+    await page
+      .getByRole("listbox")
+      .evaluate((node) => getComputedStyle(node).backgroundColor),
+    "rgb(25, 30, 35)",
+  );
   const box = await page.getByRole("listbox").boundingBox();
   assert(
     box.x >= 0 &&

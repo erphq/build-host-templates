@@ -228,7 +228,41 @@
     }
   }
 
+  function syncTheme({ select, trigger, menu }) {
+    const style = getComputedStyle(select);
+    for (const property of [
+      "font",
+      "color",
+      "backgroundColor",
+      "border",
+      "borderRadius",
+    ]) {
+      if (trigger.style[property] !== style[property])
+        trigger.style[property] = style[property];
+    }
+    if (parseFloat(style.fontSize) < 12) trigger.style.fontSize = "14px";
+    menu.style.setProperty("--bh-bg", background(select));
+    menu.style.setProperty("--bh-ink", style.color);
+    menu.style.setProperty(
+      "--bh-line",
+      style.borderTopWidth !== "0px"
+        ? style.borderTopColor
+        : "color-mix(in srgb, currentColor 20%, transparent)",
+    );
+    menu.style.setProperty(
+      "--bh-radius",
+      parseFloat(style.borderRadius) > 12
+        ? "12px"
+        : style.borderRadius || "8px",
+    );
+    menu.style.setProperty(
+      "--bh-font",
+      `${Math.max(13, parseFloat(style.fontSize) || 14)}px/1.5 ${style.fontFamily}`,
+    );
+  }
+
   function sync(control) {
+    syncTheme(control);
     const { select, trigger, value } = control;
     const text = select.selectedOptions[0]?.label || "Select an option";
     if (value.textContent !== text) value.textContent = text;
@@ -325,24 +359,6 @@
     menu.setAttribute("popover", "manual");
     menu.setAttribute("role", "listbox");
     menu.setAttribute("aria-label", labelFor(select));
-    menu.style.setProperty("--bh-bg", background(select));
-    menu.style.setProperty("--bh-ink", style.color);
-    menu.style.setProperty(
-      "--bh-line",
-      style.borderTopWidth !== "0px"
-        ? style.borderTopColor
-        : "color-mix(in srgb, currentColor 20%, transparent)",
-    );
-    menu.style.setProperty(
-      "--bh-radius",
-      parseFloat(style.borderRadius) > 12
-        ? "12px"
-        : style.borderRadius || "8px",
-    );
-    menu.style.setProperty(
-      "--bh-font",
-      `${Math.max(13, parseFloat(style.fontSize) || 14)}px/1.5 ${style.fontFamily}`,
-    );
     const control = {
       select,
       trigger,
@@ -447,6 +463,9 @@
       "label",
       "aria-invalid",
       "class",
+      "open",
+      "data-theme",
+      "data-catalog-theme",
     ],
   });
   document.addEventListener("reset", schedule, true);
